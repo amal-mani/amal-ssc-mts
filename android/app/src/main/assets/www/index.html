@@ -802,6 +802,7 @@ function drawSched(){
 wk=schedWeekStart();
 $('wkPrev').onclick=()=>{wk-=7;drawSched()};$('wkNext').onclick=()=>{wk+=7;drawSched()};$('wkToday').onclick=()=>{wk=schedWeekStart();drawSched()};
 drawSched();
+window.addEventListener('hashchange',()=>{['noteBox','scoreBox','moreSheet'].forEach(i=>{const e=document.getElementById(i);if(e)e.hidden=true});const h=location.hash.slice(1)||'today';const cur=document.querySelector('nav button[aria-selected=true][data-tab]');if(cur&&cur.dataset.tab===h)return;const b=document.querySelector(`nav button[data-tab="${h}"]`);if(b)b.click()});
 {const h=location.hash.slice(1);const b=h&&document.querySelector(`nav button[data-tab="${h}"]`);if(b)b.click();}
 }
 </script>
