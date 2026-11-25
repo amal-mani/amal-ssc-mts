@@ -483,7 +483,7 @@ let st={stats:{},mistakes:[],done:{},pomo:{},fs:18};
 try{const raw=localStorage.getItem('amalMts');if(raw)st=Object.assign(st,JSON.parse(raw));}catch(e){}
 SECS.forEach(s=>{if(!st.stats[s])st.stats[s]={a:0,c:0}});
 let MOCKS=[];if(!st.myMocks)st.myMocks=[];
-const save=()=>{try{localStorage.setItem('amalMts',JSON.stringify(st))}catch(e){}};
+const save=()=>{st._t=Date.now();try{markKeys()}catch(e){}try{localStorage.setItem('amalMts',JSON.stringify(st))}catch(e){}try{syncSoon()}catch(e){}};
 const setFs=()=>document.documentElement.style.setProperty('--fs',st.fs+'px');setFs();
 $('bigger').onclick=()=>{st.fs=Math.min(26,st.fs+2);setFs();save()};
 $('smaller').onclick=()=>{st.fs=Math.max(14,st.fs-2);setFs();save()};
@@ -933,6 +933,7 @@ Reasoning:{
   return mkq('Reasoning','Dictionary order',`Arrange these words in dictionary order: ${ws.join(', ')}. Which word comes ${['first','second','third','fourth'][i]}?`,so[i],ws,`Dictionary order: ${so.join(' → ')}. Compare letter by letter.`,`നിഘണ്ടു ക്രമം: ${so.join(' → ')}. അക്ഷരം അക്ഷരമായി താരതമ്യം ചെയ്യുക.`)}]
 }};
 let BANK={q:[],vocab:[],idioms:[],ows:[],spell:[]};
+let drawSync=()=>{const el=$('syncBox');if(el)el.innerHTML='<div class="panel" style="margin-top:18px"><h2>Sync phone + PC</h2><p class="small">Sync works in the phone app and the PC app (My day → Sync phone + PC). This Claude page keeps its own progress.</p></div>'};
 const GRP=[['Brave','Bold','Courageous','Daring'],['Immense','Enormous','Huge'],['Abundant','Plentiful','Ample'],['Scarce','Rare','Meagre','Scanty'],['Feeble','Weak','Fragile','Delicate'],['Calm','Peaceful','Tranquil','Serene'],['Rapid','Quick'],['Timid','Shy','Cowardly'],['Reluctant','Unwilling','Lazy','Idle','Lethargic','Sluggish','Inactive'],['Ancient','Old'],['Famous','Renowned','Eminent','Distinguished','Reputed'],['Wealthy','Rich'],['Kind','Gentle','Generous','Liberal','Mercy','Compassion'],['Honest','Truthful','Candid','Frank'],['Diligent','Industrious','Busy'],['Keen','Eager','Zeal','Enthusiasm'],['Jubilant','Joyful','Cheerful','Joy'],['Gloomy','Dismal','Sad','Grief','Sorrow'],['Hostile','Unfriendly'],['Precious','Valuable','Worth','Merit'],['Vague','Unclear'],['Polite','Courteous','Humble','Modest'],['Strange','Odd'],['Optimistic','Hopeful'],['Expand','Enlarge'],['Commence','Begin'],['Assist','Help'],['Conceal','Hide'],['Deny','Refuse','Decline','Decrease'],['Fertile','Productive'],['Barren','Infertile'],['Accurate','Exact'],['Lenient','Mild','Flexible'],['Obstinate','Stubborn','Rigid','Stiff','Strict'],['Novice','Beginner'],['Prudent','Sensible','Cautious','Careful'],['Victory','Triumph'],['Hazard','Danger'],['Strong','Sturdy'],['Cruel','Cruelty','Rude','Arrogant'],['Clear','Transparent'],['Small','Tiny']];
 const grpOf=w=>{const l=String(w).toLowerCase(),o=new Set([l]);GRP.forEach(g=>{if(g.some(x=>x.toLowerCase()===l))g.forEach(x=>o.add(x.toLowerCase()))});return o};
 const otherOf=(arr,key,not,n)=>{const bad=new Set();not.forEach(w=>grpOf(w).forEach(x=>bad.add(x)));const seen=new Set(),out=[];shuffle(arr).forEach(x=>{const v=x[key];if(!v)return;const l=v.toLowerCase();if(bad.has(l)||seen.has(l)||out.length>=n)return;seen.add(l);out.push(v)});return out};
@@ -1088,9 +1089,11 @@ function drawMyDay(){const el=$('mydayBody');if(!el)return;const sk=streak(),r=r
     <label>Exam date${st.set.examSet?'':' (estimate)'}<input type="date" name="d" value="${esc(st.set.exam)}"></label><label>Goal (% of marks)<input type="number" name="g" min="30" max="90" value="${st.set.goal}"></label>
     <label style="grid-column:1/-1;display:flex;gap:10px;align-items:center"><input type="checkbox" name="x" ${st.set.extra?'checked':''} style="width:auto;min-height:0"> PwD extra time in mocks (60 min per session instead of 45)</label><button class="btn" type="submit">Save</button></form>
     <p class="small" style="margin-top:8px">SSC gives scribe-eligible PwD candidates 60 minutes per session. Check your own eligibility in the notification.</p></div>
+   <div id="syncBox"></div>
   </div></div>`;
   $('rtForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);st.set.blocks.forEach((b,i)=>{b.from=f.get('f'+i)||b.from;b.to=f.get('t'+i)||b.to});save();setAlarms(true);drawMyDay()};
   $('buddyForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);st.set.buddy=String(f.get('n')||'').slice(0,40);st.set.buddyPh=String(f.get('p')||'').replace(/[^\d+]/g,'').slice(0,15);save();drawMyDay()};
+  drawSync();
   $('exForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const d=String(f.get('d')||'');if(/^\d{4}-\d{2}-\d{2}$/.test(d)){if(d!==st.set.exam)st.set.examSet=true;st.set.exam=d}st.set.goal=Math.min(90,Math.max(30,+f.get('g')||55));st.set.extra=!!f.get('x');save();drawMyDay();drawPlusToday()};
 }
 
@@ -1264,6 +1267,73 @@ if(st.fmRun){fm=st.fmRun;if(Date.now()>fm.end+6*3600e3){st.fmRun=null;fm=null;sa
 if(st.focusRun&&st.focusRun.left>0)fLen=st.focusRun.len||25;
 drawCurTab();
 window.__mts={GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
+
+/* ================= SYNC between phone and PC (phone/PC app only) =================
+   Progress is saved in a private GitHub gist ("MTS Study sync") using the person's own GitHub key (gist scope only). */
+let SY=(()=>{try{return JSON.parse(localStorage.getItem('mtsSync')||'{}')}catch(e){return{}}})();
+const syS=()=>{try{localStorage.setItem('mtsSync',JSON.stringify(SY))}catch(e){}};
+const SYNC_FILE='mts-sync.json',LOCAL_ONLY=['alarmsOn','fs'];
+const SYNC_MAX=['course','passed','revDone','dmDone','rtWake','lq','wk','seen','top','stats','log','pomo','genMist','done'];
+const ghF=(path,opt)=>{opt=opt||{};return fetch('https://api.github.com'+path,Object.assign({},opt,{cache:'no-store',headers:Object.assign({Authorization:'Bearer '+SY.tok,Accept:'application/vnd.github+json'},opt.body?{'Content-Type':'application/json'}:{})}))
+  .then(async r=>{if(r.status===401)throw new Error('The GitHub key is wrong or has expired. Make a new key and connect again.');if(r.status===403||r.status===404)throw new Error('The GitHub key cannot use gists. Make the key again and tick "gist".');if(!r.ok)throw new Error('GitHub error '+r.status+'. Try again later.');return r.json()})};
+function deepM(a,b,mode){if(a==null)return b;if(b==null)return a;
+  if(typeof a==='number'&&typeof b==='number')return Math.max(a,b);
+  if(typeof a==='boolean'||typeof b==='boolean')return !!(a||b);
+  if(typeof a==='string'&&typeof b==='string')return mode==='min'?(a<b?a:b):(a>b?a:b);
+  if(Array.isArray(a)||Array.isArray(b))return a;
+  if(typeof a==='object'&&typeof b==='object'){const o={};new Set([...Object.keys(a),...Object.keys(b)]).forEach(k=>{o[k]=deepM(a[k],b[k],mode)});return o}return a}
+function mergeSt(local,remote){if(!remote)return local;const L=local._k||{},RK=remote._k||{},newerAll=(local._t||0)>=(remote._t||0)?local:remote,cp=v=>v==null?v:JSON.parse(JSON.stringify(v));
+  const o={},keys=new Set([...Object.keys(local),...Object.keys(remote)]);['_k','_t'].forEach(k=>keys.delete(k));
+  keys.forEach(k=>{const lt=L[k]||0,rt=RK[k]||0,src=lt>rt?local:rt>lt?remote:newerAll;let v=src[k];if(v===undefined)v=(src===local?remote:local)[k];o[k]=cp(v)});
+  SYNC_MAX.forEach(k=>{if(local[k]!=null||remote[k]!=null)o[k]=deepM(cp(local[k]),cp(remote[k]),k==='passed'?'min':'max')});
+  const byId=new Map();[...(local.fmHist||[]),...(remote.fmHist||[])].forEach(r=>{if(r&&r.id&&!byId.has(r.id))byId.set(r.id,r)});o.fmHist=[...byId.values()].sort((x,y)=>String(y.id).localeCompare(String(x.id))).slice(0,80);
+  const mk=new Map();[...(local.myMocks||[]),...(remote.myMocks||[])].forEach(m=>{const k=[m.date,m.name,m.score,m.max].join('|');if(!mk.has(k))mk.set(k,m)});o.myMocks=[...mk.values()];
+  const fl=[local.fmLast,remote.fmLast].filter(x=>x&&x.r).sort((x,y)=>String(y.r.id).localeCompare(String(x.r.id)));if(fl.length)o.fmLast=cp(fl[0]);
+  o.bestStreak=Math.max(local.bestStreak||0,remote.bestStreak||0);
+  LOCAL_ONLY.forEach(k=>{if(local[k]!==undefined)o[k]=local[k];else delete o[k]});
+  o._k={};new Set([...Object.keys(L),...Object.keys(RK)]).forEach(k=>o._k[k]=Math.max(L[k]||0,RK[k]||0));
+  o._t=Math.max(local._t||0,remote._t||0);return o}
+/* remember WHEN each part changed, so edits on two devices both survive */
+let syH=null;
+function markKeys(){const k=st._k||(st._k={}),now=Date.now(),h={};Object.keys(st).forEach(x=>{if(x!=='_k'&&x!=='_t')h[x]=JSON.stringify(st[x])});if(syH)Object.keys(h).forEach(x=>{if(h[x]!==syH[x])k[x]=now});syH=h}
+markKeys();
+const forCloud=s=>{const c=Object.assign({},s);LOCAL_ONLY.forEach(k=>delete c[k]);return c};
+async function syPull(){const g=await ghF('/gists/'+SY.id),f=g.files&&g.files[SYNC_FILE];if(!f)return null;let t=f.content;if(f.truncated)t=await fetch(f.raw_url,{cache:'no-store'}).then(r=>r.text());try{return JSON.parse(t).st||null}catch(e){return null}}
+const syPush=s=>ghF('/gists/'+SY.id,{method:'PATCH',body:JSON.stringify({files:{[SYNC_FILE]:{content:JSON.stringify({v:1,app:'MTS Study',st:forCloud(s)})}}})});
+let syBusy=false,syTimer=null,syMsg='';
+const mockOpen=()=>{const b=$('simBox');return b&&!b.hidden};
+async function syncNow(manual){if(!SY.tok||!SY.id||syBusy)return;if(mockOpen()&&!manual)return;syBusy=true;syMsg='Syncing…';drawSync();
+  try{const remote=await syPull(),before=JSON.stringify(forCloud(st)),m=mergeSt(st,remote),after=JSON.stringify(forCloud(m));
+    if(after!==before&&!mockOpen()){st=m;syH=null;markKeys();try{localStorage.setItem('amalMts',JSON.stringify(st))}catch(e){}try{refreshAll();drawCurTab();drawSmart()}catch(e){}}
+    if(!remote||JSON.stringify(forCloud(mergeSt(remote,{})))!==after)await syPush(mockOpen()?st:m);
+    SY.last=Date.now();SY.err='';syS();syMsg=''}catch(e){SY.err=String(e.message||e);syS();syMsg=''}
+  syBusy=false;drawSync()}
+function syncSoon(){if(!SY.tok)return;clearTimeout(syTimer);syTimer=setTimeout(()=>syncNow(),15000)}
+async function syConnect(tok){tok=String(tok||'').trim();if(!/^(gh[pousr]_|github_pat_)[A-Za-z0-9_]{20,}$/.test(tok)){SY.err='That does not look like a GitHub key. It starts with ghp_ or github_pat_.';drawSync();return}
+  SY={tok};syMsg='Connecting…';drawSync();
+  try{const list=await ghF('/gists?per_page=100');let g=(list||[]).find(x=>x.files&&x.files[SYNC_FILE]);
+    if(!g)g=await ghF('/gists',{method:'POST',body:JSON.stringify({description:'MTS Study sync (private, do not delete)',public:false,files:{[SYNC_FILE]:{content:JSON.stringify({v:1,app:'MTS Study',st:forCloud(st)})}}})});
+    SY.id=g.id;syS();syMsg='';await syncNow(true)}catch(e){SY={err:String(e.message||e)};syS();syMsg='';drawSync()}}
+const ago=t=>{const s=Math.round((Date.now()-t)/1000);return s<60?'just now':s<3600?Math.round(s/60)+' min ago':s<86400?Math.round(s/3600)+' h ago':Math.round(s/86400)+' days ago'};
+drawSync=function(){const el=$('syncBox');if(!el)return;
+  if(SY.tok&&SY.id){el.innerHTML=`<div class="panel" style="margin-top:18px;border-top:4px solid #59d499"><h2>Sync phone + PC</h2>
+    <p><b style="color:#59d499">✓ Sync is on.</b> ${syMsg?esc(syMsg):SY.last?'Last synced '+ago(SY.last)+'.':''}</p>${SY.err?`<p style="color:#ff6b6b">${esc(SY.err)}</p>`:''}
+    <p class="small">Lessons, tests, mocks, streak and notes are shared between all your devices. It syncs when the app opens, a few seconds after you finish something, and every 3 minutes.</p>
+    <div class="row" style="justify-content:flex-start"><button class="btn" id="syNow">Sync now</button><button class="btn ghost" id="syOff">Turn off on this device</button></div></div>`;
+    $('syNow').onclick=()=>syncNow(true);$('syOff').onclick=()=>{SY={};syS();drawSync()};return}
+  el.innerHTML=`<div class="panel" style="margin-top:18px;border-top:4px solid #4cc3ff"><h2>Sync phone + PC</h2>
+   <p class="small">Turn this on once on your phone and once on your PC. Then a lesson you finish on one shows as done on the other.</p>
+   <ol class="rep"><li><a href="https://github.com/settings/tokens/new?scopes=gist&description=MTS%20Study%20sync" target="_blank" rel="noopener">Open GitHub: make a sync key ↗</a> and sign in.</li>
+   <li>"gist" is already ticked. Set <b>Expiration</b> to <b>No expiration</b>, then tap <b>Generate token</b>.</li>
+   <li>Copy the key (it starts with <b>ghp_</b>) and paste it here. Use the same key on your other device too.</li></ol>
+   <form id="syForm" class="form" style="grid-template-columns:1fr"><label>GitHub sync key<input id="syTok" type="password" autocomplete="off" spellcheck="false" placeholder="ghp_…"></label><button class="btn" type="submit">${syMsg?esc(syMsg):'Connect'}</button></form>
+   ${SY.err?`<p style="color:#ff6b6b">${esc(SY.err)}</p>`:''}<p class="small">The key can only read and write gists (small private notes) in your GitHub account. Your progress is kept in one private gist called "MTS Study sync".</p></div>`;
+  $('syForm').onsubmit=e=>{e.preventDefault();syConnect($('syTok').value)}};
+if(SY.tok&&SY.id)setTimeout(()=>syncNow(),1500);
+setInterval(()=>syncNow(),180000);
+document.addEventListener('visibilitychange',()=>{if(!SY.tok)return;if(document.visibilityState==='hidden'){clearTimeout(syTimer);syncNow()}else syncNow()});
+window.addEventListener('online',()=>syncNow());
+drawSync();
 
 refreshAll();
 }
