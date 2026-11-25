@@ -1,0 +1,2234 @@
+{
+"updated": "2026-11-25",
+"note": "Question bank for full mocks and smart practice. Written fresh for this app in SSC MTS style. The 5 AM update adds new GA and English questions every day.",
+"q": [
+{
+"s": "GA",
+"t": "History",
+"q": "Who founded the Maurya Empire?",
+"o": [
+"Ashoka",
+"Chandragupta Maurya",
+"Bindusara",
+"Bimbisara"
+],
+"a": 1,
+"e": "Chandragupta Maurya founded the Maurya Empire around 322 BCE with help from Chanakya.",
+"ml": "ചന്ദ്രഗുപ്ത മൗര്യനാണ് മൗര്യ സാമ്രാജ്യം സ്ഥാപിച്ചത്. ചാണക്യൻ സഹായിച്ചു.",
+"id": "bk-0",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "The Battle of Plassey was fought in which year?",
+"o": [
+"1757",
+"1764",
+"1857",
+"1761"
+],
+"a": 0,
+"e": "Plassey: 1757 (Robert Clive defeated Siraj-ud-Daulah). Buxar: 1764. Third Panipat: 1761.",
+"ml": "പ്ലാസി യുദ്ധം 1757-ൽ. ബക്സർ 1764. മൂന്നാം പാനിപ്പത്ത് 1761.",
+"id": "bk-1",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who gave the slogan 'Do or Die' during the Quit India Movement?",
+"o": [
+"Subhas Chandra Bose",
+"Bal Gangadhar Tilak",
+"Mahatma Gandhi",
+"Jawaharlal Nehru"
+],
+"a": 2,
+"e": "Gandhiji gave 'Do or Die' in 1942 at the start of the Quit India Movement.",
+"ml": "1942-ലെ ക്വിറ്റ് ഇന്ത്യ സമരത്തിൽ ഗാന്ധിജി 'പ്രവർത്തിക്കുക അല്ലെങ്കിൽ മരിക്കുക' എന്ന് പറഞ്ഞു.",
+"id": "bk-2",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "The Jallianwala Bagh massacre took place in which city?",
+"o": [
+"Lahore",
+"Amritsar",
+"Delhi",
+"Lucknow"
+],
+"a": 1,
+"e": "Jallianwala Bagh is in Amritsar, Punjab. It happened on 13 April 1919.",
+"ml": "ജാലിയൻവാലാബാഗ് അമൃത്സറിലാണ്. 1919 ഏപ്രിൽ 13.",
+"id": "bk-3",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who was the first Governor-General of independent India?",
+"o": [
+"C. Rajagopalachari",
+"Lord Mountbatten",
+"Rajendra Prasad",
+"Lord Canning"
+],
+"a": 1,
+"e": "Lord Mountbatten was the first. C. Rajagopalachari was the first (and last) Indian Governor-General.",
+"ml": "സ്വതന്ത്ര ഇന്ത്യയിലെ ആദ്യ ഗവർണർ ജനറൽ മൗണ്ട് ബാറ്റൺ. ആദ്യ ഇന്ത്യക്കാരൻ രാജാജി.",
+"id": "bk-4",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "The Indian National Congress was founded in which year?",
+"o": [
+"1885",
+"1905",
+"1857",
+"1919"
+],
+"a": 0,
+"e": "INC was founded in 1885 by A. O. Hume. First session in Bombay, president W. C. Bonnerjee.",
+"ml": "ഇന്ത്യൻ നാഷണൽ കോൺഗ്രസ് 1885-ൽ സ്ഥാപിച്ചു. സ്ഥാപകൻ എ. ഒ. ഹ്യൂം.",
+"id": "bk-5",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Vasco da Gama landed at which place in Kerala in 1498?",
+"o": [
+"Kochi",
+"Kollam",
+"Kappad (Kozhikode)",
+"Kannur"
+],
+"a": 2,
+"e": "Vasco da Gama reached Kappad near Kozhikode (Calicut) in May 1498.",
+"ml": "1498-ൽ വാസ്കോ ഡ ഗാമ കോഴിക്കോട് കാപ്പാട് എത്തി.",
+"id": "bk-6",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who started building the Qutub Minar?",
+"o": [
+"Akbar",
+"Qutb-ud-din Aibak",
+"Alauddin Khilji",
+"Shah Jahan"
+],
+"a": 1,
+"e": "Qutb-ud-din Aibak started it; Iltutmish completed it.",
+"ml": "ഖുതുബ് മിനാർ തുടങ്ങിയത് കുത്തബ്ദ്ദീൻ ഐബക്. പൂർത്തിയാക്കിയത് ഇൽത്തുമിഷ്.",
+"id": "bk-7",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "How many Fundamental Duties are there in the Indian Constitution now?",
+"o": [
+"10",
+"11",
+"12",
+"6"
+],
+"a": 1,
+"e": "There are 11 Fundamental Duties (Article 51A). 10 were added in 1976, the 11th in 2002.",
+"ml": "മൗലിക കടമകൾ 11 എണ്ണം (അനുച്ഛേദം 51A).",
+"id": "bk-8",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Which Article of the Constitution abolishes untouchability?",
+"o": [
+"Article 14",
+"Article 17",
+"Article 21",
+"Article 32"
+],
+"a": 1,
+"e": "Article 17 abolishes untouchability. Article 14 = equality, 21 = life, 32 = constitutional remedies.",
+"ml": "അനുച്ഛേദം 17 തൊട്ടുകൂടായ്മ നിർത്തലാക്കുന്നു.",
+"id": "bk-9",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Who is known as the 'Father of the Indian Constitution'?",
+"o": [
+"Jawaharlal Nehru",
+"Rajendra Prasad",
+"B. R. Ambedkar",
+"Sardar Patel"
+],
+"a": 2,
+"e": "Dr B. R. Ambedkar was chairman of the Drafting Committee.",
+"ml": "ഡോ. ബി. ആർ. അംബേദ്കർ - ഡ്രാഫ്റ്റിംഗ് കമ്മിറ്റി ചെയർമാൻ.",
+"id": "bk-10",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "What is the minimum age to become President of India?",
+"o": [
+"25 years",
+"30 years",
+"35 years",
+"40 years"
+],
+"a": 2,
+"e": "President: 35 years. Lok Sabha member: 25. Rajya Sabha member: 30.",
+"ml": "രാഷ്ട്രപതി ആകാൻ കുറഞ്ഞ പ്രായം 35. ലോക്സഭ 25, രാജ്യസഭ 30.",
+"id": "bk-11",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Article 21A (Right to Education) covers children of which age group?",
+"o": [
+"3 to 10",
+"6 to 14",
+"5 to 15",
+"6 to 18"
+],
+"a": 1,
+"e": "Free and compulsory education for children aged 6 to 14 (86th Amendment, 2002).",
+"ml": "6 മുതൽ 14 വയസ്സ് വരെയുള്ള കുട്ടികൾക്ക് സൗജന്യ വിദ്യാഭ്യാസം.",
+"id": "bk-12",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Who presides over a joint sitting of both Houses of Parliament?",
+"o": [
+"President",
+"Vice-President",
+"Speaker of Lok Sabha",
+"Prime Minister"
+],
+"a": 2,
+"e": "The Lok Sabha Speaker presides over a joint sitting (Article 108).",
+"ml": "സംയുക്ത സമ്മേളനത്തിൽ അധ്യക്ഷൻ ലോക്സഭാ സ്പീക്കർ.",
+"id": "bk-13",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "The Preamble of India was amended by which Amendment?",
+"o": [
+"42nd",
+"44th",
+"24th",
+"52nd"
+],
+"a": 0,
+"e": "The 42nd Amendment (1976) added 'Socialist', 'Secular' and 'Integrity'.",
+"ml": "42-ാം ഭേദഗതി (1976): സോഷ്യലിസ്റ്റ്, സെക്കുലർ, അഖണ്ഡത എന്നിവ ചേർത്തു.",
+"id": "bk-14",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the longest river in India?",
+"o": [
+"Godavari",
+"Yamuna",
+"Ganga",
+"Brahmaputra"
+],
+"a": 2,
+"e": "The Ganga is the longest river in India. Godavari is the longest river of South India.",
+"ml": "ഇന്ത്യയിലെ ഏറ്റവും നീളമുള്ള നദി ഗംഗ. ദക്ഷിണേന്ത്യയിൽ ഗോദാവരി.",
+"id": "bk-15",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The Tropic of Cancer does NOT pass through which state?",
+"o": [
+"Gujarat",
+"Odisha",
+"Jharkhand",
+"Mizoram"
+],
+"a": 1,
+"e": "It passes through 8 states: Gujarat, Rajasthan, MP, Chhattisgarh, Jharkhand, West Bengal, Tripura, Mizoram. Not Odisha.",
+"ml": "ഉത്തരായന രേഖ ഒഡീഷയിലൂടെ കടന്നുപോകുന്നില്ല.",
+"id": "bk-16",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the longest river of Kerala?",
+"o": [
+"Pamba",
+"Bharathapuzha",
+"Periyar",
+"Chaliyar"
+],
+"a": 2,
+"e": "Periyar (244 km) is the longest. Bharathapuzha is second.",
+"ml": "കേരളത്തിലെ ഏറ്റവും നീളം കൂടിയ നദി പെരിയാർ (244 കി.മീ).",
+"id": "bk-17",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Anamudi, the highest peak of South India, is in which state?",
+"o": [
+"Tamil Nadu",
+"Karnataka",
+"Kerala",
+"Andhra Pradesh"
+],
+"a": 2,
+"e": "Anamudi (2,695 m) is in Idukki district, Kerala.",
+"ml": "ആനമുടി ഇടുക്കി ജില്ലയിൽ, കേരളം.",
+"id": "bk-18",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which planet is called the 'Red Planet'?",
+"o": [
+"Venus",
+"Mars",
+"Jupiter",
+"Mercury"
+],
+"a": 1,
+"e": "Mars looks red because of iron oxide (rust) on its surface.",
+"ml": "ചൊവ്വ (Mars) ആണ് ചുവന്ന ഗ്രഹം.",
+"id": "bk-19",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The Palk Strait separates India from which country?",
+"o": [
+"Maldives",
+"Sri Lanka",
+"Myanmar",
+"Bangladesh"
+],
+"a": 1,
+"e": "Palk Strait lies between Tamil Nadu and Sri Lanka.",
+"ml": "പാക്ക് കടലിടുക്ക് ഇന്ത്യയെയും ശ്രീലങ്കയെയും വേർതിരിക്കുന്നു.",
+"id": "bk-20",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which state has the longest coastline in India?",
+"o": [
+"Andhra Pradesh",
+"Tamil Nadu",
+"Gujarat",
+"Maharashtra"
+],
+"a": 2,
+"e": "Gujarat has the longest coastline of any Indian state.",
+"ml": "ഏറ്റവും നീളമുള്ള തീരപ്രദേശം ഗുജറാത്തിന്.",
+"id": "bk-21",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Black soil is best suited for growing which crop?",
+"o": [
+"Rice",
+"Tea",
+"Cotton",
+"Wheat"
+],
+"a": 2,
+"e": "Black (regur) soil holds moisture and is ideal for cotton.",
+"ml": "കറുത്ത മണ്ണ് പരുത്തി കൃഷിക്ക് ഏറ്റവും അനുയോജ്യം.",
+"id": "bk-22",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Who regulates the money supply in India?",
+"o": [
+"SBI",
+"Finance Ministry",
+"RBI",
+"SEBI"
+],
+"a": 2,
+"e": "The Reserve Bank of India controls money supply and issues currency notes (except ₹1).",
+"ml": "പണലഭ്യത നിയന്ത്രിക്കുന്നത് റിസർവ് ബാങ്ക് (RBI).",
+"id": "bk-23",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "The RBI was established in which year?",
+"o": [
+"1935",
+"1947",
+"1949",
+"1969"
+],
+"a": 0,
+"e": "RBI was set up on 1 April 1935 and nationalised in 1949.",
+"ml": "RBI സ്ഥാപിച്ചത് 1935 ഏപ്രിൽ 1. ദേശസാൽക്കരണം 1949.",
+"id": "bk-24",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "GST was introduced in India from which date?",
+"o": [
+"1 April 2017",
+"1 July 2017",
+"1 January 2018",
+"15 August 2016"
+],
+"a": 1,
+"e": "GST came into force on 1 July 2017 (101st Amendment).",
+"ml": "GST നിലവിൽ വന്നത് 2017 ജൂലൈ 1.",
+"id": "bk-25",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Which Five-Year Plan was called the 'Mahalanobis Plan'?",
+"o": [
+"First",
+"Second",
+"Third",
+"Fifth"
+],
+"a": 1,
+"e": "The Second Plan (1956–61) was based on the P. C. Mahalanobis model and stressed heavy industry.",
+"ml": "രണ്ടാം പഞ്ചവത്സര പദ്ധതി - മഹലനോബിസ് മോഡൽ.",
+"id": "bk-26",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "NITI Aayog replaced which body?",
+"o": [
+"Finance Commission",
+"Planning Commission",
+"Election Commission",
+"UPSC"
+],
+"a": 1,
+"e": "NITI Aayog replaced the Planning Commission on 1 January 2015.",
+"ml": "നീതി ആയോഗ് 2015-ൽ ആസൂത്രണ കമ്മീഷന് പകരം വന്നു.",
+"id": "bk-27",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "What is the chemical formula of common salt?",
+"o": [
+"KCl",
+"NaCl",
+"Na2CO3",
+"NaHCO3"
+],
+"a": 1,
+"e": "Common salt is sodium chloride, NaCl. Baking soda is NaHCO3, washing soda Na2CO3.",
+"ml": "കറിയുപ്പ് = NaCl (സോഡിയം ക്ലോറൈഡ്).",
+"id": "bk-28",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Which vitamin deficiency causes night blindness?",
+"o": [
+"Vitamin A",
+"Vitamin B1",
+"Vitamin C",
+"Vitamin D"
+],
+"a": 0,
+"e": "Night blindness: Vitamin A. Scurvy: C. Rickets: D. Beri-beri: B1.",
+"ml": "നിശാന്ധത - വിറ്റാമിൻ A കുറവ്. സ്കർവി - C. റിക്കറ്റ്സ് - D.",
+"id": "bk-29",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "What is the SI unit of force?",
+"o": [
+"Joule",
+"Pascal",
+"Newton",
+"Watt"
+],
+"a": 2,
+"e": "Force: newton. Energy: joule. Pressure: pascal. Power: watt.",
+"ml": "ബലത്തിന്റെ SI യൂണിറ്റ് ന്യൂട്ടൺ.",
+"id": "bk-30",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Which gas do plants take in for photosynthesis?",
+"o": [
+"Oxygen",
+"Nitrogen",
+"Carbon dioxide",
+"Hydrogen"
+],
+"a": 2,
+"e": "Plants take in carbon dioxide and give out oxygen during photosynthesis.",
+"ml": "പ്രകാശസംശ്ലേഷണത്തിന് സസ്യങ്ങൾ കാർബൺ ഡൈ ഓക്സൈഡ് എടുക്കുന്നു.",
+"id": "bk-31",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Which is the largest organ of the human body?",
+"o": [
+"Liver",
+"Heart",
+"Skin",
+"Brain"
+],
+"a": 2,
+"e": "Skin is the largest organ. Liver is the largest internal organ (and largest gland).",
+"ml": "ഏറ്റവും വലിയ അവയവം ത്വക്ക്. ഏറ്റവും വലിയ ആന്തരാവയവം കരൾ.",
+"id": "bk-32",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "The pH value of pure water is:",
+"o": [
+"0",
+"7",
+"14",
+"1"
+],
+"a": 1,
+"e": "Pure water is neutral, pH 7. Below 7 = acid, above 7 = base.",
+"ml": "ശുദ്ധജലത്തിന്റെ pH 7 (നിർവീര്യം).",
+"id": "bk-33",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Which blood group is called the 'universal donor'?",
+"o": [
+"A",
+"B",
+"AB",
+"O negative"
+],
+"a": 3,
+"e": "O negative can be given to anyone. AB positive is the universal recipient.",
+"ml": "സാർവത്രിക ദാതാവ് O നെഗറ്റീവ്. സാർവത്രിക സ്വീകർത്താവ് AB പോസിറ്റീവ്.",
+"id": "bk-34",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Sound cannot travel through:",
+"o": [
+"Water",
+"Steel",
+"Air",
+"Vacuum"
+],
+"a": 3,
+"e": "Sound needs a medium. It cannot travel in a vacuum.",
+"ml": "ശബ്ദത്തിന് ശൂന്യതയിലൂടെ സഞ്ചരിക്കാൻ കഴിയില്ല.",
+"id": "bk-35",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Which metal is liquid at room temperature?",
+"o": [
+"Sodium",
+"Mercury",
+"Lead",
+"Zinc"
+],
+"a": 1,
+"e": "Mercury is the only metal that is liquid at room temperature.",
+"ml": "സാധാരണ ഊഷ്മാവിൽ ദ്രാവകമായ ലോഹം മെർക്കുറി (രസം).",
+"id": "bk-36",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Kathakali is the classical dance of which state?",
+"o": [
+"Tamil Nadu",
+"Kerala",
+"Karnataka",
+"Odisha"
+],
+"a": 1,
+"e": "Kathakali and Mohiniyattam are from Kerala. Bharatanatyam: Tamil Nadu. Odissi: Odisha.",
+"ml": "കഥകളി, മോഹിനിയാട്ടം - കേരളം. ഭരതനാട്യം - തമിഴ്നാട്.",
+"id": "bk-37",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Who wrote the national anthem 'Jana Gana Mana'?",
+"o": [
+"Bankim Chandra Chatterjee",
+"Rabindranath Tagore",
+"Sarojini Naidu",
+"Muhammad Iqbal"
+],
+"a": 1,
+"e": "Tagore wrote Jana Gana Mana. Bankim Chandra wrote Vande Mataram (national song).",
+"ml": "ജനഗണമന എഴുതിയത് രവീന്ദ്രനാഥ ടാഗോർ. വന്ദേമാതരം ബങ്കിം ചന്ദ്ര.",
+"id": "bk-38",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Which is the national aquatic animal of India?",
+"o": [
+"Dolphin (Ganges river dolphin)",
+"Crocodile",
+"Turtle",
+"Blue whale"
+],
+"a": 0,
+"e": "The Ganges river dolphin was declared the national aquatic animal in 2009.",
+"ml": "ദേശീയ ജലജീവി ഗംഗാ ഡോൾഫിൻ.",
+"id": "bk-39",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Onam is mainly celebrated in which state?",
+"o": [
+"Kerala",
+"Assam",
+"Punjab",
+"Bihar"
+],
+"a": 0,
+"e": "Onam is the harvest festival of Kerala. Bihu: Assam. Baisakhi: Punjab.",
+"ml": "ഓണം - കേരളം. ബിഹു - അസം. ബൈശാഖി - പഞ്ചാബ്.",
+"id": "bk-40",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Kaziranga National Park is famous for which animal?",
+"o": [
+"Lion",
+"One-horned rhinoceros",
+"Tiger",
+"Elephant"
+],
+"a": 1,
+"e": "Kaziranga (Assam) is famous for the one-horned rhino. Gir (Gujarat) for Asiatic lions.",
+"ml": "കാസിരംഗ (അസം) - ഒറ്റക്കൊമ്പൻ കാണ്ടാമൃഗം.",
+"id": "bk-41",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Silent Valley National Park is in which district of Kerala?",
+"o": [
+"Wayanad",
+"Idukki",
+"Palakkad",
+"Kollam"
+],
+"a": 2,
+"e": "Silent Valley is in Palakkad district. It is famous for the lion-tailed macaque.",
+"ml": "സൈലന്റ് വാലി പാലക്കാട് ജില്ലയിൽ. സിംഹവാലൻ കുരങ്ങ്.",
+"id": "bk-42",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Who was the first woman Prime Minister of India?",
+"o": [
+"Sarojini Naidu",
+"Indira Gandhi",
+"Pratibha Patil",
+"Sucheta Kripalani"
+],
+"a": 1,
+"e": "Indira Gandhi (1966). Pratibha Patil was the first woman President. Sucheta Kripalani was the first woman CM.",
+"ml": "ആദ്യ വനിതാ പ്രധാനമന്ത്രി ഇന്ദിരാഗാന്ധി.",
+"id": "bk-43",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "The headquarters of the United Nations is in:",
+"o": [
+"Geneva",
+"Paris",
+"New York",
+"London"
+],
+"a": 2,
+"e": "UN headquarters: New York. WHO: Geneva. UNESCO: Paris.",
+"ml": "ഐക്യരാഷ്ട്രസഭ ആസ്ഥാനം ന്യൂയോർക്ക്.",
+"id": "bk-44",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "How many players are there in a hockey team on the field?",
+"o": [
+"9",
+"10",
+"11",
+"12"
+],
+"a": 2,
+"e": "Hockey: 11. Kabaddi: 7. Volleyball: 6. Basketball: 5.",
+"ml": "ഹോക്കി ടീമിൽ കളത്തിൽ 11 പേർ. കബഡി 7, വോളിബോൾ 6.",
+"id": "bk-45",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "The Durand Cup is associated with which sport?",
+"o": [
+"Cricket",
+"Football",
+"Hockey",
+"Tennis"
+],
+"a": 1,
+"e": "The Durand Cup (since 1888) is one of Asia's oldest football tournaments.",
+"ml": "ഡ്യൂറണ്ട് കപ്പ് - ഫുട്ബോൾ.",
+"id": "bk-46",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "Which is the highest sports award of India?",
+"o": [
+"Arjuna Award",
+"Major Dhyan Chand Khel Ratna",
+"Dronacharya Award",
+"Padma Shri"
+],
+"a": 1,
+"e": "Major Dhyan Chand Khel Ratna is the highest. Dronacharya is for coaches.",
+"ml": "ഏറ്റവും ഉയർന്ന കായിക ബഹുമതി മേജർ ധ്യാൻചന്ദ് ഖേൽരത്ന.",
+"id": "bk-47",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Computer",
+"q": "What does 'CPU' stand for?",
+"o": [
+"Central Processing Unit",
+"Computer Personal Unit",
+"Central Program Utility",
+"Control Processing Unit"
+],
+"a": 0,
+"e": "CPU = Central Processing Unit, the brain of the computer.",
+"ml": "CPU = സെൻട്രൽ പ്രോസസ്സിംഗ് യൂണിറ്റ്, കമ്പ്യൂട്ടറിന്റെ തലച്ചോറ്.",
+"id": "bk-48",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Computer",
+"q": "Which shortcut key is used to copy?",
+"o": [
+"Ctrl + V",
+"Ctrl + X",
+"Ctrl + C",
+"Ctrl + Z"
+],
+"a": 2,
+"e": "Ctrl+C copy, Ctrl+V paste, Ctrl+X cut, Ctrl+Z undo.",
+"ml": "Ctrl+C കോപ്പി, Ctrl+V പേസ്റ്റ്, Ctrl+Z അൺഡു.",
+"id": "bk-49",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Computer",
+"q": "1 kilobyte (KB) is equal to:",
+"o": [
+"1000 bytes",
+"1024 bytes",
+"1024 bits",
+"100 bytes"
+],
+"a": 1,
+"e": "1 KB = 1024 bytes. 1 byte = 8 bits.",
+"ml": "1 KB = 1024 ബൈറ്റ്. 1 ബൈറ്റ് = 8 ബിറ്റ്.",
+"id": "bk-50",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "The Sun Temple of Konark is in which state?",
+"o": [
+"Odisha",
+"Madhya Pradesh",
+"Gujarat",
+"West Bengal"
+],
+"a": 0,
+"e": "Konark Sun Temple is in Odisha, built by King Narasimhadeva I.",
+"ml": "കൊണാർക്ക് സൂര്യക്ഷേത്രം ഒഡീഷയിൽ.",
+"id": "bk-51",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "The Vaikom Satyagraha (1924–25) was a struggle for:",
+"o": [
+"The right of all castes to use the roads near the temple",
+"Removal of the salt tax",
+"Land for farmers",
+"Freedom of the press"
+],
+"a": 0,
+"e": "Vaikom Satyagraha demanded that people of all castes be allowed to use the public roads around the Vaikom temple. Leaders included T. K. Madhavan and K. Kelappan; Gandhiji supported it.",
+"ml": "വൈക്കം ക്ഷേത്രത്തിന് ചുറ്റുമുള്ള വഴികളിലൂടെ എല്ലാ ജാതിക്കാർക്കും നടക്കാനുള്ള അവകാശത്തിനായുള്ള സമരം.",
+"id": "bk-52",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Sree Narayana Guru consecrated a Shiva idol at which place in 1888?",
+"o": [
+"Sivagiri",
+"Aruvippuram",
+"Varkala",
+"Aluva"
+],
+"a": 1,
+"e": "The Aruvippuram consecration took place in 1888.",
+"ml": "1888-ൽ ശ്രീനാരായണഗുരു അരുവിപ്പുറത്ത് ശിവപ്രതിഷ്ഠ നടത്തി.",
+"id": "bk-53",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "Which part of the cell is called its 'powerhouse'?",
+"o": [
+"Nucleus",
+"Ribosome",
+"Mitochondria",
+"Golgi body"
+],
+"a": 2,
+"e": "Mitochondria make energy (ATP) for the cell.",
+"ml": "കോശത്തിന്റെ ഊർജ്ജനിലയം മൈറ്റോകോൺട്രിയ.",
+"id": "bk-54",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the largest ocean in the world?",
+"o": [
+"Atlantic",
+"Indian",
+"Pacific",
+"Arctic"
+],
+"a": 2,
+"e": "The Pacific Ocean is the largest and deepest.",
+"ml": "ഏറ്റവും വലിയ സമുദ്രം പസഫിക്.",
+"id": "bk-55",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "The Election Commission of India is described in which Article?",
+"o": [
+"Article 280",
+"Article 324",
+"Article 312",
+"Article 356"
+],
+"a": 1,
+"e": "Article 324: Election Commission. 280: Finance Commission. 356: President's Rule.",
+"ml": "തിരഞ്ഞെടുപ്പ് കമ്മീഷൻ - അനുച്ഛേദം 324.",
+"id": "bk-56",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who was known as the 'Iron Man of India'?",
+"o": [
+"Bhagat Singh",
+"Sardar Vallabhbhai Patel",
+"Lal Bahadur Shastri",
+"Lala Lajpat Rai"
+],
+"a": 1,
+"e": "Sardar Patel united the princely states and is called the Iron Man of India.",
+"ml": "ഇന്ത്യയുടെ ഉരുക്കുമനുഷ്യൻ സർദാർ വല്ലഭായ് പട്ടേൽ.",
+"id": "bk-57",
+"added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "What is the full form of 'GDP'?",
+"o": [
+"Gross Domestic Product",
+"General Development Plan",
+"Gross Development Product",
+"Government Domestic Product"
+],
+"a": 0,
+"e": "GDP = Gross Domestic Product: the value of all goods and services made in a country in a year.",
+"ml": "GDP = മൊത്ത ആഭ്യന്തര ഉൽപ്പാദനം.",
+"id": "bk-58",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: She ___ to school every day.",
+"o": [
+"go",
+"goes",
+"going",
+"gone"
+],
+"a": 1,
+"e": "With he/she/it in the simple present, add -s/-es: she goes.",
+"ml": "She/He/It കൂടെ present tense-ൽ verb-ന് -s/-es ചേർക്കണം: goes.",
+"id": "bk-59",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: I have been living here ___ 2019.",
+"o": [
+"for",
+"since",
+"from",
+"by"
+],
+"a": 1,
+"e": "'Since' + a point in time (2019, Monday). 'For' + a period (5 years).",
+"ml": "ഒരു സമയബിന്ദു (2019) വന്നാൽ since; കാലയളവ് (5 years) വന്നാൽ for.",
+"id": "bk-60",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: He is ___ honest man.",
+"o": [
+"a",
+"an",
+"the",
+"no article"
+],
+"a": 1,
+"e": "'Honest' starts with a vowel sound (the h is silent), so use 'an'.",
+"ml": "honest-ൽ h ഉച്ചരിക്കില്ല, സ്വരശബ്ദം ആയതിനാൽ an.",
+"id": "bk-61",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Find the error: 'Each of the boys (A) / have (B) / a new bag (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 1,
+"e": "'Each of' takes a singular verb: Each of the boys HAS a new bag.",
+"ml": "'Each of' കൂടെ singular verb: has.",
+"id": "bk-62",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: If I ___ you, I would accept the offer.",
+"o": [
+"am",
+"was",
+"were",
+"be"
+],
+"a": 2,
+"e": "In imaginary 'if' sentences we use 'were' for all subjects: If I were you.",
+"ml": "സാങ്കൽപ്പിക if വാക്യത്തിൽ were ഉപയോഗിക്കുന്നു: If I were you.",
+"id": "bk-63",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the passive form: 'The cat killed the rat.'",
+"o": [
+"The rat is killed by the cat.",
+"The rat was killed by the cat.",
+"The rat had killed the cat.",
+"The rat was being killed."
+],
+"a": 1,
+"e": "Simple past active → was/were + past participle: The rat was killed by the cat.",
+"ml": "Simple past passive: was/were + V3. The rat was killed by the cat.",
+"id": "bk-64",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The book is ___ the table.",
+"o": [
+"in",
+"on",
+"at",
+"into"
+],
+"a": 1,
+"e": "'On' is used for a surface: on the table.",
+"ml": "പ്രതലത്തിന് മുകളിൽ ആണെങ്കിൽ on.",
+"id": "bk-65",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Find the error: 'He did not (A) / went (B) / to the market (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 1,
+"e": "After 'did not' use the base verb: He did not GO.",
+"ml": "did not-ന് ശേഷം verb-ന്റെ അടിസ്ഥാനരൂപം: go.",
+"id": "bk-66",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Neither Ram nor his friends ___ present.",
+"o": [
+"was",
+"were",
+"is",
+"has"
+],
+"a": 1,
+"e": "With neither…nor, the verb agrees with the nearer subject ('friends', plural): were.",
+"ml": "neither…nor-ൽ അടുത്തുള്ള subject (friends) അനുസരിച്ച് verb: were.",
+"id": "bk-67",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct indirect speech: He said, 'I am tired.'",
+"o": [
+"He said that he is tired.",
+"He said that he was tired.",
+"He said that I was tired.",
+"He says he was tired."
+],
+"a": 1,
+"e": "Reporting verb in past → present 'am' changes to past 'was'; 'I' becomes 'he'.",
+"ml": "said (past) ആയതിനാൽ am → was. I → he.",
+"id": "bk-68",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: This is the ___ building in the city.",
+"o": [
+"tall",
+"taller",
+"tallest",
+"more tall"
+],
+"a": 2,
+"e": "Comparing with all others in a group → superlative: the tallest.",
+"ml": "എല്ലാറ്റിനോടും താരതമ്യം → superlative: tallest.",
+"id": "bk-69",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: He is good ___ mathematics.",
+"o": [
+"in",
+"at",
+"on",
+"with"
+],
+"a": 1,
+"e": "The fixed phrase is 'good at' (a subject or skill).",
+"ml": "'good at' എന്നതാണ് ശരിയായ പ്രയോഗം.",
+"id": "bk-70",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The train ___ before we reached the station.",
+"o": [
+"left",
+"had left",
+"has left",
+"leaves"
+],
+"a": 1,
+"e": "The earlier of two past actions takes past perfect: had left.",
+"ml": "രണ്ട് past കാര്യങ്ങളിൽ ആദ്യം നടന്നതിന് had + V3.",
+"id": "bk-71",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: One of my friends ___ a doctor.",
+"o": [
+"are",
+"is",
+"were",
+"have"
+],
+"a": 1,
+"e": "'One of + plural noun' takes a singular verb: One of my friends is.",
+"ml": "'One of' കൂടെ singular verb: is.",
+"id": "bk-72",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: We ___ cricket yesterday.",
+"o": [
+"play",
+"played",
+"plays",
+"playing"
+],
+"a": 1,
+"e": "'Yesterday' shows the past: played.",
+"ml": "yesterday - past tense: played.",
+"id": "bk-73",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: She is afraid ___ dogs.",
+"o": [
+"from",
+"of",
+"with",
+"by"
+],
+"a": 1,
+"e": "The fixed phrase is 'afraid of'.",
+"ml": "'afraid of' എന്നതാണ് ശരി.",
+"id": "bk-74",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The sun ___ in the east.",
+"o": [
+"rise",
+"rises",
+"rose",
+"is rise"
+],
+"a": 1,
+"e": "Universal truths use the simple present: The sun rises in the east.",
+"ml": "സാർവത്രിക സത്യത്തിന് simple present: rises.",
+"id": "bk-75",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: I prefer tea ___ coffee.",
+"o": [
+"than",
+"to",
+"over",
+"from"
+],
+"a": 1,
+"e": "'Prefer' takes 'to': I prefer tea to coffee.",
+"ml": "prefer-ന് ശേഷം to: prefer tea to coffee.",
+"id": "bk-76",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: ___ you help me, please?",
+"o": [
+"Shall",
+"Could",
+"Must",
+"Ought"
+],
+"a": 1,
+"e": "'Could you…?' is a polite request.",
+"ml": "മര്യാദയോടെ ചോദിക്കാൻ Could you…?",
+"id": "bk-77",
+"added": "2026-11-25"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Find the error: 'The news (A) / are (B) / very good today (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 1,
+"e": "'News' is uncountable and singular: The news IS very good.",
+"ml": "news singular ആണ്: The news is.",
+"id": "bk-78",
+"added": "2026-11-25"
+}
+],
+"vocab": [
+{
+"w": "Abundant",
+"m": "existing in large amounts",
+"ml": "ധാരാളം",
+"syn": "Plentiful",
+"ant": "Scarce",
+"ex": "Kerala has abundant rainfall."
+},
+{
+"w": "Brave",
+"m": "ready to face danger",
+"ml": "ധൈര്യമുള്ള",
+"syn": "Courageous",
+"ant": "Cowardly",
+"ex": "The brave soldier saved the child."
+},
+{
+"w": "Candid",
+"m": "honest and direct",
+"ml": "തുറന്നു പറയുന്ന",
+"syn": "Frank",
+"ant": "Secretive",
+"ex": "He gave a candid answer."
+},
+{
+"w": "Diligent",
+"m": "hard-working and careful",
+"ml": "കഠിനാധ്വാനിയായ",
+"syn": "Industrious",
+"ant": "Lazy",
+"ex": "A diligent student revises every day."
+},
+{
+"w": "Eminent",
+"m": "famous and respected",
+"ml": "പ്രശസ്തനായ",
+"syn": "Distinguished",
+"ant": "Unknown",
+"ex": "She is an eminent scientist."
+},
+{
+"w": "Feeble",
+"m": "very weak",
+"ml": "ദുർബലമായ",
+"syn": "Weak",
+"ant": "Strong",
+"ex": "He gave a feeble smile."
+},
+{
+"w": "Generous",
+"m": "happy to give",
+"ml": "ഉദാരമനസ്കനായ",
+"syn": "Liberal",
+"ant": "Stingy",
+"ex": "Our generous neighbour shared food."
+},
+{
+"w": "Hostile",
+"m": "unfriendly, ready to fight",
+"ml": "ശത്രുതയുള്ള",
+"syn": "Unfriendly",
+"ant": "Friendly",
+"ex": "The crowd became hostile."
+},
+{
+"w": "Immense",
+"m": "extremely large",
+"ml": "വളരെ വലിയ",
+"syn": "Huge",
+"ant": "Tiny",
+"ex": "The ocean is immense."
+},
+{
+"w": "Jubilant",
+"m": "very happy because of success",
+"ml": "ആഹ്ലാദഭരിതനായ",
+"syn": "Joyful",
+"ant": "Sad",
+"ex": "The fans were jubilant after the win."
+},
+{
+"w": "Keen",
+"m": "very interested, eager",
+"ml": "ഉത്സാഹമുള്ള",
+"syn": "Eager",
+"ant": "Unwilling",
+"ex": "He is keen to learn."
+},
+{
+"w": "Lethargic",
+"m": "tired, without energy",
+"ml": "മന്ദതയുള്ള",
+"syn": "Sluggish",
+"ant": "Energetic",
+"ex": "Heat makes me lethargic."
+},
+{
+"w": "Meagre",
+"m": "very small in amount",
+"ml": "തുച്ഛമായ",
+"syn": "Scanty",
+"ant": "Ample",
+"ex": "He earns a meagre salary."
+},
+{
+"w": "Novice",
+"m": "a beginner",
+"ml": "തുടക്കക്കാരൻ",
+"syn": "Beginner",
+"ant": "Expert",
+"ex": "I am a novice at chess."
+},
+{
+"w": "Obstinate",
+"m": "not willing to change one's mind",
+"ml": "പിടിവാശിയുള്ള",
+"syn": "Stubborn",
+"ant": "Flexible",
+"ex": "The obstinate child refused to eat."
+},
+{
+"w": "Prudent",
+"m": "wise and careful",
+"ml": "വിവേകമുള്ള",
+"syn": "Sensible",
+"ant": "Foolish",
+"ex": "It is prudent to save money."
+},
+{
+"w": "Quarrel",
+"m": "an angry argument",
+"ml": "വഴക്ക്",
+"syn": "Dispute",
+"ant": "Agreement",
+"ex": "They had a quarrel over money."
+},
+{
+"w": "Reluctant",
+"m": "not willing",
+"ml": "മടിയുള്ള",
+"syn": "Unwilling",
+"ant": "Eager",
+"ex": "He was reluctant to speak."
+},
+{
+"w": "Scarce",
+"m": "not enough, rare",
+"ml": "ദുർലഭമായ",
+"syn": "Rare",
+"ant": "Abundant",
+"ex": "Water is scarce in summer."
+},
+{
+"w": "Timid",
+"m": "shy and easily frightened",
+"ml": "ഭീരുവായ",
+"syn": "Shy",
+"ant": "Bold",
+"ex": "The timid boy hid behind his mother."
+},
+{
+"w": "Vacant",
+"m": "empty, not used",
+"ml": "ഒഴിഞ്ഞ",
+"syn": "Empty",
+"ant": "Occupied",
+"ex": "There are many vacant posts."
+},
+{
+"w": "Wealthy",
+"m": "having a lot of money",
+"ml": "സമ്പന്നനായ",
+"syn": "Rich",
+"ant": "Poor",
+"ex": "He comes from a wealthy family."
+},
+{
+"w": "Ancient",
+"m": "very old",
+"ml": "പുരാതനമായ",
+"syn": "Old",
+"ant": "Modern",
+"ex": "We visited an ancient temple."
+},
+{
+"w": "Accurate",
+"m": "correct in every detail",
+"ml": "കൃത്യമായ",
+"syn": "Exact",
+"ant": "Wrong",
+"ex": "Give accurate answers in the exam."
+},
+{
+"w": "Admire",
+"m": "to respect and like",
+"ml": "ആരാധിക്കുക",
+"syn": "Praise",
+"ant": "Despise",
+"ex": "I admire my teacher."
+},
+{
+"w": "Barren",
+"m": "land where nothing grows",
+"ml": "തരിശായ",
+"syn": "Infertile",
+"ant": "Fertile",
+"ex": "The desert is barren."
+},
+{
+"w": "Calm",
+"m": "peaceful, not excited",
+"ml": "ശാന്തമായ",
+"syn": "Peaceful",
+"ant": "Agitated",
+"ex": "Stay calm in the exam hall."
+},
+{
+"w": "Conceal",
+"m": "to hide",
+"ml": "ഒളിപ്പിക്കുക",
+"syn": "Hide",
+"ant": "Reveal",
+"ex": "He tried to conceal the truth."
+},
+{
+"w": "Decline",
+"m": "to go down, or to refuse",
+"ml": "കുറയുക / നിരസിക്കുക",
+"syn": "Decrease",
+"ant": "Increase",
+"ex": "Prices declined last month."
+},
+{
+"w": "Enormous",
+"m": "very big",
+"ml": "ഭീമമായ",
+"syn": "Huge",
+"ant": "Small",
+"ex": "An enormous elephant came out."
+},
+{
+"w": "Fragile",
+"m": "easily broken",
+"ml": "എളുപ്പം പൊട്ടുന്ന",
+"syn": "Delicate",
+"ant": "Sturdy",
+"ex": "Glass is fragile."
+},
+{
+"w": "Gloomy",
+"m": "dark or sad",
+"ml": "ഇരുണ്ട / ദുഃഖമുള്ള",
+"syn": "Dismal",
+"ant": "Cheerful",
+"ex": "It was a gloomy day."
+},
+{
+"w": "Humble",
+"m": "not proud",
+"ml": "വിനയമുള്ള",
+"syn": "Modest",
+"ant": "Arrogant",
+"ex": "Great people are humble."
+},
+{
+"w": "Idle",
+"m": "not working, doing nothing",
+"ml": "വെറുതെയിരിക്കുന്ന",
+"syn": "Inactive",
+"ant": "Busy",
+"ex": "Do not sit idle."
+},
+{
+"w": "Juvenile",
+"m": "young, of young people",
+"ml": "കൗമാരപ്രായത്തിലുള്ള",
+"syn": "Young",
+"ant": "Adult",
+"ex": "It is a juvenile court."
+},
+{
+"w": "Lenient",
+"m": "not strict",
+"ml": "ഉദാരമായ (കർശനമല്ലാത്ത)",
+"syn": "Mild",
+"ant": "Strict",
+"ex": "The teacher was lenient."
+},
+{
+"w": "Mercy",
+"m": "kindness to someone you could punish",
+"ml": "ദയ",
+"syn": "Compassion",
+"ant": "Cruelty",
+"ex": "The king showed mercy."
+},
+{
+"w": "Notorious",
+"m": "famous for something bad",
+"ml": "കുപ്രസിദ്ധമായ",
+"syn": "Infamous",
+"ant": "Reputed",
+"ex": "He is a notorious thief."
+},
+{
+"w": "Optimistic",
+"m": "hopeful about the future",
+"ml": "ശുഭാപ്തിവിശ്വാസമുള്ള",
+"syn": "Hopeful",
+"ant": "Pessimistic",
+"ex": "Stay optimistic about your exam."
+},
+{
+"w": "Permanent",
+"m": "lasting for ever",
+"ml": "സ്ഥിരമായ",
+"syn": "Lasting",
+"ant": "Temporary",
+"ex": "A government job is permanent."
+},
+{
+"w": "Rigid",
+"m": "stiff, not bending",
+"ml": "വഴങ്ങാത്ത",
+"syn": "Stiff",
+"ant": "Flexible",
+"ex": "The rules are rigid."
+},
+{
+"w": "Shallow",
+"m": "not deep",
+"ml": "ആഴമില്ലാത്ത",
+"syn": "Superficial",
+"ant": "Deep",
+"ex": "The river is shallow here."
+},
+{
+"w": "Tranquil",
+"m": "quiet and peaceful",
+"ml": "പ്രശാന്തമായ",
+"syn": "Serene",
+"ant": "Noisy",
+"ex": "The village is tranquil."
+},
+{
+"w": "Victory",
+"m": "winning",
+"ml": "വിജയം",
+"syn": "Triumph",
+"ant": "Defeat",
+"ex": "India celebrated the victory."
+},
+{
+"w": "Artificial",
+"m": "made by people, not natural",
+"ml": "കൃത്രിമമായ",
+"syn": "Fake",
+"ant": "Natural",
+"ex": "These are artificial flowers."
+},
+{
+"w": "Bold",
+"m": "brave, not afraid",
+"ml": "ധീരമായ",
+"syn": "Daring",
+"ant": "Timid",
+"ex": "It was a bold decision."
+},
+{
+"w": "Cautious",
+"m": "careful to avoid danger",
+"ml": "ജാഗ്രതയുള്ള",
+"syn": "Careful",
+"ant": "Careless",
+"ex": "Be cautious while driving."
+},
+{
+"w": "Dense",
+"m": "thick, closely packed",
+"ml": "നിബിഡമായ",
+"syn": "Thick",
+"ant": "Sparse",
+"ex": "We walked through a dense forest."
+},
+{
+"w": "Expand",
+"m": "to become bigger",
+"ml": "വികസിക്കുക",
+"syn": "Enlarge",
+"ant": "Contract",
+"ex": "Metals expand when heated."
+},
+{
+"w": "Famous",
+"m": "known by many people",
+"ml": "പ്രശസ്തമായ",
+"syn": "Renowned",
+"ant": "Obscure",
+"ex": "Kerala is famous for backwaters."
+},
+{
+"w": "Grief",
+"m": "deep sadness",
+"ml": "ദുഃഖം",
+"syn": "Sorrow",
+"ant": "Joy",
+"ex": "She was full of grief."
+},
+{
+"w": "Honest",
+"m": "telling the truth",
+"ml": "സത്യസന്ധമായ",
+"syn": "Truthful",
+"ant": "Dishonest",
+"ex": "Be honest with yourself."
+},
+{
+"w": "Inferior",
+"m": "lower in quality",
+"ml": "താഴ്ന്ന നിലവാരമുള്ള",
+"syn": "Lower",
+"ant": "Superior",
+"ex": "This cloth is inferior."
+},
+{
+"w": "Kind",
+"m": "caring and gentle",
+"ml": "ദയയുള്ള",
+"syn": "Gentle",
+"ant": "Cruel",
+"ex": "Be kind to animals."
+},
+{
+"w": "Loyal",
+"m": "faithful",
+"ml": "വിശ്വസ്തനായ",
+"syn": "Faithful",
+"ant": "Disloyal",
+"ex": "A dog is a loyal animal."
+},
+{
+"w": "Modern",
+"m": "new, of the present time",
+"ml": "ആധുനികമായ",
+"syn": "Contemporary",
+"ant": "Ancient",
+"ex": "We use modern machines."
+},
+{
+"w": "Precious",
+"m": "very valuable",
+"ml": "വിലപ്പെട്ട",
+"syn": "Valuable",
+"ant": "Worthless",
+"ex": "Time is precious."
+},
+{
+"w": "Rapid",
+"m": "very fast",
+"ml": "വേഗതയുള്ള",
+"syn": "Quick",
+"ant": "Slow",
+"ex": "There was rapid growth."
+},
+{
+"w": "Strange",
+"m": "unusual",
+"ml": "വിചിത്രമായ",
+"syn": "Odd",
+"ant": "Ordinary",
+"ex": "I heard a strange noise."
+},
+{
+"w": "Transparent",
+"m": "can be seen through",
+"ml": "സുതാര്യമായ",
+"syn": "Clear",
+"ant": "Opaque",
+"ex": "Glass is transparent."
+},
+{
+"w": "Vague",
+"m": "not clear",
+"ml": "അവ്യക്തമായ",
+"syn": "Unclear",
+"ant": "Clear",
+"ex": "He gave a vague answer."
+},
+{
+"w": "Zeal",
+"m": "great energy and interest",
+"ml": "ആവേശം",
+"syn": "Enthusiasm",
+"ant": "Apathy",
+"ex": "She works with zeal."
+},
+{
+"w": "Assist",
+"m": "to help",
+"ml": "സഹായിക്കുക",
+"syn": "Help",
+"ant": "Hinder",
+"ex": "Please assist the old man."
+},
+{
+"w": "Commence",
+"m": "to begin",
+"ml": "ആരംഭിക്കുക",
+"syn": "Begin",
+"ant": "End",
+"ex": "The exam will commence at 10."
+},
+{
+"w": "Deny",
+"m": "to say something is not true",
+"ml": "നിഷേധിക്കുക",
+"syn": "Refuse",
+"ant": "Accept",
+"ex": "He denied the charge."
+},
+{
+"w": "Fertile",
+"m": "able to produce a lot",
+"ml": "ഫലഭൂയിഷ്ഠമായ",
+"syn": "Productive",
+"ant": "Barren",
+"ex": "The soil here is fertile."
+},
+{
+"w": "Hazard",
+"m": "a danger",
+"ml": "അപകടം",
+"syn": "Danger",
+"ant": "Safety",
+"ex": "Smoking is a health hazard."
+},
+{
+"w": "Ignorant",
+"m": "not knowing",
+"ml": "അറിവില്ലാത്ത",
+"syn": "Unaware",
+"ant": "Learned",
+"ex": "Don't stay ignorant of the rules."
+},
+{
+"w": "Merit",
+"m": "good quality, worth",
+"ml": "മികവ്",
+"syn": "Worth",
+"ant": "Demerit",
+"ex": "Selection is on merit."
+},
+{
+"w": "Polite",
+"m": "having good manners",
+"ml": "മര്യാദയുള്ള",
+"syn": "Courteous",
+"ant": "Rude",
+"ex": "Be polite to everyone."
+}
+],
+"idioms": [
+{
+"i": "Break the ice",
+"m": "to start a conversation in a friendly way",
+"ml": "സംസാരം തുടങ്ങി അകലം മാറ്റുക"
+},
+{
+"i": "A piece of cake",
+"m": "something very easy",
+"ml": "വളരെ എളുപ്പമുള്ള കാര്യം"
+},
+{
+"i": "Hit the nail on the head",
+"m": "to say exactly the right thing",
+"ml": "കൃത്യമായ കാര്യം പറയുക"
+},
+{
+"i": "Burn the midnight oil",
+"m": "to study or work late at night",
+"ml": "രാത്രി വൈകിയും പഠിക്കുക/ജോലി ചെയ്യുക"
+},
+{
+"i": "Once in a blue moon",
+"m": "very rarely",
+"ml": "വളരെ അപൂർവമായി"
+},
+{
+"i": "Cry over spilt milk",
+"m": "to be sad about something that cannot be changed",
+"ml": "കഴിഞ്ഞതിനെ ഓർത്ത് വിഷമിക്കുക"
+},
+{
+"i": "Bite the bullet",
+"m": "to face a painful situation bravely",
+"ml": "വേദനയുള്ള കാര്യം ധൈര്യത്തോടെ നേരിടുക"
+},
+{
+"i": "Cost an arm and a leg",
+"m": "to be very expensive",
+"ml": "വളരെ വിലയേറിയത്"
+},
+{
+"i": "Under the weather",
+"m": "feeling slightly ill",
+"ml": "സുഖമില്ലാതെ"
+},
+{
+"i": "Spill the beans",
+"m": "to tell a secret",
+"ml": "രഹസ്യം പുറത്തുപറയുക"
+},
+{
+"i": "At the eleventh hour",
+"m": "at the last moment",
+"ml": "അവസാന നിമിഷത്തിൽ"
+},
+{
+"i": "A blessing in disguise",
+"m": "something bad that turns out good",
+"ml": "ദോഷമായി തോന്നി ഗുണമായി മാറിയത്"
+},
+{
+"i": "Beat around the bush",
+"m": "to avoid saying something directly",
+"ml": "നേരിട്ട് പറയാതെ ചുറ്റിത്തിരിയുക"
+},
+{
+"i": "Keep one's fingers crossed",
+"m": "to hope for good luck",
+"ml": "നല്ലത് നടക്കുമെന്ന് പ്രതീക്ഷിക്കുക"
+},
+{
+"i": "In hot water",
+"m": "in trouble",
+"ml": "കുഴപ്പത്തിൽ"
+},
+{
+"i": "Turn over a new leaf",
+"m": "to start behaving in a better way",
+"ml": "പുതിയ നല്ല ജീവിതം തുടങ്ങുക"
+},
+{
+"i": "A bolt from the blue",
+"m": "a complete surprise",
+"ml": "അപ്രതീക്ഷിത സംഭവം"
+},
+{
+"i": "Hand in glove",
+"m": "working closely together (often in something bad)",
+"ml": "ഒത്തുചേർന്ന് (മോശം കാര്യത്തിൽ)"
+},
+{
+"i": "To call a spade a spade",
+"m": "to speak plainly and honestly",
+"ml": "ഉള്ളത് ഉള്ളതുപോലെ പറയുക"
+},
+{
+"i": "Add fuel to the fire",
+"m": "to make a bad situation worse",
+"ml": "പ്രശ്നം കൂടുതൽ വഷളാക്കുക"
+},
+{
+"i": "Face the music",
+"m": "to accept punishment for what you did",
+"ml": "ചെയ്തതിന്റെ ഫലം നേരിടുക"
+},
+{
+"i": "By leaps and bounds",
+"m": "very quickly",
+"ml": "വളരെ വേഗത്തിൽ"
+},
+{
+"i": "Miss the bus",
+"m": "to lose a chance",
+"ml": "അവസരം നഷ്ടപ്പെടുത്തുക"
+},
+{
+"i": "A red-letter day",
+"m": "a very important or happy day",
+"ml": "അവിസ്മരണീയമായ ദിവസം"
+},
+{
+"i": "Over the moon",
+"m": "extremely happy",
+"ml": "അതിയായ സന്തോഷത്തിൽ"
+},
+{
+"i": "Throw in the towel",
+"m": "to give up",
+"ml": "തോൽവി സമ്മതിക്കുക / ഉപേക്ഷിക്കുക"
+},
+{
+"i": "Get cold feet",
+"m": "to become nervous before doing something",
+"ml": "അവസാന നിമിഷം പേടിക്കുക"
+},
+{
+"i": "Through thick and thin",
+"m": "in good and bad times",
+"ml": "സുഖത്തിലും ദുഃഖത്തിലും"
+}
+],
+"ows": [
+{
+"p": "A person who cannot read or write",
+"w": "Illiterate"
+},
+{
+"p": "A person who does not eat meat",
+"w": "Vegetarian"
+},
+{
+"p": "A place where books are kept",
+"w": "Library"
+},
+{
+"p": "A person who loves his country",
+"w": "Patriot"
+},
+{
+"p": "A doctor who treats children",
+"w": "Paediatrician"
+},
+{
+"p": "A person who studies the stars and planets",
+"w": "Astronomer"
+},
+{
+"p": "Life story of a person written by himself",
+"w": "Autobiography"
+},
+{
+"p": "Life story of a person written by someone else",
+"w": "Biography"
+},
+{
+"p": "A place where orphans live",
+"w": "Orphanage"
+},
+{
+"p": "A person who knows everything",
+"w": "Omniscient"
+},
+{
+"p": "A word with the same meaning as another",
+"w": "Synonym"
+},
+{
+"p": "Something that cannot be seen",
+"w": "Invisible"
+},
+{
+"p": "A person who believes in God",
+"w": "Theist"
+},
+{
+"p": "A person who does not believe in God",
+"w": "Atheist"
+},
+{
+"p": "A period of ten years",
+"w": "Decade"
+},
+{
+"p": "A period of hundred years",
+"w": "Century"
+},
+{
+"p": "A place where birds are kept",
+"w": "Aviary"
+},
+{
+"p": "A place where bees are kept",
+"w": "Apiary"
+},
+{
+"p": "A person who speaks many languages",
+"w": "Polyglot"
+},
+{
+"p": "Killing of a human being",
+"w": "Homicide"
+},
+{
+"p": "A government by the people",
+"w": "Democracy"
+},
+{
+"p": "A person who leaves his country to live in another",
+"w": "Emigrant"
+},
+{
+"p": "That which cannot be avoided",
+"w": "Inevitable"
+},
+{
+"p": "A person who is new to a job",
+"w": "Novice"
+},
+{
+"p": "Fear of water",
+"w": "Hydrophobia"
+},
+{
+"p": "A person who looks on the bright side",
+"w": "Optimist"
+},
+{
+"p": "Something that can be easily broken",
+"w": "Fragile"
+},
+{
+"p": "A speech made without preparation",
+"w": "Extempore"
+}
+],
+"spell": [
+[
+"Necessary",
+"Neccessary",
+"Necesary",
+"Neccesary"
+],
+[
+"Accommodation",
+"Acommodation",
+"Accomodation",
+"Acomodation"
+],
+[
+"Government",
+"Goverment",
+"Governmant",
+"Govermant"
+],
+[
+"Receive",
+"Recieve",
+"Receeve",
+"Riceive"
+],
+[
+"Separate",
+"Seperate",
+"Separete",
+"Seperete"
+],
+[
+"Environment",
+"Enviroment",
+"Envirnment",
+"Enviornment"
+],
+[
+"Definitely",
+"Definately",
+"Defenitely",
+"Definitly"
+],
+[
+"Committee",
+"Comittee",
+"Commitee",
+"Comitee"
+],
+[
+"Beginning",
+"Begining",
+"Beggining",
+"Beginnig"
+],
+[
+"Occasion",
+"Ocassion",
+"Occassion",
+"Ocasion"
+],
+[
+"Embarrass",
+"Embarass",
+"Emberrass",
+"Embaras"
+],
+[
+"Rhythm",
+"Rythm",
+"Rhythem",
+"Rhytm"
+],
+[
+"Maintenance",
+"Maintainance",
+"Maintenence",
+"Maintanance"
+],
+[
+"Guarantee",
+"Garantee",
+"Guarentee",
+"Gaurantee"
+],
+[
+"Knowledge",
+"Knowlege",
+"Knowladge",
+"Knoledge"
+],
+[
+"Privilege",
+"Priviledge",
+"Privelege",
+"Privilage"
+],
+[
+"Achievement",
+"Acheivement",
+"Achievment",
+"Achivement"
+],
+[
+"Pronunciation",
+"Pronounciation",
+"Pronuncation",
+"Pronunciasion"
+],
+[
+"Tomorrow",
+"Tommorow",
+"Tomorow",
+"Tommorrow"
+],
+[
+"Restaurant",
+"Restaurent",
+"Resturant",
+"Restaraunt"
+],
+[
+"Calendar",
+"Calender",
+"Calandar",
+"Callendar"
+],
+[
+"Address",
+"Adress",
+"Addres",
+"Adresss"
+],
+[
+"Successful",
+"Succesful",
+"Successfull",
+"Sucessful"
+],
+[
+"Disappear",
+"Dissapear",
+"Disapear",
+"Dissappear"
+]
+]
+}

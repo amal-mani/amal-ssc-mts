@@ -13,13 +13,29 @@ function create() {
     icon: path.join(__dirname, 'build', 'icon.png'), autoHideMenuBar: true,
     webPreferences: { partition: 'persist:mts', contextIsolation: true, sandbox: true } });
   win.loadURL('mts://app/index.html');
-  const outside = url => { if (/^https?:/.test(url)) shell.openExternal(url); };
+  const outside = url => {
+    if (!/^https?:/.test(url)) return;
+    let host = ''; try { host = new URL(url).hostname; } catch (e) {}
+    // Falcon (Classplus) and Testbook open in a window inside the app; your login is kept.
+    if (/(^|\.)(classplusapp|testbook)\.com$/.test(host)) return openInside(url);
+    shell.openExternal(url);
+  };
   win.webContents.setWindowOpenHandler(({ url }) => { outside(url); return { action: 'deny' }; });
   win.webContents.on('will-navigate', (e, url) => { if (!url.startsWith('mts://')) { e.preventDefault(); outside(url); } });
   win.on('page-title-updated', e => e.preventDefault());
 }
+let inside;
+function openInside(url) {
+  if (inside && !inside.isDestroyed()) { inside.loadURL(url); inside.focus(); return; }
+  inside = new BrowserWindow({ width: 1200, height: 820, parent: win, backgroundColor: '#0e1014', title: 'MTS Study – course and tests',
+    icon: path.join(__dirname, 'build', 'icon.png'), autoHideMenuBar: true,
+    webPreferences: { partition: 'persist:web', contextIsolation: true, sandbox: true } });
+  inside.webContents.setWindowOpenHandler(({ url: u }) => { if (/^https?:/.test(u)) inside.loadURL(u); return { action: 'deny' }; });
+  inside.loadURL(url);
+}
 Menu.setApplicationMenu(Menu.buildFromTemplate([{ label: 'App', submenu: [
   { role: 'reload', label: 'Refresh (get latest updates)', accelerator: 'F5' },
+  { label: 'Open the course/test page in my browser', accelerator: 'F8', click: () => { if (inside && !inside.isDestroyed()) shell.openExternal(inside.webContents.getURL()); } },
   { type: 'separator' }, { role: 'zoomIn', label: 'Bigger text' }, { role: 'zoomOut', label: 'Smaller text' }, { role: 'resetZoom', label: 'Normal text size' },
   { type: 'separator' }, { role: 'quit', label: 'Close' }] }]));
 app.on('second-instance', () => { if (win) { if (win.isMinimized()) win.restore(); win.focus(); } });
