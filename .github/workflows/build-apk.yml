@@ -1,13 +1,13 @@
-name: Build phone app (APK)
+name: Build apps (phone APK + Windows installer)
 on:
   push:
     branches: [main]
-    paths: ['android/**', '.github/workflows/build-apk.yml']
+    paths: ['android/**', 'desktop/**', '.github/workflows/build-apk.yml']
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  build:
+  android:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -22,24 +22,55 @@ jobs:
         working-directory: android
         run: |
           set -o pipefail
-          gradle --no-daemon --stacktrace assembleRelease 2>&1 | tee ../build.log
+          gradle --no-daemon --stacktrace assembleRelease 2>&1 | tee ../build-android.log
+      - run: cp android/app/build/outputs/apk/release/app-release.apk MTS-Study.apk
+      - uses: actions/upload-artifact@v4
+        with: { name: apk, path: MTS-Study.apk }
       - name: Save build log if the build failed
         if: failure()
         run: |
           git config user.name "build-bot"; git config user.email "build-bot@users.noreply.github.com"
-          git checkout --orphan build-log
-          git rm -rf --cached . >/dev/null
-          tail -c 60000 build.log > last-build-log.txt
-          git add last-build-log.txt && git commit -m "Build log" && git push -f origin build-log
-      - name: Name the APK
-        run: cp android/app/build/outputs/apk/release/app-release.apk MTS-Study.apk
-      - name: Publish download
-        uses: softprops/action-gh-release@v2
+          git checkout --orphan build-log && git rm -rf --cached . >/dev/null
+          tail -c 60000 build-android.log > last-build-log.txt
+          git add last-build-log.txt && git commit -m "Android build log" && git push -f origin build-log
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: '20' }
+      - name: Build Windows installer
+        working-directory: desktop
+        shell: bash
+        run: |
+          set -o pipefail
+          cp -r ../android/app/src/main/assets/www ./www
+          npm install --no-audit --no-fund 2>&1 | tail -5
+          npm run dist 2>&1 | tee ../build-windows.log
+      - uses: actions/upload-artifact@v4
+        with: { name: exe, path: desktop/dist/MTS-Study-Setup.exe }
+      - name: Save build log if the build failed
+        if: failure()
+        shell: bash
+        run: |
+          git config user.name "build-bot"; git config user.email "build-bot@users.noreply.github.com"
+          git checkout --orphan build-log-win && git rm -rf --cached . >/dev/null
+          tail -c 60000 build-windows.log > last-build-log.txt
+          git add last-build-log.txt && git commit -m "Windows build log" && git push -f origin build-log-win
+  release:
+    needs: [android, windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { merge-multiple: true }
+      - uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.${{ github.run_number }}
-          name: MTS Study app v1.${{ github.run_number }}
+          name: MTS Study v1.${{ github.run_number }}
           make_latest: 'true'
-          files: MTS-Study.apk
+          files: |
+            MTS-Study.apk
+            MTS-Study-Setup.exe
           body: |
-            Download **MTS-Study.apk** below, tap it on your phone, then tap Install.
-            If Android asks, allow "Install unknown apps" for your browser or file app.
+            **Phone (Android):** download MTS-Study.apk, tap it, then Install.
+            **PC (Windows):** download MTS-Study-Setup.exe and double-click it. If Windows says "Windows protected your PC", click More info, then Run anyway.
