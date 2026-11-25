@@ -1258,9 +1258,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){pxClose()}});
 getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):''})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[]};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
 drawPlusToday();drawSmart();
 function wakeRoute(){if(location.hash==='#wake'){const nb=document.querySelector('nav button[data-tab=myday]');if(nb)nb.click();if(!st.rtWake[dkey])setTimeout(wakeCheck,300)}}
-window.addEventListener('hashchange',wakeRoute);wakeRoute();
+function drawCurTab(){const h=location.hash.slice(1);if(h==='exam')drawExam();else if(h==='myday')drawMyDay()}
+window.addEventListener('hashchange',()=>{wakeRoute();drawCurTab()});wakeRoute();
 if(st.fmRun){fm=st.fmRun;if(Date.now()>fm.end+6*3600e3){st.fmRun=null;fm=null;save()}}
 if(st.focusRun&&st.focusRun.left>0)fLen=st.focusRun.len||25;
+drawCurTab();
 window.__mts={GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
 
 refreshAll();
