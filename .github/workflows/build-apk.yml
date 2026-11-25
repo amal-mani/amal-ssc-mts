@@ -46,6 +46,7 @@ jobs:
           set -o pipefail
           cp -r ../android/app/src/main/assets/www ./www
           npm install --no-audit --no-fund 2>&1 | tail -5
+          npm pkg set version=1.${{ github.run_number }}.0
           npm run dist 2>&1 | tee ../build-windows.log
       - uses: actions/upload-artifact@v4
         with: { name: exe, path: desktop/dist/MTS-Study-Setup.exe }

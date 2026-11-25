@@ -933,6 +933,7 @@ Reasoning:{
   return mkq('Reasoning','Dictionary order',`Arrange these words in dictionary order: ${ws.join(', ')}. Which word comes ${['first','second','third','fourth'][i]}?`,so[i],ws,`Dictionary order: ${so.join(' → ')}. Compare letter by letter.`,`നിഘണ്ടു ക്രമം: ${so.join(' → ')}. അക്ഷരം അക്ഷരമായി താരതമ്യം ചെയ്യുക.`)}]
 }};
 let BANK={q:[],vocab:[],idioms:[],ows:[],spell:[]};
+let drawVer=()=>{};
 let drawSync=()=>{const el=$('syncBox');if(el)el.innerHTML='<div class="panel" style="margin-top:18px"><h2>Sync phone + PC</h2><p class="small">Sync works in the phone app and the PC app (My day → Sync phone + PC). This Claude page keeps its own progress.</p></div>'};
 const GRP=[['Brave','Bold','Courageous','Daring'],['Immense','Enormous','Huge'],['Abundant','Plentiful','Ample'],['Scarce','Rare','Meagre','Scanty'],['Feeble','Weak','Fragile','Delicate'],['Calm','Peaceful','Tranquil','Serene'],['Rapid','Quick'],['Timid','Shy','Cowardly'],['Reluctant','Unwilling','Lazy','Idle','Lethargic','Sluggish','Inactive'],['Ancient','Old'],['Famous','Renowned','Eminent','Distinguished','Reputed'],['Wealthy','Rich'],['Kind','Gentle','Generous','Liberal','Mercy','Compassion'],['Honest','Truthful','Candid','Frank'],['Diligent','Industrious','Busy'],['Keen','Eager','Zeal','Enthusiasm'],['Jubilant','Joyful','Cheerful','Joy'],['Gloomy','Dismal','Sad','Grief','Sorrow'],['Hostile','Unfriendly'],['Precious','Valuable','Worth','Merit'],['Vague','Unclear'],['Polite','Courteous','Humble','Modest'],['Strange','Odd'],['Optimistic','Hopeful'],['Expand','Enlarge'],['Commence','Begin'],['Assist','Help'],['Conceal','Hide'],['Deny','Refuse','Decline','Decrease'],['Fertile','Productive'],['Barren','Infertile'],['Accurate','Exact'],['Lenient','Mild','Flexible'],['Obstinate','Stubborn','Rigid','Stiff','Strict'],['Novice','Beginner'],['Prudent','Sensible','Cautious','Careful'],['Victory','Triumph'],['Hazard','Danger'],['Strong','Sturdy'],['Cruel','Cruelty','Rude','Arrogant'],['Clear','Transparent'],['Small','Tiny']];
 const grpOf=w=>{const l=String(w).toLowerCase(),o=new Set([l]);GRP.forEach(g=>{if(g.some(x=>x.toLowerCase()===l))g.forEach(x=>o.add(x.toLowerCase()))});return o};
@@ -1089,11 +1090,11 @@ function drawMyDay(){const el=$('mydayBody');if(!el)return;const sk=streak(),r=r
     <label>Exam date${st.set.examSet?'':' (estimate)'}<input type="date" name="d" value="${esc(st.set.exam)}"></label><label>Goal (% of marks)<input type="number" name="g" min="30" max="90" value="${st.set.goal}"></label>
     <label style="grid-column:1/-1;display:flex;gap:10px;align-items:center"><input type="checkbox" name="x" ${st.set.extra?'checked':''} style="width:auto;min-height:0"> PwD extra time in mocks (60 min per session instead of 45)</label><button class="btn" type="submit">Save</button></form>
     <p class="small" style="margin-top:8px">SSC gives scribe-eligible PwD candidates 60 minutes per session. Check your own eligibility in the notification.</p></div>
-   <div id="syncBox"></div>
+   <div id="syncBox"></div><div id="verBox"></div>
   </div></div>`;
   $('rtForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);st.set.blocks.forEach((b,i)=>{b.from=f.get('f'+i)||b.from;b.to=f.get('t'+i)||b.to});save();setAlarms(true);drawMyDay()};
   $('buddyForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);st.set.buddy=String(f.get('n')||'').slice(0,40);st.set.buddyPh=String(f.get('p')||'').replace(/[^\d+]/g,'').slice(0,15);save();drawMyDay()};
-  drawSync();
+  drawSync();drawVer();
   $('exForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);const d=String(f.get('d')||'');if(/^\d{4}-\d{2}-\d{2}$/.test(d)){if(d!==st.set.exam)st.set.examSet=true;st.set.exam=d}st.set.goal=Math.min(90,Math.max(30,+f.get('g')||55));st.set.extra=!!f.get('x');save();drawMyDay();drawPlusToday()};
 }
 
@@ -1334,6 +1335,36 @@ setInterval(()=>syncNow(),180000);
 document.addEventListener('visibilitychange',()=>{if(!SY.tok)return;if(document.visibilityState==='hidden'){clearTimeout(syTimer);syncNow()}else syncNow()});
 window.addEventListener('online',()=>syncNow());
 drawSync();
+
+/* ================= app self-update (phone / PC app only) ================= */
+const REL='https://api.github.com/repos/amal-mani/amal-ssc-mts/releases/latest';
+function appVer(){try{if(window.AndroidApp&&AndroidApp.version)return +AndroidApp.version()||0;if(window.mtsDesktop&&mtsDesktop.version)return +(String(mtsDesktop.version()).split('.')[1])||0}catch(e){}return 0}
+let UPD=null,updMsg='';
+async function checkUpd(force){const v=appVer();if(!v)return;let c={};try{c=JSON.parse(localStorage.getItem('mtsUpd')||'{}')}catch(e){}
+  if(!force&&c.t&&Date.now()-c.t<3*3600e3){UPD=c.n>v&&c.url?c:null;drawUpd();return}
+  try{const r=await fetch(REL,{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json(),n=+(((j.tag_name||'').match(/v1\.(\d+)/)||[])[1])||0,
+    a=(j.assets||[]).find(x=>x.name===(window.AndroidApp?'MTS-Study.apk':'MTS-Study-Setup.exe'));
+    c={t:Date.now(),n,url:a?a.browser_download_url:null};try{localStorage.setItem('mtsUpd',JSON.stringify(c))}catch(e){}
+    UPD=n>v&&c.url?c:null;updMsg=force&&!UPD?'You have the newest version.':''}catch(e){if(force)updMsg='Could not check. Are you online?'}
+  drawUpd()}
+function drawUpd(){let el=$('updBar');
+  if(UPD){if(!el){el=document.createElement('div');el.id='updBar';el.className='note';el.style.cssText='border-left:4px solid #59d499;color:var(--ink);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:16px';const t=$('today');t.insertBefore(el,t.firstChild)}
+    if(!el.dataset.busy){el.innerHTML=`<span><b>A new version of the app is ready</b> (v1.${UPD.n}). Your progress stays.</span><span id="updPct" class="small"></span><button class="btn" id="updGo">Update now</button>`;$('updGo').onclick=updNow}}
+  else if(el)el.remove();
+  drawVer()}
+function updNow(){const el=$('updBar');if(el)el.dataset.busy='1';const b=$('updGo');if(b)b.disabled=true;mtsUpdProgress(0,'');
+  try{if(window.AndroidApp)AndroidApp.update(UPD.url);else mtsDesktop.update(UPD.url).catch(e=>mtsUpdProgress(-1,String(e.message||e)))}catch(e){mtsUpdProgress(-1,String(e))}}
+window.mtsUpdProgress=(p,msg)=>{const el=$('updPct');if(!el)return;
+  if(p<0){el.textContent='Update failed ('+msg+'). Check the internet and try again.';const b=$('updGo');if(b)b.disabled=false;const bar=$('updBar');if(bar)delete bar.dataset.busy;return}
+  el.textContent=msg==='installing'?(window.AndroidApp?'Downloaded. Tap "Update" on the next screen.':'Installing… the app will close and open again.'):'Downloading… '+p+'%'};
+if(window.mtsDesktop&&mtsDesktop.onProgress)mtsDesktop.onProgress(p=>mtsUpdProgress(p,p>=100?'installing':''));
+drawVer=function(){const el=$('verBox');if(!el)return;const v=appVer();if(!v){el.innerHTML='';return}
+  el.innerHTML=`<div class="panel" style="margin-top:18px"><h2>App version</h2><p>You have <b>v1.${v}</b>.${UPD?` <b style="color:#59d499">v1.${UPD.n} is ready</b>: tap <b>Update now</b> at the top of Today.`:''}</p>
+   <div class="row" style="justify-content:flex-start"><button class="btn ghost" id="updChk">Check for updates</button>${UPD?'<button class="btn" id="updGo2">Update now</button>':''}</div>${updMsg?`<p class="small">${esc(updMsg)}</p>`:''}
+   <p class="small">The app checks by itself every few hours. New questions and news come every morning without an update.</p></div>`;
+  $('updChk').onclick=()=>{updMsg='Checking…';drawVer();checkUpd(true)};if($('updGo2'))$('updGo2').onclick=()=>{const t=document.querySelector('nav button[data-tab=today]');if(t)t.click();setTimeout(updNow,200)}};
+setTimeout(()=>checkUpd(false),3000);setInterval(()=>checkUpd(false),3*3600e3);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkUpd(false)});
 
 refreshAll();
 }

@@ -1,6 +1,7 @@
 // MTS Study for Windows. The whole study app is inside the program, so it works offline.
 // When online it downloads the daily updates from GitHub (data/ folder) and keeps them.
-const { app, BrowserWindow, shell, Menu, protocol } = require('electron');
+const { app, BrowserWindow, shell, Menu, protocol, ipcMain, net } = require('electron');
+const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const WWW = path.join(__dirname, 'www');
@@ -11,7 +12,7 @@ let win;
 function create() {
   win = new BrowserWindow({ width: 1280, height: 860, minWidth: 380, backgroundColor: '#0e1014', title: 'MTS Study',
     icon: path.join(__dirname, 'build', 'icon.png'), autoHideMenuBar: true,
-    webPreferences: { partition: 'persist:mts', contextIsolation: true, sandbox: true } });
+    webPreferences: { partition: 'persist:mts', contextIsolation: true, sandbox: true, preload: path.join(__dirname, 'preload.js') } });
   win.loadURL('mts://app/index.html');
   const outside = url => {
     if (!/^https?:/.test(url)) return;
@@ -38,6 +39,22 @@ Menu.setApplicationMenu(Menu.buildFromTemplate([{ label: 'App', submenu: [
   { label: 'Open the course/test page in my browser', accelerator: 'F8', click: () => { if (inside && !inside.isDestroyed()) shell.openExternal(inside.webContents.getURL()); } },
   { type: 'separator' }, { role: 'zoomIn', label: 'Bigger text' }, { role: 'zoomOut', label: 'Smaller text' }, { role: 'resetZoom', label: 'Normal text size' },
   { type: 'separator' }, { role: 'quit', label: 'Close' }] }]));
+// Self-update: download the new installer from GitHub releases, run it silently, and reopen the app.
+ipcMain.on('mts-version', e => { e.returnValue = app.getVersion(); });
+ipcMain.handle('mts-update', async (e, url) => {
+  if (!/^https:\/\/github\.com\/amal-mani\/amal-ssc-mts\/releases\//.test(url)) throw new Error('bad url');
+  const res = await net.fetch(url);
+  if (!res.ok) throw new Error('Download failed: ' + res.status);
+  const total = +res.headers.get('content-length') || 0, parts = []; let got = 0, last = -1;
+  const reader = res.body.getReader();
+  for (;;) { const { done, value } = await reader.read(); if (done) break; parts.push(Buffer.from(value)); got += value.length;
+    const pct = total ? Math.floor(got / total * 100) : 0; if (pct !== last) { last = pct; e.sender.send('mts-update-progress', pct); } }
+  const file = path.join(app.getPath('temp'), 'MTS-Study-Setup-update.exe');
+  fs.writeFileSync(file, Buffer.concat(parts));
+  spawn(file, ['/S', '--force-run'], { detached: true, stdio: 'ignore' }).unref();
+  setTimeout(() => app.quit(), 800);
+  return true;
+});
 app.on('second-instance', () => { if (win) { if (win.isMinimized()) win.restore(); win.focus(); } });
 app.whenReady().then(() => {
   app.setAppUserModelId('com.amalmani.mtsstudy');

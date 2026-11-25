@@ -92,6 +92,16 @@ public class MainActivity extends Activity {
 
     class AppBridge {
         @JavascriptInterface
+        public int version() {
+            try { return getPackageManager().getPackageInfo(getPackageName(), 0).versionCode; } catch (Exception e) { return 0; }
+        }
+        @JavascriptInterface
+        public void update(String url) {
+            Updater.run(MainActivity.this, url, (pct, msg) -> runOnUiThread(() -> {
+                if (web != null) web.evaluateJavascript("window.mtsUpdProgress&&mtsUpdProgress(" + pct + "," + org.json.JSONObject.quote(msg) + ")", null);
+            }));
+        }
+        @JavascriptInterface
         public void setAlarms(String json) {
             runOnUiThread(() -> {
                 if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED)
