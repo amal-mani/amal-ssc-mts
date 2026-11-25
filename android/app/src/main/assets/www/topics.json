@@ -1,0 +1,136 @@
+{
+  "updated": "2026-11-25",
+  "daily": [
+    {
+      "date": "2026-11-25",
+      "items": [
+        {"s": "Quant", "title": "Square of any number ending in 5", "text": "Take the number before 5, multiply it by the next number, then write 25 at the end. 35² → 3 × 4 = 12 → 1225. 85² → 8 × 9 = 72 → 7225."},
+        {"s": "Reasoning", "title": "EJOTY: find any letter's position fast", "text": "E = 5, J = 10, O = 15, T = 20, Y = 25. Count from the nearest one. R? T is 20, go back 2 → R = 18."},
+        {"s": "English", "title": "Since or For?", "text": "SINCE + a Starting point (since Monday, since 2015). FOR + a length of time (for 3 days, for 2 years). Both S-words: Since = Start."},
+        {"s": "GA", "title": "Order of the planets", "text": "\"My Very Educated Mother Just Served Us Nachos\" = Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune (closest to the Sun first)."}
+      ]
+    }
+  ],
+  "lessons": {
+    "Quant0": {
+      "points": [
+        "BODMAS order: Brackets → Of → Division and Multiplication (left to right) → Addition and Subtraction.",
+        "× 5 is the same as × 10 then ÷ 2.",
+        "× 25 is the same as × 100 then ÷ 4.",
+        "To divide by a decimal, move the decimal point in both numbers: 72 ÷ 0.8 = 720 ÷ 8.",
+        "Learn squares from 1 to 30. They save time in almost every chapter."
+      ],
+      "tricks": [
+        "× 5 → add a zero, then halve. 48 × 5 → 480 → 240.",
+        "1000 − 357: take each digit from 9, the last digit from 10 → 643.",
+        "Square ending in 5: n × (n + 1), then write 25. 65² → 6 × 7 = 42 → 4225."
+      ]
+    },
+    "Quant1": {
+      "points": [
+        "To add fractions, make the bottom numbers the same first: 3/4 + 1/8 = 6/8 + 1/8 = 7/8.",
+        "When multiplying decimals, count the total decimal places: 0.25 × 0.4 → 25 × 4 = 100 → 3 places → 0.100.",
+        "√ of a perfect square: use the last digit to guess the last digit of the answer.",
+        "× 11 has a quick trick (see below).",
+        "Always do brackets first, then × and ÷, then + and −."
+      ],
+      "tricks": [
+        "× 11 for 2-digit numbers: write the first digit, then the sum of both, then the last digit. 45 × 11 → 4 | 9 | 5 = 495. If the sum is 10 or more, carry 1: 57 × 11 → 5 | 12 | 7 → 627.",
+        "Square root last digit: ends in 1 → 1 or 9; 4 → 2 or 8; 9 → 3 or 7; 6 → 4 or 6; 5 → 5; 0 → 0."
+      ]
+    },
+    "Quant2": {
+      "points": [
+        "(a + b)(a − b) = a² − b². Use it when two numbers are the same distance from a round number.",
+        "× 99 = × 100 minus the number once.",
+        "÷ 25 = × 4 then ÷ 100.",
+        "Fraction to % table: 1/2 = 50%, 1/3 = 33.33%, 1/4 = 25%, 1/5 = 20%, 1/6 = 16.66%, 1/8 = 12.5%.",
+        "Near 100: 104 × 96 = 100² − 4² = 9984."
+      ],
+      "tricks": [
+        "Eighths go up by 12.5: 1/8 = 12.5%, 3/8 = 37.5%, 5/8 = 62.5%, 7/8 = 87.5%.",
+        "99 × 37 → 3700 − 37 = 3663."
+      ]
+    },
+    "GA0": {
+      "points": [
+        "Palaeolithic (Old Stone Age): hunting, gathering, use of fire, rough stone tools.",
+        "Mesolithic (Middle Stone Age): microliths (tiny stone tools). Early animal keeping at Bagor (Rajasthan) and Adamgarh (Madhya Pradesh).",
+        "Neolithic (New Stone Age): farming, polished stone tools, pottery. Mehrgarh (now in Pakistan) is an early farming site.",
+        "Bhimbetka rock shelters (Madhya Pradesh) have Stone Age paintings. UNESCO World Heritage Site.",
+        "Chalcolithic Age = copper + stone used together."
+      ],
+      "tricks": [
+        "P → M → N = Palaeo (old) → Meso (middle) → Neo (new).",
+        "Microliths = Mesolithic: both start with M.",
+        "Neo = New things: farming, pottery, polished tools."
+      ]
+    },
+    "GA1": {
+      "points": [
+        "Indus Valley (Harappan) Civilisation: a Bronze Age civilisation, mature phase about 2500–1900 BCE.",
+        "Harappa: first excavated by Daya Ram Sahni in 1921, on the Ravi river (now in Pakistan).",
+        "Mohenjo-daro: excavated by R. D. Banerji in 1922, on the Indus. Has the Great Bath and a great granary.",
+        "Lothal (Gujarat): dockyard. Kalibangan (Rajasthan): ploughed field. Dholavira (Gujarat): water system, UNESCO site.",
+        "The Indus script has not been read (deciphered) yet."
+      ],
+      "tricks": [
+        "H before M, like the alphabet: Harappa 1921, Mohenjo-daro 1922.",
+        "Lothal = 'Lot of boats' → dockyard.",
+        "Mohenjo-daro = 'Mound of the dead' and has the Great Bath: 'M for Mound, Many baths'."
+      ]
+    },
+    "English0": {
+      "points": [
+        "Simple present: habits and facts. He/she/it + verb-s (She plays, Water boils).",
+        "Present continuous: am/is/are + verb-ing, for 'now' (They are watching).",
+        "Present perfect: has/have + V3, often with since/for (I have known him for 5 years).",
+        "Present perfect continuous: has/have been + verb-ing (She has been studying since morning).",
+        "Verbs like know, like, love, believe are not usually used in -ing form."
+      ],
+      "tricks": [
+        "He / She / It → add S. Think 'He Sings, She Swims, It Sleeps'.",
+        "Does / doesn't → base verb: 'He doesn't like', never 'likes'."
+      ]
+    },
+    "English1": {
+      "points": [
+        "Simple past (V2) with yesterday, ago, last week, in 2020: I went, she ate.",
+        "Past continuous: was/were + verb-ing for an action going on in the past.",
+        "A short past action that interrupts uses simple past: I was cooking when the phone rang.",
+        "Past perfect: had + V3 for the earlier of two past actions.",
+        "After did / didn't, use the base verb: Did you see? He didn't go."
+      ],
+      "tricks": [
+        "Did + V1: 'Did you GO', never 'Did you went'.",
+        "Two past actions? The FIRST one gets HAD: 'The train had left when I reached.'"
+      ]
+    },
+    "Reasoning0": {
+      "points": [
+        "Analogy = same relation. Find how the first pair is linked, then use the same link for the second pair.",
+        "Common links: use (pen–write), home (bird–nest), young one (cow–calf), worker–place, opposite.",
+        "Number analogies: try square, cube, ×2, n × (n + 1), +/− a fixed number.",
+        "Letter analogies: count how many steps each letter moves (A→B = +1).",
+        "Check all four options against the rule before choosing."
+      ],
+      "tricks": [
+        "Make a sentence: 'A pen is used to write' → 'A knife is used to cut'.",
+        "For numbers, try n² and n³ first: 3 : 27 → cube → 4 : 64."
+      ]
+    },
+    "Reasoning1": {
+      "points": [
+        "Number rule n × (n + 1): 5 : 30 → 7 : 56.",
+        "Squares: 12 : 144 → 15 : 225.",
+        "Young ones: cow → calf, dog → puppy, cat → kitten, lion → cub, horse → foal.",
+        "Professional pairs: doctor → patient, lawyer → client, teacher → student.",
+        "Word value: add letter positions (A = 1 … Z = 26): BAT = 2 + 1 + 20 = 23."
+      ],
+      "tricks": [
+        "EJOTY = 5, 10, 15, 20, 25 for quick letter positions.",
+        "Opposite letter pairs add to 27: A–Z, B–Y, C–X (1 + 26 = 27)."
+      ]
+    }
+  }
+}

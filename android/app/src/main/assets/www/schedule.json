@@ -1,0 +1,1720 @@
+{
+"note": "Lesson order by date. Lessons with subject Quant/Reasoning/English/GA need a 5-question test in lessonquiz.json under their id.",
+"lessons": [
+{
+"date": "2026-11-25",
+"id": "Quant0",
+"subject": "Quant",
+"title": "Basic calculation part 1 + practice material",
+"falconDay": 1
+},
+{
+"date": "2026-11-25",
+"id": "GA0",
+"subject": "GA",
+"title": "Stone Age",
+"falconDay": 1
+},
+{
+"date": "2026-11-26",
+"id": "Reasoning0",
+"subject": "Reasoning",
+"title": "Analogy",
+"falconDay": 89
+},
+{
+"date": "2026-11-26",
+"id": "English0",
+"subject": "English",
+"title": "Present tense",
+"falconDay": 1
+},
+{
+"date": "2026-11-27",
+"id": "GA1",
+"subject": "GA",
+"title": "Indus Valley Civilisation",
+"falconDay": 2
+},
+{
+"date": "2026-11-27",
+"id": "CA0",
+"subject": "CA",
+"title": "May 2026",
+"falconDay": 97
+},
+{
+"date": "2026-11-28",
+"id": "Mock0",
+"subject": "Mock",
+"title": "PYQ practice MTS",
+"falconDay": 94
+},
+{
+"date": "2026-11-30",
+"id": "Quant1",
+"subject": "Quant",
+"title": "Basic calculation part 2",
+"falconDay": 3
+},
+{
+"date": "2026-11-30",
+"id": "English1",
+"subject": "English",
+"title": "Past tense",
+"falconDay": 2
+},
+{
+"date": "2026-12-01",
+"id": "Quant2",
+"subject": "Quant",
+"title": "Calculation tricks",
+"falconDay": 98
+},
+{
+"date": "2026-12-01",
+"id": "Reasoning1",
+"subject": "Reasoning",
+"title": "Analogy 2",
+"falconDay": 91
+},
+{
+"date": "2026-12-02",
+"id": "Quant3",
+"subject": "Quant",
+"title": "Simplification",
+"falconDay": 93
+},
+{
+"date": "2026-12-02",
+"id": "GA2",
+"subject": "GA",
+"title": "Vedic Age",
+"falconDay": 3
+},
+{
+"date": "2026-12-03",
+"id": "Reasoning2",
+"subject": "Reasoning",
+"title": "Number series 1",
+"falconDay": 92
+},
+{
+"date": "2026-12-03",
+"id": "English2",
+"subject": "English",
+"title": "Future tense",
+"falconDay": 3
+},
+{
+"date": "2026-12-04",
+"id": "GA3",
+"subject": "GA",
+"title": "Mahajanapadas",
+"falconDay": 4
+},
+{
+"date": "2026-12-04",
+"id": "CA1",
+"subject": "CA",
+"title": "April 2026",
+"falconDay": 95
+},
+{
+"date": "2026-12-05",
+"id": "Mock1",
+"subject": "Mock",
+"title": "MTS Mock 1 + discussion",
+"falconDay": 10
+},
+{
+"date": "2026-12-07",
+"id": "Quant4",
+"subject": "Quant",
+"title": "Percentage basics 1",
+"falconDay": 5
+},
+{
+"date": "2026-12-07",
+"id": "English3",
+"subject": "English",
+"title": "Types of nouns 1 & 2",
+"falconDay": 6
+},
+{
+"date": "2026-12-08",
+"id": "Quant5",
+"subject": "Quant",
+"title": "Percentage basics 2 + percentage table",
+"falconDay": 6
+},
+{
+"date": "2026-12-08",
+"id": "Reasoning3",
+"subject": "Reasoning",
+"title": "Number series 2 + alphabet series",
+"falconDay": 93
+},
+{
+"date": "2026-12-09",
+"id": "Quant6",
+"subject": "Quant",
+"title": "Percentage basics 3",
+"falconDay": 8
+},
+{
+"date": "2026-12-09",
+"id": "GA4",
+"subject": "GA",
+"title": "Buddhism, Jainism & Maurya Empire",
+"falconDay": 6
+},
+{
+"date": "2026-12-10",
+"id": "Reasoning4",
+"subject": "Reasoning",
+"title": "Coding-decoding basics + part 2",
+"falconDay": 96
+},
+{
+"date": "2026-12-10",
+"id": "English4",
+"subject": "English",
+"title": "Noun rules + pronouns intro",
+"falconDay": 7
+},
+{
+"date": "2026-12-11",
+"id": "GA5",
+"subject": "GA",
+"title": "Post-Maurya & Gupta Empire",
+"falconDay": 7
+},
+{
+"date": "2026-12-11",
+"id": "CA2",
+"subject": "CA",
+"title": "March 2026",
+"falconDay": 92
+},
+{
+"date": "2026-12-12",
+"id": "Mock2",
+"subject": "Mock",
+"title": "MTS Mock 2 + discussion",
+"falconDay": 20
+},
+{
+"date": "2026-12-14",
+"id": "Quant7",
+"subject": "Quant",
+"title": "Percentage basics 4",
+"falconDay": 13
+},
+{
+"date": "2026-12-14",
+"id": "English5",
+"subject": "English",
+"title": "Types of pronouns",
+"falconDay": 9
+},
+{
+"date": "2026-12-15",
+"id": "Quant8",
+"subject": "Quant",
+"title": "Percentage basics 5",
+"falconDay": 14
+},
+{
+"date": "2026-12-15",
+"id": "Reasoning5",
+"subject": "Reasoning",
+"title": "Coding-decoding part 3",
+"falconDay": 97
+},
+{
+"date": "2026-12-16",
+"id": "Quant9",
+"subject": "Quant",
+"title": "Percentage basics 6",
+"falconDay": 17
+},
+{
+"date": "2026-12-16",
+"id": "GA6",
+"subject": "GA",
+"title": "Post-Gupta period",
+"falconDay": 8
+},
+{
+"date": "2026-12-17",
+"id": "Reasoning6",
+"subject": "Reasoning",
+"title": "Missing number 1",
+"falconDay": 98
+},
+{
+"date": "2026-12-17",
+"id": "English6",
+"subject": "English",
+"title": "Relative pronouns",
+"falconDay": 11
+},
+{
+"date": "2026-12-18",
+"id": "GA7",
+"subject": "GA",
+"title": "Arab & Turkish invasion",
+"falconDay": 9
+},
+{
+"date": "2026-12-18",
+"id": "CA3",
+"subject": "CA",
+"title": "February 2026",
+"falconDay": 91
+},
+{
+"date": "2026-12-19",
+"id": "Mock3",
+"subject": "Mock",
+"title": "MTS practice set 2",
+"falconDay": 97
+},
+{
+"date": "2026-12-21",
+"id": "Quant10",
+"subject": "Quant",
+"title": "Ratio & proportion 1",
+"falconDay": 21
+},
+{
+"date": "2026-12-21",
+"id": "English7",
+"subject": "English",
+"title": "Nouns & pronouns PYQ",
+"falconDay": 15
+},
+{
+"date": "2026-12-22",
+"id": "Quant11",
+"subject": "Quant",
+"title": "Ratio & proportion 2",
+"falconDay": 23
+},
+{
+"date": "2026-12-22",
+"id": "Reasoning7",
+"subject": "Reasoning",
+"title": "Missing number 2",
+"falconDay": 99
+},
+{
+"date": "2026-12-23",
+"id": "Quant12",
+"subject": "Quant",
+"title": "Ratio & proportion 3",
+"falconDay": 24
+},
+{
+"date": "2026-12-23",
+"id": "GA8",
+"subject": "GA",
+"title": "Delhi Sultanate",
+"falconDay": 11
+},
+{
+"date": "2026-12-24",
+"id": "Reasoning8",
+"subject": "Reasoning",
+"title": "Mathematical operations",
+"falconDay": 86
+},
+{
+"date": "2026-12-24",
+"id": "English8",
+"subject": "English",
+"title": "Adjectives",
+"falconDay": 14
+},
+{
+"date": "2026-12-25",
+"id": "GA9",
+"subject": "GA",
+"title": "Mughal Empire",
+"falconDay": 13
+},
+{
+"date": "2026-12-25",
+"id": "CA4",
+"subject": "CA",
+"title": "January 2026",
+"falconDay": 67
+},
+{
+"date": "2026-12-26",
+"id": "Mock4",
+"subject": "Mock",
+"title": "MTS Mock 3",
+"falconDay": 30
+},
+{
+"date": "2026-12-28",
+"id": "Quant13",
+"subject": "Quant",
+"title": "Ratio & proportion 4",
+"falconDay": 26
+},
+{
+"date": "2026-12-28",
+"id": "English9",
+"subject": "English",
+"title": "Adverbs",
+"falconDay": 15
+},
+{
+"date": "2026-12-29",
+"id": "Quant14",
+"subject": "Quant",
+"title": "Ratio & proportion 5",
+"falconDay": 27
+},
+{
+"date": "2026-12-29",
+"id": "Reasoning9",
+"subject": "Reasoning",
+"title": "Mathematical operations 2",
+"falconDay": 88
+},
+{
+"date": "2026-12-30",
+"id": "Quant15",
+"subject": "Quant",
+"title": "Ratio & proportion 6 + workout material",
+"falconDay": 29
+},
+{
+"date": "2026-12-30",
+"id": "GA10",
+"subject": "GA",
+"title": "Vijayanagara & Bahmani",
+"falconDay": 14
+},
+{
+"date": "2026-12-31",
+"id": "Reasoning10",
+"subject": "Reasoning",
+"title": "Direction 1",
+"falconDay": 2
+},
+{
+"date": "2026-12-31",
+"id": "English10",
+"subject": "English",
+"title": "Adjective or adverb",
+"falconDay": 16
+},
+{
+"date": "2027-01-01",
+"id": "GA11",
+"subject": "GA",
+"title": "Religious movements & Marathas",
+"falconDay": 15
+},
+{
+"date": "2027-01-01",
+"id": "CA5",
+"subject": "CA",
+"title": "December 2025",
+"falconDay": 66
+},
+{
+"date": "2027-01-02",
+"id": "Mock5",
+"subject": "Mock",
+"title": "MTS Mock 4",
+"falconDay": 40
+},
+{
+"date": "2027-01-04",
+"id": "Quant16",
+"subject": "Quant",
+"title": "Profit, loss, discount 1",
+"falconDay": 31
+},
+{
+"date": "2027-01-04",
+"id": "English11",
+"subject": "English",
+"title": "Adjective & adverb PYQ",
+"falconDay": 33
+},
+{
+"date": "2027-01-05",
+"id": "Quant17",
+"subject": "Quant",
+"title": "Profit, loss, discount 2",
+"falconDay": 33
+},
+{
+"date": "2027-01-05",
+"id": "Reasoning11",
+"subject": "Reasoning",
+"title": "Direction 2",
+"falconDay": 4
+},
+{
+"date": "2027-01-06",
+"id": "Quant18",
+"subject": "Quant",
+"title": "Profit, loss, discount 3",
+"falconDay": 34
+},
+{
+"date": "2027-01-06",
+"id": "GA12",
+"subject": "GA",
+"title": "Europeans & British expansion",
+"falconDay": 16
+},
+{
+"date": "2027-01-07",
+"id": "Reasoning12",
+"subject": "Reasoning",
+"title": "Direction 3",
+"falconDay": 35
+},
+{
+"date": "2027-01-07",
+"id": "English12",
+"subject": "English",
+"title": "Verbs part 1",
+"falconDay": 18
+},
+{
+"date": "2027-01-08",
+"id": "GA13",
+"subject": "GA",
+"title": "British rule up to 1857",
+"falconDay": 17
+},
+{
+"date": "2027-01-08",
+"id": "CA6",
+"subject": "CA",
+"title": "November 2025",
+"falconDay": 63
+},
+{
+"date": "2027-01-09",
+"id": "Mock6",
+"subject": "Mock",
+"title": "PYQ practice set 3",
+"falconDay": 99
+},
+{
+"date": "2027-01-11",
+"id": "Quant19",
+"subject": "Quant",
+"title": "Profit, loss, discount 4",
+"falconDay": 36
+},
+{
+"date": "2027-01-11",
+"id": "English13",
+"subject": "English",
+"title": "Verb classification",
+"falconDay": 19
+},
+{
+"date": "2027-01-12",
+"id": "Quant20",
+"subject": "Quant",
+"title": "Profit, loss, discount 5",
+"falconDay": 37
+},
+{
+"date": "2027-01-12",
+"id": "Reasoning13",
+"subject": "Reasoning",
+"title": "Blood relation 1",
+"falconDay": 9
+},
+{
+"date": "2027-01-13",
+"id": "Quant21",
+"subject": "Quant",
+"title": "Profit, loss, discount 6 + workout material",
+"falconDay": 39
+},
+{
+"date": "2027-01-13",
+"id": "GA14",
+"subject": "GA",
+"title": "1857 revolt & social reformers",
+"falconDay": 18
+},
+{
+"date": "2027-01-14",
+"id": "Reasoning14",
+"subject": "Reasoning",
+"title": "Blood relation 2",
+"falconDay": 12
+},
+{
+"date": "2027-01-14",
+"id": "English14",
+"subject": "English",
+"title": "Verb PYQ",
+"falconDay": 34
+},
+{
+"date": "2027-01-15",
+"id": "GA15",
+"subject": "GA",
+"title": "INC early phase & 1907-1918",
+"falconDay": 19
+},
+{
+"date": "2027-01-15",
+"id": "CA7",
+"subject": "CA",
+"title": "October 2025",
+"falconDay": 55
+},
+{
+"date": "2027-01-16",
+"id": "Mock7",
+"subject": "Mock",
+"title": "MTS Mock 5",
+"falconDay": 50
+},
+{
+"date": "2027-01-18",
+"id": "Quant22",
+"subject": "Quant",
+"title": "Simple interest 1",
+"falconDay": 41
+},
+{
+"date": "2027-01-18",
+"id": "English15",
+"subject": "English",
+"title": "Subject-verb agreement 1 & 2",
+"falconDay": 49
+},
+{
+"date": "2027-01-19",
+"id": "Quant23",
+"subject": "Quant",
+"title": "Simple interest 2",
+"falconDay": 42
+},
+{
+"date": "2027-01-19",
+"id": "Reasoning15",
+"subject": "Reasoning",
+"title": "Mirror & water image",
+"falconDay": 64
+},
+{
+"date": "2027-01-20",
+"id": "Quant24",
+"subject": "Quant",
+"title": "Simple interest 3",
+"falconDay": 44
+},
+{
+"date": "2027-01-20",
+"id": "GA16",
+"subject": "GA",
+"title": "1919-1924 & revolutionaries",
+"falconDay": 21
+},
+{
+"date": "2027-01-21",
+"id": "Reasoning16",
+"subject": "Reasoning",
+"title": "Paper cutting",
+"falconDay": 65
+},
+{
+"date": "2027-01-21",
+"id": "English16",
+"subject": "English",
+"title": "Subject-verb agreement PYQ",
+"falconDay": 64
+},
+{
+"date": "2027-01-22",
+"id": "GA17",
+"subject": "GA",
+"title": "1925-1947",
+"falconDay": 22
+},
+{
+"date": "2027-01-22",
+"id": "CA8",
+"subject": "CA",
+"title": "September 2025",
+"falconDay": 49
+},
+{
+"date": "2027-01-23",
+"id": "Mock8",
+"subject": "Mock",
+"title": "MTS Mock 6",
+"falconDay": 60
+},
+{
+"date": "2027-01-25",
+"id": "Quant25",
+"subject": "Quant",
+"title": "Compound interest 1",
+"falconDay": 45
+},
+{
+"date": "2027-01-25",
+"id": "English17",
+"subject": "English",
+"title": "Articles + omission of articles",
+"falconDay": 65
+},
+{
+"date": "2027-01-26",
+"id": "Quant26",
+"subject": "Quant",
+"title": "Compound interest 2",
+"falconDay": 46
+},
+{
+"date": "2027-01-26",
+"id": "Reasoning17",
+"subject": "Reasoning",
+"title": "Counting of figures 1",
+"falconDay": 73
+},
+{
+"date": "2027-01-27",
+"id": "Quant27",
+"subject": "Quant",
+"title": "Compound interest 3",
+"falconDay": 47
+},
+{
+"date": "2027-01-27",
+"id": "GA18",
+"subject": "GA",
+"title": "Polity: background & making of the Constitution",
+"falconDay": 24
+},
+{
+"date": "2027-01-28",
+"id": "Reasoning18",
+"subject": "Reasoning",
+"title": "Counting of figures 2",
+"falconDay": 74
+},
+{
+"date": "2027-01-28",
+"id": "English18",
+"subject": "English",
+"title": "Articles wrap-up & PYQ",
+"falconDay": 67
+},
+{
+"date": "2027-01-29",
+"id": "GA19",
+"subject": "GA",
+"title": "Preamble & Parts 1-3",
+"falconDay": 25
+},
+{
+"date": "2027-01-29",
+"id": "CA9",
+"subject": "CA",
+"title": "August 2025",
+"falconDay": 45
+},
+{
+"date": "2027-01-30",
+"id": "Mock9",
+"subject": "Mock",
+"title": "MTS Mock 7",
+"falconDay": 70
+},
+{
+"date": "2027-02-01",
+"id": "Quant28",
+"subject": "Quant",
+"title": "Average 1",
+"falconDay": 75
+},
+{
+"date": "2027-02-01",
+"id": "English19",
+"subject": "English",
+"title": "Prepositions 1",
+"falconDay": 27
+},
+{
+"date": "2027-02-02",
+"id": "Quant29",
+"subject": "Quant",
+"title": "Average 2",
+"falconDay": 77
+},
+{
+"date": "2027-02-02",
+"id": "Reasoning19",
+"subject": "Reasoning",
+"title": "Venn diagram 1",
+"falconDay": 57
+},
+{
+"date": "2027-02-03",
+"id": "Quant30",
+"subject": "Quant",
+"title": "Average 3",
+"falconDay": 79
+},
+{
+"date": "2027-02-03",
+"id": "GA20",
+"subject": "GA",
+"title": "Parts 4, 4A & 5",
+"falconDay": 26
+},
+{
+"date": "2027-02-04",
+"id": "Reasoning20",
+"subject": "Reasoning",
+"title": "Venn diagram 2",
+"falconDay": 58
+},
+{
+"date": "2027-02-04",
+"id": "English20",
+"subject": "English",
+"title": "Prepositions 2",
+"falconDay": 32
+},
+{
+"date": "2027-02-05",
+"id": "GA21",
+"subject": "GA",
+"title": "Parts 5-8",
+"falconDay": 28
+},
+{
+"date": "2027-02-05",
+"id": "CA10",
+"subject": "CA",
+"title": "July 2025",
+"falconDay": 35
+},
+{
+"date": "2027-02-06",
+"id": "Mock10",
+"subject": "Mock",
+"title": "MTS Mock 8",
+"falconDay": 80
+},
+{
+"date": "2027-02-08",
+"id": "Quant31",
+"subject": "Quant",
+"title": "Time, speed, distance 1",
+"falconDay": 54
+},
+{
+"date": "2027-02-08",
+"id": "English21",
+"subject": "English",
+"title": "Prepositions PYQ",
+"falconDay": 66
+},
+{
+"date": "2027-02-09",
+"id": "Quant32",
+"subject": "Quant",
+"title": "Time, speed, distance 2",
+"falconDay": 55
+},
+{
+"date": "2027-02-09",
+"id": "Reasoning21",
+"subject": "Reasoning",
+"title": "Order & ranking 1",
+"falconDay": 69
+},
+{
+"date": "2027-02-10",
+"id": "Quant33",
+"subject": "Quant",
+"title": "Race, boat and stream",
+"falconDay": 57
+},
+{
+"date": "2027-02-10",
+"id": "GA22",
+"subject": "GA",
+"title": "Parts 9-22",
+"falconDay": 29
+},
+{
+"date": "2027-02-11",
+"id": "Reasoning22",
+"subject": "Reasoning",
+"title": "Order & ranking 2",
+"falconDay": 71
+},
+{
+"date": "2027-02-11",
+"id": "English22",
+"subject": "English",
+"title": "Coordinating conjunctions",
+"falconDay": 39
+},
+{
+"date": "2027-02-12",
+"id": "GA23",
+"subject": "GA",
+"title": "Schedules & amendments",
+"falconDay": 31
+},
+{
+"date": "2027-02-12",
+"id": "CA11",
+"subject": "CA",
+"title": "June 2025",
+"falconDay": 31
+},
+{
+"date": "2027-02-13",
+"id": "Mock11",
+"subject": "Mock",
+"title": "MTS Mock 9",
+"falconDay": 90
+},
+{
+"date": "2027-02-15",
+"id": "Quant34",
+"subject": "Quant",
+"title": "Time and work 1",
+"falconDay": 62
+},
+{
+"date": "2027-02-15",
+"id": "English23",
+"subject": "English",
+"title": "Subordinating conjunctions",
+"falconDay": 41
+},
+{
+"date": "2027-02-16",
+"id": "Quant35",
+"subject": "Quant",
+"title": "Time and work 2",
+"falconDay": 63
+},
+{
+"date": "2027-02-16",
+"id": "Reasoning23",
+"subject": "Reasoning",
+"title": "Seating arrangement 1",
+"falconDay": 5
+},
+{
+"date": "2027-02-17",
+"id": "Quant36",
+"subject": "Quant",
+"title": "Time and work 3",
+"falconDay": 64
+},
+{
+"date": "2027-02-17",
+"id": "GA24",
+"subject": "GA",
+"title": "Cell 1",
+"falconDay": 32
+},
+{
+"date": "2027-02-18",
+"id": "Reasoning24",
+"subject": "Reasoning",
+"title": "Seating arrangement 2",
+"falconDay": 8
+},
+{
+"date": "2027-02-18",
+"id": "English24",
+"subject": "English",
+"title": "Correlative conjunctions",
+"falconDay": 42
+},
+{
+"date": "2027-02-19",
+"id": "GA25",
+"subject": "GA",
+"title": "Cell 2",
+"falconDay": 33
+},
+{
+"date": "2027-02-19",
+"id": "CA12",
+"subject": "CA",
+"title": "May 2025",
+"falconDay": 27
+},
+{
+"date": "2027-02-20",
+"id": "Mock12",
+"subject": "Mock",
+"title": "MTS Mock 10",
+"falconDay": 100
+},
+{
+"date": "2027-02-22",
+"id": "Quant37",
+"subject": "Quant",
+"title": "Number system: types of numbers",
+"falconDay": 89
+},
+{
+"date": "2027-02-22",
+"id": "English25",
+"subject": "English",
+"title": "Interjection",
+"falconDay": 44
+},
+{
+"date": "2027-02-23",
+"id": "Quant38",
+"subject": "Quant",
+"title": "Number system basics",
+"falconDay": 92
+},
+{
+"date": "2027-02-23",
+"id": "Reasoning25",
+"subject": "Reasoning",
+"title": "Seating arrangement 3",
+"falconDay": 32
+},
+{
+"date": "2027-02-24",
+"id": "Quant39",
+"subject": "Quant",
+"title": "LCM & HCF part 2",
+"falconDay": 94
+},
+{
+"date": "2027-02-24",
+"id": "GA26",
+"subject": "GA",
+"title": "Cell cycle & genetics",
+"falconDay": 34
+},
+{
+"date": "2027-02-25",
+"id": "Reasoning26",
+"subject": "Reasoning",
+"title": "Calendar 1",
+"falconDay": 38
+},
+{
+"date": "2027-02-25",
+"id": "English26",
+"subject": "English",
+"title": "Conjunction PYQ",
+"falconDay": 48
+},
+{
+"date": "2027-02-26",
+"id": "GA27",
+"subject": "GA",
+"title": "Classification of organisms",
+"falconDay": 35
+},
+{
+"date": "2027-02-26",
+"id": "CA13",
+"subject": "CA",
+"title": "April 2025",
+"falconDay": 23
+},
+{
+"date": "2027-02-27",
+"id": "Quant40",
+"subject": "Quant",
+"title": "LCM & HCF part 3 + divisibility rules",
+"falconDay": 95
+},
+{
+"date": "2027-03-01",
+"id": "Quant41",
+"subject": "Quant",
+"title": "2D & 3D shapes",
+"falconDay": 98
+},
+{
+"date": "2027-03-01",
+"id": "English27",
+"subject": "English",
+"title": "Active-passive 1 (assertive)",
+"falconDay": 51
+},
+{
+"date": "2027-03-02",
+"id": "English28",
+"subject": "English",
+"title": "Active-passive 2 & 3",
+"falconDay": 52
+},
+{
+"date": "2027-03-02",
+"id": "Reasoning27",
+"subject": "Reasoning",
+"title": "Calendar 2",
+"falconDay": 43
+},
+{
+"date": "2027-03-03",
+"id": "English29",
+"subject": "English",
+"title": "Passive voice PYQ",
+"falconDay": 63
+},
+{
+"date": "2027-03-03",
+"id": "GA28",
+"subject": "GA",
+"title": "Evolution & plant kingdom",
+"falconDay": 36
+},
+{
+"date": "2027-03-04",
+"id": "Reasoning28",
+"subject": "Reasoning",
+"title": "Calendar 3",
+"falconDay": 46
+},
+{
+"date": "2027-03-04",
+"id": "English30",
+"subject": "English",
+"title": "Reported speech 1",
+"falconDay": 58
+},
+{
+"date": "2027-03-05",
+"id": "GA29",
+"subject": "GA",
+"title": "Parts of a plant & photosynthesis",
+"falconDay": 37
+},
+{
+"date": "2027-03-05",
+"id": "CA14",
+"subject": "CA",
+"title": "March 2025",
+"falconDay": 17
+},
+{
+"date": "2027-03-06",
+"id": "English31",
+"subject": "English",
+"title": "Reported speech 2 & 3",
+"falconDay": 59
+},
+{
+"date": "2027-03-08",
+"id": "English32",
+"subject": "English",
+"title": "Reported speech PYQ",
+"falconDay": 61
+},
+{
+"date": "2027-03-08",
+"id": "English33",
+"subject": "English",
+"title": "Question tag",
+"falconDay": 53
+},
+{
+"date": "2027-03-09",
+"id": "English34",
+"subject": "English",
+"title": "Question tag PYQ",
+"falconDay": 56
+},
+{
+"date": "2027-03-09",
+"id": "Reasoning29",
+"subject": "Reasoning",
+"title": "Clock 1",
+"falconDay": 75
+},
+{
+"date": "2027-03-10",
+"id": "English35",
+"subject": "English",
+"title": "Error spotting mixed",
+"falconDay": 94
+},
+{
+"date": "2027-03-10",
+"id": "GA30",
+"subject": "GA",
+"title": "Plant tissues",
+"falconDay": 38
+},
+{
+"date": "2027-03-11",
+"id": "Reasoning30",
+"subject": "Reasoning",
+"title": "Clock 2",
+"falconDay": 76
+},
+{
+"date": "2027-03-11",
+"id": "English36",
+"subject": "English",
+"title": "Sentence improvement 1",
+"falconDay": 68
+},
+{
+"date": "2027-03-12",
+"id": "GA31",
+"subject": "GA",
+"title": "Scientific names & nutrients",
+"falconDay": 39
+},
+{
+"date": "2027-03-12",
+"id": "CA15",
+"subject": "CA",
+"title": "February 2025",
+"falconDay": 12
+},
+{
+"date": "2027-03-13",
+"id": "English37",
+"subject": "English",
+"title": "Sentence improvement 2",
+"falconDay": 69
+},
+{
+"date": "2027-03-15",
+"id": "English38",
+"subject": "English",
+"title": "Conditional sentences",
+"falconDay": 77
+},
+{
+"date": "2027-03-15",
+"id": "English39",
+"subject": "English",
+"title": "Rule of inversion",
+"falconDay": 78
+},
+{
+"date": "2027-03-16",
+"id": "English40",
+"subject": "English",
+"title": "Idioms & phrases 1",
+"falconDay": 4
+},
+{
+"date": "2027-03-16",
+"id": "Reasoning31",
+"subject": "Reasoning",
+"title": "Cubes & dice 1",
+"falconDay": 23
+},
+{
+"date": "2027-03-17",
+"id": "English41",
+"subject": "English",
+"title": "Idioms & phrases 2",
+"falconDay": 12
+},
+{
+"date": "2027-03-17",
+"id": "GA32",
+"subject": "GA",
+"title": "Animal tissues",
+"falconDay": 41
+},
+{
+"date": "2027-03-18",
+"id": "Reasoning32",
+"subject": "Reasoning",
+"title": "Cubes & dice 2",
+"falconDay": 25
+},
+{
+"date": "2027-03-18",
+"id": "English42",
+"subject": "English",
+"title": "Idioms & phrases 3",
+"falconDay": 16
+},
+{
+"date": "2027-03-19",
+"id": "GA33",
+"subject": "GA",
+"title": "Animal kingdom",
+"falconDay": 42
+},
+{
+"date": "2027-03-19",
+"id": "CA16",
+"subject": "CA",
+"title": "January 2025",
+"falconDay": 5
+},
+{
+"date": "2027-03-20",
+"id": "English43",
+"subject": "English",
+"title": "Idioms & phrases 4",
+"falconDay": 22
+},
+{
+"date": "2027-03-22",
+"id": "English44",
+"subject": "English",
+"title": "One word substitution 1",
+"falconDay": 28
+},
+{
+"date": "2027-03-22",
+"id": "English45",
+"subject": "English",
+"title": "One word substitution 2",
+"falconDay": 38
+},
+{
+"date": "2027-03-23",
+"id": "English46",
+"subject": "English",
+"title": "One word substitution 3",
+"falconDay": 45
+},
+{
+"date": "2027-03-23",
+"id": "Reasoning33",
+"subject": "Reasoning",
+"title": "Syllogism basics",
+"falconDay": 81
+},
+{
+"date": "2027-03-24",
+"id": "English47",
+"subject": "English",
+"title": "One word substitution 4",
+"falconDay": 54
+},
+{
+"date": "2027-03-24",
+"id": "GA34",
+"subject": "GA",
+"title": "Respiratory & digestive system",
+"falconDay": 43
+},
+{
+"date": "2027-03-25",
+"id": "Reasoning34",
+"subject": "Reasoning",
+"title": "Syllogism 1",
+"falconDay": 82
+},
+{
+"date": "2027-03-25",
+"id": "English48",
+"subject": "English",
+"title": "Synonyms 1",
+"falconDay": 79
+},
+{
+"date": "2027-03-26",
+"id": "GA35",
+"subject": "GA",
+"title": "Nervous & circulatory system",
+"falconDay": 44
+},
+{
+"date": "2027-03-26",
+"id": "English49",
+"subject": "English",
+"title": "Synonyms 2",
+"falconDay": 81
+},
+{
+"date": "2027-03-27",
+"id": "English50",
+"subject": "English",
+"title": "Synonyms 3",
+"falconDay": 83
+},
+{
+"date": "2027-03-29",
+"id": "English51",
+"subject": "English",
+"title": "Synonyms 4",
+"falconDay": 85
+},
+{
+"date": "2027-03-29",
+"id": "English52",
+"subject": "English",
+"title": "Dictionary word formation",
+"falconDay": 72
+},
+{
+"date": "2027-03-30",
+"id": "English53",
+"subject": "English",
+"title": "Reading comprehension",
+"falconDay": 84
+},
+{
+"date": "2027-03-30",
+"id": "Reasoning35",
+"subject": "Reasoning",
+"title": "Syllogism 2",
+"falconDay": 83
+},
+{
+"date": "2027-03-31",
+"id": "English54",
+"subject": "English",
+"title": "Cloze test",
+"falconDay": 88
+},
+{
+"date": "2027-03-31",
+"id": "GA36",
+"subject": "GA",
+"title": "Skeletal & endocrine system",
+"falconDay": 46
+},
+{
+"date": "2027-04-01",
+"id": "Reasoning36",
+"subject": "Reasoning",
+"title": "Syllogism 3",
+"falconDay": 91
+},
+{
+"date": "2027-04-01",
+"id": "English55",
+"subject": "English",
+"title": "Sentence rearrangement",
+"falconDay": 89
+},
+{
+"date": "2027-04-02",
+"id": "GA37",
+"subject": "GA",
+"title": "Reproductive, excretory & lymph",
+"falconDay": 47
+},
+{
+"date": "2027-04-02",
+"id": "Reasoning37",
+"subject": "Reasoning",
+"title": "Machine input-output",
+"falconDay": 94
+},
+{
+"date": "2027-04-03",
+"id": "GA38",
+"subject": "GA",
+"title": "Sense organs & diseases",
+"falconDay": 48
+},
+{
+"date": "2027-04-05",
+"id": "GA39",
+"subject": "GA",
+"title": "Biology miscellaneous",
+"falconDay": 49
+},
+{
+"date": "2027-04-05",
+"id": "GA40",
+"subject": "GA",
+"title": "Units, motion & laws of motion",
+"falconDay": 51
+},
+{
+"date": "2027-04-06",
+"id": "GA41",
+"subject": "GA",
+"title": "Work, energy, power",
+"falconDay": 52
+},
+{
+"date": "2027-04-06",
+"id": "GA42",
+"subject": "GA",
+"title": "Gravitation & reflection of light",
+"falconDay": 53
+},
+{
+"date": "2027-04-07",
+"id": "GA43",
+"subject": "GA",
+"title": "Refraction & human eye",
+"falconDay": 54
+},
+{
+"date": "2027-04-07",
+"id": "GA44",
+"subject": "GA",
+"title": "Lens & human eye",
+"falconDay": 55
+},
+{
+"date": "2027-04-08",
+"id": "GA45",
+"subject": "GA",
+"title": "Magnetism & electricity",
+"falconDay": 56
+},
+{
+"date": "2027-04-08",
+"id": "GA46",
+"subject": "GA",
+"title": "Sound",
+"falconDay": 57
+},
+{
+"date": "2027-04-09",
+"id": "GA47",
+"subject": "GA",
+"title": "Solar system",
+"falconDay": 99
+},
+{
+"date": "2027-04-09",
+"id": "GA48",
+"subject": "GA",
+"title": "Atom & matter",
+"falconDay": 73
+},
+{
+"date": "2027-04-10",
+"id": "GA49",
+"subject": "GA",
+"title": "Atomic theories & classification of elements",
+"falconDay": 74
+},
+{
+"date": "2027-04-12",
+"id": "GA50",
+"subject": "GA",
+"title": "Periodic table",
+"falconDay": 75
+},
+{
+"date": "2027-04-12",
+"id": "GA51",
+"subject": "GA",
+"title": "Electronic configuration, bonding & metals",
+"falconDay": 76
+},
+{
+"date": "2027-04-13",
+"id": "GA52",
+"subject": "GA",
+"title": "Gas laws & metallurgy",
+"falconDay": 77
+},
+{
+"date": "2027-04-13",
+"id": "GA53",
+"subject": "GA",
+"title": "Organic chemistry",
+"falconDay": 78
+},
+{
+"date": "2027-04-14",
+"id": "GA54",
+"subject": "GA",
+"title": "Basic facts of India",
+"falconDay": 79
+},
+{
+"date": "2027-04-14",
+"id": "GA55",
+"subject": "GA",
+"title": "Northern mountains",
+"falconDay": 81
+},
+{
+"date": "2027-04-15",
+"id": "GA56",
+"subject": "GA",
+"title": "Plateau, plains, deserts & islands",
+"falconDay": 82
+},
+{
+"date": "2027-04-15",
+"id": "GA57",
+"subject": "GA",
+"title": "Himalayan rivers",
+"falconDay": 83
+},
+{
+"date": "2027-04-16",
+"id": "GA58",
+"subject": "GA",
+"title": "Peninsular rivers",
+"falconDay": 84
+},
+{
+"date": "2027-04-16",
+"id": "GA59",
+"subject": "GA",
+"title": "Soils of India",
+"falconDay": 85
+},
+{
+"date": "2027-04-17",
+"id": "GA60",
+"subject": "GA",
+"title": "Forests, crops & monsoon",
+"falconDay": 87
+},
+{
+"date": "2027-04-19",
+"id": "GA61",
+"subject": "GA",
+"title": "El Nino & La Nina",
+"falconDay": 89
+},
+{
+"date": "2027-04-19",
+"id": "GA62",
+"subject": "GA",
+"title": "Economics introduction",
+"falconDay": 83
+},
+{
+"date": "2027-04-20",
+"id": "GA63",
+"subject": "GA",
+"title": "National income",
+"falconDay": 84
+},
+{
+"date": "2027-04-20",
+"id": "GA64",
+"subject": "GA",
+"title": "Banking, currency & RBI",
+"falconDay": 85
+},
+{
+"date": "2027-04-21",
+"id": "GA65",
+"subject": "GA",
+"title": "Inflation & taxation",
+"falconDay": 86
+},
+{
+"date": "2027-04-21",
+"id": "GA66",
+"subject": "GA",
+"title": "Budget",
+"falconDay": 87
+},
+{
+"date": "2027-04-22",
+"id": "GA67",
+"subject": "GA",
+"title": "Micro economics",
+"falconDay": 88
+},
+{
+"date": "2027-04-22",
+"id": "GA68",
+"subject": "GA",
+"title": "Census + books & authors 1",
+"falconDay": 58
+},
+{
+"date": "2027-04-23",
+"id": "GA69",
+"subject": "GA",
+"title": "Books & authors 2 + temples 1",
+"falconDay": 59
+},
+{
+"date": "2027-04-23",
+"id": "GA70",
+"subject": "GA",
+"title": "Temples in India 2 & 3",
+"falconDay": 61
+},
+{
+"date": "2027-04-24",
+"id": "GA71",
+"subject": "GA",
+"title": "Folk dances & festivals 1 & 2",
+"falconDay": 62
+},
+{
+"date": "2027-04-26",
+"id": "GA72",
+"subject": "GA",
+"title": "Folk dances & festivals 3",
+"falconDay": 65
+},
+{
+"date": "2027-04-26",
+"id": "GA73",
+"subject": "GA",
+"title": "Monuments",
+"falconDay": 66
+},
+{
+"date": "2027-04-27",
+"id": "GA74",
+"subject": "GA",
+"title": "Dams in India",
+"falconDay": 67
+},
+{
+"date": "2027-04-27",
+"id": "GA75",
+"subject": "GA",
+"title": "Sports 1 & 2",
+"falconDay": 68
+},
+{
+"date": "2027-04-28",
+"id": "GA76",
+"subject": "GA",
+"title": "Sports 3 + Indian music 1",
+"falconDay": 71
+},
+{
+"date": "2027-04-28",
+"id": "GA77",
+"subject": "GA",
+"title": "Indian music 2 & 3",
+"falconDay": 72
+},
+{
+"date": "2027-04-29",
+"id": "GA78",
+"subject": "GA",
+"title": "Classical dances",
+"falconDay": 69
+}
+]
+}

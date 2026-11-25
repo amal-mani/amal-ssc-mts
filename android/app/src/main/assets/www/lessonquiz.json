@@ -1,0 +1,69 @@
+{
+  "updated": "2026-11-25",
+  "passMark": 60,
+  "quizzes": {
+    "Quant0": [
+      {"q": "25 × 16 = ?", "o": ["300", "400", "425", "375"], "a": 1, "e": "25 × 4 = 100, and 16 = 4 × 4, so 25 × 16 = 100 × 4 = 400."},
+      {"q": "48 × 5 = ?", "o": ["200", "220", "240", "250"], "a": 2, "e": "Trick: × 5 is the same as × 10 ÷ 2. 48 × 10 = 480, ÷ 2 = 240."},
+      {"q": "1001 − 357 = ?", "o": ["654", "644", "744", "634"], "a": 1, "e": "1000 − 357 = 643, then add 1: 644."},
+      {"q": "72 ÷ 0.8 = ?", "o": ["9", "90", "80", "900"], "a": 1, "e": "Multiply both by 10: 720 ÷ 8 = 90."},
+      {"q": "15² = ?", "o": ["215", "225", "235", "255"], "a": 1, "e": "15 × 15 = 225. Trick for numbers ending in 5: 1 × 2 = 2, then write 25 → 225."}
+    ],
+    "Quant1": [
+      {"q": "3/4 + 1/8 = ?", "o": ["4/12", "7/8", "5/8", "1"], "a": 1, "e": "3/4 = 6/8. 6/8 + 1/8 = 7/8."},
+      {"q": "0.25 × 0.4 = ?", "o": ["1", "0.1", "0.01", "0.001"], "a": 1, "e": "25 × 4 = 100. There are 3 decimal places in total (2 + 1), so 0.100 = 0.1."},
+      {"q": "√196 = ?", "o": ["12", "13", "14", "16"], "a": 2, "e": "14 × 14 = 196, so √196 = 14."},
+      {"q": "45 × 11 = ?", "o": ["455", "495", "505", "445"], "a": 1, "e": "Trick for × 11: write 4, then 4 + 5 = 9, then 5 → 495."},
+      {"q": "(12 + 8) × 3 − 10 = ?", "o": ["50", "34", "26", "60"], "a": 0, "e": "BODMAS: brackets first, 20. Then 20 × 3 = 60. Then 60 − 10 = 50."}
+    ],
+    "Quant2": [
+      {"q": "99 × 25 = ?", "o": ["2475", "2500", "2425", "2375"], "a": 0, "e": "99 × 25 = (100 − 1) × 25 = 2500 − 25 = 2475."},
+      {"q": "35² = ?", "o": ["1225", "1125", "1325", "1215"], "a": 0, "e": "Ends in 5: 3 × 4 = 12, then write 25 → 1225."},
+      {"q": "1/8 written as a percentage is:", "o": ["8%", "12.5%", "15%", "18%"], "a": 1, "e": "1 ÷ 8 = 0.125 = 12.5%. Learn this one by heart."},
+      {"q": "625 ÷ 25 = ?", "o": ["20", "25", "30", "35"], "a": 1, "e": "25 × 25 = 625, so 625 ÷ 25 = 25."},
+      {"q": "104 × 96 = ?", "o": ["9984", "9996", "10016", "9916"], "a": 0, "e": "(100 + 4)(100 − 4) = 100² − 4² = 10000 − 16 = 9984."}
+    ],
+    "GA0": [
+      {"q": "The Bhimbetka rock shelters, famous for Stone Age paintings, are in which state?", "o": ["Rajasthan", "Madhya Pradesh", "Karnataka", "Odisha"], "a": 1, "e": "Bhimbetka is near Bhopal in Madhya Pradesh. It is a UNESCO World Heritage Site."},
+      {"q": "Which period is called the Old Stone Age?", "o": ["Neolithic", "Mesolithic", "Palaeolithic", "Chalcolithic"], "a": 2, "e": "Palaeo = old, lithic = stone. Palaeolithic = Old Stone Age."},
+      {"q": "Farming (agriculture) began in which age?", "o": ["Palaeolithic", "Mesolithic", "Neolithic", "Iron Age"], "a": 2, "e": "People started farming and keeping animals in the Neolithic (New Stone) Age."},
+      {"q": "Very small stone tools called microliths are typical of which age?", "o": ["Mesolithic", "Palaeolithic", "Neolithic", "Bronze Age"], "a": 0, "e": "Microliths (tiny stone tools) are the mark of the Mesolithic (Middle Stone) Age."},
+      {"q": "Mehrgarh, an early farming site of the Neolithic Age, is now in which country?", "o": ["India", "Afghanistan", "Pakistan", "Nepal"], "a": 2, "e": "Mehrgarh is in Balochistan, Pakistan. It shows some of the earliest farming in South Asia."}
+    ],
+    "GA1": [
+      {"q": "Who first excavated Harappa in 1921?", "o": ["R. D. Banerji", "Daya Ram Sahni", "John Marshall", "Mortimer Wheeler"], "a": 1, "e": "Daya Ram Sahni excavated Harappa in 1921. R. D. Banerji excavated Mohenjo-daro in 1922."},
+      {"q": "What does 'Mohenjo-daro' mean?", "o": ["City of gold", "Mound of the dead", "Land of rivers", "Great city"], "a": 1, "e": "Mohenjo-daro means 'Mound of the dead' in Sindhi."},
+      {"q": "The Great Bath of the Indus Valley Civilisation was found at:", "o": ["Harappa", "Lothal", "Mohenjo-daro", "Kalibangan"], "a": 2, "e": "The Great Bath is at Mohenjo-daro."},
+      {"q": "An ancient dockyard of the Indus Valley Civilisation was found at:", "o": ["Lothal", "Dholavira", "Ropar", "Banawali"], "a": 0, "e": "Lothal in Gujarat had a dockyard, showing sea trade."},
+      {"q": "The Indus Valley Civilisation belongs to which age?", "o": ["Stone Age", "Bronze Age", "Iron Age", "Vedic Age"], "a": 1, "e": "The Harappans used copper and bronze, so it is a Bronze Age civilisation."}
+    ],
+    "English0": [
+      {"q": "She ___ tennis every Sunday.", "o": ["play", "plays", "playing", "is play"], "a": 1, "e": "Habit + he/she/it → simple present with -s: plays."},
+      {"q": "Look! They ___ watching TV now.", "o": ["is", "are", "am", "be"], "a": 1, "e": "'Now' → present continuous. They + are + -ing."},
+      {"q": "I ___ known him for five years.", "o": ["has", "have", "am", "had been"], "a": 1, "e": "Present perfect with 'for five years': I have known."},
+      {"q": "Water ___ at 100°C.", "o": ["boil", "boils", "is boiling", "boiled"], "a": 1, "e": "A general truth uses the simple present: water boils."},
+      {"q": "Choose the correct sentence.", "o": ["He don't like milk.", "He doesn't likes milk.", "He doesn't like milk.", "He not like milk."], "a": 2, "e": "He + does not + base verb (like, not likes)."}
+    ],
+    "English1": [
+      {"q": "I ___ to Kochi yesterday.", "o": ["go", "gone", "went", "have gone"], "a": 2, "e": "'Yesterday' → simple past: went."},
+      {"q": "She was cooking when the phone ___.", "o": ["ring", "rang", "rung", "rings"], "a": 1, "e": "A short action that interrupts a longer past action uses simple past: rang."},
+      {"q": "They ___ finished the work before I arrived.", "o": ["have", "has", "had", "were"], "a": 2, "e": "The earlier of two past actions uses past perfect: had finished."},
+      {"q": "What is the past form of 'teach'?", "o": ["teached", "taught", "tought", "teach"], "a": 1, "e": "Teach is irregular: teach → taught → taught."},
+      {"q": "Choose the correct sentence.", "o": ["Did you saw him?", "Did you see him?", "Do you saw him?", "Did you seen him?"], "a": 1, "e": "After 'did', use the base verb: Did you see him?"}
+    ],
+    "Reasoning0": [
+      {"q": "Pen : Write :: Knife : ?", "o": ["Sharp", "Cut", "Kitchen", "Steel"], "a": 1, "e": "A pen is used to write. A knife is used to cut."},
+      {"q": "3 : 27 :: 4 : ?", "o": ["16", "48", "64", "81"], "a": 2, "e": "3³ = 27, so the rule is the cube. 4³ = 64."},
+      {"q": "Bird : Nest :: Lion : ?", "o": ["Forest", "Den", "Cage", "Jungle"], "a": 1, "e": "A bird lives in a nest. A lion lives in a den."},
+      {"q": "ACE : BDF :: GIK : ?", "o": ["HJL", "HIJ", "IKM", "GHI"], "a": 0, "e": "Each letter moves 1 step forward: G→H, I→J, K→L = HJL."},
+      {"q": "Eye : See :: Ear : ?", "o": ["Sound", "Hear", "Noise", "Music"], "a": 1, "e": "We see with eyes and hear with ears."}
+    ],
+    "Reasoning1": [
+      {"q": "5 : 30 :: 7 : ?", "o": ["42", "49", "56", "63"], "a": 2, "e": "5 × 6 = 30 (number × next number). 7 × 8 = 56."},
+      {"q": "Cow : Calf :: Dog : ?", "o": ["Kitten", "Puppy", "Cub", "Foal"], "a": 1, "e": "The young one of a cow is a calf; of a dog, a puppy."},
+      {"q": "Doctor : Patient :: Lawyer : ?", "o": ["Court", "Judge", "Client", "Case"], "a": 2, "e": "A doctor serves a patient. A lawyer serves a client."},
+      {"q": "12 : 144 :: 15 : ?", "o": ["150", "196", "225", "250"], "a": 2, "e": "12² = 144. 15² = 225."},
+      {"q": "BAT : 23 :: CAT : ?", "o": ["22", "24", "25", "26"], "a": 1, "e": "Add letter positions: B(2) + A(1) + T(20) = 23. C(3) + A(1) + T(20) = 24."}
+    ]
+  }
+}
