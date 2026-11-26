@@ -887,7 +887,7 @@ const GEN={Quant:{
  'HCF and LCM':[()=>{const h=rnd(2,12),[x,y]=any([[2,3],[3,4],[2,5],[3,5],[4,5],[5,6],[3,7],[2,7],[5,7],[4,7]]),A=h*x,B=h*y;
   if(Math.random()<.5)return mkq('Quant','HCF and LCM',`What is the HCF of ${A} and ${B}?`,h,[h*2,x*y,h+1],`${A} = ${h} × ${x} and ${B} = ${h} × ${y}. The biggest common factor is ${h}.`,`${A} = ${h} × ${x}, ${B} = ${h} × ${y}. ഉ.സാ.ഘ (HCF) = ${h}.`);
   return mkq('Quant','HCF and LCM',`What is the LCM of ${A} and ${B}?`,h*x*y,[A*B,h*x*y+h,h*(x+y)],`LCM = HCF × ${x} × ${y} = ${h} × ${x} × ${y} = ${h*x*y}. Check: LCM × HCF = ${A} × ${B}.`,`ല.സാ.ഗു (LCM) = ${h} × ${x} × ${y} = ${h*x*y}.`)}],
- 'Simplification':[()=>{const a=rnd(10,99),b=rnd(2,9),c=rnd(2,9),e=rnd(2,9),d=e*rnd(2,12),v=a+b*c-d/e;return mkq('Quant','Simplification',`${a} + ${b} × ${c} − ${d} ÷ ${e} = ?`,v,[nf(((a+b)*c-d)/e),a+b*c-d,v+e],`BODMAS: first ÷ and ×. ${d} ÷ ${e} = ${d/e}, ${b} × ${c} = ${b*c}. Then ${a} + ${b*c} − ${d/e} = ${v}.`,`BODMAS: ആദ്യം ഹരണം, ഗുണനം; പിന്നെ കൂട്ടൽ, കുറയ്ക്കൽ. ${d} ÷ ${e} = ${d/e}, ${b} × ${c} = ${b*c}. ഉത്തരം ${v}.`)}],
+ 'Simplification':[()=>{const a=rnd(10,99),b=rnd(2,9),c=rnd(2,9),e=rnd(2,9),d=e*rnd(2,12),v=a+b*c-d/e;return mkq('Quant','Simplification',`${a} + ${b} × ${c} − ${d} ÷ ${e} = ?`,v,[(a+b)*c-d/e,a+b*c+d/e,v+e],`BODMAS: first ÷ and ×. ${d} ÷ ${e} = ${d/e}, ${b} × ${c} = ${b*c}. Then ${a} + ${b*c} − ${d/e} = ${v}.`,`BODMAS: ആദ്യം ഹരണം, ഗുണനം; പിന്നെ കൂട്ടൽ, കുറയ്ക്കൽ. ${d} ÷ ${e} = ${d/e}, ${b} × ${c} = ${b*c}. ഉത്തരം ${v}.`)}],
  'Squares and roots':[()=>{const n=rnd(11,32);if(Math.random()<.5)return mkq('Quant','Squares and roots',`√${n*n} = ?`,n,[n+1,n-1,n+2],`${n} × ${n} = ${n*n}, so √${n*n} = ${n}. Learn squares up to 30 by heart.`,`${n} × ${n} = ${n*n}. അതിനാൽ √${n*n} = ${n}.`);
   return mkq('Quant','Squares and roots',`${n}² = ?`,n*n,[n*n+n,n*n-10,(n+1)*(n+1)-1],`${n} × ${n} = ${n*n}.`,`${n} × ${n} = ${n*n}.`)}],
  'Mensuration':[()=>{const l=rnd(6,30),b=rnd(3,l-1);if(Math.random()<.5)return mkq('Quant','Mensuration',`A rectangle is ${l} m long and ${b} m wide. What is its area?`,l*b+' sq m',[2*(l+b)+' sq m',(l*b+l)+' sq m',(l+b)+' sq m'],`Area = length × breadth = ${l} × ${b} = ${l*b} sq m.`,`പരപ്പളവ് = നീളം × വീതി = ${l} × ${b} = ${l*b} ച.മീ.`);
@@ -1323,7 +1323,7 @@ function fixPanel(){const a=fixShow(),m=fixList().filter(f=>f.done&&f.stage!=='r
 /* ================= EXPECTED 2026 PAPER: real SSC MTS topic pattern ================= */
 /* new generators for question types seen in recent MTS papers */
 GEN.Quant['Data interpretation']=[()=>{const yrs=['2021','2022','2023','2024','2025'],v=yrs.map(()=>rnd(4,20)*10),k=rnd(0,3);
-  if(k===2){const a=rnd(2,10)*10,inc=any([10,20,25,50]);v[1]=a;v[2]=a+a*inc/100}
+  if(k===2){const a=rnd(1,5)*20,inc=any([10,20,25,50]);v[1]=a;v[2]=a+a*inc/100}
   const pre=`A shop sold these numbers of fans: ${yrs.map((y,i)=>y+': '+v[i]).join(', ')}. `,s=v.reduce((x,y)=>x+y,0);
   if(k===0)return mkq('Quant','Data interpretation',pre+'How many fans were sold in all five years?',s,[s+10,s-10,s+20],`Add all: ${v.join(' + ')} = ${s}.`,`എല്ലാം കൂട്ടുക: ${v.join(' + ')} = ${s}.`);
   if(k===1)return mkq('Quant','Data interpretation',pre+'What is the average number of fans sold per year?',nf(s/5),[nf(s/5+4),nf(s/5-4),nf(s/5+10)],`Total ${s} ÷ 5 years = ${nf(s/5)}.`,`ആകെ ${s} ÷ 5 = ${nf(s/5)}.`);
@@ -1338,9 +1338,9 @@ GEN.Reasoning['Syllogism']=[()=>{const N=any([['pens','books','bags'],['cats','d
   const O=['Only conclusion I follows','Only conclusion II follows','Both I and II follow','Either I or II follows'];
   const T=[[`All ${A} are ${B}. All ${B} are ${C}.`,`All ${A} are ${C}.`,`Some ${C} are ${A}.`,2,'All A→B→C, so all A are C; and then some C are A.'],
    [`All ${A} are ${B}. Some ${B} are ${C}.`,`Some ${A} are ${C}.`,`Some ${C} are ${B}.`,1,'"Some B are C" turns around to "some C are B" (II). Nothing links A and C directly.'],
-   [`Some ${A} are ${B}. No ${B} is ${C}.`,`Some ${A} are not ${C}.`,`No ${A} is ${C}.`,0,'The A that are B can never be C, so some A are not C (I). We cannot say no A is C.'],
-   [`All ${A} are ${B}. No ${B} is ${C}.`,`No ${A} is ${C}.`,`Some ${B} are ${A}.`,2,'All A are inside B, and B never meets C, so no A is C. "All A are B" also gives "some B are A".'],
-   [`Some ${A} are ${B}. Some ${B} are ${C}.`,`Some ${A} are ${C}.`,`No ${A} is ${C}.`,3,'Neither is certain alone, but one of the pair must be true ("some" vs "no"): either I or II.'],
+   [`Some ${A} are ${B}. No ${B} are ${C}.`,`Some ${A} are not ${C}.`,`No ${A} are ${C}.`,0,'The A that are B can never be C, so some A are not C (I). We cannot say no A is C.'],
+   [`All ${A} are ${B}. No ${B} are ${C}.`,`No ${A} are ${C}.`,`Some ${B} are ${A}.`,2,'All A are inside B, and B never meets C, so no A is C. "All A are B" also gives "some B are A".'],
+   [`Some ${A} are ${B}. Some ${B} are ${C}.`,`Some ${A} are ${C}.`,`No ${A} are ${C}.`,3,'Neither is certain alone, but one of the pair must be true ("some" vs "no"): either I or II.'],
    [`All ${A} are ${B}. All ${A} are ${C}.`,`Some ${B} are ${C}.`,`All ${C} are ${B}.`,0,'The A are both B and C, so some B are C. We cannot say all C are B.']],t=any(T);
   const q={id:'g'+Date.now().toString(36)+(gseq++),s:'Reasoning',t:'Syllogism',q:`Statements: ${t[0]}\nConclusions: I. ${t[1]} II. ${t[2]}\nWhich conclusion(s) follow?`,o:O.slice(),a:t[3],e:t[4]+' Tip: draw circles (Venn diagram).',ml:'വൃത്തങ്ങൾ (Venn diagram) വരച്ച് നോക്കുക. ശരിയായ ഉത്തരം: '+O[t[3]]+'.',gen:1};return q}];
 const canForm=(w,base)=>{const c={};for(const ch of base)c[ch]=(c[ch]||0)+1;for(const ch of w){if(!c[ch])return false;c[ch]--}return true};
@@ -1380,7 +1380,8 @@ function bpPick(s,t,n){let out=[];
   if(t==='Cloze test')out=clozeQs(n);
   else if(t==='Reading comprehension')out=rcQs(n);
   else if(GEN[s]&&GEN[s][t]&&(s!=='English'||BANK.vocab.length)){const seen=new Set();for(let i=0;out.length<n&&i<n*20;i++){const q=any(GEN[s][t])();if(!seen.has(q.q)){seen.add(q.q);out.push(q)}}}
-  else{st.seen=st.seen||{};out=shuffle(Q.filter(q=>topicMatch(q,s,t))).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0)).slice(0,n).map(shufO)}
+  else{st.seen=st.seen||{};const dd=new Set();out=shuffle(Q.filter(q=>topicMatch(q,s,t)&&!dd.has(q.q)&&dd.add(q.q))).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0)).slice(0,n).map(shufO)}
+  if(s==='English')out=out.map(q=>({...q,t:engSub(q)}));
   return out}
 function bpSet(s){if(!BLUEPRINT[s])return null;const out=[],txt=new Set();BLUEPRINT[s].forEach(([t,n])=>{bpPick(s,t,n).forEach(q=>{if(!txt.has(q.q)){txt.add(q.q);out.push(q)}})});
   const need=BLUEPRINT[s].reduce((a,[,n])=>a+n,0);if(out.length<need)fresh(s==='GA'?'GA':s,need*2).forEach(q=>{if(out.length<need&&!txt.has(q.q)){txt.add(q.q);out.push(q)}});
