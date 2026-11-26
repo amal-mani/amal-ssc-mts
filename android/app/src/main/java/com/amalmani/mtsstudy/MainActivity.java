@@ -125,6 +125,18 @@ public class MainActivity extends Activity {
             });
         }
         @JavascriptInterface
+        public void quickSet(String cfg, String qs) {
+            runOnUiThread(() -> {
+                if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED)
+                    requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 9);
+                QuickQuiz.save(MainActivity.this, cfg, qs);
+            });
+        }
+        @JavascriptInterface
+        public String quickTake() { return QuickQuiz.take(MainActivity.this); }
+        @JavascriptInterface
+        public void quickNow() { QuickQuiz.showNow(MainActivity.this); }
+        @JavascriptInterface
         public void keepOn(boolean on) {
             runOnUiThread(() -> {
                 if (on) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

@@ -10,7 +10,7 @@
   "build": {
     "appId": "com.amalmani.mtsstudy",
     "productName": "MTS Study",
-    "files": ["main.js", "preload.js", "www/**", "build/icon.png"],
+    "files": ["main.js", "preload.js", "quick.js", "quickPreload.js", "quick.html", "www/**", "build/icon.png"],
     "win": { "target": "nsis", "icon": "build/icon.png", "artifactName": "MTS-Study-Setup.exe" },
     "nsis": { "oneClick": true, "perMachine": false, "createDesktopShortcut": true, "createStartMenuShortcut": true, "shortcutName": "MTS Study" }
   }

@@ -33,6 +33,14 @@
             android:name=".BrowserActivity"
             android:exported="false"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode|smallestScreenSize" />
+        <activity
+            android:name=".QuickActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:launchMode="singleTask" />
+        <receiver android:name=".QuickQuiz" android:exported="false" />
         <receiver android:name=".Updater" android:exported="false" />
         <service android:name=".ListenService" android:exported="false" android:foregroundServiceType="mediaPlayback" />
         <receiver android:name=".Alarms" android:exported="false">

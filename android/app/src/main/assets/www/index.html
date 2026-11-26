@@ -178,6 +178,23 @@ details summary{cursor:pointer}
 .fxd{display:inline-block;font-size:.78rem;padding:2px 8px;margin:4px 4px 2px 0;border-radius:99px;background:var(--card2);color:var(--soft)}.fxd.on{background:#1f6b45;color:#fff}
 #lsBar{position:fixed;left:12px;right:12px;bottom:84px;z-index:30;display:flex;gap:10px;align-items:center;justify-content:space-between;background:#20242c;border:1px solid var(--line);border-radius:18px;padding:10px 12px;box-shadow:0 8px 30px rgba(0,0,0,.5)}#lsBar[hidden]{display:none}.lst{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lsb{display:flex;gap:6px;flex:none}.lsb button{min-width:44px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--ink);font-size:1rem}
 @media(min-width:901px){#lsBar{left:auto;width:520px;bottom:20px}}
+/* learning panel */
+.learn{margin-top:14px;display:grid;gap:12px}
+.learn .lnWhy{border-left:4px solid #ff6b6b;background:#ff6b6b14;padding:12px 14px;border-radius:10px}
+.learn .lnWhy p,.learn .lnTrick p{margin:6px 0 0}
+.learn .lnStep{border-left:4px solid #59d499;background:#59d49912;padding:12px 14px;border-radius:10px}
+.learn .lnHead{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.learn .lnT{font-size:1.15rem;line-height:1.6;margin:10px 0 12px}
+.learn .lnLine{display:block;margin:0 0 6px}
+.learn .lnTrick{border-left:4px solid #ffc65c;background:#ffc65c14;padding:12px 14px;border-radius:10px}
+.learn .lnMl{margin:10px 0 0;font-size:1.05rem}
+/* in-page quick question */
+#qqBox{position:fixed;right:16px;bottom:90px;z-index:60;width:min(380px,calc(100vw - 32px));max-height:80vh;overflow:auto}
+#qqBox .qqCard{background:var(--card,#171b23);border:1px solid #2a3140;border-radius:14px;padding:14px;box-shadow:0 10px 40px #0008}
+#qqBox .qqTop{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#qqBox .qqQ{font-size:1.08rem;line-height:1.5}
+#qqBox .opt{margin:6px 0;width:100%}
+.chip.qqDay.on{background:var(--acc);color:var(--accInk)}
 </style>
 </head>
 <body>
@@ -862,12 +879,12 @@ const isoD=d=>new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().sl
 const addD=(k,n)=>{const d=new Date(k+'T12:00:00');d.setDate(d.getDate()+n);return isoD(d)};
 const daysBetween=(a,b)=>Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/864e5);
 let gseq=0;
-function mkq(s,t,q,ans,dis,e,ml){ans=String(ans);const o=[ans];
-  (dis||[]).map(String).forEach(d=>{if(o.length<4&&d&&d!=='NaN'&&!o.includes(d))o.push(d)});
+function mkq(s,t,q,ans,dis,e,ml){ans=String(ans);const o=[ans],src=new Map([[ans,-1]]);
+  (dis||[]).map(String).forEach((d,i)=>{if(o.length<4&&d&&d!=='NaN'&&!o.includes(d)){o.push(d);src.set(d,i)}});
   const m=ans.match(/^(\D*?)(\d+(?:\.\d+)?)(\D*)$/);let k=1;
   while(o.length<4&&m&&k<40){const n=+m[2],stp=Math.max(1,Math.round(n*.1)),v=n+(k%2?1:-1)*Math.ceil(k/2)*stp,d=m[1]+nf(v)+m[3];if(v>0&&!o.includes(d))o.push(d);k++}
   let f=1;while(o.length<4)o.push('None of these'+(f++>1?' ('+f+')':''));
-  const sh=shuffle(o);return{id:'g'+Date.now().toString(36)+(gseq++),s,t,q,o:sh,a:sh.indexOf(ans),e,ml,gen:1}}
+  const sh=shuffle(o);return{id:'g'+Date.now().toString(36)+(gseq++),s,t,q,o:sh,a:sh.indexOf(ans),e,ml,gen:1,dwi:sh.map(x=>src.has(x)?src.get(x):null)}}
 
 /* ---------- question generators: a new question every time ---------- */
 const GEN={Quant:{
@@ -958,7 +975,7 @@ const topicOf=q=>q.t||(q.lesson?((findL(q.lesson)||{}).title||'Mixed'):q.s==='CA
 /* pool of written questions (bank + daily files), least-seen first */
 function poolFor(s,topic){const all=Q.filter(q=>(s==='GA'?(q.s==='GA'||q.s==='CA'):q.s===s)&&(!topic||topicOf(q)===topic));
   st.seen=st.seen||{};return shuffle(all).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0))}
-const shufO=q=>{if(q.o.join('')==='ABCD')return q;const ix=shuffle([0,1,2,3]);return Object.assign({},q,{o:ix.map(i=>q.o[i]),a:ix.indexOf(q.a)})};
+const shufO=q=>{if(q.o.join('')==='ABCD')return q;const ix=shuffle([0,1,2,3]);return Object.assign({},q,{o:ix.map(i=>q.o[i]),a:ix.indexOf(q.a)},Array.isArray(q.w)?{w:ix.map(i=>q.w[i]||null)}:{})};
 function fresh(s,n,topic){const out=[],txt=new Set(),add=q=>{if(q&&!txt.has(q.q)){txt.add(q.q);out.push(q)}};const G=GEN[s]||{};
   if(topic&&!G[topic])poolFor(s,topic).forEach(q=>{if(out.length<n)add(shufO(q))});
   if(s==='Quant'||s==='Reasoning'){const tps=topic&&G[topic]?[topic]:shuffle(Object.keys(G));let c=0;while(out.length<n&&c<n*15){add(any(G[tps[c%tps.length]])());c++}}
@@ -1062,7 +1079,7 @@ function drawPlusToday(){const el=$('plusToday');if(!el)return;const sk=streak()
   if(rv.length)h+=`<h2 style="margin-top:22px">Revision due today</h2><ul class="plan">${rv.slice(0,4).map(x=>`<li style="--c:${COL[x.l.t]}"><span class="t">Day ${x.n} revision</span><span class="what">${esc(TNAME[x.l.t])}: ${esc(x.l.title)}<span class="how">Passed on ${esc(fmtDate(st.passed[x.l.id]))}${noteLink(x.l)}</span></span><button class="btn" style="padding:8px 14px" data-px="rev" data-k="${esc(x.key)}">Revise</button></li>`).join('')}</ul>${rv.length>4?`<p class="small">${rv.length-4} more after these.</p>`:''}`;
   try{fixAuto();const fx=fixShow();if(fx.length)h+=`<h2 style="margin-top:22px">Topic doctor: fixing weak topics</h2><ul class="plan">${fx.map(fixRow).join('')}</ul>`}catch(e){}
   if(dow2===0){const r=report();h+=`<div class="panel" style="margin-top:14px;border-top:4px solid #4cc3ff"><h2>Your weekly report</h2>${reportHTML(r)}${st.set.buddyPh?`<a class="btn ghost" href="${waLink(repText(r))}" target="_blank" rel="noopener">Send to my study buddy ↗</a>`:''}</div>`}
-  h+=`<div class="row" style="justify-content:flex-start;margin-top:14px"><button class="btn" data-px="focus">Focus mode</button><button class="btn ghost" data-px="smart">Smart practice</button><button class="btn ghost" data-px="listen">🎧 Listen mode</button><button class="btn ghost" data-px="low">Feeling low?</button></div>`;
+  h+=`<div class="row" style="justify-content:flex-start;margin-top:14px"><button class="btn" data-px="focus">Focus mode</button><button class="btn ghost" data-px="smart">Smart practice</button><button class="btn ghost" data-px="learn">Learning mock</button><button class="btn ghost" data-px="listen">🎧 Listen mode</button><button class="btn ghost" data-px="low">Feeling low?</button></div>`;
   el.innerHTML=h}
 
 /* ---------- My day page ---------- */
@@ -1169,7 +1186,7 @@ function drawVocab(){const el=$('vocabBox');if(!el)return;const v=vocabToday();i
 /* ---------- smart practice panel ---------- */
 function drawSmart(){const el=$('smart');if(!el)return;const w=weakTopics().slice(0,6);
   el.innerHTML=`<div class="panel" style="margin-bottom:20px;border-top:4px solid #c39bff"><h2>Smart practice</h2><p class="small" style="margin-top:-6px">Always new questions. 60% from your weak topics, 40% from strong ones, so nothing slips. The list updates after every answer.</p>
-   <div class="row" style="justify-content:flex-start"><button class="btn" data-px="smart">Start smart practice (10)</button><button class="btn ghost" data-px="tab" data-t="exam">Full mock / sectional</button></div>
+   <div class="row" style="justify-content:flex-start"><button class="btn" data-px="smart">Start smart practice (10)</button><button class="btn ghost" data-px="learn">Learning mock (20)</button><button class="btn ghost" data-px="tab" data-t="exam">Full mock / sectional</button></div>
    ${(()=>{try{fixAuto();return fixPanel()}catch(e){return""}})()}<h3 style="margin:18px 0 8px">My weak topics</h3>${w.length?`<ul class="plan">${w.map(x=>{const ls=Object.values(TRACKS).flat().filter(l=>l.t===x.s&&l.title.toLowerCase().includes(x.t.toLowerCase().split(' ')[0])).slice(0,1)[0];
      return `<li style="--c:${COL[x.s]||'#ff7a59'}"><span class="t">${esc(SL(x.s))}</span><span class="what">${esc(x.t)}<span class="how">${Math.round(x.acc*100)}% right in ${x.a} tries · <b>1</b> learn → <b>2</b> practise → <b>3</b> sectional mock${ls?` · <a href="${dayUrl(ls.day)}" target="_blank" rel="noopener">Learn: Falcon Day ${ls.day} ↗</a>${noteLink(ls)}`:''}</span></span>${st.fix[fixKey(x.s,x.t)]&&!st.fix[fixKey(x.s,x.t)].done?'<span class="tick" aria-pressed="true" title="In Topic doctor">🩺</span>':`<button class="btn" style="padding:8px 14px" data-px="fixstart" data-s="${esc(x.s)}" data-t="${esc(x.t)}">Fix until strong</button>`}</li>`}).join('')}</ul>`
      :'<p class="small">No weak topics yet. Answer at least 3 questions in a topic and the app will find the weak ones.</p>'}
@@ -1180,7 +1197,7 @@ const FULL=[{s:'Quant',sess:1,n:20},{s:'Reasoning',sess:1,n:20},{s:'GA',sess:2,n
 const PNAME={Quant:'Numerical & Mathematical Ability',Reasoning:'Reasoning & Problem Solving',GA:'General Awareness',English:'English Language',CA:'Current Affairs (last 6 months)'};
 let fm=null,fmTick=null;
 function buildMock(kind,subj){const parts=kind==='full'?FULL:[{s:subj,sess:['GA','English','CA'].includes(subj)?2:1,n:['GA','English','CA'].includes(subj)?25:20}];
-  const P=parts.map(p=>({s:p.s,sess:p.sess,qs:((typeof bpSet==='function'&&bpSet(p.s))||fresh(p.s,p.n)).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen}))}));
+  const P=parts.map(p=>({s:p.s,sess:p.sess,qs:((typeof bpSet==='function'&&bpSet(p.s))||fresh(p.s,p.n)).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen,w:q.w||undefined}))}));
   const sessions=[...new Set(P.map(p=>p.sess))],per=st.set.extra?60:45,mins=kind==='full'?per:Math.round(P[0].qs.length*(per/(P[0].sess===1?40:50)));
   return{kind,title:kind==='full'?'App full mock '+(st.fmHist.filter(r=>r.kind==='full').length+1):SL(subj)+' sectional mock',parts:P,sessions,si:0,mins,ans:{},mark:{},guess:{},vis:{},cur:{p:P.findIndex(p=>p.sess===sessions[0]),i:0},end:null,start:Date.now(),used:{}}}
 function fmStart(kind,subj){if(st.fmRun){fmResume();return}fm=buildMock(kind,subj);if(fm.parts.some(p=>!p.qs.length)){alert('Questions are still loading. Try again in a moment.');fm=null;return}st.fmRun=fm;fmSession();}
@@ -1232,7 +1249,7 @@ function drawExam(showLast){const el=$('examBody');if(!el)return;const run=st.fm
   let x=`${run?`<div class="panel" style="border-top:4px solid #ff6b6b;margin-bottom:18px"><h2>Mock in progress</h2><p>${esc(run.title)}: the timer kept running. Continue now.</p><button class="btn" data-px="resume">Continue mock</button> <button class="btn ghost" data-px="quit">Quit this mock</button></div>`:''}
   ${mb?`<div class="note" style="border-left:4px solid #ff6b6b;color:var(--ink)"><b>Compulsory:</b> you missed the weekly full mock (week ending ${esc(fmtDate(mb))}). New classes stay locked until you take one.</div>`:''}
   <div class="grid2"><div class="panel"><h2>Full mock (real SSC pattern)</h2><ul class="rep"><li>Session 1: Maths 20 + Reasoning 20 · +3 each · <b>no negative</b></li><li>Session 2: GA 25 + English 25 · +3 each · <b>−1 per wrong</b></li><li>${st.set.extra?60:45} minutes per session${st.set.extra?' (PwD extra time on, change in My day)':''} · 270 marks</li><li>New questions every time: maths and reasoning are made fresh, GA and English come from the bank that grows every morning.</li></ul>
-   <p class="small">Compulsory: one full mock every week (Saturday is mock day).</p><button class="btn" data-px="fm">Start full mock (expected 2026 pattern)</button></div>
+   <p class="small">Compulsory: one full mock every week (Saturday is mock day).</p><button class="btn" data-px="fm">Start full mock (expected 2026 pattern)</button><button class="btn ghost" data-px="learn">Learning mock (20 Q, explains every mistake)</button></div>
    <div class="panel"><h2>Sectional mocks</h2><p class="small">After you learn and practise a weak topic, test the whole subject.</p><div class="row" style="justify-content:flex-start;flex-wrap:wrap">${['Quant','Reasoning','GA','English'].map(s=>`<button class="btn ghost" data-px="sect" data-s="${s}">${esc(SL(s))}</button>`).join('')}<button class="btn ghost" data-px="sect" data-s="CA">Current affairs</button></div>
    <h3 style="margin:18px 0 6px">Testbook mocks</h3><p class="small">In the phone and PC app, Testbook opens inside the app. Log in once. After each Testbook mock, add your score in <a href="#mocks">My mocks</a>.</p><a class="btn ghost" href="${TB}" target="_blank" rel="noopener">Open Testbook MTS tests ↗</a></div></div>`;
   try{x+=bpHTML()}catch(e){}
@@ -1401,6 +1418,195 @@ function bpHTML(){const nm={Quant:'Maths (20)',Reasoning:'Reasoning (20)',GA:'Ge
    <h3 style="margin:14px 0 6px">Question bank grows every day</h3><p class="small">${bs.n} questions now · <b>${bs.w} new this week</b>. Every morning the app reads new exam analyses of SSC MTS and other SSC exams at the same level (GD, CHSL, Selection Post, Stenographer) and adds fresh questions on the topics they asked.</p>
    ${log.length?`<p class="small">${log.map(l=>`• ${esc(l.date||'')}: ${esc(l.exam||'')}: ${esc(l.what||'')}`).join('<br>')}</p>`:''}</div>`}
 
+/* ================= LEARNING MOCK: why it went wrong + step-by-step + similar question ================= */
+/* WHY[topic][generator index] = reasons for each wrong option, in the order the generator lists them (or a function of the question) */
+const SLIP='Small calculation slip. Do the steps below slowly and check each number.';
+const WHY={
+ 'Percentage':[["You added an extra 10%. Find the percent only once.","You doubled the answer. Find the percent only once.","You used a bigger percent than the question gives. Read the % again.",SLIP],
+  ["You took the % off the NEW number. A percent change is always on the OLD number: Old = New × 100 ÷ (100 + %).",SLIP,SLIP]],
+ 'Profit and loss':[[SLIP,SLIP,"You divided by the selling price. Profit % is always on the cost price (CP)."],
+  ["You added the loss. In a loss, SP = CP − loss.","You took away the % number itself. Loss = CP × % ÷ 100, then take it away.",SLIP]],
+ 'Discount':[["That is the discount amount, not the selling price. SP = marked price − discount.",SLIP,SLIP]],
+ 'Simple interest':[["You used one extra year. Check the time T.","That is the amount (P + SI). The question asks only the interest.","You used one year less. Check the time T."],
+  [SLIP,"You did not divide by the time. R = SI × 100 ÷ (P × T).",SLIP]],
+ 'Compound interest':[["That is simple interest. Compound interest also adds interest on the first year's interest.",SLIP,"That is the amount. CI = Amount − Principal."]],
+ 'Ratio':[["That is A's share. Read whose share is asked.",SLIP,"You split it equally. Divide by the ratio parts, not by 2."]],
+ 'Average':[[SLIP,SLIP,SLIP],[SLIP,"That is the total of all 5 numbers. Take away the total of the first 4.",SLIP]],
+ 'Time and work':[["You took the average of the days. Working together is faster than either one alone: (A × B) ÷ (A + B).",SLIP,"You added the days. Together they finish SOONER, so the answer must be less than both."]],
+ 'Speed and trains':[[SLIP,SLIP,"You did not change km/h to m/s. Multiply km/h by 5/18 first."],[SLIP,SLIP,SLIP]],
+ 'HCF and LCM':[q=>/HCF/.test(q.q)?["You doubled the HCF. HCF is the biggest number that divides both.","You multiplied the leftover parts. That is not the HCF.",SLIP]:["You multiplied the two numbers. LCM = HCF × the leftover parts, not A × B.",SLIP,"You added the leftover parts. Multiply them instead."]],
+ 'Simplification':[["You did + before ×. BODMAS: do ÷ and × first, then + and −.","You added the ÷ part. Look at the sign: it is minus.","Small slip at the end. Re-check the last step."]],
+ 'Squares and roots':[q=>/√/.test(q.q)?["Check: your answer × itself must give the number. Learn squares up to 30.",SLIP,SLIP]:["You added the number once more. Square means number × itself.",SLIP,SLIP]],
+ 'Mensuration':[q=>/area/.test(q.q)?["That is the perimeter (the edge). Area = length × breadth.",SLIP,"You added. Area means multiply: length × breadth."]:["That is the area. Perimeter = 2 × (length + breadth).","You forgot to double it. Perimeter goes around all 4 sides: 2 × (length + breadth).",SLIP],
+  ["That is the circumference (2πr). Area = πr².","You doubled it. Area = πr² with no × 2.",SLIP]],
+ 'Ages':[["That is B's age. Read whose age is asked.","You added the difference twice.","You split the sum equally. First add the difference: (sum + difference) ÷ 2."]],
+ 'Data interpretation':[q=>/percent/.test(q.q)?["That is the increase in number, not in percent. % = increase ÷ old × 100.",SLIP,"You divided by the new value. Always divide by the OLD value."]:/difference/.test(q.q)?[SLIP,"That is only the highest value. Subtract the lowest from it.","You added. Difference means subtract."]:[SLIP,SLIP,SLIP]],
+ 'Number system':[q=>/added/.test(q.q)?["That is the remainder. To make it divisible, add (divisor − remainder).",SLIP,SLIP]:["That is the number you would ADD to make it divisible, not the remainder.",SLIP,SLIP]],
+ 'Mirror image':[q=>/clock/.test(q.q)?[SLIP,"That is like a water image. Mirror time = 11:60 − the time.",SLIP]:null]
+};
+const WHYGEN={Quant:"Your answer does not match the working. Follow the steps below and check each number.",Reasoning:"Find the rule first, then test it on every option before you choose.",English:"Read the full sentence again with your answer in it. Does it sound right? Check the rule below.",GA:"This is a fact to remember. Read the answer and the memory trick; it will come back in revision.",CA:"This is a current-affairs fact. Read it once more, say it aloud, and it will come back in revision."};
+/* memory tricks per topic (short, easy to remember) */
+const TRICK={
+ 'Percentage':'10% = move the decimal one place left. 5% = half of 10%. 1% = move two places. Build any % from these.',
+ 'Profit and loss':'Profit and loss % are always on CP (cost price). Remember: "Cost is the Boss".',
+ 'Discount':'Discount is always on the marked price (MP). SP = MP − discount.',
+ 'Simple interest':'SI = P × R × T ÷ 100. Think "PRT by 100".',
+ 'Compound interest':'2-year CI = SI of 2 years + interest on the first year\'s interest.',
+ 'Ratio':'Add the ratio parts first. One part = total ÷ parts. Then multiply.',
+ 'Average':'Average = total ÷ count. Total = average × count. Work with totals.',
+ 'Time and work':'Together = (A × B) ÷ (A + B). The answer is always less than the faster one.',
+ 'Speed and trains':'km/h → m/s: × 5/18. m/s → km/h: × 18/5. Crossing a pole: time = train length ÷ speed.',
+ 'HCF and LCM':'HCF × LCM = first number × second number.',
+ 'Simplification':'BODMAS: Brackets, Of, Division, Multiplication, Addition, Subtraction. × and ÷ before + and −.',
+ 'Squares and roots':'Learn squares up to 30 by heart. A square never ends in 2, 3, 7 or 8.',
+ 'Mensuration':'Area = inside space (multiply). Perimeter = the edge (add all sides).',
+ 'Ages':'Bigger age = (sum + difference) ÷ 2. Smaller age = (sum − difference) ÷ 2.',
+ 'Data interpretation':'Write the numbers you need first. For % change, divide by the OLD value.',
+ 'Number system':'Remainder = number − (divisor × quotient). To add: divisor − remainder.',
+ 'Number series':'Check the differences between numbers. If no pattern, check ×, then squares and cubes.',
+ 'Letter series':'Write A=1 … Z=26. Remember EJOTY = 5, 10, 15, 20, 25.',
+ 'Coding-decoding':'Write the letter numbers under both words. Find the + or − change, then apply it.',
+ 'Odd one out':'Find what 3 options share (type, group, property). The one left out is the answer.',
+ 'Analogy':'Say the link as a sentence: "A is to B as …". Use the same sentence for the second pair.',
+ 'Mirror image':'Mirror: left and right swap, top stays top. Clock mirror time = 11:60 − time.',
+ 'Maths operations':'Change the signs first on paper, then solve with BODMAS.',
+ 'Direction':'Draw it. North is up, East is right. Turning right from North = East.',
+ 'Blood relation':'Draw a family tree. Men in squares, women in circles.',
+ 'Missing number':'Look for the same rule in every group: +, −, ×, or squares.',
+ 'Calendar':'Odd days: divide by 7 and use the remainder. Count forward from the known day.',
+ 'Clock':'Angle = |30H − 5.5M|. If above 180°, take 360 − angle.',
+ 'Syllogism':'Draw circles. A conclusion follows only if it is true in EVERY drawing.',
+ 'Ranking':'Total = left rank + right rank − 1.',
+ 'Dictionary order':'Compare letter by letter: first letter, then second, then third.',
+ 'Word formation':'Count each letter in the big word. A word can use a letter only as many times as it appears.',
+ 'Set similarity':'Find the rule with the given set, then test each option with the same rule.',
+ 'Voice and narration':'Passive: object + be + V3 (verb 3rd form). Indirect speech: one tense back (is → was, will → would).',
+ 'Cloze test':'Read the whole passage first. Then fill the blank that fits the meaning AND the grammar.',
+ 'Reading comprehension':'Read the question first, then find the line in the passage that answers it.',
+ 'Fill in the blanks':'Read the full sentence. Look at words just before and after the blank.',
+ 'Error spotting':'Check the subject and verb first (singular / plural), then tense, then articles.',
+ 'Sentence improvement':'Read the sentence with each option. Choose the one a teacher would write.',
+ 'Synonyms':'Make a short sentence with the word. Swap in each option; the same meaning is the answer.',
+ 'Antonyms':'Find the meaning first, then pick the word that means the opposite.',
+ 'Idioms':'Idioms do not mean the words literally. Learn 5 a day with a picture in your mind.',
+ 'One word substitution':'Look for word endings: -cide = killing, -phobia = fear, -logy = study of.',
+ 'Spelling':'Break the word into small parts and say each part aloud.',
+ 'History':'Link each event to a date and a person. Say it as one sentence.',
+ 'Polity':'Remember articles in groups: 12–35 Fundamental Rights, 36–51 Directive Principles.',
+ 'Geography':'Picture the map. Say: river → state → famous place.',
+ 'Economy':'Link each term to one example (RBI → repo rate, banks, notes).',
+ 'Physics':'Write the unit with the quantity: force → newton, power → watt.',
+ 'Chemistry':'Link each chemical to its common name (NaCl → salt, H₂O → water).',
+ 'Biology':'Link each vitamin or disease to one food or cause.',
+ 'Culture':'Link each dance and festival to its state: Bihu → Assam, Garba → Gujarat.',
+ 'Sports':'Link each trophy to its sport: Durand → football, Ranji → cricket.',
+ 'Static GK':'Make small groups (firsts, books, days) and revise one group each day.',
+ 'Current affairs':'Ask: who, what, where. Link it to one static fact (state, capital, organisation).'
+};
+for(const s in GEN)for(const t in GEN[s]){const R=WHY[t];if(!R)continue;GEN[s][t]=GEN[s][t].map((g,gi)=>()=>{const q=g();try{let r=R[gi];if(typeof r==='function')r=r(q);if(r&&q.dwi)q.w=q.dwi.map(i=>i==null||i<0?null:(r[i]||null))}catch(e){}return q})}
+function whyText(q,i){if(i===-1)return q.s==='Quant'||q.s==='Reasoning'?'You skipped it. Session 1 (Maths, Reasoning) has no minus marks, so always choose an answer there.':'You skipped it. In Session 2 a wrong answer costs 1 mark, so skipping was safe. Now learn it below.';
+  const w=Array.isArray(q.w)&&q.w[i];return w||WHYGEN[q.s]||WHYGEN.GA}
+function lnSteps(e){const p=String(e||'').split(/(?<=[.!?])\s+(?=[A-Z0-9₹(√"'])/).map(x=>x.trim()).filter(Boolean);return p.length?p:['']}
+function lnTopic(q){try{return q.s==='English'&&typeof engSub==='function'?engSub(q):q.s==='CA'?'Current affairs':topicOf(q)}catch(e){return q.t||''}}
+/* builds the learning panel inside box (an element) */
+function learnPanel(box,q,i,opts){opts=opts||{};const ML=q.ml&&!box.querySelector('#mlB');const S=lnSteps(q.e),tp=lnTopic(q),tr=TRICK[tp];let k=0;
+  const d=document.createElement('div');d.className='learn';
+  d.innerHTML=`<div class="lnWhy"><b>${i===-1?'Skipped':'Why it went wrong'}</b>${i>=0?`<p>You chose <b>${esc(q.o[i])}</b>. ${esc(whyText(q,i))}</p>`:`<p>${esc(whyText(q,i))}</p>`}</div>
+   <div class="lnStep"><div class="lnHead"><b>The right answer, step by step</b><span class="small lnN"></span></div><p class="lnT"></p>
+   <div class="row" style="justify-content:flex-start;gap:8px"><button class="btn ghost lnB" type="button">◀ Back</button><button class="btn lnF" type="button">Next step ▶</button><button class="speak lnS" type="button">🔊 Read</button>${ML?'<button class="speak lnM" type="button">മലയാളം</button>':''}<button class="speak lnA" type="button">Show all</button></div>
+   ${ML?`<p class="lnMl" lang="ml" hidden>${esc(q.ml)}</p>`:''}</div>
+   ${tr?`<div class="lnTrick"><b>Remember (${esc(tp)})</b><p>${esc(tr)}</p></div>`:''}
+   ${opts.similar?'<div class="row" style="justify-content:flex-start"><button class="btn lnSim" type="button">Try one like it</button></div>':''}`;
+  box.appendChild(d);
+  const show=()=>{d.querySelector('.lnT').textContent=S[k];d.querySelector('.lnN').textContent=S.length>1?`Step ${k+1} of ${S.length}`:'';d.querySelector('.lnB').disabled=k===0;const f=d.querySelector('.lnF');f.textContent=k<S.length-1?'Next step ▶':'Done ✓';f.disabled=k>=S.length-1&&S.length>1?false:false};
+  d.querySelector('.lnB').onclick=()=>{if(k>0){k--;show()}};
+  d.querySelector('.lnF').onclick=()=>{if(k<S.length-1){k++;show();if(st.set&&st.set.autoRead)speak(S[k])}else{d.querySelector('.lnStep').classList.add('done');d.querySelector('.lnF').textContent='Done ✓'}};
+  d.querySelector('.lnS').onclick=()=>speak(S[k]);
+  d.querySelector('.lnA').onclick=()=>{d.querySelector('.lnT').innerHTML=S.map((x,j)=>`<span class="lnLine"><b>${j+1}.</b> ${esc(x)}</span>`).join('');d.querySelector('.lnN').textContent='';};
+  const m=d.querySelector('.lnM');if(m)m.onclick=()=>{const t=d.querySelector('.lnMl');t.hidden=!t.hidden};
+  show();return d}
+function similarQ(q){const tp=lnTopic(q);let n=null;try{if(GEN[q.s]&&GEN[q.s][tp]){for(let j=0;j<6&&(!n||n.q===q.q);j++)n=any(GEN[q.s][tp])()}}catch(e){n=null}
+  if(!n){const used=new Set(set.map(x=>x.q));const pool=Q.filter(x=>x.s===q.s&&x.q!==q.q&&!used.has(x.q)&&lnTopic(x)===tp);if(pool.length)n=shufO(any(pool))}
+  if(!n){const used=new Set(set.map(x=>x.q));const pool=Q.filter(x=>x.s===q.s&&x.q!==q.q&&!used.has(x.q)&&!x.lesson);if(pool.length)n=shufO(any(pool))}
+  return n}
+const _lnAnswer=answer;answer=function(i){if(answered)return;const q=set[qi];_lnAnswer(i);const ok=i===q.a;
+  try{if(q.simOf&&!ok){fixStart(q.s,lnTopic(q),true);const n=document.createElement('div');n.className='note';n.style.cssText='border-left:4px solid #c39bff';n.innerHTML='<b>Topic doctor:</b> this topic needs more practice. It is added to your Topic doctor list.';$('after').appendChild(n)}
+    if(q.simOf&&ok){const n=document.createElement('p');n.innerHTML='<b style="color:#59d499">You fixed it!</b> Same kind of question, right answer this time.';$('after').prepend(n)}
+    if(!ok){const ex=$('after').querySelector('.explain');if(ex){for(const nd of [...ex.childNodes])if(nd.nodeType===3&&nd.textContent.trim()===String(q.e).trim())nd.remove()}
+      const p=learnPanel($('after'),q,i,{similar:!q.simOf});const b=p.querySelector('.lnSim');
+      if(b)b.onclick=()=>{const n=similarQ(q);if(!n){b.textContent='No similar question yet';b.disabled=true;return}set.splice(qi+1,0,Object.assign({},n,{simOf:q.id}));qi++;drawQ()};
+      if(qctx&&qctx.learn){qctx.wrong=(qctx.wrong||0)+1;(qctx.tops=qctx.tops||{})[lnTopic(q)]=1}}}catch(e){}};
+function learnSet(){const out=[],take=(s,n)=>{let L=[];try{L=(bpSet(s)||[]).filter(q=>!/^Read the passage/.test(q.q))}catch(e){}if(L.length<n)L=L.concat(fresh(s,n*2));shuffle(L).slice(0,n).forEach(q=>{if(!out.some(x=>x.q===q.q))out.push(q)})};
+  take('Quant',5);take('Reasoning',5);take('English',5);take('GA',3);const ca=shuffle(Q.filter(q=>q.s==='CA')).slice(0,2).map(shufO);out.push(...ca);if(out.length<20)take('GA',20-out.length);return shuffle(out).slice(0,20)}
+function learnStart(){const L=learnSet();if(!L.length){alert('Questions are still loading. Try again in a moment.');return}location.hash='practice';setTimeout(()=>{startQuiz(L,true,{learn:true});try{$('quiz').scrollIntoView({behavior:'smooth'})}catch(e){}},60)}
+const _lnEnd=drawEnd;drawEnd=function(){const c=qctx;_lnEnd();if(c&&c.learn){const p=document.createElement('div');p.className='note';p.style.cssText='border-left:4px solid #59d499';
+  const tops=Object.keys(c.tops||{});p.innerHTML=`<b>Learning mock done.</b> ${c.wrong?`You learned from ${c.wrong} mistake${c.wrong>1?'s':''}${tops.length?' in: '+tops.map(esc).join(', '):''}. These come back in your revision.`:'No mistakes. Excellent!'} <button class="btn ghost" data-px="learn" style="margin-left:6px">Another learning mock</button>`;$('quiz').prepend(p)}};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-px="learn"]');if(b){e.preventDefault();learnStart()}});
+/* full mock review: explain each wrong answer the same way */
+const _lnRev=drawReview;drawReview=function(){_lnRev();try{const L=st.fmLast,notes=[...document.querySelectorAll('#fmRev .note')];let n=0;
+  L.parts.forEach((P,pi)=>P.qs.forEach((q,j)=>{const el=notes[n++],a=L.ans[qk(pi,j)];if(!el||a===q.a)return;const b=document.createElement('button');b.className='speak';b.type='button';b.textContent='Explain step by step';b.style.marginTop='8px';
+    b.onclick=()=>{b.remove();learnPanel(el,q,a==null?-1:a,{})};el.appendChild(b)}))}catch(e){}};
+
+/* ================= POP-UP QUIZ: phone notification quiz + PC corner pop-up during work hours ================= */
+if(!st.qq||typeof st.qq!=='object')st.qq={on:true,from:'10:00',to:'17:00',every:60,days:[1,2,3,4,5,6]};
+if(!st.qqLog||typeof st.qqLog!=='object')st.qqLog={};
+const QQ_SUBJ=['Quant','Reasoning','English','GA','CA'];
+const qqNative=()=>!!((window.AndroidApp&&AndroidApp.quickSet)||(window.mtsDesktop&&mtsDesktop.quickSet));
+const qqShort=q=>q&&Array.isArray(q.o)&&q.o.length===4&&String(q.q).length<=230&&q.o.every(o=>String(o).length<=70)&&!/^Read the passage/.test(q.q);
+function qqItem(q){q=shufO(q);const tp=(typeof lnTopic==='function'?lnTopic(q):q.t)||'';return{id:String(q.id),s:q.s,t:(typeof lnTopic==='function'?lnTopic(q):q.t)||'',q:String(q.q),o:q.o.map(String),a:q.a,e:String(q.e||''),ml:String(q.ml||''),w:Array.isArray(q.w)?q.w.map(x=>x||''):null,tr:(typeof TRICK!=='undefined'&&TRICK[tp])||''}}
+/* 40 questions: every subject in turn, current affairs from the latest days first */
+function qqPack(n){n=n||40;const by={},seen=new Set();
+  const ca=Q.filter(q=>q.s==='CA'&&qqShort(q)).sort((a,b)=>String(b.day||b.id).localeCompare(String(a.day||a.id)));
+  by.CA=ca.slice(0,30).concat(shuffle(ca.slice(30))).slice(0,n);
+  for(const s of ['Quant','Reasoning','English']){let L=[];try{L=fresh(s,n)}catch(e){}by[s]=shuffle(L.filter(qqShort))}
+  by.GA=shuffle(Q.filter(q=>q.s==='GA'&&qqShort(q))).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0));
+  const out=[];for(let r=0;out.length<n&&r<n;r++)for(const s of QQ_SUBJ){const L=by[s]||[];while(L.length){const q=L.shift();if(!seen.has(q.q)){seen.add(q.q);out.push(qqItem(q));break}}if(out.length>=n)break}
+  return out}
+function qqCfg(){const c=st.qq;return{on:!!c.on,from:c.from||'10:00',to:c.to||'17:00',every:+c.every||60,days:(c.days||[]).map(Number)}}
+function qqPush(){try{const cfg=JSON.stringify(qqCfg()),qs=JSON.stringify(qqPack(40));
+  if(window.AndroidApp&&AndroidApp.quickSet)AndroidApp.quickSet(cfg,qs);
+  else if(window.mtsDesktop&&mtsDesktop.quickSet)mtsDesktop.quickSet(cfg,qs)}catch(e){}}
+/* answers given in the pop-ups come back here and count like any practice answer */
+function qqApply(list){if(!Array.isArray(list)||!list.length)return;let ch=0;
+  for(const r of list){if(!r||!r.s||typeof r.a!=='number')continue;const skip=r.i==null||r.i<0,ok=!skip&&r.i===r.a,day=String(r.at||dkey).slice(0,10);
+    const L=st.qqLog[day]||(st.qqLog[day]={n:0,c:0});L.n++;if(ok)L.c++;
+    if(!st.stats[r.s])st.stats[r.s]={a:0,c:0};if(!skip){st.stats[r.s].a++;if(ok)st.stats[r.s].c++}
+    const q={id:r.id,s:r.s,t:r.t,q:r.q||'',o:r.o||[],a:r.a,e:r.e||'',ml:r.ml||'',gen:/^g/.test(r.id)?1:0};
+    try{rec(q,ok,skip)}catch(e){}
+    if(!ok){if(!st.mistakes.includes(q.id))st.mistakes.push(q.id);if(q.gen&&q.o.length===4){st.genMist[q.id]=q;if(!Q.some(x=>x.id===q.id))Q.push(q)}}
+    else st.mistakes=st.mistakes.filter(x=>x!==q.id);ch++}
+  const ks=Object.keys(st.qqLog).sort();while(ks.length>60)delete st.qqLog[ks.shift()];
+  if(ch){save();try{drawPlusToday()}catch(e){}}}
+function qqPull(){try{if(window.AndroidApp&&AndroidApp.quickTake){const t=AndroidApp.quickTake();qqApply(JSON.parse(t||'[]'))}
+  else if(window.mtsDesktop&&mtsDesktop.quickTake)mtsDesktop.quickTake().then(qqApply).catch(()=>{})}catch(e){}}
+setTimeout(()=>{qqPull();qqPush()},4500);setInterval(()=>{qqPull()},5*60000);setInterval(qqPush,60*60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){qqPull()}});
+/* in-page version (study page in a browser): same quiz as a small box */
+function qqInPage(){const P=qqPack(5),q=P[0];if(!q){alert('Questions are still loading.');return}let b=$('qqBox');if(!b){b=document.createElement('div');b.id='qqBox';document.body.appendChild(b)}
+  b.hidden=false;b.innerHTML=`<div class="qqCard"><div class="qqTop"><b>Quick question · ${esc(q.s==='CA'?'Current affairs':SL(q.s))}</b><button class="speak" id="qqX" aria-label="Close">✕</button></div><p class="qqQ">${esc(q.q)}</p>${q.o.map((o,i)=>`<button class="opt qqO" data-i="${i}"><span class="b">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}<div id="qqAfter"></div></div>`;
+  $('qqX').onclick=()=>{b.hidden=true};
+  b.querySelectorAll('.qqO').forEach(x=>x.onclick=()=>{const i=+x.dataset.i;b.querySelectorAll('.qqO').forEach((y,k)=>{y.disabled=true;if(k===q.a)y.classList.add('right');else if(k===i)y.classList.add('wrong')});
+    qqApply([Object.assign({},q,{i,at:dkey})]);const a=$('qqAfter');a.innerHTML=`<p><b>${i===q.a?'Correct!':'Answer: '+esc(q.o[q.a])}</b></p>`;
+    if(i!==q.a&&typeof learnPanel==='function')learnPanel(a,q,i,{});else a.insertAdjacentHTML('beforeend',`<p class="small">${esc(q.e)}</p>`)})}
+/* settings panel in My day */
+function qqPanel(){const c=qqCfg(),L=st.qqLog[dkey]||{n:0,c:0},D=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  return `<div class="panel" style="margin-top:18px" id="qqSet"><h2>Pop-up quiz at work</h2><p class="small" style="margin-top:-6px">One short question pops up during your work hours: on the phone as a notification, and on the PC as a small box in the corner. It mixes Maths, Reasoning, English, GK and the latest current affairs. A wrong answer shows why, step by step. Today: <b>${L.n} answered, ${L.c} right</b>.</p>
+  <div class="row" style="justify-content:flex-start;gap:10px;flex-wrap:wrap;align-items:center">
+   <label class="chip" style="cursor:pointer"><input type="checkbox" id="qqOn" ${c.on?'checked':''}> On</label>
+   <label class="small">From <input type="time" id="qqFrom" value="${esc(c.from)}"></label>
+   <label class="small">To <input type="time" id="qqTo" value="${esc(c.to)}"></label>
+   <label class="small">Every <select id="qqEvery">${[30,45,60,90,120].map(m=>`<option value="${m}" ${m===c.every?'selected':''}>${m} min</option>`).join('')}</select></label></div>
+  <div class="row" style="justify-content:flex-start;gap:6px;margin-top:10px;flex-wrap:wrap">${D.map((d,i)=>`<button class="chip qqDay ${c.days.includes(i)?'on':''}" data-d="${i}" type="button" aria-pressed="${c.days.includes(i)}">${d}</button>`).join('')}</div>
+  <div class="row" style="justify-content:flex-start;margin-top:12px"><button class="btn ghost" id="qqTry" type="button">Try one now</button></div>
+  ${qqNative()?'':'<p class="small">The pop-ups work in the phone app and the PC app. On this page, "Try one now" shows a quick question here.</p>'}</div>`}
+function qqBind(){const el=$('qqSet');if(!el)return;const upd=()=>{save();qqPush()};
+  $('qqOn').onchange=e=>{st.qq.on=e.target.checked;upd()};$('qqFrom').onchange=e=>{st.qq.from=e.target.value;upd()};$('qqTo').onchange=e=>{st.qq.to=e.target.value;upd()};
+  $('qqEvery').onchange=e=>{st.qq.every=+e.target.value;upd()};
+  el.querySelectorAll('.qqDay').forEach(b=>b.onclick=()=>{const d=+b.dataset.d,s=new Set(st.qq.days||[]);s.has(d)?s.delete(d):s.add(d);st.qq.days=[...s].sort();b.classList.toggle('on');b.setAttribute('aria-pressed',s.has(d));upd()});
+  $('qqTry').onclick=()=>{qqPush();try{if(window.AndroidApp&&AndroidApp.quickNow){AndroidApp.quickNow();return}if(window.mtsDesktop&&mtsDesktop.quickNow){mtsDesktop.quickNow();return}}catch(e){}qqInPage()}}
+const _qqMy=drawMyDay;drawMyDay=function(){_qqMy();try{const el=$('mydayBody');if(el&&!$('qqSet')){el.insertAdjacentHTML('beforeend',qqPanel());qqBind()}}catch(e){}};
+try{drawMyDay()}catch(e){}
+
 /* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
 let MON={months:[]},monSel=0;
 const ytQ=s=>'https://www.youtube.com/results?search_query='+encodeURIComponent(s).replace(/%20/g,'+');
@@ -1489,7 +1695,7 @@ document.querySelectorAll('nav button[data-tab=cards]').forEach(b=>b.addEventLis
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){pxClose()}});
 
 /* ---------- load the bank, start ---------- */
-getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):''})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[],cloze:(d.cloze||[]).filter(c=>c&&c.p&&Array.isArray(c.b)),rc:(d.rc||[]).filter(c=>c&&c.p&&Array.isArray(c.qs))};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
+getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):'',w:Array.isArray(q.w)&&q.w.length===4?q.w.map(x=>x?String(x):null):undefined})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[],cloze:(d.cloze||[]).filter(c=>c&&c.p&&Array.isArray(c.b)),rc:(d.rc||[]).filter(c=>c&&c.p&&Array.isArray(c.qs))};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
 drawPlusToday();drawSmart();
 function wakeRoute(){if(location.hash==='#wake'){const nb=document.querySelector('nav button[data-tab=myday]');if(nb)nb.click();if(!st.rtWake[dkey])setTimeout(wakeCheck,300)}}
 function drawCurTab(){const h=location.hash.slice(1);if(h==='exam')drawExam();else if(h==='myday')drawMyDay()}
@@ -1497,7 +1703,7 @@ window.addEventListener('hashchange',()=>{wakeRoute();drawCurTab()});wakeRoute()
 if(st.fmRun){fm=st.fmRun;if(Date.now()>fm.end+6*3600e3){st.fmRun=null;fm=null;save()}}
 if(st.focusRun&&st.focusRun.left>0)fLen=st.focusRun.len||25;
 drawCurTab();
-window.__mts={buildMock,bpSet:s=>bpSet(s),fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
+window.__mts={any:(a)=>any(a),buildMock,bpSet:s=>bpSet(s),fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
 
 /* ================= SYNC between phone and PC (phone/PC app only) =================
    Progress is saved in a private GitHub gist ("MTS Study sync") using the person's own GitHub key (gist scope only). */

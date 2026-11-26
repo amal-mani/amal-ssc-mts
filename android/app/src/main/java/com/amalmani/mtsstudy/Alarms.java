@@ -80,6 +80,7 @@ public class Alarms extends BroadcastReceiver {
         String action = intent.getAction() == null ? "" : intent.getAction();
         if (action.equals(Intent.ACTION_BOOT_COMPLETED) || action.equals("android.intent.action.MY_PACKAGE_REPLACED")) {
             scheduleSaved(c);
+            QuickQuiz.schedule(c);
             return;
         }
         String id = intent.getStringExtra("id"), label = intent.getStringExtra("label");
