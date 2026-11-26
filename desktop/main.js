@@ -18,7 +18,7 @@ function create() {
     if (!/^https?:/.test(url)) return;
     let host = ''; try { host = new URL(url).hostname; } catch (e) {}
     // Falcon (Classplus) and Testbook open in a window inside the app; your login is kept.
-    if (/(^|\.)(classplusapp|testbook)\.com$/.test(host)) return openInside(url);
+    if (/(^|\.)(classplusapp|testbook|youtube)\.com$/.test(host) || host === "youtu.be") return openInside(url);
     shell.openExternal(url);
   };
   win.webContents.setWindowOpenHandler(({ url }) => { outside(url); return { action: 'deny' }; });

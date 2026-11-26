@@ -175,6 +175,8 @@ details summary{cursor:pointer}
 @media(max-width:900px){.simMain{grid-template-columns:minmax(0,1fr)}.simPal{position:static}.pal{grid-template-columns:repeat(8,1fr)}}
 @media(max-width:600px){.pal{grid-template-columns:repeat(6,1fr)}.simQ{padding:16px}}
 .fxd{display:inline-block;font-size:.78rem;padding:2px 8px;margin:4px 4px 2px 0;border-radius:99px;background:var(--card2);color:var(--soft)}.fxd.on{background:#1f6b45;color:#fff}
+#lsBar{position:fixed;left:12px;right:12px;bottom:84px;z-index:30;display:flex;gap:10px;align-items:center;justify-content:space-between;background:#20242c;border:1px solid var(--line);border-radius:18px;padding:10px 12px;box-shadow:0 8px 30px rgba(0,0,0,.5)}#lsBar[hidden]{display:none}.lst{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lsb{display:flex;gap:6px;flex:none}.lsb button{min-width:44px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--ink);font-size:1rem}
+@media(min-width:901px){#lsBar{left:auto;width:520px;bottom:20px}}
 </style>
 </head>
 <body>
@@ -1059,7 +1061,7 @@ function drawPlusToday(){const el=$('plusToday');if(!el)return;const sk=streak()
   if(rv.length)h+=`<h2 style="margin-top:22px">Revision due today</h2><ul class="plan">${rv.slice(0,4).map(x=>`<li style="--c:${COL[x.l.t]}"><span class="t">Day ${x.n} revision</span><span class="what">${esc(TNAME[x.l.t])}: ${esc(x.l.title)}<span class="how">Passed on ${esc(fmtDate(st.passed[x.l.id]))}${noteLink(x.l)}</span></span><button class="btn" style="padding:8px 14px" data-px="rev" data-k="${esc(x.key)}">Revise</button></li>`).join('')}</ul>${rv.length>4?`<p class="small">${rv.length-4} more after these.</p>`:''}`;
   try{fixAuto();const fx=fixShow();if(fx.length)h+=`<h2 style="margin-top:22px">Topic doctor: fixing weak topics</h2><ul class="plan">${fx.map(fixRow).join('')}</ul>`}catch(e){}
   if(dow2===0){const r=report();h+=`<div class="panel" style="margin-top:14px;border-top:4px solid #4cc3ff"><h2>Your weekly report</h2>${reportHTML(r)}${st.set.buddyPh?`<a class="btn ghost" href="${waLink(repText(r))}" target="_blank" rel="noopener">Send to my study buddy ↗</a>`:''}</div>`}
-  h+=`<div class="row" style="justify-content:flex-start;margin-top:14px"><button class="btn" data-px="focus">Focus mode</button><button class="btn ghost" data-px="smart">Smart practice</button><button class="btn ghost" data-px="low">Feeling low?</button></div>`;
+  h+=`<div class="row" style="justify-content:flex-start;margin-top:14px"><button class="btn" data-px="focus">Focus mode</button><button class="btn ghost" data-px="smart">Smart practice</button><button class="btn ghost" data-px="listen">🎧 Listen mode</button><button class="btn ghost" data-px="low">Feeling low?</button></div>`;
   el.innerHTML=h}
 
 /* ---------- My day page ---------- */
@@ -1174,9 +1176,9 @@ function drawSmart(){const el=$('smart');if(!el)return;const w=weakTopics().slic
 
 /* ---------- full mock / sectional simulator ---------- */
 const FULL=[{s:'Quant',sess:1,n:20},{s:'Reasoning',sess:1,n:20},{s:'GA',sess:2,n:25},{s:'English',sess:2,n:25}];
-const PNAME={Quant:'Numerical & Mathematical Ability',Reasoning:'Reasoning & Problem Solving',GA:'General Awareness',English:'English Language'};
+const PNAME={Quant:'Numerical & Mathematical Ability',Reasoning:'Reasoning & Problem Solving',GA:'General Awareness',English:'English Language',CA:'Current Affairs (last 6 months)'};
 let fm=null,fmTick=null;
-function buildMock(kind,subj){const parts=kind==='full'?FULL:[{s:subj,sess:['GA','English'].includes(subj)?2:1,n:subj==='GA'||subj==='English'?25:20}];
+function buildMock(kind,subj){const parts=kind==='full'?FULL:[{s:subj,sess:['GA','English','CA'].includes(subj)?2:1,n:['GA','English','CA'].includes(subj)?25:20}];
   const P=parts.map(p=>({s:p.s,sess:p.sess,qs:fresh(p.s,p.n).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen}))}));
   const sessions=[...new Set(P.map(p=>p.sess))],per=st.set.extra?60:45,mins=kind==='full'?per:Math.round(P[0].qs.length*(per/(P[0].sess===1?40:50)));
   return{kind,title:kind==='full'?'App full mock '+(st.fmHist.filter(r=>r.kind==='full').length+1):SL(subj)+' sectional mock',parts:P,sessions,si:0,mins,ans:{},mark:{},guess:{},vis:{},cur:{p:P.findIndex(p=>p.sess===sessions[0]),i:0},end:null,start:Date.now(),used:{}}}
@@ -1230,7 +1232,7 @@ function drawExam(showLast){const el=$('examBody');if(!el)return;const run=st.fm
   ${mb?`<div class="note" style="border-left:4px solid #ff6b6b;color:var(--ink)"><b>Compulsory:</b> you missed the weekly full mock (week ending ${esc(fmtDate(mb))}). New classes stay locked until you take one.</div>`:''}
   <div class="grid2"><div class="panel"><h2>Full mock (real SSC pattern)</h2><ul class="rep"><li>Session 1: Maths 20 + Reasoning 20 · +3 each · <b>no negative</b></li><li>Session 2: GA 25 + English 25 · +3 each · <b>−1 per wrong</b></li><li>${st.set.extra?60:45} minutes per session${st.set.extra?' (PwD extra time on, change in My day)':''} · 270 marks</li><li>New questions every time: maths and reasoning are made fresh, GA and English come from the bank that grows every morning.</li></ul>
    <p class="small">Compulsory: one full mock every week (Saturday is mock day).</p><button class="btn" data-px="fm">Start full mock</button></div>
-   <div class="panel"><h2>Sectional mocks</h2><p class="small">After you learn and practise a weak topic, test the whole subject.</p><div class="row" style="justify-content:flex-start;flex-wrap:wrap">${['Quant','Reasoning','GA','English'].map(s=>`<button class="btn ghost" data-px="sect" data-s="${s}">${esc(SL(s))}</button>`).join('')}</div>
+   <div class="panel"><h2>Sectional mocks</h2><p class="small">After you learn and practise a weak topic, test the whole subject.</p><div class="row" style="justify-content:flex-start;flex-wrap:wrap">${['Quant','Reasoning','GA','English'].map(s=>`<button class="btn ghost" data-px="sect" data-s="${s}">${esc(SL(s))}</button>`).join('')}<button class="btn ghost" data-px="sect" data-s="CA">Current affairs</button></div>
    <h3 style="margin:18px 0 6px">Testbook mocks</h3><p class="small">In the phone and PC app, Testbook opens inside the app. Log in once. After each Testbook mock, add your score in <a href="#mocks">My mocks</a>.</p><a class="btn ghost" href="${TB}" target="_blank" rel="noopener">Open Testbook MTS tests ↗</a></div></div>`;
   if(last&&last.r){const r=last.r;x+=`<div class="panel" style="margin-top:18px;border-top:4px solid #59d499" id="fmRes"><p class="small">${esc(fmtDate(r.date))} · ${esc(r.title)} · ${r.minutes} min</p><p class="result">${r.score} / ${r.max}</p>
    <div class="scroll"><table><thead><tr><th>Section</th><th>Right</th><th>Wrong</th><th>Skipped</th><th>Marks</th></tr></thead><tbody>${r.parts.map(p=>`<tr><td>${esc(PNAME[p.s])}</td><td>${p.c}</td><td>${p.w}</td><td>${p.sk}</td><td>${p.score} / ${p.max}</td></tr>`).join('')}</tbody></table></div>
@@ -1333,13 +1335,12 @@ function drawMonthly(){const el=$('monthBox');if(!el)return;const ms=MON.months|
    <h3 style="margin:18px 0 8px">▶ Daily news videos</h3><div class="row" style="justify-content:flex-start;flex-wrap:wrap">
     <a class="btn" href="${esc(ytQ((latest||'today')+' current affairs malayalam'))}" target="_blank" rel="noopener">▶ Malayalam: ${esc(latest||'latest day')}</a>
     <a class="btn ghost" href="${esc(ytQ((latest||'today')+' current affairs english SSC'))}" target="_blank" rel="noopener">▶ English: ${esc(latest||'latest day')}</a></div>
-   <div class="row" style="justify-content:flex-start;margin-top:16px;flex-wrap:wrap"><button class="btn" id="monQuiz">${esc(m.name.split(' (')[0])} quiz (${m.quiz.length} Q)</button><button class="btn ghost" id="monAll">Mixed quiz: all 6 months</button><button class="speak" id="monSayAll">🔊 Read the whole month</button></div>
+   <div class="row" style="justify-content:flex-start;margin-top:16px;flex-wrap:wrap"><button class="btn" id="monQuiz">${esc(m.name.split(' (')[0])} quiz (${m.quiz.length} Q)</button><button class="btn ghost" id="monAll">Mixed quiz: all 6 months</button><button class="btn" data-px="sect" data-s="CA">Current affairs mock (25 Q, timed)</button><button class="btn ghost" data-px="listen" data-k="m${monSel}">🎧 Listen to this month</button></div>
    <h3 style="margin:16px 0 8px">${esc(m.name)}: ${m.items.length} key news</h3>
    <div class="cards">${m.items.map((it,i)=>`<div class="fc" style="--c:${({States:'#59d499',National:'#4cc3ff',International:'#c39bff',Economy:'#f0c674',Sports:'#ff7a59',Awards:'#ff9fcf',Science:'#7ee0d1',Environment:'#9bd66b',Defence:'#a0a8b8',Schemes:'#f0c674'})[it.cat]||'#4cc3ff'}"><span class="k">${esc(it.cat)}</span><span class="f">${esc(it.title)}</span><span class="ex">${esc(it.text)}${it.gk?`<br><b>GK:</b> ${esc(it.gk)}`:''}</span><span class="row" style="justify-content:flex-start;margin-top:auto"><button class="speak" data-msay="${i}">🔊 Read</button></span></div>`).join('')}</div>
    ${m.sources&&m.sources.length?`<p class="small" style="margin-top:12px">Written from: ${m.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>`:''}</div>`;
   el.querySelectorAll('[data-mon]').forEach(b=>b.onclick=()=>{monSel=+b.dataset.mon;drawMonthly()});
   el.querySelectorAll('[data-msay]').forEach(b=>b.onclick=()=>{const it=m.items[+b.dataset.msay];speak(it.title+'. '+it.text+(it.gk?' '+it.gk:''))});
-  $('monSayAll').onclick=()=>speak(m.name+'. '+m.items.map(it=>it.title+'. '+it.text).join(' '));
   const mq=(mm,i)=>mm.quiz.map((q,j)=>({id:'mon-'+mm.month+'-'+j,s:'CA',t:'Current affairs',q:q.q,o:q.o.slice(),a:q.a,e:q.e,ml:q.ml}));
   $('monQuiz').onclick=()=>{goPractice();startQuiz(shuffle(mq(m)),true)};
   $('monAll').onclick=()=>{goPractice();startQuiz(shuffle(ms.flatMap(x=>mq(x))).slice(0,15),true)}}
@@ -1347,6 +1348,41 @@ getData('monthly.json').then(r=>r.json()).then(d=>{MON=d||{months:[]};
   const have=new Set(Q.map(q=>q.id));(MON.months||[]).forEach(m=>(m.quiz||[]).forEach((q,j)=>{const id='mon-'+m.month+'-'+j;if(!have.has(id)&&Array.isArray(q.o)&&q.o.length===4)Q.push({id,s:'CA',t:'Current affairs',q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):undefined,day:m.month})}));
   drawMonthly()}).catch(()=>{});
 document.querySelectorAll('nav button[data-tab=ca]').forEach(b=>b.addEventListener('click',()=>setTimeout(drawMonthly,50)));
+
+/* ================= LISTEN MODE: study notes read aloud like an audiobook ================= */
+let LS={list:[],i:0,name:'',playing:false,rate:+(st.lsRate||0.9)};
+const nativeLS=()=>!!(window.AndroidApp&&AndroidApp.listen);
+const lsItem=(title,text)=>({title:String(title||'').slice(0,200),text:String(text||'').replace(/\s+/g,' ').slice(0,1500)});
+function lsLists(){const out=[];
+  try{const d=CA&&CA.days&&CA.days[0];if(d)out.push({k:'today',name:'Latest news ('+fmtDate(d.date)+')',list:d.items.map(x=>lsItem(x.title,x.text+(x.gk?' Remember: '+x.gk:'')))})}catch(e){}
+  try{(MON.months||[]).forEach((m,i)=>{if(i<6)out.push({k:'m'+i,name:m.name,list:m.items.map(x=>lsItem(x.title,x.text+(x.gk?' Remember: '+x.gk:'')))})});
+    if((MON.months||[]).length)out.push({k:'all',name:'All 6 months of news',list:MON.months.flatMap(m=>m.items.map(x=>lsItem(m.name.split(' (')[0]+': '+x.title,x.text)))})}catch(e){}
+  try{const d=TOP.daily&&TOP.daily[0];const v=vocabToday();const l=[];if(d)d.items.forEach(x=>l.push(lsItem(SL(x.s)+' trick: '+x.title,x.text)));v.forEach(x=>l.push(lsItem('Word: '+x.w,`${x.w} means ${x.m}. Same as ${x.syn}. Opposite of ${x.ant}. Example: ${x.ex}`)));if(l.length)out.push({k:'tricks',name:"Today's shortcuts and words",list:l})}catch(e){}
+  try{const ids=Object.keys(TOP.lessons||{}),done=ids.filter(id=>st.course[id]),use=(done.length?done:ids).slice(-12);const l=use.map(id=>{const L=findL(id),n=TOP.lessons[id];return lsItem((L?L.title:id)+' — class notes',n.points.join('. ')+'. Memory tricks: '+n.tricks.join('. '))});if(l.length)out.push({k:'notes',name:done.length?'Notes of classes I passed':'Class notes',list:l})}catch(e){}
+  return out}
+function lsBar(){let b=$('lsBar');if(!LS.list.length){if(b)b.hidden=true;return}
+  if(!b){b=document.createElement('div');b.id='lsBar';document.body.appendChild(b)}b.hidden=false;
+  b.innerHTML=`<span class="lst">🎧 <b>${esc(LS.name)}</b><br><span class="small">${LS.i+1} of ${LS.list.length}: ${esc((LS.list[LS.i]||{}).title||'')}</span></span>
+   <span class="lsb"><button aria-label="Back" data-ls="prev">⏮</button><button aria-label="${LS.playing?'Pause':'Play'}" data-ls="toggle">${LS.playing?'⏸':'▶'}</button><button aria-label="Next" data-ls="next">⏭</button><button aria-label="Speed" data-ls="speed">${LS.rate}×</button><button aria-label="Stop" data-ls="stop">✕</button></span>`;
+  b.querySelectorAll('[data-ls]').forEach(x=>x.onclick=()=>lsCmd(x.dataset.ls))}
+function lsWebSpeak(){try{speechSynthesis.cancel()}catch(e){}if(!LS.playing||!LS.list[LS.i])return;const it=LS.list[LS.i],u=new SpeechSynthesisUtterance(it.title+'. '+it.text);u.lang='en-IN';u.rate=LS.rate;
+  const my=LS.i;u.onend=()=>{if(!LS.playing||LS.i!==my)return;if(LS.i+1<LS.list.length){LS.i++;lsWebSpeak()}else{LS.playing=false}lsBar()};try{speechSynthesis.speak(u)}catch(e){}lsBar()}
+function lsPlay(p,start){LS={list:p.list,i:start||0,name:p.name,playing:true,rate:LS.rate};pxClose();
+  if(nativeLS()){try{AndroidApp.listen(JSON.stringify(LS.list),LS.name,LS.i,LS.rate)}catch(e){}lsBar()}else lsWebSpeak()}
+function lsCmd(c){if(c==='speed'){const r=[0.8,0.9,1,1.2];LS.rate=r[(r.indexOf(LS.rate)+1)%r.length];st.lsRate=LS.rate;save()}
+  if(nativeLS()){try{AndroidApp.listenCmd(c,LS.rate)}catch(e){}if(c==='stop'){LS.list=[];lsBar()}return}
+  if(c==='toggle'){LS.playing=!LS.playing;if(LS.playing)lsWebSpeak();else{try{speechSynthesis.cancel()}catch(e){}}}
+  else if(c==='next'){if(LS.i+1<LS.list.length){LS.i++;LS.playing=true;lsWebSpeak()}}
+  else if(c==='prev'){LS.i=Math.max(0,LS.i-1);LS.playing=true;lsWebSpeak()}
+  else if(c==='speed'){if(LS.playing)lsWebSpeak()}
+  else if(c==='stop'){LS.playing=false;LS.list=[];try{speechSynthesis.cancel()}catch(e){}}
+  lsBar()}
+window.mtsListenStatus=s=>{if(!s)return;LS.playing=!!s.playing;LS.i=s.i||0;if(s.n===0){LS.list=[]}if(s.rate)LS.rate=Math.round(s.rate*10)/10;lsBar()};
+function lsMenu(){const L=lsLists();pxBox(`<h2>🎧 Listen mode</h2><p class="small">The app reads your notes aloud, like an audiobook. ${nativeLS()?'It keeps playing when the screen is off; use the buttons on your lock screen.':'Keep this window open while it plays.'}</p>
+  <div style="display:grid;gap:8px;margin-top:10px">${L.map((p,i)=>`<button class="btn ghost" style="justify-content:space-between;display:flex;text-align:left" data-lsp="${i}"><span>${esc(p.name)}</span><span class="small">${p.list.length} parts</span></button>`).join('')||'<p>Nothing to read yet. Open the app with internet once.</p>'}</div>
+  <div class="row" style="justify-content:flex-end;margin-top:12px"><button class="btn ghost" id="lsX">Close</button></div>`);
+  $('lsX').onclick=pxClose;$('pxBox').querySelectorAll('[data-lsp]').forEach(b=>b.onclick=()=>lsPlay(L[+b.dataset.lsp],0))}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-px=listen]');if(!b)return;e.preventDefault();e.stopPropagation();const k=b.dataset.k;if(k){const p=lsLists().find(x=>x.k===k);if(p)return lsPlay(p,0)}lsMenu()},true);
 
 /* ---------- click actions ---------- */
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!b)return;e.preventDefault();const k=b.dataset.px;

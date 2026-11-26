@@ -59,12 +59,15 @@ public class MainActivity extends Activity {
         setContentView(web);
         if (saved != null) web.restoreState(saved); else web.loadUrl(HOME + hashFrom(getIntent()));
         Alarms.scheduleSaved(this);
+        ListenService.listener = json -> { if (web != null) web.post(() -> web.evaluateJavascript("window.mtsListenStatus&&mtsListenStatus(" + json + ")", null)); };
+        if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED)
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 8);
     }
 
     /** Falcon (Classplus) and Testbook open inside the app; other links open in the phone's browser. */
     void openLink(Uri u) {
         String h = u.getHost() == null ? "" : u.getHost();
-        boolean inside = h.endsWith("classplusapp.com") || h.endsWith("testbook.com");
+        boolean inside = h.endsWith("classplusapp.com") || h.endsWith("testbook.com") || h.endsWith("youtube.com") || h.equals("youtu.be");
         try {
             if (inside) startActivity(new Intent(this, BrowserActivity.class).setData(u));
             else startActivity(new Intent(Intent.ACTION_VIEW, u));
@@ -91,6 +94,17 @@ public class MainActivity extends Activity {
     }
 
     class AppBridge {
+        @JavascriptInterface
+        public void listen(String json, String name, int start, float rate) {
+            Intent it = new Intent(MainActivity.this, ListenService.class).setAction(ListenService.A_PLAY)
+                    .putExtra("list", json).putExtra("name", name).putExtra("start", start).putExtra("rate", rate);
+            try { if (Build.VERSION.SDK_INT >= 26) startForegroundService(it); else startService(it); } catch (Exception e) { }
+        }
+        @JavascriptInterface
+        public void listenCmd(String cmd, float rate) {
+            if (ListenService.self == null && !ListenService.A_STOP.equals(cmd)) return;
+            try { startService(new Intent(MainActivity.this, ListenService.class).setAction(cmd).putExtra("rate", rate)); } catch (Exception e) { }
+        }
         @JavascriptInterface
         public int version() {
             try { return getPackageManager().getPackageInfo(getPackageName(), 0).versionCode; } catch (Exception e) { return 0; }
@@ -129,5 +143,5 @@ public class MainActivity extends Activity {
 
     @Override protected void onSaveInstanceState(Bundle out) { super.onSaveInstanceState(out); web.saveState(out); }
     @Override public void onBackPressed() { if (web.canGoBack()) web.goBack(); else super.onBackPressed(); }
-    @Override protected void onDestroy() { if (tts != null) tts.shutdown(); super.onDestroy(); }
+    @Override protected void onDestroy() { ListenService.listener = null; if (tts != null) tts.shutdown(); super.onDestroy(); }
 }
