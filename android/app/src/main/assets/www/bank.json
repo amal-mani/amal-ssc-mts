@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-25",
+"updated": "2026-11-26",
 "note": "Question bank for full mocks and smart practice. Written fresh for this app in SSC MTS style. The 5 AM update adds new GA and English questions every day.",
 "q": [
 {
@@ -452,7 +452,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Chemistry",
 "q": "What is the chemical formula of common salt?",
 "o": [
 "KCl",
@@ -468,7 +468,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Biology",
 "q": "Which vitamin deficiency causes night blindness?",
 "o": [
 "Vitamin A",
@@ -484,7 +484,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Physics",
 "q": "What is the SI unit of force?",
 "o": [
 "Joule",
@@ -500,7 +500,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Biology",
 "q": "Which gas do plants take in for photosynthesis?",
 "o": [
 "Oxygen",
@@ -516,7 +516,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Biology",
 "q": "Which is the largest organ of the human body?",
 "o": [
 "Liver",
@@ -532,7 +532,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Chemistry",
 "q": "The pH value of pure water is:",
 "o": [
 "0",
@@ -548,7 +548,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Biology",
 "q": "Which blood group is called the 'universal donor'?",
 "o": [
 "A",
@@ -564,7 +564,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Physics",
 "q": "Sound cannot travel through:",
 "o": [
 "Water",
@@ -580,7 +580,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Chemistry",
 "q": "Which metal is liquid at room temperature?",
 "o": [
 "Sodium",
@@ -868,7 +868,7 @@
 },
 {
 "s": "GA",
-"t": "Science",
+"t": "Biology",
 "q": "Which part of the cell is called its 'powerhouse'?",
 "o": [
 "Nucleus",
@@ -1265,6 +1265,1622 @@
 "ml": "news singular ആണ്: The news is.",
 "id": "bk-78",
 "added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Which Gupta king is called the 'Napoleon of India'?",
+"o": [
+"Samudragupta",
+"Chandragupta I",
+"Skandagupta",
+"Kumaragupta"
+],
+"a": 0,
+"e": "Historian V. A. Smith called Samudragupta the Napoleon of India for his conquests.",
+"ml": "'ഇന്ത്യൻ നെപ്പോളിയൻ' സമുദ്രഗുപ്തൻ.",
+"id": "bk-20261126-0",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "The state of Kerala was formed on:",
+"o": [
+"1 November 1956",
+"15 August 1947",
+"26 January 1950",
+"1 May 1960"
+],
+"a": 0,
+"e": "Kerala was formed on 1 November 1956 (Kerala Piravi).",
+"ml": "കേരളം രൂപീകരിച്ചത് 1956 നവംബർ 1 (കേരളപ്പിറവി).",
+"id": "bk-20261126-1",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the largest planet in the Solar System?",
+"o": [
+"Jupiter",
+"Saturn",
+"Earth",
+"Neptune"
+],
+"a": 0,
+"e": "Jupiter is the largest planet.",
+"ml": "ഏറ്റവും വലിയ ഗ്രഹം വ്യാഴം (Jupiter).",
+"id": "bk-20261126-2",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "The chemical symbol of gold is:",
+"o": [
+"Au",
+"Ag",
+"Go",
+"Gd"
+],
+"a": 0,
+"e": "Gold = Au (from Latin 'Aurum'). Silver = Ag.",
+"ml": "സ്വർണ്ണം = Au, വെള്ളി = Ag.",
+"id": "bk-20261126-3",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Who appoints the Chief Justice of India?",
+"o": [
+"The President",
+"The Prime Minister",
+"The Parliament",
+"The Law Minister"
+],
+"a": 0,
+"e": "The President appoints the Chief Justice of India (Article 124).",
+"ml": "ചീഫ് ജസ്റ്റിസിനെ നിയമിക്കുന്നത് രാഷ്ട്രപതി.",
+"id": "bk-20261126-4",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Who was the first Indian to win a Nobel Prize?",
+"o": [
+"Rabindranath Tagore",
+"C. V. Raman",
+"Mother Teresa",
+"Amartya Sen"
+],
+"a": 0,
+"e": "Tagore won the Nobel Prize for Literature in 1913 for 'Gitanjali'.",
+"ml": "ആദ്യ ഇന്ത്യൻ നോബൽ ജേതാവ് ടാഗോർ (1913, ഗീതാഞ്ജലി).",
+"id": "bk-20261126-5",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the hottest planet?",
+"o": [
+"Venus",
+"Mercury",
+"Mars",
+"Jupiter"
+],
+"a": 0,
+"e": "Venus is hottest because its thick carbon dioxide air traps heat.",
+"ml": "ഏറ്റവും ചൂടുള്ള ഗ്രഹം ശുക്രൻ (Venus).",
+"id": "bk-20261126-6",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "An earthquake is measured by a:",
+"o": [
+"Seismograph",
+"Barometer",
+"Thermometer",
+"Hygrometer"
+],
+"a": 0,
+"e": "A seismograph records earthquakes. Barometer measures air pressure.",
+"ml": "ഭൂകമ്പം അളക്കുന്നത് സീസ്മോഗ്രാഫ്.",
+"id": "bk-20261126-7",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The capital of Australia is:",
+"o": [
+"Canberra",
+"Sydney",
+"Melbourne",
+"Perth"
+],
+"a": 0,
+"e": "Canberra is the capital; Sydney is the biggest city.",
+"ml": "ഓസ്ട്രേലിയയുടെ തലസ്ഥാനം കാൻബെറ.",
+"id": "bk-20261126-8",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Who is known as the Father of the Green Revolution in India?",
+"o": [
+"M. S. Swaminathan",
+"Verghese Kurien",
+"Norman Borlaug",
+"C. Subramaniam"
+],
+"a": 0,
+"e": "M. S. Swaminathan led India's Green Revolution. Verghese Kurien led the White Revolution (milk).",
+"ml": "ഹരിതവിപ്ലവത്തിന്റെ പിതാവ് എം. എസ്. സ്വാമിനാഥൻ.",
+"id": "bk-20261126-9",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The largest desert in India is the:",
+"o": [
+"Thar",
+"Rann of Kutch",
+"Ladakh",
+"Deccan"
+],
+"a": 0,
+"e": "The Thar Desert is mostly in Rajasthan.",
+"ml": "ഇന്ത്യയിലെ ഏറ്റവും വലിയ മരുഭൂമി ഥാർ.",
+"id": "bk-20261126-10",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who wrote 'The Discovery of India'?",
+"o": [
+"Jawaharlal Nehru",
+"Mahatma Gandhi",
+"B. R. Ambedkar",
+"Rabindranath Tagore"
+],
+"a": 0,
+"e": "Nehru wrote it in Ahmednagar Fort jail (1944).",
+"ml": "'ഡിസ്കവറി ഓഫ് ഇന്ത്യ' എഴുതിയത് നെഹ്റു.",
+"id": "bk-20261126-11",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "National Sports Day in India is on:",
+"o": [
+"29 August",
+"15 August",
+"14 November",
+"5 September"
+],
+"a": 0,
+"e": "29 August is the birthday of hockey legend Major Dhyan Chand.",
+"ml": "ദേശീയ കായിക ദിനം ഓഗസ്റ്റ് 29 (ധ്യാൻചന്ദിന്റെ ജന്മദിനം).",
+"id": "bk-20261126-12",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Computer",
+"q": "WWW stands for:",
+"o": [
+"World Wide Web",
+"World Web Wide",
+"Wide World Web",
+"Web World Wide"
+],
+"a": 0,
+"e": "WWW = World Wide Web, invented by Tim Berners-Lee.",
+"ml": "WWW = World Wide Web.",
+"id": "bk-20261126-13",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Theyyam is a ritual art form mainly of:",
+"o": [
+"North Kerala",
+"Tamil Nadu",
+"Goa",
+"Assam"
+],
+"a": 0,
+"e": "Theyyam is performed mainly in Kannur and Kasaragod.",
+"ml": "തെയ്യം പ്രധാനമായും വടക്കൻ കേരളത്തിൽ (കണ്ണൂർ, കാസർകോട്).",
+"id": "bk-20261126-14",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: She is senior ___ me.",
+"o": [
+"to",
+"than",
+"from",
+"with"
+],
+"a": 0,
+"e": "Words like senior, junior and prefer take 'to'.",
+"ml": "senior, junior എന്നിവയ്ക്ക് ശേഷം to.",
+"id": "bk-20261126-15",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: I have lived here ___ ten years.",
+"o": [
+"for",
+"since",
+"from",
+"by"
+],
+"a": 0,
+"e": "'For' + a length of time (ten years).",
+"ml": "കാലയളവ് (ten years) → for.",
+"id": "bk-20261126-16",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Find the error: 'He don't (A) / like (B) / coffee (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 0,
+"e": "He/She/It takes 'doesn't': He doesn't like coffee.",
+"ml": "He-യോടൊപ്പം doesn't വേണം. തെറ്റ് A.",
+"id": "bk-20261126-17",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The children ___ playing in the park now.",
+"o": [
+"are",
+"is",
+"was",
+"has"
+],
+"a": 0,
+"e": "'Children' is plural and 'now' shows present: are playing.",
+"ml": "children ബഹുവചനം: are.",
+"id": "bk-20261126-18",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the passive form: 'Ravi writes a letter.'",
+"o": [
+"A letter is written by Ravi.",
+"A letter was written by Ravi.",
+"A letter is wrote by Ravi.",
+"A letter has written by Ravi."
+],
+"a": 0,
+"e": "Simple present passive: is/are + V3.",
+"ml": "Simple present passive: is + V3 (written).",
+"id": "bk-20261126-19",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: This is ___ best day of my life.",
+"o": [
+"the",
+"a",
+"an",
+"no article"
+],
+"a": 0,
+"e": "Superlatives (best, tallest) take 'the'.",
+"ml": "best പോലുള്ള superlative-ന് മുമ്പ് the.",
+"id": "bk-20261126-20",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Neither of the two answers ___ correct.",
+"o": [
+"is",
+"are",
+"were",
+"have"
+],
+"a": 0,
+"e": "'Neither of' takes a singular verb: is.",
+"ml": "'Neither of' → singular verb: is.",
+"id": "bk-20261126-21",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: He gave me ___ advice.",
+"o": [
+"some",
+"an",
+"many",
+"a"
+],
+"a": 0,
+"e": "'Advice' is uncountable: use some, not a/an.",
+"ml": "advice എണ്ണാൻ കഴിയാത്ത നാമം: some.",
+"id": "bk-20261126-22",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the indirect speech: She said, 'I like mangoes.'",
+"o": [
+"She said that she liked mangoes.",
+"She said that I like mangoes.",
+"She says she liked mangoes.",
+"She said that she likes mango."
+],
+"a": 0,
+"e": "Said (past) → like becomes liked; I becomes she.",
+"ml": "said → like മാറി liked; I → she.",
+"id": "bk-20261126-23",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The meeting starts ___ 9 o'clock.",
+"o": [
+"at",
+"on",
+"in",
+"by"
+],
+"a": 0,
+"e": "Use 'at' for an exact clock time.",
+"ml": "കൃത്യമായ സമയത്തിന് at.",
+"id": "bk-20261126-24",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Mathematics ___ my favourite subject.",
+"o": [
+"is",
+"are",
+"were",
+"have"
+],
+"a": 0,
+"e": "Subject names like Mathematics and Physics are singular.",
+"ml": "Mathematics singular ആണ്: is.",
+"id": "bk-20261126-25",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Improve the sentence: 'He is more taller than his brother.'",
+"o": [
+"taller",
+"most taller",
+"more tall",
+"No improvement"
+],
+"a": 0,
+"e": "Don't use 'more' with -er. Say: He is taller than his brother.",
+"ml": "-er ഉള്ളിടത്ത് more വേണ്ട: taller.",
+"id": "bk-20261126-26",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The boy ___ won the prize is my cousin.",
+"o": [
+"who",
+"which",
+"whom",
+"whose"
+],
+"a": 0,
+"e": "'Who' is used for a person doing the action.",
+"ml": "ആളെക്കുറിച്ച് (subject) → who.",
+"id": "bk-20261126-27",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: I am looking forward to ___ you.",
+"o": [
+"meeting",
+"meet",
+"met",
+"be meet"
+],
+"a": 0,
+"e": "'Looking forward to' takes verb + -ing.",
+"ml": "looking forward to + -ing: meeting.",
+"id": "bk-20261126-28",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Hardly had he left ___ it began to rain.",
+"o": [
+"when",
+"than",
+"then",
+"that"
+],
+"a": 0,
+"e": "'Hardly … when' is a fixed pair. ('No sooner … than' is the other.)",
+"ml": "Hardly-യോടൊപ്പം when; No sooner-ഓടൊപ്പം than.",
+"id": "bk-20261126-29",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "The SI unit of electric current is:",
+"o": [
+"Ampere",
+"Volt",
+"Ohm",
+"Watt"
+],
+"a": 0,
+"e": "Current: ampere. Voltage: volt. Resistance: ohm. Power: watt.",
+"ml": "വൈദ്യുത പ്രവാഹത്തിന്റെ SI യൂണിറ്റ് ആമ്പിയർ.",
+"id": "bk-exp-0",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "Which lens is used to correct short-sightedness (myopia)?",
+"o": [
+"Concave lens",
+"Convex lens",
+"Cylindrical lens",
+"Bifocal lens"
+],
+"a": 0,
+"e": "Myopia: concave lens. Long-sightedness (hypermetropia): convex lens.",
+"ml": "ഹ്രസ്വദൃഷ്ടി (മയോപിയ) ശരിയാക്കാൻ കോൺകേവ് ലെൻസ്.",
+"id": "bk-exp-1",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "The speed of light in vacuum is about:",
+"o": [
+"3 × 10⁸ m/s",
+"3 × 10⁶ m/s",
+"340 m/s",
+"3 × 10⁵ m/s"
+],
+"a": 0,
+"e": "Light: about 3 lakh km per second = 3 × 10⁸ m/s. Sound in air: about 340 m/s.",
+"ml": "പ്രകാശവേഗം ഏകദേശം 3 × 10⁸ മീ/സെ.",
+"id": "bk-exp-2",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "Which instrument measures atmospheric pressure?",
+"o": [
+"Barometer",
+"Hygrometer",
+"Thermometer",
+"Ammeter"
+],
+"a": 0,
+"e": "Barometer: air pressure. Hygrometer: humidity. Ammeter: current.",
+"ml": "അന്തരീക്ഷമർദ്ദം അളക്കുന്നത് ബാരോമീറ്റർ.",
+"id": "bk-exp-3",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "The unit of power is:",
+"o": [
+"Watt",
+"Joule",
+"Newton",
+"Pascal"
+],
+"a": 0,
+"e": "Power = work ÷ time, measured in watt.",
+"ml": "പവറിന്റെ യൂണിറ്റ് വാട്ട്.",
+"id": "bk-exp-4",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "Sound travels fastest in:",
+"o": [
+"Steel (solids)",
+"Water",
+"Air",
+"Vacuum"
+],
+"a": 0,
+"e": "Sound is fastest in solids, slower in liquids, slowest in gases, and cannot travel in a vacuum.",
+"ml": "ശബ്ദം ഏറ്റവും വേഗത്തിൽ ഖരവസ്തുക്കളിലൂടെ.",
+"id": "bk-exp-5",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "The rainbow is formed because of:",
+"o": [
+"Dispersion of light",
+"Reflection only",
+"Magnetism",
+"Gravity"
+],
+"a": 0,
+"e": "Water drops split white light into seven colours (dispersion, with refraction and reflection).",
+"ml": "മഴവില്ല് പ്രകാശത്തിന്റെ പ്രകീർണനം (dispersion) മൂലം.",
+"id": "bk-exp-6",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Physics",
+"q": "An electric fuse works on the ___ effect of current.",
+"o": [
+"Heating",
+"Magnetic",
+"Chemical",
+"Lighting"
+],
+"a": 0,
+"e": "Too much current heats and melts the fuse wire, breaking the circuit.",
+"ml": "ഫ്യൂസ് വൈദ്യുതിയുടെ താപഫലത്തിൽ പ്രവർത്തിക്കുന്നു.",
+"id": "bk-exp-7",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "Baking soda is chemically:",
+"o": [
+"Sodium bicarbonate (NaHCO₃)",
+"Sodium carbonate (Na₂CO₃)",
+"Calcium carbonate",
+"Sodium chloride"
+],
+"a": 0,
+"e": "Baking soda = NaHCO₃. Washing soda = Na₂CO₃. Common salt = NaCl.",
+"ml": "അപ്പക്കാരം = സോഡിയം ബൈകാർബണേറ്റ് (NaHCO₃).",
+"id": "bk-exp-8",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "Which gas is called 'laughing gas'?",
+"o": [
+"Nitrous oxide (N₂O)",
+"Carbon monoxide",
+"Methane",
+"Ozone"
+],
+"a": 0,
+"e": "N₂O is laughing gas, used as a mild anaesthetic.",
+"ml": "ലാഫിംഗ് ഗ്യാസ് = നൈട്രസ് ഓക്സൈഡ് (N₂O).",
+"id": "bk-exp-9",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "The chemical symbol of iron is:",
+"o": [
+"Fe",
+"Ir",
+"In",
+"I"
+],
+"a": 0,
+"e": "Iron = Fe (from Latin 'ferrum').",
+"ml": "ഇരുമ്പിന്റെ പ്രതീകം Fe.",
+"id": "bk-exp-10",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "Vinegar contains which acid?",
+"o": [
+"Acetic acid",
+"Citric acid",
+"Lactic acid",
+"Hydrochloric acid"
+],
+"a": 0,
+"e": "Vinegar: acetic acid. Lemon: citric acid. Curd: lactic acid.",
+"ml": "വിനാഗിരിയിൽ അസറ്റിക് ആസിഡ്.",
+"id": "bk-exp-11",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "Which is the most abundant gas in the Earth's atmosphere?",
+"o": [
+"Nitrogen",
+"Oxygen",
+"Carbon dioxide",
+"Argon"
+],
+"a": 0,
+"e": "Nitrogen is about 78%; oxygen about 21%.",
+"ml": "അന്തരീക്ഷത്തിൽ ഏറ്റവും കൂടുതൽ നൈട്രജൻ (78%).",
+"id": "bk-exp-12",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "Rusting of iron needs:",
+"o": [
+"Oxygen and water",
+"Only oxygen",
+"Only water",
+"Nitrogen"
+],
+"a": 0,
+"e": "Iron rusts when it reacts with oxygen in the presence of water (moisture).",
+"ml": "തുരുമ്പിക്കാൻ ഓക്സിജനും ജലവും വേണം.",
+"id": "bk-exp-13",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "The hardest natural substance is:",
+"o": [
+"Diamond",
+"Graphite",
+"Iron",
+"Quartz"
+],
+"a": 0,
+"e": "Diamond is a form of carbon and the hardest natural substance.",
+"ml": "ഏറ്റവും കാഠിന്യമുള്ള പ്രകൃതിദത്ത വസ്തു വജ്രം.",
+"id": "bk-exp-14",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Chemistry",
+"q": "An acid turns blue litmus paper:",
+"o": [
+"Red",
+"Blue",
+"Green",
+"Yellow"
+],
+"a": 0,
+"e": "Acid: blue litmus → red. Base: red litmus → blue.",
+"ml": "ആസിഡ് നീല ലിറ്റ്മസിനെ ചുവപ്പാക്കുന്നു.",
+"id": "bk-exp-15",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Biology",
+"q": "Which blood cells help in blood clotting?",
+"o": [
+"Platelets",
+"Red blood cells",
+"White blood cells",
+"Plasma cells"
+],
+"a": 0,
+"e": "Platelets help blood clot. RBCs carry oxygen; WBCs fight infection.",
+"ml": "രക്തം കട്ടപിടിക്കാൻ സഹായിക്കുന്നത് പ്ലേറ്റ്ലെറ്റുകൾ.",
+"id": "bk-exp-16",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Biology",
+"q": "Deficiency of iodine causes:",
+"o": [
+"Goitre",
+"Scurvy",
+"Rickets",
+"Night blindness"
+],
+"a": 0,
+"e": "Lack of iodine causes goitre (swelling of the thyroid).",
+"ml": "അയഡിന്റെ കുറവ് ഗോയിറ്റർ ഉണ്ടാക്കുന്നു.",
+"id": "bk-exp-17",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Biology",
+"q": "The functional unit of the kidney is the:",
+"o": [
+"Nephron",
+"Neuron",
+"Alveolus",
+"Villus"
+],
+"a": 0,
+"e": "Nephrons filter blood. Neurons are nerve cells; alveoli are in the lungs.",
+"ml": "വൃക്കയുടെ അടിസ്ഥാന യൂണിറ്റ് നെഫ്രോൺ.",
+"id": "bk-exp-18",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Biology",
+"q": "Malaria is spread by the:",
+"o": [
+"Female Anopheles mosquito",
+"Housefly",
+"Aedes mosquito",
+"Rat flea"
+],
+"a": 0,
+"e": "Malaria: female Anopheles. Dengue: Aedes mosquito.",
+"ml": "മലേറിയ പരത്തുന്നത് പെൺ അനോഫിലസ് കൊതുക്.",
+"id": "bk-exp-19",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Biology",
+"q": "Which part of the plant makes food?",
+"o": [
+"Leaf",
+"Root",
+"Stem",
+"Flower"
+],
+"a": 0,
+"e": "Leaves make food by photosynthesis using chlorophyll.",
+"ml": "ഇലകളാണ് ആഹാരം നിർമ്മിക്കുന്നത് (പ്രകാശസംശ്ലേഷണം).",
+"id": "bk-exp-20",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Biology",
+"q": "How many bones are there in an adult human body?",
+"o": [
+"206",
+"306",
+"196",
+"216"
+],
+"a": 0,
+"e": "An adult has 206 bones.",
+"ml": "മുതിർന്ന മനുഷ്യശരീരത്തിൽ 206 അസ്ഥികൾ.",
+"id": "bk-exp-21",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "How many Fundamental Rights are there now in the Constitution?",
+"o": [
+"6",
+"7",
+"5",
+"11"
+],
+"a": 0,
+"e": "Six. The Right to Property was removed from Fundamental Rights by the 44th Amendment (1978).",
+"ml": "മൗലികാവകാശങ്ങൾ 6.",
+"id": "bk-exp-22",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Who is the Supreme Commander of the Indian Armed Forces?",
+"o": [
+"The President",
+"The Prime Minister",
+"The Defence Minister",
+"The Chief of Defence Staff"
+],
+"a": 0,
+"e": "The President is the Supreme Commander (Article 53).",
+"ml": "സായുധ സേനകളുടെ പരമോന്നത മേധാവി രാഷ്ട്രപതി.",
+"id": "bk-exp-23",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "The maximum strength of the Lok Sabha is:",
+"o": [
+"552",
+"545",
+"250",
+"500"
+],
+"a": 0,
+"e": "Up to 552 members as per the Constitution. Rajya Sabha: up to 250.",
+"ml": "ലോക്സഭയുടെ പരമാവധി അംഗബലം 552.",
+"id": "bk-exp-24",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Article 32 of the Constitution is about:",
+"o": [
+"Right to Constitutional Remedies",
+"Right to Equality",
+"Right to Freedom of Religion",
+"Right against Exploitation"
+],
+"a": 0,
+"e": "Ambedkar called Article 32 the 'heart and soul' of the Constitution.",
+"ml": "അനുച്ഛേദം 32: ഭരണഘടനാപരമായ പരിഹാരത്തിനുള്ള അവകാശം.",
+"id": "bk-exp-25",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "The Constitution of India came into force on:",
+"o": [
+"26 January 1950",
+"15 August 1947",
+"26 November 1949",
+"2 October 1950"
+],
+"a": 0,
+"e": "Adopted 26 November 1949; in force 26 January 1950.",
+"ml": "ഭരണഘടന നിലവിൽ വന്നത് 1950 ജനുവരി 26.",
+"id": "bk-exp-26",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Who was the first President of India?",
+"o": [
+"Dr Rajendra Prasad",
+"Dr S. Radhakrishnan",
+"Zakir Husain",
+"V. V. Giri"
+],
+"a": 0,
+"e": "Dr Rajendra Prasad (1950–1962).",
+"ml": "ഇന്ത്യയുടെ ആദ്യ രാഷ്ട്രപതി ഡോ. രാജേന്ദ്ര പ്രസാദ്.",
+"id": "bk-exp-27",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "The first Battle of Panipat (1526) was won by:",
+"o": [
+"Babur",
+"Akbar",
+"Humayun",
+"Sher Shah"
+],
+"a": 0,
+"e": "Babur defeated Ibrahim Lodi and founded the Mughal Empire.",
+"ml": "ഒന്നാം പാനിപ്പത്ത് യുദ്ധം (1526) ബാബർ ജയിച്ചു.",
+"id": "bk-exp-28",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "The Dandi March (Salt Satyagraha) began in:",
+"o": [
+"1930",
+"1920",
+"1942",
+"1919"
+],
+"a": 0,
+"e": "Gandhiji marched from Sabarmati to Dandi in March–April 1930.",
+"ml": "ദണ്ഡിയാത്ര 1930-ൽ.",
+"id": "bk-exp-29",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who founded the Arya Samaj?",
+"o": [
+"Swami Dayanand Saraswati",
+"Raja Ram Mohan Roy",
+"Swami Vivekananda",
+"Ishwar Chandra Vidyasagar"
+],
+"a": 0,
+"e": "Arya Samaj was founded in 1875. Raja Ram Mohan Roy founded the Brahmo Samaj.",
+"ml": "ആര്യസമാജം സ്ഥാപിച്ചത് സ്വാമി ദയാനന്ദ സരസ്വതി.",
+"id": "bk-exp-30",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Ashoka changed after the Kalinga war, which is in present-day:",
+"o": [
+"Odisha",
+"Bihar",
+"Andhra Pradesh",
+"Madhya Pradesh"
+],
+"a": 0,
+"e": "Kalinga is modern Odisha; Ashoka turned to Buddhism after the war.",
+"ml": "കലിംഗം ഇന്നത്തെ ഒഡീഷ.",
+"id": "bk-exp-31",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who built the Taj Mahal?",
+"o": [
+"Shah Jahan",
+"Akbar",
+"Jahangir",
+"Aurangzeb"
+],
+"a": 0,
+"e": "Shah Jahan built it in memory of Mumtaz Mahal.",
+"ml": "താജ്മഹൽ പണിതത് ഷാജഹാൻ.",
+"id": "bk-exp-32",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "The Revolt of 1857 started at:",
+"o": [
+"Meerut",
+"Delhi",
+"Lucknow",
+"Kanpur"
+],
+"a": 0,
+"e": "It began at Meerut on 10 May 1857.",
+"ml": "1857-ലെ കലാപം തുടങ്ങിയത് മീററ്റിൽ.",
+"id": "bk-exp-33",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the largest state of India by area?",
+"o": [
+"Rajasthan",
+"Madhya Pradesh",
+"Maharashtra",
+"Uttar Pradesh"
+],
+"a": 0,
+"e": "Rajasthan is the largest by area; Uttar Pradesh by population.",
+"ml": "വിസ്തീർണ്ണത്തിൽ ഏറ്റവും വലിയ സംസ്ഥാനം രാജസ്ഥാൻ.",
+"id": "bk-exp-34",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The Western Ghats are also called:",
+"o": [
+"Sahyadri",
+"Aravalli",
+"Vindhya",
+"Satpura"
+],
+"a": 0,
+"e": "The Western Ghats are known as the Sahyadri.",
+"ml": "പശ്ചിമഘട്ടം = സഹ്യാദ്രി.",
+"id": "bk-exp-35",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which river is called the 'Sorrow of Bihar'?",
+"o": [
+"Kosi",
+"Ganga",
+"Son",
+"Gandak"
+],
+"a": 0,
+"e": "Kosi causes frequent floods in Bihar.",
+"ml": "'ബീഹാറിന്റെ ദുഃഖം' കോസി നദി.",
+"id": "bk-exp-36",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The Standard Meridian of India passes through:",
+"o": [
+"Mirzapur (82.5° E)",
+"Delhi",
+"Nagpur",
+"Kolkata"
+],
+"a": 0,
+"e": "Indian Standard Time is based on 82.5° E, passing near Mirzapur (UP).",
+"ml": "ഇന്ത്യൻ സ്റ്റാൻഡേർഡ് മെറിഡിയൻ 82.5° E, മിർസാപൂർ.",
+"id": "bk-exp-37",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the largest continent?",
+"o": [
+"Asia",
+"Africa",
+"Europe",
+"North America"
+],
+"a": 0,
+"e": "Asia is the largest continent by area and population.",
+"ml": "ഏറ്റവും വലിയ ഭൂഖണ്ഡം ഏഷ്യ.",
+"id": "bk-exp-38",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Who presents the Union Budget in Parliament?",
+"o": [
+"The Finance Minister",
+"The Prime Minister",
+"The RBI Governor",
+"The President"
+],
+"a": 0,
+"e": "The Union Finance Minister presents the Budget (Article 112: Annual Financial Statement).",
+"ml": "കേന്ദ്ര ബജറ്റ് അവതരിപ്പിക്കുന്നത് ധനമന്ത്രി.",
+"id": "bk-exp-39",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Indian currency notes (except ₹1) are issued by:",
+"o": [
+"Reserve Bank of India",
+"Ministry of Finance",
+"SBI",
+"SEBI"
+],
+"a": 0,
+"e": "RBI issues notes; the ₹1 note is issued by the Ministry of Finance.",
+"ml": "₹1 ഒഴികെയുള്ള നോട്ടുകൾ RBI പുറത്തിറക്കുന്നു.",
+"id": "bk-exp-40",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Which organisation regulates the stock market in India?",
+"o": [
+"SEBI",
+"RBI",
+"NABARD",
+"IRDAI"
+],
+"a": 0,
+"e": "SEBI regulates securities markets. IRDAI: insurance.",
+"ml": "ഓഹരി വിപണി നിയന്ത്രിക്കുന്നത് SEBI.",
+"id": "bk-exp-41",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "NABARD mainly gives credit for:",
+"o": [
+"Agriculture and rural development",
+"Foreign trade",
+"Housing",
+"Industry only"
+],
+"a": 0,
+"e": "NABARD = National Bank for Agriculture and Rural Development.",
+"ml": "NABARD – കൃഷിക്കും ഗ്രാമവികസനത്തിനും.",
+"id": "bk-exp-42",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "The Nobel Prize is given in how many fields?",
+"o": [
+"6",
+"5",
+"7",
+"4"
+],
+"a": 0,
+"e": "Physics, Chemistry, Medicine, Literature, Peace and Economic Sciences.",
+"ml": "നോബൽ സമ്മാനം 6 മേഖലകളിൽ.",
+"id": "bk-exp-43",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "'Wings of Fire' was written by:",
+"o": [
+"A. P. J. Abdul Kalam",
+"Jawaharlal Nehru",
+"R. K. Narayan",
+"Ruskin Bond"
+],
+"a": 0,
+"e": "Autobiography of Dr A. P. J. Abdul Kalam.",
+"ml": "'വിങ്സ് ഓഫ് ഫയർ' എഴുതിയത് എ. പി. ജെ. അബ്ദുൽ കലാം.",
+"id": "bk-exp-44",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "The Ranji Trophy is related to:",
+"o": [
+"Cricket",
+"Football",
+"Hockey",
+"Badminton"
+],
+"a": 0,
+"e": "Ranji Trophy is India's domestic first-class cricket championship.",
+"ml": "രഞ്ജി ട്രോഫി – ക്രിക്കറ്റ്.",
+"id": "bk-exp-45",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Bihu is the festival of:",
+"o": [
+"Assam",
+"Punjab",
+"Kerala",
+"Gujarat"
+],
+"a": 0,
+"e": "Bihu is Assam's harvest festival.",
+"ml": "ബിഹു അസമിന്റെ ഉത്സവം.",
+"id": "bk-exp-46",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Which is the national animal of India?",
+"o": [
+"Tiger",
+"Lion",
+"Elephant",
+"Peacock"
+],
+"a": 0,
+"e": "The Bengal tiger is the national animal; the peacock is the national bird.",
+"ml": "ദേശീയ മൃഗം കടുവ; ദേശീയ പക്ഷി മയിൽ.",
+"id": "bk-exp-47",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "The famous dance 'Kuchipudi' belongs to:",
+"o": [
+"Andhra Pradesh",
+"Kerala",
+"Odisha",
+"Manipur"
+],
+"a": 0,
+"e": "Kuchipudi: Andhra Pradesh. Mohiniyattam: Kerala. Odissi: Odisha. Manipuri: Manipur.",
+"ml": "കുച്ചിപ്പുടി ആന്ധ്രപ്രദേശിന്റെ നൃത്തം.",
+"id": "bk-exp-48",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Error spotting",
+"q": "Find the error: 'She do not (A) / know the answer (B) / to this question. (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 0,
+"e": "She takes 'does': She does not know.",
+"ml": "She-യോടൊപ്പം does വേണം. തെറ്റ് A.",
+"id": "bk-exp-49",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Error spotting",
+"q": "Find the error: 'Each of the students (A) / have submitted (B) / the form. (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 1,
+"e": "'Each of' takes a singular verb: has submitted.",
+"ml": "'Each of' → has. തെറ്റ് B.",
+"id": "bk-exp-50",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Error spotting",
+"q": "Find the error: 'I am living (A) / in Kochi (B) / since 2020. (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 0,
+"e": "With 'since' + time, use present perfect continuous: I have been living.",
+"ml": "since 2020 → have been living. തെറ്റ് A.",
+"id": "bk-exp-51",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Error spotting",
+"q": "Find the error: 'He is (A) / one of the best player (B) / in the team. (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 1,
+"e": "'One of the' + plural noun: best players.",
+"ml": "'one of the' കഴിഞ്ഞ് ബഹുവചനം: players. തെറ്റ് B.",
+"id": "bk-exp-52",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Sentence improvement",
+"q": "Improve the underlined part: 'He did not came to office yesterday.' (did not came)",
+"o": [
+"did not come",
+"does not came",
+"did not comes",
+"No improvement"
+],
+"a": 0,
+"e": "After 'did not', use the base verb: come.",
+"ml": "did not-ന് ശേഷം come.",
+"id": "bk-exp-53",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Sentence improvement",
+"q": "Improve the underlined part: 'If I will see him, I will tell him.' (If I will see)",
+"o": [
+"If I see",
+"If I saw",
+"If I seen",
+"No improvement"
+],
+"a": 0,
+"e": "In 'if' clauses about the future, use simple present: If I see him.",
+"ml": "If വാക്യത്തിൽ will വേണ്ട: If I see.",
+"id": "bk-exp-54",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Sentence improvement",
+"q": "Improve the underlined part: 'The weather is more better today.' (more better)",
+"o": [
+"better",
+"most better",
+"more good",
+"No improvement"
+],
+"a": 0,
+"e": "'Better' is already comparative; do not add 'more'.",
+"ml": "better-നോടൊപ്പം more വേണ്ട.",
+"id": "bk-exp-55",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Sentence improvement",
+"q": "Improve the underlined part: 'She has gone to Delhi last week.' (has gone)",
+"o": [
+"went",
+"has went",
+"had go",
+"No improvement"
+],
+"a": 0,
+"e": "'Last week' is finished past time → simple past: went.",
+"ml": "last week → simple past: went.",
+"id": "bk-exp-56",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'They are building a new bridge.'",
+"o": [
+"A new bridge is being built by them.",
+"A new bridge was built by them.",
+"A new bridge is built by them.",
+"A new bridge has been building by them."
+],
+"a": 0,
+"e": "Present continuous passive: is/are + being + V3.",
+"ml": "Present continuous passive: is being built.",
+"id": "bk-exp-57",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the active form: 'The letter was written by Anu.'",
+"o": [
+"Anu wrote the letter.",
+"Anu writes the letter.",
+"Anu has written the letter.",
+"Anu was writing the letter."
+],
+"a": 0,
+"e": "'Was written' is simple past passive → active: Anu wrote.",
+"ml": "was written → active: Anu wrote.",
+"id": "bk-exp-58",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the indirect speech: He said to me, 'Where do you live?'",
+"o": [
+"He asked me where I lived.",
+"He asked me where do I live.",
+"He said me where I live.",
+"He asked where did I live."
+],
+"a": 0,
+"e": "Questions become statements in indirect speech; 'do you live' → 'I lived'.",
+"ml": "ചോദ്യം → asked; do you live → I lived.",
+"id": "bk-exp-59",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the indirect speech: The teacher said, 'Sit down.'",
+"o": [
+"The teacher told us to sit down.",
+"The teacher said us sit down.",
+"The teacher told that sit down.",
+"The teacher asked that we sat down."
+],
+"a": 0,
+"e": "Commands use 'told/ordered + to + verb'.",
+"ml": "കല്പന → told + to + verb.",
+"id": "bk-exp-60",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Fill in the blanks",
+"q": "Fill in the blank: The train arrived ___ the station on time.",
+"o": [
+"at",
+"in",
+"on",
+"into"
+],
+"a": 0,
+"e": "'Arrive at' a small place like a station.",
+"ml": "station പോലുള്ള സ്ഥലത്ത് arrive at.",
+"id": "bk-exp-61",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Fill in the blanks",
+"q": "Fill in the blank: She has been working here ___ five years.",
+"o": [
+"for",
+"since",
+"from",
+"during"
+],
+"a": 0,
+"e": "'For' + a length of time.",
+"ml": "കാലയളവ് → for.",
+"id": "bk-exp-62",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Fill in the blanks",
+"q": "Fill in the blank: Neither the manager nor the clerks ___ present.",
+"o": [
+"were",
+"was",
+"is",
+"has"
+],
+"a": 0,
+"e": "With neither…nor, the verb agrees with the nearer subject (clerks).",
+"ml": "അടുത്തുള്ള subject clerks → were.",
+"id": "bk-exp-63",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Fill in the blanks",
+"q": "Fill in the blank: He is ___ European.",
+"o": [
+"a",
+"an",
+"the",
+"no article"
+],
+"a": 0,
+"e": "'European' starts with a 'yoo' sound → 'a'.",
+"ml": "European – 'യൂ' ശബ്ദം → a.",
+"id": "bk-exp-64",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Para jumble",
+"q": "Arrange the parts to make a correct sentence: The boy / to school / every day / goes / on foot\n(P) to school (Q) every day (R) goes (S) on foot — 'The boy ___'",
+"o": [
+"RPSQ",
+"PRQS",
+"QRPS",
+"SRPQ"
+],
+"a": 0,
+"e": "The boy goes (R) to school (P) on foot (S) every day (Q).",
+"ml": "The boy goes to school on foot every day.",
+"id": "bk-exp-65",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Para jumble",
+"q": "Arrange to make a sentence: 'My mother ___' (P) a cake (Q) for my birthday (R) baked (S) yesterday",
+"o": [
+"RPQS",
+"PRQS",
+"SRPQ",
+"QRPS"
+],
+"a": 0,
+"e": "My mother baked (R) a cake (P) for my birthday (Q) yesterday (S).",
+"ml": "My mother baked a cake for my birthday yesterday.",
+"id": "bk-exp-66",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Para jumble",
+"q": "Arrange to make a sentence: 'We ___' (P) the exam (Q) hard (R) to pass (S) must study",
+"o": [
+"SQRP",
+"QSRP",
+"SRPQ",
+"PSQR"
+],
+"a": 0,
+"e": "We must study (S) hard (Q) to pass (R) the exam (P).",
+"ml": "We must study hard to pass the exam.",
+"id": "bk-exp-67",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Para jumble",
+"q": "Arrange to make a sentence: 'The old man ___' (P) slowly (Q) the road (R) crossed (S) with a stick",
+"o": [
+"RQPS",
+"QRPS",
+"PRQS",
+"SRQP"
+],
+"a": 0,
+"e": "The old man crossed (R) the road (Q) slowly (P) with a stick (S).",
+"ml": "The old man crossed the road slowly with a stick.",
+"id": "bk-exp-68",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Para jumble",
+"q": "Arrange to make a sentence: 'Kerala ___' (P) for its (Q) is famous (R) backwaters (S) and beaches",
+"o": [
+"QPRS",
+"PQRS",
+"RQPS",
+"QRPS"
+],
+"a": 0,
+"e": "Kerala is famous (Q) for its (P) backwaters (R) and beaches (S).",
+"ml": "Kerala is famous for its backwaters and beaches.",
+"id": "bk-exp-69",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Para jumble",
+"q": "Arrange to make a sentence: 'If you ___' (P) every day (Q) you will (R) practise (S) improve",
+"o": [
+"RPQS",
+"PRQS",
+"QSRP",
+"RQPS"
+],
+"a": 0,
+"e": "If you practise (R) every day (P), you will (Q) improve (S).",
+"ml": "If you practise every day, you will improve.",
+"id": "bk-exp-70",
+"added": "2026-11-26"
 }
 ],
 "vocab": [
@@ -1827,6 +3443,46 @@
 "syn": "Courteous",
 "ant": "Rude",
 "ex": "Be polite to everyone."
+},
+{
+"w": "Brief",
+"m": "short in time or words",
+"ml": "ചുരുക്കമായ",
+"syn": "Short",
+"ant": "Long",
+"ex": "Give a brief answer."
+},
+{
+"w": "Gigantic",
+"m": "extremely big",
+"ml": "ഭീമാകാരമായ",
+"syn": "Huge",
+"ant": "Tiny",
+"ex": "A gigantic wave hit the shore."
+},
+{
+"w": "Punctual",
+"m": "arriving at the right time",
+"ml": "കൃത്യനിഷ്ഠയുള്ള",
+"syn": "Timely",
+"ant": "Late",
+"ex": "Be punctual for your exam."
+},
+{
+"w": "Sincere",
+"m": "honest and true in feelings",
+"ml": "ആത്മാർത്ഥതയുള്ള",
+"syn": "Genuine",
+"ant": "Fake",
+"ex": "She is a sincere student."
+},
+{
+"w": "Courteous",
+"m": "polite and kind",
+"ml": "മര്യാദയുള്ള",
+"syn": "Polite",
+"ant": "Rude",
+"ex": "The courteous clerk helped everyone."
 }
 ],
 "idioms": [
@@ -1969,6 +3625,16 @@
 "i": "Through thick and thin",
 "m": "in good and bad times",
 "ml": "സുഖത്തിലും ദുഃഖത്തിലും"
+},
+{
+"i": "Hit the books",
+"m": "to start studying hard",
+"ml": "ഗൗരവമായി പഠിക്കാൻ തുടങ്ങുക"
+},
+{
+"i": "Keep your chin up",
+"m": "to stay brave and hopeful in a hard time",
+"ml": "പ്രയാസ സമയത്തും ധൈര്യം കൈവിടാതിരിക്കുക"
 }
 ],
 "ows": [
@@ -2083,6 +3749,14 @@
 {
 "p": "A speech made without preparation",
 "w": "Extempore"
+},
+{
+"p": "A person who works without pay",
+"w": "Volunteer"
+},
+{
+"p": "A place where clothes are washed",
+"w": "Laundry"
 }
 ],
 "spell": [
@@ -2230,5 +3904,251 @@
 "Disapear",
 "Dissappear"
 ]
+],
+"cloze": [
+{
+"id": "cz-0",
+"p": "Ravi works in an office in Kochi. Every morning he (1) ___ up at six o'clock. He reads the newspaper (2) ___ he drinks his tea. Then he (3) ___ a bus to his office. He is never (4) ___ for work. His manager is very (5) ___ with him.",
+"b": [
+{
+"o": [
+"gets",
+"get",
+"getting",
+"got"
+],
+"a": 0,
+"e": "He (singular, habit) → gets.",
+"ml": "He → gets (simple present)."
+},
+{
+"o": [
+"while",
+"because",
+"unless",
+"until"
+],
+"a": 0,
+"e": "Two actions at the same time → while.",
+"ml": "ഒരേ സമയം → while."
+},
+{
+"o": [
+"takes",
+"take",
+"taking",
+"took"
+],
+"a": 0,
+"e": "Habit in simple present: takes.",
+"ml": "He → takes."
+},
+{
+"o": [
+"late",
+"early",
+"soon",
+"fast"
+],
+"a": 0,
+"e": "'Never late for work' fits the meaning.",
+"ml": "ജോലിക്ക് ഒരിക്കലും വൈകില്ല → late."
+},
+{
+"o": [
+"pleased",
+"please",
+"pleasing",
+"pleasure"
+],
+"a": 0,
+"e": "'Pleased with' someone = happy with them.",
+"ml": "pleased with = സന്തോഷവാൻ."
+}
+]
+},
+{
+"id": "cz-1",
+"p": "Water is very important for all living things. We cannot (1) ___ without it. Many villages in India still (2) ___ from water shortage in summer. We must not (3) ___ water. We should repair leaking taps and (4) ___ rainwater. Small steps can make a big (5) ___.",
+"b": [
+{
+"o": [
+"live",
+"living",
+"lives",
+"lived"
+],
+"a": 0,
+"e": "After 'cannot', use the base verb: live.",
+"ml": "cannot → live."
+},
+{
+"o": [
+"suffer",
+"suffers",
+"suffering",
+"suffered"
+],
+"a": 0,
+"e": "Villages (plural), present habit → suffer.",
+"ml": "Villages ബഹുവചനം → suffer."
+},
+{
+"o": [
+"waste",
+"wastes",
+"wasted",
+"wasting"
+],
+"a": 0,
+"e": "After 'must not', base verb: waste.",
+"ml": "must not → waste."
+},
+{
+"o": [
+"collect",
+"collects",
+"collecting",
+"collection"
+],
+"a": 0,
+"e": "Parallel with 'repair': should repair … and collect.",
+"ml": "should repair and collect."
+},
+{
+"o": [
+"difference",
+"different",
+"differ",
+"differently"
+],
+"a": 0,
+"e": "Fixed phrase: make a big difference.",
+"ml": "make a difference = മാറ്റം ഉണ്ടാക്കുക."
+}
+]
+},
+{
+"id": "cz-2",
+"p": "Anu wanted to buy a gift for her father. She went (1) ___ a shop near her house. The shopkeeper showed her (2) ___ watches. She chose a (3) ___ one with a brown strap. Her father was very happy (4) ___ he saw it. He thanked her (5) ___ the lovely gift.",
+"b": [
+{
+"o": [
+"to",
+"at",
+"in",
+"on"
+],
+"a": 0,
+"e": "'Go to' a place.",
+"ml": "went to a shop."
+},
+{
+"o": [
+"many",
+"much",
+"a",
+"an"
+],
+"a": 0,
+"e": "'Watches' is plural and countable → many.",
+"ml": "എണ്ണാവുന്ന ബഹുവചനം → many."
+},
+{
+"o": [
+"beautiful",
+"beauty",
+"beautifully",
+"beautify"
+],
+"a": 0,
+"e": "An adjective before 'one': beautiful.",
+"ml": "നാമത്തിന് മുമ്പ് adjective: beautiful."
+},
+{
+"o": [
+"when",
+"what",
+"which",
+"who"
+],
+"a": 0,
+"e": "Time clause: when he saw it.",
+"ml": "സമയം → when."
+},
+{
+"o": [
+"for",
+"to",
+"with",
+"by"
+],
+"a": 0,
+"e": "Thank someone for something.",
+"ml": "thank … for."
+}
+]
+},
+{
+"id": "cz-3",
+"p": "Exercise is good for our body and mind. Doctors (1) ___ that we walk for at least thirty minutes a day. Exercise (2) ___ our heart strong. It also helps us to (3) ___ well at night. People who exercise (4) ___ are usually happier. So, start today and make it a daily (5) ___.",
+"b": [
+{
+"o": [
+"advise",
+"advice",
+"advised",
+"advising"
+],
+"a": 0,
+"e": "'Advise' is the verb; 'advice' is the noun.",
+"ml": "advise (ക്രിയ), advice (നാമം)."
+},
+{
+"o": [
+"keeps",
+"keep",
+"keeping",
+"kept"
+],
+"a": 0,
+"e": "Exercise (singular) → keeps.",
+"ml": "Exercise singular → keeps."
+},
+{
+"o": [
+"sleep",
+"sleeps",
+"slept",
+"sleeping"
+],
+"a": 0,
+"e": "After 'to', base verb: sleep.",
+"ml": "to → sleep."
+},
+{
+"o": [
+"regularly",
+"regular",
+"regularity",
+"regulate"
+],
+"a": 0,
+"e": "An adverb describes 'exercise' (verb): regularly.",
+"ml": "ക്രിയയെ വിശേഷിപ്പിക്കാൻ adverb: regularly."
+},
+{
+"o": [
+"habit",
+"habitual",
+"habitat",
+"inhabit"
+],
+"a": 0,
+"e": "A daily habit.",
+"ml": "daily habit = ദിനചര്യ."
+}
+]
+}
 ]
 }

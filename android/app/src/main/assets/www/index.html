@@ -1179,7 +1179,7 @@ const FULL=[{s:'Quant',sess:1,n:20},{s:'Reasoning',sess:1,n:20},{s:'GA',sess:2,n
 const PNAME={Quant:'Numerical & Mathematical Ability',Reasoning:'Reasoning & Problem Solving',GA:'General Awareness',English:'English Language',CA:'Current Affairs (last 6 months)'};
 let fm=null,fmTick=null;
 function buildMock(kind,subj){const parts=kind==='full'?FULL:[{s:subj,sess:['GA','English','CA'].includes(subj)?2:1,n:['GA','English','CA'].includes(subj)?25:20}];
-  const P=parts.map(p=>({s:p.s,sess:p.sess,qs:fresh(p.s,p.n).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen}))}));
+  const P=parts.map(p=>({s:p.s,sess:p.sess,qs:((typeof bpSet==='function'&&bpSet(p.s))||fresh(p.s,p.n)).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen}))}));
   const sessions=[...new Set(P.map(p=>p.sess))],per=st.set.extra?60:45,mins=kind==='full'?per:Math.round(P[0].qs.length*(per/(P[0].sess===1?40:50)));
   return{kind,title:kind==='full'?'App full mock '+(st.fmHist.filter(r=>r.kind==='full').length+1):SL(subj)+' sectional mock',parts:P,sessions,si:0,mins,ans:{},mark:{},guess:{},vis:{},cur:{p:P.findIndex(p=>p.sess===sessions[0]),i:0},end:null,start:Date.now(),used:{}}}
 function fmStart(kind,subj){if(st.fmRun){fmResume();return}fm=buildMock(kind,subj);if(fm.parts.some(p=>!p.qs.length)){alert('Questions are still loading. Try again in a moment.');fm=null;return}st.fmRun=fm;fmSession();}
@@ -1231,9 +1231,10 @@ function drawExam(showLast){const el=$('examBody');if(!el)return;const run=st.fm
   let x=`${run?`<div class="panel" style="border-top:4px solid #ff6b6b;margin-bottom:18px"><h2>Mock in progress</h2><p>${esc(run.title)}: the timer kept running. Continue now.</p><button class="btn" data-px="resume">Continue mock</button> <button class="btn ghost" data-px="quit">Quit this mock</button></div>`:''}
   ${mb?`<div class="note" style="border-left:4px solid #ff6b6b;color:var(--ink)"><b>Compulsory:</b> you missed the weekly full mock (week ending ${esc(fmtDate(mb))}). New classes stay locked until you take one.</div>`:''}
   <div class="grid2"><div class="panel"><h2>Full mock (real SSC pattern)</h2><ul class="rep"><li>Session 1: Maths 20 + Reasoning 20 · +3 each · <b>no negative</b></li><li>Session 2: GA 25 + English 25 · +3 each · <b>−1 per wrong</b></li><li>${st.set.extra?60:45} minutes per session${st.set.extra?' (PwD extra time on, change in My day)':''} · 270 marks</li><li>New questions every time: maths and reasoning are made fresh, GA and English come from the bank that grows every morning.</li></ul>
-   <p class="small">Compulsory: one full mock every week (Saturday is mock day).</p><button class="btn" data-px="fm">Start full mock</button></div>
+   <p class="small">Compulsory: one full mock every week (Saturday is mock day).</p><button class="btn" data-px="fm">Start full mock (expected 2026 pattern)</button></div>
    <div class="panel"><h2>Sectional mocks</h2><p class="small">After you learn and practise a weak topic, test the whole subject.</p><div class="row" style="justify-content:flex-start;flex-wrap:wrap">${['Quant','Reasoning','GA','English'].map(s=>`<button class="btn ghost" data-px="sect" data-s="${s}">${esc(SL(s))}</button>`).join('')}<button class="btn ghost" data-px="sect" data-s="CA">Current affairs</button></div>
    <h3 style="margin:18px 0 6px">Testbook mocks</h3><p class="small">In the phone and PC app, Testbook opens inside the app. Log in once. After each Testbook mock, add your score in <a href="#mocks">My mocks</a>.</p><a class="btn ghost" href="${TB}" target="_blank" rel="noopener">Open Testbook MTS tests ↗</a></div></div>`;
+  try{x+=bpHTML()}catch(e){}
   if(last&&last.r){const r=last.r;x+=`<div class="panel" style="margin-top:18px;border-top:4px solid #59d499" id="fmRes"><p class="small">${esc(fmtDate(r.date))} · ${esc(r.title)} · ${r.minutes} min</p><p class="result">${r.score} / ${r.max}</p>
    <div class="scroll"><table><thead><tr><th>Section</th><th>Right</th><th>Wrong</th><th>Skipped</th><th>Marks</th></tr></thead><tbody>${r.parts.map(p=>`<tr><td>${esc(PNAME[p.s])}</td><td>${p.c}</td><td>${p.w}</td><td>${p.sk}</td><td>${p.score} / ${p.max}</td></tr>`).join('')}</tbody></table></div>
    <h3 style="margin:16px 0 6px">No-guess trainer</h3><ul class="rep">${guessAdvice(r)}</ul>
@@ -1318,6 +1319,66 @@ function fixAfter(k,pct){const f=st.fix[k];if(!f)return'';f.rounds.push({d:dkey,
 function fixShow(){return fixList().filter(f=>!f.done||f.stage==='recheck')}
 function fixPanel(){const a=fixShow(),m=fixList().filter(f=>f.done&&f.stage!=='recheck');
   return `<h3 style="margin:18px 0 8px">Topic doctor</h3><p class="small" style="margin-top:-4px">A weak topic stays here until you score ${FIX_PASS}% twice, ${FIX_GAP} days apart.</p>${a.length?`<ul class="plan">${a.map(fixRow).join('')}</ul>`:'<p class="small">No topic being fixed now.</p>'}${m.length?`<p class="small" style="margin-top:10px"><b>Mastered ✓</b> ${m.map(f=>esc(f.t)).join(', ')}</p>`:''}`}
+
+/* ================= EXPECTED 2026 PAPER: real SSC MTS topic pattern ================= */
+/* new generators for question types seen in recent MTS papers */
+GEN.Quant['Data interpretation']=[()=>{const yrs=['2021','2022','2023','2024','2025'],v=yrs.map(()=>rnd(4,20)*10),k=rnd(0,3);
+  if(k===2){const a=rnd(2,10)*10,inc=any([10,20,25,50]);v[1]=a;v[2]=a+a*inc/100}
+  const pre=`A shop sold these numbers of fans: ${yrs.map((y,i)=>y+': '+v[i]).join(', ')}. `,s=v.reduce((x,y)=>x+y,0);
+  if(k===0)return mkq('Quant','Data interpretation',pre+'How many fans were sold in all five years?',s,[s+10,s-10,s+20],`Add all: ${v.join(' + ')} = ${s}.`,`എല്ലാം കൂട്ടുക: ${v.join(' + ')} = ${s}.`);
+  if(k===1)return mkq('Quant','Data interpretation',pre+'What is the average number of fans sold per year?',nf(s/5),[nf(s/5+4),nf(s/5-4),nf(s/5+10)],`Total ${s} ÷ 5 years = ${nf(s/5)}.`,`ആകെ ${s} ÷ 5 = ${nf(s/5)}.`);
+  if(k===2){const p=Math.round((v[2]-v[1])/v[1]*100);return mkq('Quant','Data interpretation',pre+'By what percent did sales increase from 2022 to 2023?',p+'%',[(v[2]-v[1])+'%',(p+5)+'%',Math.round((v[2]-v[1])/v[2]*100)+'%'],`Increase = ${v[2]} − ${v[1]} = ${v[2]-v[1]}. % = ${v[2]-v[1]} ÷ ${v[1]} × 100 = ${p}%. Divide by the old value.`,`വർധന ${v[2]-v[1]}. ശതമാനം = ${v[2]-v[1]} ÷ ${v[1]} × 100 = ${p}%.`)}
+  const mx=Math.max(...v),mn=Math.min(...v);return mkq('Quant','Data interpretation',pre+'What is the difference between the highest and the lowest sales?',mx-mn,[mx-mn+10,mx,mx+mn],`Highest ${mx} − lowest ${mn} = ${mx-mn}.`,`കൂടിയത് ${mx} − കുറഞ്ഞത് ${mn} = ${mx-mn}.`)}];
+GEN.Quant['Number system']=[()=>{for(;;){const N=rnd(120,999),k=any([7,8,9,11,12,13]),r=N%k;if(!r)continue;
+  if(Math.random()<.5)return mkq('Quant','Number system',`What is the least number that must be added to ${N} to make it divisible by ${k}?`,k-r,[r,k,(k-r+1)%k||k+1],`${N} ÷ ${k} leaves remainder ${r}. Add ${k} − ${r} = ${k-r}.`,`${N} ÷ ${k} ശിഷ്ടം ${r}. ${k} − ${r} = ${k-r} കൂട്ടണം.`);
+  return mkq('Quant','Number system',`What is the remainder when ${N} is divided by ${k}?`,r,[k-r,r+1,Math.max(0,r-1)===r?r+2:Math.max(0,r-1)],`${k} × ${Math.floor(N/k)} = ${k*Math.floor(N/k)}. ${N} − ${k*Math.floor(N/k)} = ${r}.`,`${N} − ${k*Math.floor(N/k)} = ${r} (ശിഷ്ടം).`)}}];
+GEN.Reasoning['Odd one out'].push(()=>{const G=[['Mango','Rose','Lotus','Jasmine','Mango is a fruit; the others are flowers.'],['Moon','Mercury','Venus','Mars','The Moon is a satellite; the others are planets.'],['Delhi','Kerala','Karnataka','Tamil Nadu','Delhi is a Union Territory; the others are states.'],['Circle','Square','Rectangle','Triangle','A circle has no straight sides.'],['Tiger','Cow','Goat','Buffalo','The tiger is a wild animal that eats meat; the others are domestic animals.'],['Chess','Hockey','Cricket','Football','Chess is an indoor board game; the others are field games.'],['Kilogram','Rupee','Dollar','Yen','Kilogram is a unit of weight; the others are currencies.'],['Wood','Copper','Iron','Silver','Wood is not a metal.'],['Potato','Apple','Banana','Grape','Potato is a vegetable; the others are fruits.'],['June','January','March','May','June has 30 days; the others have 31.']],g=any(G);
+  return mkq('Reasoning','Odd one out','Find the odd one out.',g[0],g.slice(1,4),g[4],`${g[0]} ആണ് വ്യത്യസ്തം. ${g[4]}`)});
+GEN.Reasoning['Syllogism']=[()=>{const N=any([['pens','books','bags'],['cats','dogs','birds'],['doctors','teachers','singers'],['roses','flowers','plants'],['cars','buses','trains'],['tables','chairs','boxes']]),[A,B,C]=N;
+  const O=['Only conclusion I follows','Only conclusion II follows','Both I and II follow','Either I or II follows'];
+  const T=[[`All ${A} are ${B}. All ${B} are ${C}.`,`All ${A} are ${C}.`,`Some ${C} are ${A}.`,2,'All A→B→C, so all A are C; and then some C are A.'],
+   [`All ${A} are ${B}. Some ${B} are ${C}.`,`Some ${A} are ${C}.`,`Some ${C} are ${B}.`,1,'"Some B are C" turns around to "some C are B" (II). Nothing links A and C directly.'],
+   [`Some ${A} are ${B}. No ${B} is ${C}.`,`Some ${A} are not ${C}.`,`No ${A} is ${C}.`,0,'The A that are B can never be C, so some A are not C (I). We cannot say no A is C.'],
+   [`All ${A} are ${B}. No ${B} is ${C}.`,`No ${A} is ${C}.`,`Some ${B} are ${A}.`,2,'All A are inside B, and B never meets C, so no A is C. "All A are B" also gives "some B are A".'],
+   [`Some ${A} are ${B}. Some ${B} are ${C}.`,`Some ${A} are ${C}.`,`No ${A} is ${C}.`,3,'Neither is certain alone, but one of the pair must be true ("some" vs "no"): either I or II.'],
+   [`All ${A} are ${B}. All ${A} are ${C}.`,`Some ${B} are ${C}.`,`All ${C} are ${B}.`,0,'The A are both B and C, so some B are C. We cannot say all C are B.']],t=any(T);
+  const q={id:'g'+Date.now().toString(36)+(gseq++),s:'Reasoning',t:'Syllogism',q:`Statements: ${t[0]}\nConclusions: I. ${t[1]} II. ${t[2]}\nWhich conclusion(s) follow?`,o:O.slice(),a:t[3],e:t[4]+' Tip: draw circles (Venn diagram).',ml:'വൃത്തങ്ങൾ (Venn diagram) വരച്ച് നോക്കുക. ശരിയായ ഉത്തരം: '+O[t[3]]+'.',gen:1};return q}];
+const canForm=(w,base)=>{const c={};for(const ch of base)c[ch]=(c[ch]||0)+1;for(const ch of w){if(!c[ch])return false;c[ch]--}return true};
+GEN.Reasoning['Word formation']=[()=>{const B={EDUCATION:['CAUTION','NOTICE','COUNT','DONATE','AUCTION','ACTION','CODE','DANCE','NATION','EDITION','DUTIES','STUDENT'],PRESIDENT:['PRINTED','STRIDE','SPIDER','PRIEST','TENDER','PRINCE','STRONG','SPRINTS','DESPITE','PRESENT'],COMPUTER:['COMPUTE','ROUTE','COURT','METRO','CUTE','POUR','COMMUTE','COMPOSE','COUPLE','TEMPO'],TELEVISION:['VISION','LISTEN','SILENT','NOVEL','OLIVE','TENSION','ELEVEN','STATION','LESSON']};
+  for(let t=0;t<20;t++){const base=any(Object.keys(B)),yes=shuffle(B[base].filter(w=>canForm(w,base))),no=B[base].filter(w=>!canForm(w,base));if(yes.length<3||!no.length)continue;const ans=any(no);
+   const need=[...ans].filter((ch,i,a)=>[...ans].filter(x=>x===ch).length>[...base].filter(x=>x===ch).length&&a.indexOf(ch)===i);
+   return mkq('Reasoning','Word formation',`Which word CANNOT be formed using the letters of the word '${base}'? (each letter used only as many times as it appears)`,ans,yes.slice(0,3),`'${ans}' needs ${need.map(c=>"'"+c+"'").join(', ')||'a letter'} more times than '${base}' has.`,`'${ans}' ഉണ്ടാക്കാൻ '${base}'-ൽ ആവശ്യമായ അക്ഷരങ്ങളില്ല.`)}
+  return GEN.Reasoning['Analogy'][0]()}];
+GEN.Reasoning['Set similarity']=[()=>{const R=[['sum',(a,b)=>a+b,'third = first + second','മൂന്നാമത്തേത് = ഒന്ന് + രണ്ട്'],['product',(a,b)=>a*b,'third = first × second','മൂന്നാമത്തേത് = ഒന്ന് × രണ്ട്'],['diff',(a,b)=>(a+b)*2,'third = (first + second) × 2','മൂന്നാമത്തേത് = (ഒന്ന് + രണ്ട്) × 2']],[nm,f,rule,ml]=any(R),hi=nm==='product'?12:40;
+  const mk3=()=>{const a=rnd(2,hi),b=rnd(2,hi);return[a,b,f(a,b)]},g=mk3(),ans=mk3(),fmt=t=>`(${t.join(', ')})`,bad=()=>{const t=mk3();t[2]+=any([1,2,3,-1,-2]);return t};
+  return mkq('Reasoning','Set similarity',`Select the set in which the numbers are related in the same way as the numbers of the set ${fmt(g)}.`,fmt(ans),[fmt(bad()),fmt(bad()),fmt(bad())],`Rule: ${rule}. ${fmt(g)}: ${g[0]} and ${g[1]} give ${g[2]}. Only ${fmt(ans)} follows it.`,`നിയമം: ${ml}.`)}];
+GEN.Reasoning['Missing number']=[()=>{const rows=[0,1,2].map(()=>[rnd(2,9),rnd(2,9)]);const add=Math.random()<.5,f=(a,b)=>add?a*b+a:a*b;const r=rows.map(([a,b])=>[a,b,f(a,b)]),ans=r[2][2];
+  return mkq('Reasoning','Missing number',`Find the missing number: (${r[0].join(', ')}), (${r[1].join(', ')}), (${r[2][0]}, ${r[2][1]}, ?)`,ans,[ans+1,ans+r[2][0]+1,ans-2],`In each group the third number = ${add?'first × second + first':'first × second'}. ${r[2][0]} and ${r[2][1]} → ${ans}.`,`ഓരോ കൂട്ടത്തിലും മൂന്നാമത്തേത് = ${add?'ഒന്ന് × രണ്ട് + ഒന്ന്':'ഒന്ന് × രണ്ട്'}.`)}];
+GEN.Reasoning['Calendar']=[()=>{const D=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],s=rnd(0,6);
+  if(Math.random()<.5){const d=rnd(8,30),r=(s+d-1)%7,M=any(['March','May','July','August','October']);return mkq('Reasoning','Calendar',`If 1 ${M} of a year is a ${D[s]}, what day of the week is ${d} ${M}?`,D[r],[D[(r+1)%7],D[(r+6)%7],D[(r+2)%7]],`${d} − 1 = ${d-1} days later. ${d-1} ÷ 7 leaves ${(d-1)%7} odd days. ${D[s]} + ${(d-1)%7} = ${D[r]}.`,`${d-1} ദിവസം കഴിഞ്ഞ്; ${(d-1)%7} ഒറ്റ ദിവസം. ഉത്തരം ${D[r]}.`)}
+  const n=rnd(15,120),r=(s+n)%7;return mkq('Reasoning','Calendar',`Today is ${D[s]}. What day of the week will it be after ${n} days?`,D[r],[D[(r+1)%7],D[(r+6)%7],D[(r+3)%7]],`${n} ÷ 7 leaves ${n%7}. ${D[s]} + ${n%7} days = ${D[r]}.`,`${n} ÷ 7 ശിഷ്ടം ${n%7}. ഉത്തരം ${D[r]}.`)}];
+/* blueprint: question count per topic, from published SSC MTS 2024–25 shift analyses */
+const BLUEPRINT={
+ Quant:[['Percentage',2],['Profit and loss',2],['Discount',1],['Simple interest',1],['Compound interest',1],['Ratio',2],['Average',2],['Number system',1],['HCF and LCM',1],['Simplification',2],['Time and work',1],['Speed and trains',2],['Mensuration',1],['Data interpretation',1]],
+ Reasoning:[['Odd one out',3],['Analogy',2],['Number series',1],['Letter series',1],['Coding-decoding',2],['Maths operations',2],['Direction',1],['Blood relation',1],['Syllogism',1],['Word formation',1],['Set similarity',1],['Missing number',1],['Ranking',1],['Dictionary order',1],['Calendar',1]],
+ GA:[['History',3],['Polity',3],['Geography',2],['Economy',1],['Static GK',4],['Biology',2],['Chemistry',3],['Physics',2],['Current affairs',5]],
+ English:[['Cloze test',5],['Error spotting',2],['Sentence improvement',2],['Fill in the blanks',2],['Synonyms',2],['Antonyms',2],['Idioms',2],['One word substitution',2],['Spelling',2],['Voice and narration',2],['Para jumble',2]]};
+const GA_ALIAS={'Static GK':['Static GK','Sports','Culture','Computer','Awards']};
+function engSub(q){if(q.t&&q.t!=='Grammar')return q.t;const x=q.q;if(/^Find the error/i.test(x))return'Error spotting';if(/passive|active form|indirect speech|direct speech/i.test(x))return'Voice and narration';if(/^Improve/i.test(x))return'Sentence improvement';if(/___|Fill in the blank/i.test(x))return'Fill in the blanks';return'Grammar'}
+function topicMatch(q,s,t){if(s==='GA'){if(t==='Current affairs')return q.s==='CA';if(q.s!=='GA')return false;return(GA_ALIAS[t]||[t]).includes(topicOf(q))}
+  if(q.s!==s)return false;return s==='English'?engSub(q)===t:topicOf(q)===t}
+function clozeQs(n){const out=[],P=shuffle(BANK.cloze||[]);for(const c of P){c.b.forEach((b,k)=>{if(out.length<n){const ix=shuffle([0,1,2,3]);out.push({id:c.id+'-'+k,s:'English',t:'Cloze test',q:`Read the passage and choose the word for blank (${k+1}).\n\n${c.p}`,o:ix.map(i=>b.o[i]),a:ix.indexOf(b.a),e:b.e,ml:b.ml})}});if(out.length>=n)break}return out}
+function bpPick(s,t,n){let out=[];
+  if(t==='Cloze test')out=clozeQs(n);
+  else if(GEN[s]&&GEN[s][t]&&(s!=='English'||BANK.vocab.length)){const seen=new Set();for(let i=0;out.length<n&&i<n*20;i++){const q=any(GEN[s][t])();if(!seen.has(q.q)){seen.add(q.q);out.push(q)}}}
+  else{st.seen=st.seen||{};out=shuffle(Q.filter(q=>topicMatch(q,s,t))).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0)).slice(0,n).map(shufO)}
+  return out}
+function bpSet(s){if(!BLUEPRINT[s])return null;const out=[],txt=new Set();BLUEPRINT[s].forEach(([t,n])=>{bpPick(s,t,n).forEach(q=>{if(!txt.has(q.q)){txt.add(q.q);out.push(q)}})});
+  const need=BLUEPRINT[s].reduce((a,[,n])=>a+n,0);if(out.length<need)fresh(s==='GA'?'GA':s,need*2).forEach(q=>{if(out.length<need&&!txt.has(q.q)){txt.add(q.q);out.push(q)}});
+  return out.slice(0,need)}
+function bpHTML(){const nm={Quant:'Maths (20)',Reasoning:'Reasoning (20)',GA:'General Awareness (25)',English:'English (25)'};
+  return `<div class="panel" style="margin-top:18px"><h2>Expected 2026 pattern</h2><p class="small" style="margin-top:-6px">Every full and sectional mock follows this topic plan. It is built from published topic tables of recent SSC MTS shifts (StudyIQ 2024 shift analysis, PW topic weightage). The real paper can change a little.</p>
+   <div class="grid2">${Object.keys(BLUEPRINT).map(s=>`<div><h3 style="margin:10px 0 6px">${nm[s]}</h3><p class="small">${BLUEPRINT[s].map(([t,n])=>`${esc(t)} <b>${n}</b>`).join(' · ')}</p></div>`).join('')}</div></div>`}
 
 /* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
 let MON={months:[]},monSel=0;
@@ -1407,7 +1468,7 @@ document.querySelectorAll('nav button[data-tab=cards]').forEach(b=>b.addEventLis
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){pxClose()}});
 
 /* ---------- load the bank, start ---------- */
-getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):''})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[]};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
+getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):''})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[],cloze:(d.cloze||[]).filter(c=>c&&c.p&&Array.isArray(c.b))};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
 drawPlusToday();drawSmart();
 function wakeRoute(){if(location.hash==='#wake'){const nb=document.querySelector('nav button[data-tab=myday]');if(nb)nb.click();if(!st.rtWake[dkey])setTimeout(wakeCheck,300)}}
 function drawCurTab(){const h=location.hash.slice(1);if(h==='exam')drawExam();else if(h==='myday')drawMyDay()}
@@ -1415,7 +1476,7 @@ window.addEventListener('hashchange',()=>{wakeRoute();drawCurTab()});wakeRoute()
 if(st.fmRun){fm=st.fmRun;if(Date.now()>fm.end+6*3600e3){st.fmRun=null;fm=null;save()}}
 if(st.focusRun&&st.focusRun.left>0)fLen=st.focusRun.len||25;
 drawCurTab();
-window.__mts={fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
+window.__mts={buildMock,bpSet:s=>bpSet(s),fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
 
 /* ================= SYNC between phone and PC (phone/PC app only) =================
    Progress is saved in a private GitHub gist ("MTS Study sync") using the person's own GitHub key (gist scope only). */
