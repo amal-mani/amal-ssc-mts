@@ -127,8 +127,12 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public void quickSet(String cfg, String qs) {
             runOnUiThread(() -> {
-                if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED)
+                // ask for notification permission only once for the pop-up quiz
+                if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+                        && !QuickQuiz.p(MainActivity.this).getBoolean("asked", false)) {
+                    QuickQuiz.p(MainActivity.this).edit().putBoolean("asked", true).apply();
                     requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 9);
+                }
                 QuickQuiz.save(MainActivity.this, cfg, qs);
             });
         }

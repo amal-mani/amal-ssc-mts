@@ -190,5 +190,16 @@ public class QuickActivity extends Activity {
         box.addView(done);
     }
 
+    /** a new notification tapped while this window is open: show that question */
+    @Override
+    protected void onNewIntent(android.content.Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (nm != null) nm.cancel(QuickQuiz.NOTE_ID);
+        try { q = new JSONObject(QuickQuiz.p(this).getString("q_" + intent.getStringExtra("key"), "")); } catch (Exception e) { return; }
+        draw();
+    }
+
     @Override protected void onDestroy() { if (tts != null) tts.shutdown(); super.onDestroy(); }
 }

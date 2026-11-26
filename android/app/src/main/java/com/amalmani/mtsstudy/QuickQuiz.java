@@ -25,8 +25,10 @@ public class QuickQuiz extends BroadcastReceiver {
     static SharedPreferences p(Context c) { return c.getSharedPreferences(PREFS, Context.MODE_PRIVATE); }
 
     static void save(Context c, String cfg, String qs) {
+        boolean same = cfg.equals(p(c).getString("cfg", ""));
         p(c).edit().putString("cfg", cfg).putString("qs", qs).putInt("idx", 0).apply();
-        schedule(c);
+        // a new question pack alone must not push the next pop-up later; only a settings change does
+        if (!same || p(c).getLong("next", 0) <= System.currentTimeMillis()) schedule(c);
     }
 
     static JSONObject cfg(Context c) {
@@ -108,6 +110,7 @@ public class QuickQuiz extends BroadcastReceiver {
         PendingIntent pi = alarmPi(c);
         am.cancel(pi);
         long t = nextTime(cfg(c), System.currentTimeMillis());
+        p(c).edit().putLong("next", Math.max(t, 0)).apply();
         if (t < 0) return;
         try {
             if (Build.VERSION.SDK_INT >= 31 && !am.canScheduleExactAlarms()) am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, t, pi);

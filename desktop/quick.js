@@ -77,7 +77,8 @@ function setup(onChange) {
   ipcMain.on('qq-get', e => { e.returnValue = popQ; });
   ipcMain.on('qq-answer', (e, i) => {
     if (!popQ) return;
-    const r = Object.assign({}, popQ, { i: +i, at: new Date().toISOString().slice(0, 10) });
+    const d = new Date(), pad = n => String(n).padStart(2, '0');
+    const r = Object.assign({}, popQ, { i: +i, at: `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}` });
     S.res.push(r); if (S.res.length > 300) S.res = S.res.slice(-300); store();
     if (pop && !pop.isDestroyed()) pop.__answered = true;
   });

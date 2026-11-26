@@ -764,7 +764,7 @@ function drawNews(U){
   $('newsList').innerHTML=U.items.map(n=>`<li style="--c:#4cc3ff"><span class="t">${esc(n.tag)}</span><span class="what">${esc(n.title)}<span class="how">${esc(n.text)}${n.url?` · <a href="${esc(su(n.url))}" target="_blank" rel="noopener">source</a>`:''} · ${esc(fmtDate(n.date))}</span></span><span></span></li>`).join('');
 }
 getData('ca.json').then(r=>r.json()).then(d=>{CA=d;
-  (d.days||[]).forEach(day=>(day.quiz||[]).forEach((q,i)=>{if(Array.isArray(q.o)&&q.o.length===4)Q.push({id:'ca-'+day.date+'-'+i,s:'CA',day:day.date,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),t:q.t?String(q.t):undefined,ml:q.ml?String(q.ml):undefined})}));
+  (d.days||[]).forEach(day=>(day.quiz||[]).forEach((q,i)=>{if(Array.isArray(q.o)&&q.o.length===4)Q.push({id:'ca-'+day.date+'-'+i,s:'CA',day:day.date,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),t:q.t?String(q.t):undefined,ml:q.ml?String(q.ml):undefined,w:Array.isArray(q.w)&&q.w.length===4?q.w.map(x=>x?String(x):null):undefined})}));
   drawCA();}).catch(()=>{CA=null;drawCA()});
 getData('updates.json').then(r=>r.json()).then(drawNews).catch(()=>drawNews(null));
 
@@ -827,13 +827,13 @@ function drawLib(all){
    +EXTRA.map(([t,label,u])=>`<li style="--c:${c[t]}"><span class="t">PYQ bank</span><span class="what">${label}<span class="how">Chapter-wise old questions, good after each course topic</span></span><a class="btn ghost" href="${u}" target="_blank" rel="noopener">Open ↗</a></li>`).join('');
 }
 getData('lessonquiz.json').then(r=>r.json()).then(d=>{LQ=d.quizzes||{};
-  Object.entries(LQ).forEach(([id,qs])=>{const l=findL(id);if(!l||!Array.isArray(qs))return;qs.forEach((q,i)=>{if(Array.isArray(q.o)&&q.o.length===4)Q.push({id:'lq-'+id+'-'+i,s:l.t,lesson:id,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),t:q.t?String(q.t):undefined,ml:q.ml?String(q.ml):undefined})})});
+  Object.entries(LQ).forEach(([id,qs])=>{const l=findL(id);if(!l||!Array.isArray(qs))return;qs.forEach((q,i)=>{if(Array.isArray(q.o)&&q.o.length===4)Q.push({id:'lq-'+id+'-'+i,s:l.t,lesson:id,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),t:q.t?String(q.t):undefined,ml:q.ml?String(q.ml):undefined,w:Array.isArray(q.w)&&q.w.length===4?q.w.map(x=>x?String(x):null):undefined})})});
   refreshAll()}).catch(()=>{});
 getData('topics.json').then(r=>r.json()).then(d=>{TOP={lessons:(d&&d.lessons)||{},daily:Array.isArray(d&&d.daily)?d.daily:[]};refreshAll()}).catch(()=>{try{drawTricks()}catch(e){}});
 $('nbClose').onclick=()=>{$('noteBox').hidden=true};
 /* daily mock written fresh each day */
 let DM=null;
-getData('practice.json').then(r=>r.json()).then(d=>{DM=d;(d.days||[]).forEach(day=>(day.q||[]).forEach((q,i)=>{if(Array.isArray(q.o)&&q.o.length===4&&SECS.includes(q.s))Q.push({id:'dm-'+day.date+'-'+i,s:q.s,mock:day.date,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),t:q.t?String(q.t):undefined,ml:q.ml?String(q.ml):undefined})}));
+getData('practice.json').then(r=>r.json()).then(d=>{DM=d;(d.days||[]).forEach(day=>(day.q||[]).forEach((q,i)=>{if(Array.isArray(q.o)&&q.o.length===4&&SECS.includes(q.s))Q.push({id:'dm-'+day.date+'-'+i,s:q.s,mock:day.date,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),t:q.t?String(q.t):undefined,ml:q.ml?String(q.ml):undefined,w:Array.isArray(q.w)&&q.w.length===4?q.w.map(x=>x?String(x):null):undefined})}));
   const last=(d.days||[])[0];if(last){$('dmBtn').disabled=false;$('dmInfo').textContent='New mock for '+fmtDate(last.date)+': '+last.q.length+' questions, about 20 minutes. A new one is added every morning by 5 AM.'}}).catch(()=>{});
 $('dmBtn').onclick=()=>{const last=DM.days[0];document.querySelector('nav button[data-tab=practice]').click();startQuiz(Q.filter(q=>q.mock===last.date),true,{dm:last.date})};
 
@@ -1530,6 +1530,7 @@ function similarQ(q){const tp=lnTopic(q);let n=null;try{if(GEN[q.s]&&GEN[q.s][tp
   if(!n){const used=new Set(set.map(x=>x.q));const pool=Q.filter(x=>x.s===q.s&&x.q!==q.q&&!used.has(x.q)&&!x.lesson);if(pool.length)n=shufO(any(pool))}
   return n}
 const _lnAnswer=answer;answer=function(i){if(answered)return;const q=set[qi];_lnAnswer(i);const ok=i===q.a;
+  if(q.simOf)q.simRes=i===-1?'sk':ok?'c':'w';
   try{if(q.simOf&&!ok){fixStart(q.s,lnTopic(q),true);const n=document.createElement('div');n.className='note';n.style.cssText='border-left:4px solid #c39bff';n.innerHTML='<b>Topic doctor:</b> this topic needs more practice. It is added to your Topic doctor list.';$('after').appendChild(n)}
     if(q.simOf&&ok){const n=document.createElement('p');n.innerHTML='<b style="color:#59d499">You fixed it!</b> Same kind of question, right answer this time.';$('after').prepend(n)}
     if(!ok){const ex=$('after').querySelector('.explain');if(ex){for(const nd of [...ex.childNodes])if(nd.nodeType===3&&nd.textContent.trim()===String(q.e).trim())nd.remove()}
@@ -1539,7 +1540,7 @@ const _lnAnswer=answer;answer=function(i){if(answered)return;const q=set[qi];_ln
 function learnSet(){const out=[],take=(s,n)=>{let L=[];try{L=(bpSet(s)||[]).filter(q=>!/^Read the passage/.test(q.q))}catch(e){}if(L.length<n)L=L.concat(fresh(s,n*2));shuffle(L).slice(0,n).forEach(q=>{if(!out.some(x=>x.q===q.q))out.push(q)})};
   take('Quant',5);take('Reasoning',5);take('English',5);take('GA',3);const ca=shuffle(Q.filter(q=>q.s==='CA')).slice(0,2).map(shufO);out.push(...ca);if(out.length<20)take('GA',20-out.length);return shuffle(out).slice(0,20)}
 function learnStart(){const L=learnSet();if(!L.length){alert('Questions are still loading. Try again in a moment.');return}location.hash='practice';setTimeout(()=>{startQuiz(L,true,{learn:true});try{$('quiz').scrollIntoView({behavior:'smooth'})}catch(e){}},60)}
-const _lnEnd=drawEnd;drawEnd=function(){const c=qctx;_lnEnd();if(c&&c.learn){const p=document.createElement('div');p.className='note';p.style.cssText='border-left:4px solid #59d499';
+const _lnEnd=drawEnd;drawEnd=function(){const c=qctx;try{const sims=set.filter(x=>x.simOf);if(sims.length){sims.forEach(x=>{if(x.simRes&&score[x.simRes]>0)score[x.simRes]--});set=set.filter(x=>!x.simOf)}}catch(e){}_lnEnd();if(c&&c.learn){const p=document.createElement('div');p.className='note';p.style.cssText='border-left:4px solid #59d499';
   const tops=Object.keys(c.tops||{});p.innerHTML=`<b>Learning mock done.</b> ${c.wrong?`You learned from ${c.wrong} mistake${c.wrong>1?'s':''}${tops.length?' in: '+tops.map(esc).join(', '):''}. These come back in your revision.`:'No mistakes. Excellent!'} <button class="btn ghost" data-px="learn" style="margin-left:6px">Another learning mock</button>`;$('quiz').prepend(p)}};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px="learn"]');if(b){e.preventDefault();learnStart()}});
 /* full mock review: explain each wrong answer the same way */
@@ -1629,11 +1630,11 @@ function drawMonthly(){const el=$('monthBox');if(!el)return;const ms=MON.months|
    ${m.sources&&m.sources.length?`<p class="small" style="margin-top:12px">Written from: ${m.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>`:''}</div>`;
   el.querySelectorAll('[data-mon]').forEach(b=>b.onclick=()=>{monSel=+b.dataset.mon;drawMonthly()});
   el.querySelectorAll('[data-msay]').forEach(b=>b.onclick=()=>{const it=m.items[+b.dataset.msay];speak(it.title+'. '+it.text+(it.gk?' '+it.gk:''))});
-  const mq=(mm,i)=>mm.quiz.map((q,j)=>({id:'mon-'+mm.month+'-'+j,s:'CA',t:'Current affairs',q:q.q,o:q.o.slice(),a:q.a,e:q.e,ml:q.ml}));
+  const mq=(mm,i)=>mm.quiz.map((q,j)=>({id:'mon-'+mm.month+'-'+j,s:'CA',t:'Current affairs',q:q.q,o:q.o.slice(),a:q.a,e:q.e,ml:q.ml,w:Array.isArray(q.w)&&q.w.length===4?q.w:undefined}));
   $('monQuiz').onclick=()=>{goPractice();startQuiz(shuffle(mq(m)),true)};
   $('monAll').onclick=()=>{goPractice();startQuiz(shuffle(ms.flatMap(x=>mq(x))).slice(0,15),true)}}
 getData('monthly.json').then(r=>r.json()).then(d=>{MON=d||{months:[]};
-  const have=new Set(Q.map(q=>q.id));(MON.months||[]).forEach(m=>(m.quiz||[]).forEach((q,j)=>{const id='mon-'+m.month+'-'+j;if(!have.has(id)&&Array.isArray(q.o)&&q.o.length===4)Q.push({id,s:'CA',t:'Current affairs',q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):undefined,day:m.month})}));
+  const have=new Set(Q.map(q=>q.id));(MON.months||[]).forEach(m=>(m.quiz||[]).forEach((q,j)=>{const id='mon-'+m.month+'-'+j;if(!have.has(id)&&Array.isArray(q.o)&&q.o.length===4)Q.push({id,s:'CA',t:'Current affairs',q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):undefined,day:m.month,w:Array.isArray(q.w)&&q.w.length===4?q.w.map(x=>x?String(x):null):undefined})}));
   drawMonthly()}).catch(()=>{});
 document.querySelectorAll('nav button[data-tab=ca]').forEach(b=>b.addEventListener('click',()=>setTimeout(drawMonthly,50)));
 
@@ -1703,7 +1704,7 @@ window.addEventListener('hashchange',()=>{wakeRoute();drawCurTab()});wakeRoute()
 if(st.fmRun){fm=st.fmRun;if(Date.now()>fm.end+6*3600e3){st.fmRun=null;fm=null;save()}}
 if(st.focusRun&&st.focusRun.left>0)fLen=st.focusRun.len||25;
 drawCurTab();
-window.__mts={any:(a)=>any(a),buildMock,bpSet:s=>bpSet(s),fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
+window.__mts={any:(a)=>any(a),startQuiz:(a,b,c)=>startQuiz(a,b,c),score:()=>({...score,n:set.length}),buildMock,bpSet:s=>bpSet(s),fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
 
 /* ================= SYNC between phone and PC (phone/PC app only) =================
    Progress is saved in a private GitHub gist ("MTS Study sync") using the person's own GitHub key (gist scope only). */
