@@ -260,6 +260,7 @@ details summary{cursor:pointer}
 </section>
 
 <section id="ca" hidden>
+  <div id="monthBox"></div>
   <h2>Daily current affairs</h2>
   <p class="small" id="caUpdated">Loading…</p>
   <div class="chips" id="caDays"></div>
@@ -1315,6 +1316,37 @@ function fixAfter(k,pct){const f=st.fix[k];if(!f)return'';f.rounds.push({d:dkey,
 function fixShow(){return fixList().filter(f=>!f.done||f.stage==='recheck')}
 function fixPanel(){const a=fixShow(),m=fixList().filter(f=>f.done&&f.stage!=='recheck');
   return `<h3 style="margin:18px 0 8px">Topic doctor</h3><p class="small" style="margin-top:-4px">A weak topic stays here until you score ${FIX_PASS}% twice, ${FIX_GAP} days apart.</p>${a.length?`<ul class="plan">${a.map(fixRow).join('')}</ul>`:'<p class="small">No topic being fixed now.</p>'}${m.length?`<p class="small" style="margin-top:10px"><b>Mastered ✓</b> ${m.map(f=>esc(f.t)).join(', ')}</p>`:''}`}
+
+/* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
+let MON={months:[]},monSel=0;
+const ytQ=s=>'https://www.youtube.com/results?search_query='+encodeURIComponent(s).replace(/%20/g,'+');
+function caDayVideos(){const d=(document.querySelector('#caDays .chip[aria-pressed=true]')||{}).textContent||'';return d}
+function drawMonthly(){const el=$('monthBox');if(!el)return;const ms=MON.months||[];if(!ms.length){el.innerHTML='';return}
+  const m=ms[Math.min(monSel,ms.length-1)];
+  const latest=(()=>{try{const d=CA&&CA.days&&CA.days[0]&&CA.days[0].date;return d?new Date(d+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}):''}catch(e){return''}})();
+  el.innerHTML=`<div class="panel" style="margin-bottom:24px;border-top:4px solid #ff7a59"><h2>Monthly revision: last 6 months</h2>
+   <p class="small" style="margin-top:-6px">SSC asks about the last 6–8 months. Read one month, watch a video, then take the quiz.</p>
+   <div class="chips" style="flex-wrap:wrap">${ms.map((x,i)=>`<button class="chip" data-mon="${i}" aria-pressed="${i===monSel}">${esc(x.name.replace(' 2026',''))}</button>`).join('')}</div>
+   <h3 style="margin:16px 0 8px">▶ Videos for ${esc(m.name.split(' (')[0])}</h3>
+   <div class="row" style="justify-content:flex-start;flex-wrap:wrap">${m.videos.map(v=>`<a class="btn ${v.lang==='Malayalam'?'':'ghost'}" href="${esc(v.url)}" target="_blank" rel="noopener">▶ ${esc(['Malayalam video','Malayalam quiz video','English video','English MCQ video'][m.videos.indexOf(v)]||v.lang)}</a>`).join('')}</div>
+   <p class="small" style="margin-top:8px">These open YouTube with the newest videos for that month. Pick one from a channel you trust and watch at 1× speed with the app's notes beside you.</p>
+   <h3 style="margin:18px 0 8px">▶ Daily news videos</h3><div class="row" style="justify-content:flex-start;flex-wrap:wrap">
+    <a class="btn" href="${esc(ytQ((latest||'today')+' current affairs malayalam'))}" target="_blank" rel="noopener">▶ Malayalam: ${esc(latest||'latest day')}</a>
+    <a class="btn ghost" href="${esc(ytQ((latest||'today')+' current affairs english SSC'))}" target="_blank" rel="noopener">▶ English: ${esc(latest||'latest day')}</a></div>
+   <div class="row" style="justify-content:flex-start;margin-top:16px;flex-wrap:wrap"><button class="btn" id="monQuiz">${esc(m.name.split(' (')[0])} quiz (${m.quiz.length} Q)</button><button class="btn ghost" id="monAll">Mixed quiz: all 6 months</button><button class="speak" id="monSayAll">🔊 Read the whole month</button></div>
+   <h3 style="margin:16px 0 8px">${esc(m.name)}: ${m.items.length} key news</h3>
+   <div class="cards">${m.items.map((it,i)=>`<div class="fc" style="--c:${({States:'#59d499',National:'#4cc3ff',International:'#c39bff',Economy:'#f0c674',Sports:'#ff7a59',Awards:'#ff9fcf',Science:'#7ee0d1',Environment:'#9bd66b',Defence:'#a0a8b8',Schemes:'#f0c674'})[it.cat]||'#4cc3ff'}"><span class="k">${esc(it.cat)}</span><span class="f">${esc(it.title)}</span><span class="ex">${esc(it.text)}${it.gk?`<br><b>GK:</b> ${esc(it.gk)}`:''}</span><span class="row" style="justify-content:flex-start;margin-top:auto"><button class="speak" data-msay="${i}">🔊 Read</button></span></div>`).join('')}</div>
+   ${m.sources&&m.sources.length?`<p class="small" style="margin-top:12px">Written from: ${m.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join(' · ')}</p>`:''}</div>`;
+  el.querySelectorAll('[data-mon]').forEach(b=>b.onclick=()=>{monSel=+b.dataset.mon;drawMonthly()});
+  el.querySelectorAll('[data-msay]').forEach(b=>b.onclick=()=>{const it=m.items[+b.dataset.msay];speak(it.title+'. '+it.text+(it.gk?' '+it.gk:''))});
+  $('monSayAll').onclick=()=>speak(m.name+'. '+m.items.map(it=>it.title+'. '+it.text).join(' '));
+  const mq=(mm,i)=>mm.quiz.map((q,j)=>({id:'mon-'+mm.month+'-'+j,s:'CA',t:'Current affairs',q:q.q,o:q.o.slice(),a:q.a,e:q.e,ml:q.ml}));
+  $('monQuiz').onclick=()=>{goPractice();startQuiz(shuffle(mq(m)),true)};
+  $('monAll').onclick=()=>{goPractice();startQuiz(shuffle(ms.flatMap(x=>mq(x))).slice(0,15),true)}}
+getData('monthly.json').then(r=>r.json()).then(d=>{MON=d||{months:[]};
+  const have=new Set(Q.map(q=>q.id));(MON.months||[]).forEach(m=>(m.quiz||[]).forEach((q,j)=>{const id='mon-'+m.month+'-'+j;if(!have.has(id)&&Array.isArray(q.o)&&q.o.length===4)Q.push({id,s:'CA',t:'Current affairs',q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):undefined,day:m.month})}));
+  drawMonthly()}).catch(()=>{});
+document.querySelectorAll('nav button[data-tab=ca]').forEach(b=>b.addEventListener('click',()=>setTimeout(drawMonthly,50)));
 
 /* ---------- click actions ---------- */
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!b)return;e.preventDefault();const k=b.dataset.px;
