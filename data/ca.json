@@ -1,34 +1,357 @@
 {
-  "updated": "2026-11-25",
-  "days": [
+ "updated": "2026-11-26",
+ "days": [
+  {
+   "date": "2026-11-25",
+   "items": [
     {
-      "date": "2026-11-24",
-      "items": [
-        {"cat": "Important days", "title": "Guru Nanak Jayanti (24 November)", "text": "Guru Nanak Jayanti fell on 24 November this year, the same day as Kartik Purnima. Guru Nanak Dev was born in 1469 at Rai Bhoi di Talwandi, now Nankana Sahib in Pakistan.", "gk": "Guru Nanak founded Sikhism and was the first of the ten Sikh Gurus."},
-        {"cat": "Important days", "title": "Lachit Divas in Assam (24 November)", "text": "Assam marks Lachit Divas to honour Lachit Borphukan, the Ahom army commander born in 1622.", "gk": "Lachit Borphukan defeated the Mughals in the Battle of Saraighat in 1671."},
-        {"cat": "Important days", "title": "Guru Tegh Bahadur martyrdom day", "text": "The 351st martyrdom anniversary of Guru Tegh Bahadur was observed on 24 November. He was executed in Delhi in 1675.", "gk": "Guru Tegh Bahadur was the ninth Sikh Guru and is called 'Hind di Chadar' (Shield of India)."},
-        {"cat": "National", "title": "National Milk Day on 26 November in Patna", "text": "The Department of Animal Husbandry and Dairying will hold National Milk Day 2026 in Patna, Bihar. The National Gopal Ratna Awards 2026 will be given there.", "gk": "National Milk Day marks the birth anniversary of Dr Verghese Kurien, the Father of the White Revolution."},
-        {"cat": "States", "title": "West Bengal Cabinet approves new name 'Paschim Banga'", "text": "On 23 November 2026 the West Bengal Cabinet approved renaming the state as Paschim Banga. The name is not changed yet: Parliament must approve it.", "gk": "Parliament can change the name of a state under Article 3 of the Constitution."},
-        {"cat": "States", "title": "Kerala: Edamalakkudy tribal panchayat", "text": "Edamalakkudy in Idukki district is Kerala's first tribal grama panchayat. It serves 26 tribal settlements and about 2,300 people.", "gk": "The main community there is the Muthuvan tribe."},
-        {"cat": "International", "title": "India–Nepal ₹15,000 crore development package", "text": "Nepal's Prime Minister Balendra Shah visited India on 22–23 November 2026. India announced a ₹15,000 crore package for railways, pipelines, bridges and the 669 MW Lower Arun hydro project.", "gk": "Capital of Nepal: Kathmandu. Currency: Nepalese rupee."},
-        {"cat": "Banking", "title": "RBI keeps SBI, HDFC Bank and ICICI Bank as D-SIBs", "text": "The RBI kept SBI, HDFC Bank and ICICI Bank on its 2026 list of Domestic Systemically Important Banks (D-SIBs), banks considered 'too big to fail'.", "gk": "RBI Governor: Sanjay Malhotra. RBI was set up in 1935; headquarters in Mumbai."},
-        {"cat": "Defence", "title": "JWALA MK-1 counter-drone missile tested", "text": "JWALA MK-1, an Indian counter-drone micro-missile system, was test-fired at Pokhran, Rajasthan, on 23 November 2026. Its range is up to 5 km.", "gk": "Pokhran is also where India held its nuclear tests in 1974 and 1998."},
-        {"cat": "Defence", "title": "GRSE delivers 'Ashank' to the Navy", "text": "Garden Reach Shipbuilders and Engineers (GRSE) delivered Ashank, an Arnala-class anti-submarine shallow-water craft, to the Indian Navy at Visakhapatnam. It has over 80% Indian-made content.", "gk": "GRSE is based in Kolkata."},
-        {"cat": "Science", "title": "BepiColombo enters Mercury's orbit", "text": "BepiColombo, a joint mission of the European (ESA) and Japanese (JAXA) space agencies, entered orbit around Mercury on 21 November 2026. It was launched in October 2018.", "gk": "Mercury is the smallest planet and the closest to the Sun."},
-        {"cat": "Science", "title": "India's first Human Metabolic Chamber", "text": "India's first Human Metabolic Chamber was opened at CMC Vellore, Tamil Nadu, set up with TIFR. It measures how much energy the human body uses.", "gk": "TIFR = Tata Institute of Fundamental Research, Mumbai."},
-        {"cat": "Sports", "title": "FIFA Women's World Cup hosts chosen", "text": "FIFA chose the USA, Mexico, Costa Rica and Jamaica to host the 2031 Women's World Cup, with 48 teams. The United Kingdom will host the 2035 edition.", "gk": "FIFA headquarters: Zurich, Switzerland."}
-      ],
-      "quiz": [
-        {"q": "National Milk Day is celebrated on the birth anniversary of whom?", "o": ["M. S. Swaminathan", "Verghese Kurien", "Norman Borlaug", "C. Subramaniam"], "a": 1, "e": "National Milk Day (26 November) marks the birth anniversary of Dr Verghese Kurien, Father of the White Revolution."},
-        {"q": "Lachit Borphukan defeated the Mughals in which battle?", "o": ["Battle of Plassey", "Battle of Haldighati", "Battle of Saraighat", "Battle of Talikota"], "a": 2, "e": "Ahom commander Lachit Borphukan won the Battle of Saraighat in 1671."},
-        {"q": "Under which Article can Parliament change the name of a state?", "o": ["Article 1", "Article 3", "Article 21", "Article 370"], "a": 1, "e": "Article 3 lets Parliament form new states and change the names or borders of states. West Bengal's 'Paschim Banga' proposal needs this approval."},
-        {"q": "The BepiColombo mission entered the orbit of which planet in November 2026?", "o": ["Venus", "Mars", "Mercury", "Jupiter"], "a": 2, "e": "BepiColombo, by ESA and JAXA, entered Mercury's orbit on 21 November 2026."},
-        {"q": "Where was the JWALA MK-1 counter-drone missile system test-fired?", "o": ["Sriharikota", "Pokhran", "Chandipur", "Balasore"], "a": 1, "e": "It was test-fired at Pokhran, Rajasthan, on 23 November 2026."},
-        {"q": "Which country will host the FIFA Women's World Cup 2035?", "o": ["United Kingdom", "Brazil", "Australia", "Spain"], "a": 0, "e": "FIFA chose the United Kingdom (England, Scotland, Wales, Northern Ireland) for 2035."}
-      ],
-      "sources": [
-        {"name": "Bankersadda, Daily current affairs 24 Nov 2026", "url": "https://www.bankersadda.com/daily-current-affairs-and-gk-updates-24th-november-2026/"}
-      ]
+     "cat": "States",
+     "title": "Wayanad: Kerala's first e-waste-free district",
+     "text": "Wayanad finished a three-month drive to collect and safely process e-waste. CM V. D. Satheesan will announce it at Kalpetta on 27 November. The next goal is carbon neutrality.",
+     "gk": "Wayanad district headquarters: Kalpetta."
+    },
+    {
+     "cat": "States",
+     "title": "Kerala launches 'Avalkkoppam' (With Her)",
+     "text": "Kerala's Women and Child Development Department started Avalkkoppam to fight domestic and cyber violence against women. Budget: ₹40 lakh.",
+     "gk": "It is part of the UN 'Orange the World' campaign (till 10 December)."
+    },
+    {
+     "cat": "Important days",
+     "title": "Day for Elimination of Violence against Women (25 Nov)",
+     "text": "Observed on 25 November. It starts the '16 Days of Activism' (25 November to 10 December).",
+     "gk": "The date remembers the Mirabal sisters, killed in the Dominican Republic in 1960."
+    },
+    {
+     "cat": "National",
+     "title": "SAMAVESH portal launched",
+     "text": "The Ministry of Social Justice and Empowerment launched SAMAVESH in New Delhi. It joins 20+ portals with one login and an AI chatbot in many languages.",
+     "gk": "Minister of Social Justice and Empowerment: Dr Virendra Kumar."
+    },
+    {
+     "cat": "International",
+     "title": "Australia–Solomon Islands security treaty",
+     "text": "Signed on 25 November 2026. Australia becomes the main security partner of the Solomon Islands. The treaty does not allow foreign military bases.",
+     "gk": "Capital of Solomon Islands: Honiara."
+    },
+    {
+     "cat": "Awards",
+     "title": "Miss Universe 2026: Jennifer Barreto (Puerto Rico)",
+     "text": "She won the 75th Miss Universe in San Juan, Puerto Rico. It is Puerto Rico's sixth title. Costa Rica will host in 2027."
+    },
+    {
+     "cat": "Awards",
+     "title": "Javed Akhtar gets Mahatma Phule Samata Puraskar 2026",
+     "text": "The lyricist and poet will receive it in Pune on 28 November.",
+     "gk": "Javed Akhtar won the Sahitya Akademi Award (Urdu, 2013) for 'Lava'."
+    },
+    {
+     "cat": "Appointments",
+     "title": "Kalyan Krishnamurthy steps down as Flipkart CEO",
+     "text": "He led Flipkart since January 2017. A new CEO will be named soon.",
+     "gk": "Flipkart is owned by Walmart (USA)."
+    },
+    {
+     "cat": "Science",
+     "title": "Voyager 1 reaches one light-day from Earth",
+     "text": "On 18 November 2026, NASA's Voyager 1 became about one light-day (25.9 billion km) away. Its Golden Record has an Indian raga by Kesarbai Kerkar.",
+     "gk": "Voyager 1 was launched on 5 September 1977."
+    },
+    {
+     "cat": "Science",
+     "title": "First industry-built PSLV by early 2027",
+     "text": "ISRO plans to launch PSLV-N1, built by HAL and L&T, in the first quarter of 2027.",
+     "gk": "ISRO Chairman: Dr V. Narayanan. ISRO headquarters: Bengaluru."
+    },
+    {
+     "cat": "Defence",
+     "title": "Exercise Harimau Shakti 2026",
+     "text": "6th India–Malaysia army exercise, held at Ipoh, Malaysia, from 18 to 30 November 2026.",
+     "gk": "India–Nepal army exercise is called Suryakiran."
+    },
+    {
+     "cat": "Sports",
+     "title": "Vaibhav Sooryavanshi: fastest List A double century",
+     "text": "He scored 204 off 52 balls for India A against UAE in Doha, hitting 27 sixes."
+    },
+    {
+     "cat": "Sports",
+     "title": "First BIMSTEC U-23 Athletics in Bhubaneswar",
+     "text": "Started on 25 November 2026 at Kalinga Stadium, Odisha, with athletes from six countries.",
+     "gk": "BIMSTEC has 7 members; its secretariat is in Dhaka."
+    },
+    {
+     "cat": "Economy",
+     "title": "Shiv Nadar tops Hurun Philanthropy List again",
+     "text": "Shiv Nadar and family gave ₹2,593 crore in 2025-26, topping the list for the fifth year. The Adani family was second."
+    },
+    {
+     "cat": "National",
+     "title": "Lonar Lake in world geological heritage list",
+     "text": "Lonar crater lake in Buldhana, Maharashtra, was added to the IUGS list of 100 more geological heritage sites.",
+     "gk": "Lonar Lake was made by a meteorite impact."
     }
-  ]
+   ],
+   "quiz": [
+    {
+     "t": "Current affairs",
+     "q": "Which became Kerala's first e-waste-free district?",
+     "o": [
+      "Wayanad",
+      "Idukki",
+      "Kasaragod",
+      "Pathanamthitta"
+     ],
+     "a": 0,
+     "e": "Wayanad finished a three-month drive to collect and safely process e-waste.",
+     "ml": "കേരളത്തിലെ ആദ്യത്തെ ഇ-മാലിന്യ രഹിത ജില്ല വയനാട്."
+    },
+    {
+     "t": "Current affairs",
+     "q": "Kerala's 'Avalkkoppam' initiative fights:",
+     "o": [
+      "Domestic and cyber violence against women",
+      "Plastic waste",
+      "Child labour",
+      "Road accidents"
+     ],
+     "a": 0,
+     "e": "Avalkkoppam ('With Her') by Kerala's Women and Child Development Department targets domestic and cyber violence.",
+     "ml": "'അവൾക്കൊപ്പം' – സ്ത്രീകൾക്കെതിരായ ഗാർഹിക, സൈബർ അതിക്രമങ്ങൾ തടയാൻ."
+    },
+    {
+     "t": "Current affairs",
+     "q": "Who won Miss Universe 2026 (75th edition)?",
+     "o": [
+      "Jennifer Barreto",
+      "Melissa Núñez",
+      "Clara Vegas",
+      "Harnaaz Sandhu"
+     ],
+     "a": 0,
+     "e": "Jennifer Barreto of Puerto Rico won in San Juan.",
+     "ml": "2026 മിസ് യൂണിവേഴ്സ്: ജെന്നിഫർ ബാരെറ്റോ (പോർട്ടോ റിക്കോ)."
+    },
+    {
+     "t": "Current affairs",
+     "q": "Exercise Harimau Shakti is between India and:",
+     "o": [
+      "Malaysia",
+      "Nepal",
+      "Indonesia",
+      "Thailand"
+     ],
+     "a": 0,
+     "e": "Harimau Shakti is the India–Malaysia army exercise; the 2026 edition was at Ipoh.",
+     "ml": "ഹരിമൗ ശക്തി – ഇന്ത്യ, മലേഷ്യ സൈനിക അഭ്യാസം."
+    },
+    {
+     "t": "Current affairs",
+     "q": "Australia signed a security treaty on 25 November 2026 with:",
+     "o": [
+      "Solomon Islands",
+      "Fiji",
+      "Papua New Guinea",
+      "New Zealand"
+     ],
+     "a": 0,
+     "e": "Australia became the Solomon Islands' main security partner.",
+     "ml": "ഓസ്ട്രേലിയ സോളമൻ ദ്വീപുകളുമായി സുരക്ഷാ കരാർ ഒപ്പുവെച്ചു."
+    },
+    {
+     "t": "Current affairs",
+     "q": "The International Day for the Elimination of Violence against Women is on:",
+     "o": [
+      "25 November",
+      "10 December",
+      "8 March",
+      "2 October"
+     ],
+     "a": 0,
+     "e": "25 November; it starts 16 Days of Activism till 10 December.",
+     "ml": "നവംബർ 25 – സ്ത്രീകൾക്കെതിരായ അതിക്രമ നിർമാർജന ദിനം."
+    },
+    {
+     "t": "Current affairs",
+     "q": "Lonar Lake, added to a world geological heritage list, is in:",
+     "o": [
+      "Maharashtra",
+      "Rajasthan",
+      "Madhya Pradesh",
+      "Karnataka"
+     ],
+     "a": 0,
+     "e": "Lonar crater lake is in Buldhana district, Maharashtra.",
+     "ml": "ലോണാർ തടാകം മഹാരാഷ്ട്രയിലെ ബുൽധാനയിൽ."
+    }
+   ],
+   "sources": [
+    {
+     "name": "Bankersadda, Daily current affairs 25 Nov 2026",
+     "url": "https://www.bankersadda.com/daily-current-affairs-and-gk-updates-25th-november-2026/"
+    },
+    {
+     "name": "C4S Courses, Daily current affairs 25 Nov 2026",
+     "url": "https://c4scourses.in/current-affairs/daily-current-affairs-dca-25-november-2026-2/"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-24",
+   "items": [
+    {
+     "cat": "Important days",
+     "title": "Guru Nanak Jayanti (24 November)",
+     "text": "Guru Nanak Jayanti fell on 24 November this year, the same day as Kartik Purnima. Guru Nanak Dev was born in 1469 at Rai Bhoi di Talwandi, now Nankana Sahib in Pakistan.",
+     "gk": "Guru Nanak founded Sikhism and was the first of the ten Sikh Gurus."
+    },
+    {
+     "cat": "Important days",
+     "title": "Lachit Divas in Assam (24 November)",
+     "text": "Assam marks Lachit Divas to honour Lachit Borphukan, the Ahom army commander born in 1622.",
+     "gk": "Lachit Borphukan defeated the Mughals in the Battle of Saraighat in 1671."
+    },
+    {
+     "cat": "Important days",
+     "title": "Guru Tegh Bahadur martyrdom day",
+     "text": "The 351st martyrdom anniversary of Guru Tegh Bahadur was observed on 24 November. He was executed in Delhi in 1675.",
+     "gk": "Guru Tegh Bahadur was the ninth Sikh Guru and is called 'Hind di Chadar' (Shield of India)."
+    },
+    {
+     "cat": "National",
+     "title": "National Milk Day on 26 November in Patna",
+     "text": "The Department of Animal Husbandry and Dairying will hold National Milk Day 2026 in Patna, Bihar. The National Gopal Ratna Awards 2026 will be given there.",
+     "gk": "National Milk Day marks the birth anniversary of Dr Verghese Kurien, the Father of the White Revolution."
+    },
+    {
+     "cat": "States",
+     "title": "West Bengal Cabinet approves new name 'Paschim Banga'",
+     "text": "On 23 November 2026 the West Bengal Cabinet approved renaming the state as Paschim Banga. The name is not changed yet: Parliament must approve it.",
+     "gk": "Parliament can change the name of a state under Article 3 of the Constitution."
+    },
+    {
+     "cat": "States",
+     "title": "Kerala: Edamalakkudy tribal panchayat",
+     "text": "Edamalakkudy in Idukki district is Kerala's first tribal grama panchayat. It serves 26 tribal settlements and about 2,300 people.",
+     "gk": "The main community there is the Muthuvan tribe."
+    },
+    {
+     "cat": "International",
+     "title": "India–Nepal ₹15,000 crore development package",
+     "text": "Nepal's Prime Minister Balendra Shah visited India on 22–23 November 2026. India announced a ₹15,000 crore package for railways, pipelines, bridges and the 669 MW Lower Arun hydro project.",
+     "gk": "Capital of Nepal: Kathmandu. Currency: Nepalese rupee."
+    },
+    {
+     "cat": "Banking",
+     "title": "RBI keeps SBI, HDFC Bank and ICICI Bank as D-SIBs",
+     "text": "The RBI kept SBI, HDFC Bank and ICICI Bank on its 2026 list of Domestic Systemically Important Banks (D-SIBs), banks considered 'too big to fail'.",
+     "gk": "RBI Governor: Sanjay Malhotra. RBI was set up in 1935; headquarters in Mumbai."
+    },
+    {
+     "cat": "Defence",
+     "title": "JWALA MK-1 counter-drone missile tested",
+     "text": "JWALA MK-1, an Indian counter-drone micro-missile system, was test-fired at Pokhran, Rajasthan, on 23 November 2026. Its range is up to 5 km.",
+     "gk": "Pokhran is also where India held its nuclear tests in 1974 and 1998."
+    },
+    {
+     "cat": "Defence",
+     "title": "GRSE delivers 'Ashank' to the Navy",
+     "text": "Garden Reach Shipbuilders and Engineers (GRSE) delivered Ashank, an Arnala-class anti-submarine shallow-water craft, to the Indian Navy at Visakhapatnam. It has over 80% Indian-made content.",
+     "gk": "GRSE is based in Kolkata."
+    },
+    {
+     "cat": "Science",
+     "title": "BepiColombo enters Mercury's orbit",
+     "text": "BepiColombo, a joint mission of the European (ESA) and Japanese (JAXA) space agencies, entered orbit around Mercury on 21 November 2026. It was launched in October 2018.",
+     "gk": "Mercury is the smallest planet and the closest to the Sun."
+    },
+    {
+     "cat": "Science",
+     "title": "India's first Human Metabolic Chamber",
+     "text": "India's first Human Metabolic Chamber was opened at CMC Vellore, Tamil Nadu, set up with TIFR. It measures how much energy the human body uses.",
+     "gk": "TIFR = Tata Institute of Fundamental Research, Mumbai."
+    },
+    {
+     "cat": "Sports",
+     "title": "FIFA Women's World Cup hosts chosen",
+     "text": "FIFA chose the USA, Mexico, Costa Rica and Jamaica to host the 2031 Women's World Cup, with 48 teams. The United Kingdom will host the 2035 edition.",
+     "gk": "FIFA headquarters: Zurich, Switzerland."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "National Milk Day is celebrated on the birth anniversary of whom?",
+     "o": [
+      "M. S. Swaminathan",
+      "Verghese Kurien",
+      "Norman Borlaug",
+      "C. Subramaniam"
+     ],
+     "a": 1,
+     "e": "National Milk Day (26 November) marks the birth anniversary of Dr Verghese Kurien, Father of the White Revolution."
+    },
+    {
+     "q": "Lachit Borphukan defeated the Mughals in which battle?",
+     "o": [
+      "Battle of Plassey",
+      "Battle of Haldighati",
+      "Battle of Saraighat",
+      "Battle of Talikota"
+     ],
+     "a": 2,
+     "e": "Ahom commander Lachit Borphukan won the Battle of Saraighat in 1671."
+    },
+    {
+     "q": "Under which Article can Parliament change the name of a state?",
+     "o": [
+      "Article 1",
+      "Article 3",
+      "Article 21",
+      "Article 370"
+     ],
+     "a": 1,
+     "e": "Article 3 lets Parliament form new states and change the names or borders of states. West Bengal's 'Paschim Banga' proposal needs this approval."
+    },
+    {
+     "q": "The BepiColombo mission entered the orbit of which planet in November 2026?",
+     "o": [
+      "Venus",
+      "Mars",
+      "Mercury",
+      "Jupiter"
+     ],
+     "a": 2,
+     "e": "BepiColombo, by ESA and JAXA, entered Mercury's orbit on 21 November 2026."
+    },
+    {
+     "q": "Where was the JWALA MK-1 counter-drone missile system test-fired?",
+     "o": [
+      "Sriharikota",
+      "Pokhran",
+      "Chandipur",
+      "Balasore"
+     ],
+     "a": 1,
+     "e": "It was test-fired at Pokhran, Rajasthan, on 23 November 2026."
+    },
+    {
+     "q": "Which country will host the FIFA Women's World Cup 2035?",
+     "o": [
+      "United Kingdom",
+      "Brazil",
+      "Australia",
+      "Spain"
+     ],
+     "a": 0,
+     "e": "FIFA chose the United Kingdom (England, Scotland, Wales, Northern Ireland) for 2035."
+    }
+   ],
+   "sources": [
+    {
+     "name": "Bankersadda, Daily current affairs 24 Nov 2026",
+     "url": "https://www.bankersadda.com/daily-current-affairs-and-gk-updates-24th-november-2026/"
+    }
+   ]
+  }
+ ]
 }

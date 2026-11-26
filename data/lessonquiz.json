@@ -1,69 +1,1229 @@
 {
-  "updated": "2026-11-25",
-  "passMark": 60,
-  "quizzes": {
-    "Quant0": [
-      {"q": "25 × 16 = ?", "o": ["300", "400", "425", "375"], "a": 1, "e": "25 × 4 = 100, and 16 = 4 × 4, so 25 × 16 = 100 × 4 = 400."},
-      {"q": "48 × 5 = ?", "o": ["200", "220", "240", "250"], "a": 2, "e": "Trick: × 5 is the same as × 10 ÷ 2. 48 × 10 = 480, ÷ 2 = 240."},
-      {"q": "1001 − 357 = ?", "o": ["654", "644", "744", "634"], "a": 1, "e": "1000 − 357 = 643, then add 1: 644."},
-      {"q": "72 ÷ 0.8 = ?", "o": ["9", "90", "80", "900"], "a": 1, "e": "Multiply both by 10: 720 ÷ 8 = 90."},
-      {"q": "15² = ?", "o": ["215", "225", "235", "255"], "a": 1, "e": "15 × 15 = 225. Trick for numbers ending in 5: 1 × 2 = 2, then write 25 → 225."}
+ "updated": "2026-11-26",
+ "passMark": 60,
+ "quizzes": {
+  "Quant0": [
+   {
+    "q": "25 × 16 = ?",
+    "o": [
+     "300",
+     "400",
+     "425",
+     "375"
     ],
-    "Quant1": [
-      {"q": "3/4 + 1/8 = ?", "o": ["4/12", "7/8", "5/8", "1"], "a": 1, "e": "3/4 = 6/8. 6/8 + 1/8 = 7/8."},
-      {"q": "0.25 × 0.4 = ?", "o": ["1", "0.1", "0.01", "0.001"], "a": 1, "e": "25 × 4 = 100. There are 3 decimal places in total (2 + 1), so 0.100 = 0.1."},
-      {"q": "√196 = ?", "o": ["12", "13", "14", "16"], "a": 2, "e": "14 × 14 = 196, so √196 = 14."},
-      {"q": "45 × 11 = ?", "o": ["455", "495", "505", "445"], "a": 1, "e": "Trick for × 11: write 4, then 4 + 5 = 9, then 5 → 495."},
-      {"q": "(12 + 8) × 3 − 10 = ?", "o": ["50", "34", "26", "60"], "a": 0, "e": "BODMAS: brackets first, 20. Then 20 × 3 = 60. Then 60 − 10 = 50."}
+    "a": 1,
+    "e": "25 × 4 = 100, and 16 = 4 × 4, so 25 × 16 = 100 × 4 = 400."
+   },
+   {
+    "q": "48 × 5 = ?",
+    "o": [
+     "200",
+     "220",
+     "240",
+     "250"
     ],
-    "Quant2": [
-      {"q": "99 × 25 = ?", "o": ["2475", "2500", "2425", "2375"], "a": 0, "e": "99 × 25 = (100 − 1) × 25 = 2500 − 25 = 2475."},
-      {"q": "35² = ?", "o": ["1225", "1125", "1325", "1215"], "a": 0, "e": "Ends in 5: 3 × 4 = 12, then write 25 → 1225."},
-      {"q": "1/8 written as a percentage is:", "o": ["8%", "12.5%", "15%", "18%"], "a": 1, "e": "1 ÷ 8 = 0.125 = 12.5%. Learn this one by heart."},
-      {"q": "625 ÷ 25 = ?", "o": ["20", "25", "30", "35"], "a": 1, "e": "25 × 25 = 625, so 625 ÷ 25 = 25."},
-      {"q": "104 × 96 = ?", "o": ["9984", "9996", "10016", "9916"], "a": 0, "e": "(100 + 4)(100 − 4) = 100² − 4² = 10000 − 16 = 9984."}
+    "a": 2,
+    "e": "Trick: × 5 is the same as × 10 ÷ 2. 48 × 10 = 480, ÷ 2 = 240."
+   },
+   {
+    "q": "1001 − 357 = ?",
+    "o": [
+     "654",
+     "644",
+     "744",
+     "634"
     ],
-    "GA0": [
-      {"q": "The Bhimbetka rock shelters, famous for Stone Age paintings, are in which state?", "o": ["Rajasthan", "Madhya Pradesh", "Karnataka", "Odisha"], "a": 1, "e": "Bhimbetka is near Bhopal in Madhya Pradesh. It is a UNESCO World Heritage Site."},
-      {"q": "Which period is called the Old Stone Age?", "o": ["Neolithic", "Mesolithic", "Palaeolithic", "Chalcolithic"], "a": 2, "e": "Palaeo = old, lithic = stone. Palaeolithic = Old Stone Age."},
-      {"q": "Farming (agriculture) began in which age?", "o": ["Palaeolithic", "Mesolithic", "Neolithic", "Iron Age"], "a": 2, "e": "People started farming and keeping animals in the Neolithic (New Stone) Age."},
-      {"q": "Very small stone tools called microliths are typical of which age?", "o": ["Mesolithic", "Palaeolithic", "Neolithic", "Bronze Age"], "a": 0, "e": "Microliths (tiny stone tools) are the mark of the Mesolithic (Middle Stone) Age."},
-      {"q": "Mehrgarh, an early farming site of the Neolithic Age, is now in which country?", "o": ["India", "Afghanistan", "Pakistan", "Nepal"], "a": 2, "e": "Mehrgarh is in Balochistan, Pakistan. It shows some of the earliest farming in South Asia."}
+    "a": 1,
+    "e": "1000 − 357 = 643, then add 1: 644."
+   },
+   {
+    "q": "72 ÷ 0.8 = ?",
+    "o": [
+     "9",
+     "90",
+     "80",
+     "900"
     ],
-    "GA1": [
-      {"q": "Who first excavated Harappa in 1921?", "o": ["R. D. Banerji", "Daya Ram Sahni", "John Marshall", "Mortimer Wheeler"], "a": 1, "e": "Daya Ram Sahni excavated Harappa in 1921. R. D. Banerji excavated Mohenjo-daro in 1922."},
-      {"q": "What does 'Mohenjo-daro' mean?", "o": ["City of gold", "Mound of the dead", "Land of rivers", "Great city"], "a": 1, "e": "Mohenjo-daro means 'Mound of the dead' in Sindhi."},
-      {"q": "The Great Bath of the Indus Valley Civilisation was found at:", "o": ["Harappa", "Lothal", "Mohenjo-daro", "Kalibangan"], "a": 2, "e": "The Great Bath is at Mohenjo-daro."},
-      {"q": "An ancient dockyard of the Indus Valley Civilisation was found at:", "o": ["Lothal", "Dholavira", "Ropar", "Banawali"], "a": 0, "e": "Lothal in Gujarat had a dockyard, showing sea trade."},
-      {"q": "The Indus Valley Civilisation belongs to which age?", "o": ["Stone Age", "Bronze Age", "Iron Age", "Vedic Age"], "a": 1, "e": "The Harappans used copper and bronze, so it is a Bronze Age civilisation."}
+    "a": 1,
+    "e": "Multiply both by 10: 720 ÷ 8 = 90."
+   },
+   {
+    "q": "15² = ?",
+    "o": [
+     "215",
+     "225",
+     "235",
+     "255"
     ],
-    "English0": [
-      {"q": "She ___ tennis every Sunday.", "o": ["play", "plays", "playing", "is play"], "a": 1, "e": "Habit + he/she/it → simple present with -s: plays."},
-      {"q": "Look! They ___ watching TV now.", "o": ["is", "are", "am", "be"], "a": 1, "e": "'Now' → present continuous. They + are + -ing."},
-      {"q": "I ___ known him for five years.", "o": ["has", "have", "am", "had been"], "a": 1, "e": "Present perfect with 'for five years': I have known."},
-      {"q": "Water ___ at 100°C.", "o": ["boil", "boils", "is boiling", "boiled"], "a": 1, "e": "A general truth uses the simple present: water boils."},
-      {"q": "Choose the correct sentence.", "o": ["He don't like milk.", "He doesn't likes milk.", "He doesn't like milk.", "He not like milk."], "a": 2, "e": "He + does not + base verb (like, not likes)."}
+    "a": 1,
+    "e": "15 × 15 = 225. Trick for numbers ending in 5: 1 × 2 = 2, then write 25 → 225."
+   }
+  ],
+  "Quant1": [
+   {
+    "q": "3/4 + 1/8 = ?",
+    "o": [
+     "4/12",
+     "7/8",
+     "5/8",
+     "1"
     ],
-    "English1": [
-      {"q": "I ___ to Kochi yesterday.", "o": ["go", "gone", "went", "have gone"], "a": 2, "e": "'Yesterday' → simple past: went."},
-      {"q": "She was cooking when the phone ___.", "o": ["ring", "rang", "rung", "rings"], "a": 1, "e": "A short action that interrupts a longer past action uses simple past: rang."},
-      {"q": "They ___ finished the work before I arrived.", "o": ["have", "has", "had", "were"], "a": 2, "e": "The earlier of two past actions uses past perfect: had finished."},
-      {"q": "What is the past form of 'teach'?", "o": ["teached", "taught", "tought", "teach"], "a": 1, "e": "Teach is irregular: teach → taught → taught."},
-      {"q": "Choose the correct sentence.", "o": ["Did you saw him?", "Did you see him?", "Do you saw him?", "Did you seen him?"], "a": 1, "e": "After 'did', use the base verb: Did you see him?"}
+    "a": 1,
+    "e": "3/4 = 6/8. 6/8 + 1/8 = 7/8."
+   },
+   {
+    "q": "0.25 × 0.4 = ?",
+    "o": [
+     "1",
+     "0.1",
+     "0.01",
+     "0.001"
     ],
-    "Reasoning0": [
-      {"q": "Pen : Write :: Knife : ?", "o": ["Sharp", "Cut", "Kitchen", "Steel"], "a": 1, "e": "A pen is used to write. A knife is used to cut."},
-      {"q": "3 : 27 :: 4 : ?", "o": ["16", "48", "64", "81"], "a": 2, "e": "3³ = 27, so the rule is the cube. 4³ = 64."},
-      {"q": "Bird : Nest :: Lion : ?", "o": ["Forest", "Den", "Cage", "Jungle"], "a": 1, "e": "A bird lives in a nest. A lion lives in a den."},
-      {"q": "ACE : BDF :: GIK : ?", "o": ["HJL", "HIJ", "IKM", "GHI"], "a": 0, "e": "Each letter moves 1 step forward: G→H, I→J, K→L = HJL."},
-      {"q": "Eye : See :: Ear : ?", "o": ["Sound", "Hear", "Noise", "Music"], "a": 1, "e": "We see with eyes and hear with ears."}
+    "a": 1,
+    "e": "25 × 4 = 100. There are 3 decimal places in total (2 + 1), so 0.100 = 0.1."
+   },
+   {
+    "q": "√196 = ?",
+    "o": [
+     "12",
+     "13",
+     "14",
+     "16"
     ],
-    "Reasoning1": [
-      {"q": "5 : 30 :: 7 : ?", "o": ["42", "49", "56", "63"], "a": 2, "e": "5 × 6 = 30 (number × next number). 7 × 8 = 56."},
-      {"q": "Cow : Calf :: Dog : ?", "o": ["Kitten", "Puppy", "Cub", "Foal"], "a": 1, "e": "The young one of a cow is a calf; of a dog, a puppy."},
-      {"q": "Doctor : Patient :: Lawyer : ?", "o": ["Court", "Judge", "Client", "Case"], "a": 2, "e": "A doctor serves a patient. A lawyer serves a client."},
-      {"q": "12 : 144 :: 15 : ?", "o": ["150", "196", "225", "250"], "a": 2, "e": "12² = 144. 15² = 225."},
-      {"q": "BAT : 23 :: CAT : ?", "o": ["22", "24", "25", "26"], "a": 1, "e": "Add letter positions: B(2) + A(1) + T(20) = 23. C(3) + A(1) + T(20) = 24."}
-    ]
-  }
+    "a": 2,
+    "e": "14 × 14 = 196, so √196 = 14."
+   },
+   {
+    "q": "45 × 11 = ?",
+    "o": [
+     "455",
+     "495",
+     "505",
+     "445"
+    ],
+    "a": 1,
+    "e": "Trick for × 11: write 4, then 4 + 5 = 9, then 5 → 495."
+   },
+   {
+    "q": "(12 + 8) × 3 − 10 = ?",
+    "o": [
+     "50",
+     "34",
+     "26",
+     "60"
+    ],
+    "a": 0,
+    "e": "BODMAS: brackets first, 20. Then 20 × 3 = 60. Then 60 − 10 = 50."
+   }
+  ],
+  "Quant2": [
+   {
+    "q": "99 × 25 = ?",
+    "o": [
+     "2475",
+     "2500",
+     "2425",
+     "2375"
+    ],
+    "a": 0,
+    "e": "99 × 25 = (100 − 1) × 25 = 2500 − 25 = 2475."
+   },
+   {
+    "q": "35² = ?",
+    "o": [
+     "1225",
+     "1125",
+     "1325",
+     "1215"
+    ],
+    "a": 0,
+    "e": "Ends in 5: 3 × 4 = 12, then write 25 → 1225."
+   },
+   {
+    "q": "1/8 written as a percentage is:",
+    "o": [
+     "8%",
+     "12.5%",
+     "15%",
+     "18%"
+    ],
+    "a": 1,
+    "e": "1 ÷ 8 = 0.125 = 12.5%. Learn this one by heart."
+   },
+   {
+    "q": "625 ÷ 25 = ?",
+    "o": [
+     "20",
+     "25",
+     "30",
+     "35"
+    ],
+    "a": 1,
+    "e": "25 × 25 = 625, so 625 ÷ 25 = 25."
+   },
+   {
+    "q": "104 × 96 = ?",
+    "o": [
+     "9984",
+     "9996",
+     "10016",
+     "9916"
+    ],
+    "a": 0,
+    "e": "(100 + 4)(100 − 4) = 100² − 4² = 10000 − 16 = 9984."
+   }
+  ],
+  "GA0": [
+   {
+    "q": "The Bhimbetka rock shelters, famous for Stone Age paintings, are in which state?",
+    "o": [
+     "Rajasthan",
+     "Madhya Pradesh",
+     "Karnataka",
+     "Odisha"
+    ],
+    "a": 1,
+    "e": "Bhimbetka is near Bhopal in Madhya Pradesh. It is a UNESCO World Heritage Site."
+   },
+   {
+    "q": "Which period is called the Old Stone Age?",
+    "o": [
+     "Neolithic",
+     "Mesolithic",
+     "Palaeolithic",
+     "Chalcolithic"
+    ],
+    "a": 2,
+    "e": "Palaeo = old, lithic = stone. Palaeolithic = Old Stone Age."
+   },
+   {
+    "q": "Farming (agriculture) began in which age?",
+    "o": [
+     "Palaeolithic",
+     "Mesolithic",
+     "Neolithic",
+     "Iron Age"
+    ],
+    "a": 2,
+    "e": "People started farming and keeping animals in the Neolithic (New Stone) Age."
+   },
+   {
+    "q": "Very small stone tools called microliths are typical of which age?",
+    "o": [
+     "Mesolithic",
+     "Palaeolithic",
+     "Neolithic",
+     "Bronze Age"
+    ],
+    "a": 0,
+    "e": "Microliths (tiny stone tools) are the mark of the Mesolithic (Middle Stone) Age."
+   },
+   {
+    "q": "Mehrgarh, an early farming site of the Neolithic Age, is now in which country?",
+    "o": [
+     "India",
+     "Afghanistan",
+     "Pakistan",
+     "Nepal"
+    ],
+    "a": 2,
+    "e": "Mehrgarh is in Balochistan, Pakistan. It shows some of the earliest farming in South Asia."
+   }
+  ],
+  "GA1": [
+   {
+    "q": "Who first excavated Harappa in 1921?",
+    "o": [
+     "R. D. Banerji",
+     "Daya Ram Sahni",
+     "John Marshall",
+     "Mortimer Wheeler"
+    ],
+    "a": 1,
+    "e": "Daya Ram Sahni excavated Harappa in 1921. R. D. Banerji excavated Mohenjo-daro in 1922."
+   },
+   {
+    "q": "What does 'Mohenjo-daro' mean?",
+    "o": [
+     "City of gold",
+     "Mound of the dead",
+     "Land of rivers",
+     "Great city"
+    ],
+    "a": 1,
+    "e": "Mohenjo-daro means 'Mound of the dead' in Sindhi."
+   },
+   {
+    "q": "The Great Bath of the Indus Valley Civilisation was found at:",
+    "o": [
+     "Harappa",
+     "Lothal",
+     "Mohenjo-daro",
+     "Kalibangan"
+    ],
+    "a": 2,
+    "e": "The Great Bath is at Mohenjo-daro."
+   },
+   {
+    "q": "An ancient dockyard of the Indus Valley Civilisation was found at:",
+    "o": [
+     "Lothal",
+     "Dholavira",
+     "Ropar",
+     "Banawali"
+    ],
+    "a": 0,
+    "e": "Lothal in Gujarat had a dockyard, showing sea trade."
+   },
+   {
+    "q": "The Indus Valley Civilisation belongs to which age?",
+    "o": [
+     "Stone Age",
+     "Bronze Age",
+     "Iron Age",
+     "Vedic Age"
+    ],
+    "a": 1,
+    "e": "The Harappans used copper and bronze, so it is a Bronze Age civilisation."
+   }
+  ],
+  "English0": [
+   {
+    "q": "She ___ tennis every Sunday.",
+    "o": [
+     "play",
+     "plays",
+     "playing",
+     "is play"
+    ],
+    "a": 1,
+    "e": "Habit + he/she/it → simple present with -s: plays."
+   },
+   {
+    "q": "Look! They ___ watching TV now.",
+    "o": [
+     "is",
+     "are",
+     "am",
+     "be"
+    ],
+    "a": 1,
+    "e": "'Now' → present continuous. They + are + -ing."
+   },
+   {
+    "q": "I ___ known him for five years.",
+    "o": [
+     "has",
+     "have",
+     "am",
+     "had been"
+    ],
+    "a": 1,
+    "e": "Present perfect with 'for five years': I have known."
+   },
+   {
+    "q": "Water ___ at 100°C.",
+    "o": [
+     "boil",
+     "boils",
+     "is boiling",
+     "boiled"
+    ],
+    "a": 1,
+    "e": "A general truth uses the simple present: water boils."
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "He don't like milk.",
+     "He doesn't likes milk.",
+     "He doesn't like milk.",
+     "He not like milk."
+    ],
+    "a": 2,
+    "e": "He + does not + base verb (like, not likes)."
+   }
+  ],
+  "English1": [
+   {
+    "q": "I ___ to Kochi yesterday.",
+    "o": [
+     "go",
+     "gone",
+     "went",
+     "have gone"
+    ],
+    "a": 2,
+    "e": "'Yesterday' → simple past: went."
+   },
+   {
+    "q": "She was cooking when the phone ___.",
+    "o": [
+     "ring",
+     "rang",
+     "rung",
+     "rings"
+    ],
+    "a": 1,
+    "e": "A short action that interrupts a longer past action uses simple past: rang."
+   },
+   {
+    "q": "They ___ finished the work before I arrived.",
+    "o": [
+     "have",
+     "has",
+     "had",
+     "were"
+    ],
+    "a": 2,
+    "e": "The earlier of two past actions uses past perfect: had finished."
+   },
+   {
+    "q": "What is the past form of 'teach'?",
+    "o": [
+     "teached",
+     "taught",
+     "tought",
+     "teach"
+    ],
+    "a": 1,
+    "e": "Teach is irregular: teach → taught → taught."
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "Did you saw him?",
+     "Did you see him?",
+     "Do you saw him?",
+     "Did you seen him?"
+    ],
+    "a": 1,
+    "e": "After 'did', use the base verb: Did you see him?"
+   }
+  ],
+  "Reasoning0": [
+   {
+    "q": "Pen : Write :: Knife : ?",
+    "o": [
+     "Sharp",
+     "Cut",
+     "Kitchen",
+     "Steel"
+    ],
+    "a": 1,
+    "e": "A pen is used to write. A knife is used to cut."
+   },
+   {
+    "q": "3 : 27 :: 4 : ?",
+    "o": [
+     "16",
+     "48",
+     "64",
+     "81"
+    ],
+    "a": 2,
+    "e": "3³ = 27, so the rule is the cube. 4³ = 64."
+   },
+   {
+    "q": "Bird : Nest :: Lion : ?",
+    "o": [
+     "Forest",
+     "Den",
+     "Cage",
+     "Jungle"
+    ],
+    "a": 1,
+    "e": "A bird lives in a nest. A lion lives in a den."
+   },
+   {
+    "q": "ACE : BDF :: GIK : ?",
+    "o": [
+     "HJL",
+     "HIJ",
+     "IKM",
+     "GHI"
+    ],
+    "a": 0,
+    "e": "Each letter moves 1 step forward: G→H, I→J, K→L = HJL."
+   },
+   {
+    "q": "Eye : See :: Ear : ?",
+    "o": [
+     "Sound",
+     "Hear",
+     "Noise",
+     "Music"
+    ],
+    "a": 1,
+    "e": "We see with eyes and hear with ears."
+   }
+  ],
+  "Reasoning1": [
+   {
+    "q": "5 : 30 :: 7 : ?",
+    "o": [
+     "42",
+     "49",
+     "56",
+     "63"
+    ],
+    "a": 2,
+    "e": "5 × 6 = 30 (number × next number). 7 × 8 = 56."
+   },
+   {
+    "q": "Cow : Calf :: Dog : ?",
+    "o": [
+     "Kitten",
+     "Puppy",
+     "Cub",
+     "Foal"
+    ],
+    "a": 1,
+    "e": "The young one of a cow is a calf; of a dog, a puppy."
+   },
+   {
+    "q": "Doctor : Patient :: Lawyer : ?",
+    "o": [
+     "Court",
+     "Judge",
+     "Client",
+     "Case"
+    ],
+    "a": 2,
+    "e": "A doctor serves a patient. A lawyer serves a client."
+   },
+   {
+    "q": "12 : 144 :: 15 : ?",
+    "o": [
+     "150",
+     "196",
+     "225",
+     "250"
+    ],
+    "a": 2,
+    "e": "12² = 144. 15² = 225."
+   },
+   {
+    "q": "BAT : 23 :: CAT : ?",
+    "o": [
+     "22",
+     "24",
+     "25",
+     "26"
+    ],
+    "a": 1,
+    "e": "Add letter positions: B(2) + A(1) + T(20) = 23. C(3) + A(1) + T(20) = 24."
+   }
+  ],
+  "Quant3": [
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "18 + 6 × 4 − 10 = ?",
+    "o": [
+     "32",
+     "62",
+     "14",
+     "34"
+    ],
+    "a": 0,
+    "e": "First × : 6 × 4 = 24. Then 18 + 24 − 10 = 32.",
+    "ml": "ആദ്യം ഗുണനം: 24. പിന്നെ 18 + 24 − 10 = 32."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "100 ÷ 4 × 5 = ?",
+    "o": [
+     "125",
+     "5",
+     "20",
+     "100"
+    ],
+    "a": 0,
+    "e": "÷ and × go left to right: 100 ÷ 4 = 25, 25 × 5 = 125.",
+    "ml": "÷, × ഇടത്തുനിന്ന് വലത്തോട്ട്: 25 × 5 = 125."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "(36 − 12) ÷ 6 + 3 = ?",
+    "o": [
+     "7",
+     "4",
+     "9",
+     "10"
+    ],
+    "a": 0,
+    "e": "Bracket first: 24. 24 ÷ 6 = 4. 4 + 3 = 7.",
+    "ml": "ആദ്യം ബ്രാക്കറ്റ്: 24 ÷ 6 = 4, + 3 = 7."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "7² − 5 × 6 = ?",
+    "o": [
+     "19",
+     "264",
+     "24",
+     "29"
+    ],
+    "a": 0,
+    "e": "7² = 49. 5 × 6 = 30. 49 − 30 = 19.",
+    "ml": "49 − 30 = 19."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "1/2 + 1/4 = ?",
+    "o": [
+     "3/4",
+     "2/6",
+     "1/6",
+     "1"
+    ],
+    "a": 0,
+    "e": "1/2 = 2/4. 2/4 + 1/4 = 3/4.",
+    "ml": "1/2 = 2/4. 2/4 + 1/4 = 3/4."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "0.5 × 0.4 = ?",
+    "o": [
+     "0.2",
+     "2",
+     "0.02",
+     "0.9"
+    ],
+    "a": 0,
+    "e": "5 × 4 = 20. Two decimal places in total: 0.20 = 0.2.",
+    "ml": "5 × 4 = 20. രണ്ട് ദശാംശ സ്ഥാനം: 0.20."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "45 − [15 + (8 − 3)] = ?",
+    "o": [
+     "25",
+     "35",
+     "15",
+     "29"
+    ],
+    "a": 0,
+    "e": "Inner bracket: 5. Then 15 + 5 = 20. 45 − 20 = 25.",
+    "ml": "ഉള്ളിലെ ബ്രാക്കറ്റ് ആദ്യം: 5, പിന്നെ 20. 45 − 20 = 25."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "25% of 80 + 10 = ?",
+    "o": [
+     "30",
+     "28",
+     "20",
+     "40"
+    ],
+    "a": 0,
+    "e": "25% = 1/4. 80 ÷ 4 = 20. 20 + 10 = 30.",
+    "ml": "25% = 1/4. 80 ÷ 4 = 20, + 10 = 30."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "√144 + √81 = ?",
+    "o": [
+     "21",
+     "15",
+     "225",
+     "23"
+    ],
+    "a": 0,
+    "e": "√144 = 12, √81 = 9. 12 + 9 = 21.",
+    "ml": "12 + 9 = 21."
+   },
+   {
+    "s": "Quant",
+    "t": "Simplification",
+    "q": "3.6 ÷ 0.6 = ?",
+    "o": [
+     "6",
+     "0.6",
+     "60",
+     "3"
+    ],
+    "a": 0,
+    "e": "Multiply both by 10: 36 ÷ 6 = 6.",
+    "ml": "രണ്ടിനെയും 10 കൊണ്ട് ഗുണിക്കുക: 36 ÷ 6 = 6."
+   }
+  ],
+  "GA2": [
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Which is the oldest Veda?",
+    "o": [
+     "Rigveda",
+     "Samaveda",
+     "Yajurveda",
+     "Atharvaveda"
+    ],
+    "a": 0,
+    "e": "The Rigveda is the oldest of the four Vedas.",
+    "ml": "ഏറ്റവും പഴയ വേദം ഋഗ്വേദം."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The Gayatri Mantra is found in the:",
+    "o": [
+     "Rigveda",
+     "Samaveda",
+     "Atharvaveda",
+     "Upanishads"
+    ],
+    "a": 0,
+    "e": "The Gayatri Mantra is in the Rigveda (3rd Mandala).",
+    "ml": "ഗായത്രി മന്ത്രം ഋഗ്വേദത്തിൽ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Which Veda is linked with music?",
+    "o": [
+     "Samaveda",
+     "Rigveda",
+     "Yajurveda",
+     "Atharvaveda"
+    ],
+    "a": 0,
+    "e": "Samaveda contains hymns set to music; Indian music has its roots here.",
+    "ml": "സംഗീതവുമായി ബന്ധപ്പെട്ട വേദം സാമവേദം."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The Atharvaveda mainly deals with:",
+    "o": [
+     "Magic, medicine and daily life",
+     "Music",
+     "Rules of sacrifice",
+     "War"
+    ],
+    "a": 0,
+    "e": "Atharvaveda has charms, spells and remedies for diseases.",
+    "ml": "അഥർവവേദം: മന്ത്രവാദം, ഔഷധം, ദൈനംദിന ജീവിതം."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The Early Vedic period is also called the:",
+    "o": [
+     "Rigvedic period",
+     "Mauryan period",
+     "Gupta period",
+     "Harappan period"
+    ],
+    "a": 0,
+    "e": "Early Vedic = Rigvedic period (about 1500–1000 BCE).",
+    "ml": "ആദ്യ വേദകാലം = ഋഗ്വേദ കാലം."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The most important god of the Rigvedic people was:",
+    "o": [
+     "Indra",
+     "Vishnu",
+     "Shiva",
+     "Brahma"
+    ],
+    "a": 0,
+    "e": "Indra, the god of rain and war, has the most hymns in the Rigveda.",
+    "ml": "ഋഗ്വേദത്തിലെ പ്രധാന ദേവൻ ഇന്ദ്രൻ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "India's motto 'Satyameva Jayate' is taken from the:",
+    "o": [
+     "Mundaka Upanishad",
+     "Rigveda",
+     "Bhagavad Gita",
+     "Ramayana"
+    ],
+    "a": 0,
+    "e": "'Satyameva Jayate' (Truth alone wins) is from the Mundaka Upanishad.",
+    "ml": "'സത്യമേവ ജയതേ' മുണ്ഡകോപനിഷത്തിൽ നിന്ന്."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "How many Vedas are there?",
+    "o": [
+     "4",
+     "3",
+     "5",
+     "6"
+    ],
+    "a": 0,
+    "e": "Four: Rig, Sama, Yajur, Atharva.",
+    "ml": "വേദങ്ങൾ നാല്: ഋക്, സാമം, യജുസ്, അഥർവം."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "In the Vedic age, 'Sabha' and 'Samiti' were:",
+    "o": [
+     "Assemblies of people",
+     "Taxes",
+     "Weapons",
+     "Temples"
+    ],
+    "a": 0,
+    "e": "Sabha and Samiti were popular assemblies that advised the king.",
+    "ml": "സഭയും സമിതിയും രാജാവിനെ ഉപദേശിച്ച ജനസഭകൾ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Which river is called 'Naditama' (best of rivers) in the Rigveda?",
+    "o": [
+     "Saraswati",
+     "Ganga",
+     "Yamuna",
+     "Narmada"
+    ],
+    "a": 0,
+    "e": "The Rigveda calls the Saraswati 'Naditama'.",
+    "ml": "ഋഗ്വേദത്തിൽ 'നദീതമ' എന്ന് വിളിക്കുന്നത് സരസ്വതിയെ."
+   }
+  ],
+  "Reasoning2": [
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 2, 4, 6, 8, ?",
+    "o": [
+     "10",
+     "12",
+     "9",
+     "16"
+    ],
+    "a": 0,
+    "e": "Add 2 each time.",
+    "ml": "ഓരോ തവണയും 2 കൂട്ടുന്നു: 10."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 5, 10, 20, 40, ?",
+    "o": [
+     "80",
+     "60",
+     "50",
+     "45"
+    ],
+    "a": 0,
+    "e": "Multiply by 2 each time.",
+    "ml": "ഓരോ തവണയും 2 കൊണ്ട് ഗുണിക്കുന്നു: 80."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 1, 4, 9, 16, ?",
+    "o": [
+     "25",
+     "20",
+     "24",
+     "36"
+    ],
+    "a": 0,
+    "e": "Squares: 1², 2², 3², 4², so 5² = 25.",
+    "ml": "വർഗ്ഗങ്ങൾ: അടുത്തത് 5² = 25."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 100, 90, 80, 70, ?",
+    "o": [
+     "60",
+     "65",
+     "50",
+     "75"
+    ],
+    "a": 0,
+    "e": "Subtract 10 each time.",
+    "ml": "ഓരോ തവണയും 10 കുറയ്ക്കുന്നു: 60."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 3, 6, 11, 18, ?",
+    "o": [
+     "27",
+     "25",
+     "24",
+     "30"
+    ],
+    "a": 0,
+    "e": "Gaps: +3, +5, +7, so next +9: 18 + 9 = 27.",
+    "ml": "വ്യത്യാസം +3, +5, +7, അടുത്തത് +9: 27."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 2, 6, 18, 54, ?",
+    "o": [
+     "162",
+     "108",
+     "72",
+     "148"
+    ],
+    "a": 0,
+    "e": "Multiply by 3 each time: 54 × 3 = 162.",
+    "ml": "ഓരോ തവണയും × 3: 162."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 1, 8, 27, 64, ?",
+    "o": [
+     "125",
+     "100",
+     "81",
+     "216"
+    ],
+    "a": 0,
+    "e": "Cubes: 1³, 2³, 3³, 4³, so 5³ = 125.",
+    "ml": "ഘനങ്ങൾ: അടുത്തത് 5³ = 125."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 7, 14, 28, 56, ?",
+    "o": [
+     "112",
+     "84",
+     "70",
+     "98"
+    ],
+    "a": 0,
+    "e": "Multiply by 2: 56 × 2 = 112.",
+    "ml": "× 2: 112."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 50, 45, 41, 38, ?",
+    "o": [
+     "36",
+     "35",
+     "34",
+     "37"
+    ],
+    "a": 0,
+    "e": "Gaps: −5, −4, −3, so next −2: 38 − 2 = 36.",
+    "ml": "വ്യത്യാസം −5, −4, −3, അടുത്തത് −2: 36."
+   },
+   {
+    "s": "Reasoning",
+    "t": "Number series",
+    "q": "Find the next number: 2, 3, 5, 7, 11, ?",
+    "o": [
+     "13",
+     "12",
+     "15",
+     "14"
+    ],
+    "a": 0,
+    "e": "These are prime numbers. After 11 comes 13.",
+    "ml": "ഇവ അഭാജ്യ സംഖ്യകൾ. 11 കഴിഞ്ഞ് 13."
+   }
+  ],
+  "English2": [
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: I ___ you tomorrow.",
+    "o": [
+     "will call",
+     "called",
+     "calling",
+     "calls"
+    ],
+    "a": 0,
+    "e": "'Tomorrow' shows the future: will + base verb.",
+    "ml": "tomorrow → future: will + verb."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: She will ___ the exam next year.",
+    "o": [
+     "write",
+     "writes",
+     "wrote",
+     "writing"
+    ],
+    "a": 0,
+    "e": "After 'will', always use the base verb.",
+    "ml": "will-ന് ശേഷം verb-ന്റെ അടിസ്ഥാന രൂപം: write."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: We ___ going to visit Kochi on Sunday.",
+    "o": [
+     "are",
+     "is",
+     "am",
+     "was"
+    ],
+    "a": 0,
+    "e": "We + are + going to.",
+    "ml": "We-യുടെ കൂടെ are: We are going to."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: By next June, he ___ his course.",
+    "o": [
+     "will have completed",
+     "completes",
+     "completed",
+     "has completing"
+    ],
+    "a": 0,
+    "e": "'By' + future time → future perfect: will have + V3.",
+    "ml": "By + ഭാവി സമയം → will have + V3."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: Tomorrow at 10 AM, I ___ in the office.",
+    "o": [
+     "will be working",
+     "worked",
+     "work",
+     "am worked"
+    ],
+    "a": 0,
+    "e": "An action going on at a future time → future continuous: will be + -ing.",
+    "ml": "ഭാവിയിൽ ആ സമയത്ത് നടന്നുകൊണ്ടിരിക്കുന്നത്: will be + -ing."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Which sentence is in the simple future tense?",
+    "o": [
+     "They will play.",
+     "They played.",
+     "They are playing.",
+     "They have played."
+    ],
+    "a": 0,
+    "e": "Simple future = will + base verb.",
+    "ml": "Simple future = will + verb: They will play."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct sentence.",
+    "o": [
+     "He will not come.",
+     "He will not comes.",
+     "He will not coming.",
+     "He not will come."
+    ],
+    "a": 0,
+    "e": "Negative: will not + base verb.",
+    "ml": "നിഷേധം: will not + verb."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: Look at those dark clouds! It ___ rain.",
+    "o": [
+     "is going to",
+     "was going to",
+     "has",
+     "rained"
+    ],
+    "a": 0,
+    "e": "A future event we can see coming → 'is going to'.",
+    "ml": "കാണാവുന്ന സൂചനയുള്ള ഭാവി കാര്യം: is going to."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: If it rains, we ___ at home.",
+    "o": [
+     "will stay",
+     "stayed",
+     "stays",
+     "staying"
+    ],
+    "a": 0,
+    "e": "If + present, will + base verb.",
+    "ml": "If + present → will + verb."
+   },
+   {
+    "s": "English",
+    "t": "Grammar",
+    "q": "Choose the correct option: ___ you help me tomorrow?",
+    "o": [
+     "Will",
+     "Did",
+     "Are",
+     "Has"
+    ],
+    "a": 0,
+    "e": "A question about the future starts with 'Will'.",
+    "ml": "ഭാവിയെക്കുറിച്ചുള്ള ചോദ്യം Will കൊണ്ട് തുടങ്ങും."
+   }
+  ],
+  "GA3": [
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "How many Mahajanapadas were there?",
+    "o": [
+     "16",
+     "12",
+     "18",
+     "10"
+    ],
+    "a": 0,
+    "e": "There were 16 Mahajanapadas in the 6th century BCE.",
+    "ml": "മഹാജനപദങ്ങൾ 16."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Which was the most powerful Mahajanapada?",
+    "o": [
+     "Magadha",
+     "Kosala",
+     "Vatsa",
+     "Avanti"
+    ],
+    "a": 0,
+    "e": "Magadha became the strongest and later built an empire.",
+    "ml": "ഏറ്റവും ശക്തമായ മഹാജനപദം മഗധ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The early capital of Magadha was:",
+    "o": [
+     "Rajagriha (Rajgir)",
+     "Taxila",
+     "Ujjain",
+     "Kaushambi"
+    ],
+    "a": 0,
+    "e": "Rajagriha was the first capital; later Pataliputra.",
+    "ml": "മഗധയുടെ ആദ്യ തലസ്ഥാനം രാജഗൃഹം."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The list of 16 Mahajanapadas is given in the Buddhist text:",
+    "o": [
+     "Anguttara Nikaya",
+     "Rigveda",
+     "Arthashastra",
+     "Indica"
+    ],
+    "a": 0,
+    "e": "The Anguttara Nikaya lists the 16 Mahajanapadas.",
+    "ml": "16 മഹാജനപദങ്ങളുടെ പട്ടിക അംഗുത്തര നികായത്തിൽ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Who founded the Haryanka dynasty of Magadha?",
+    "o": [
+     "Bimbisara",
+     "Ashoka",
+     "Chandragupta Maurya",
+     "Mahapadma Nanda"
+    ],
+    "a": 0,
+    "e": "Bimbisara founded the Haryanka dynasty.",
+    "ml": "ഹര്യങ്ക വംശ സ്ഥാപകൻ ബിംബിസാരൻ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The capital of Avanti was:",
+    "o": [
+     "Ujjain",
+     "Vaishali",
+     "Champa",
+     "Shravasti"
+    ],
+    "a": 0,
+    "e": "Avanti's capital was Ujjain (Madhya Pradesh).",
+    "ml": "അവന്തിയുടെ തലസ്ഥാനം ഉജ്ജയിനി."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Which was the only Mahajanapada in South India?",
+    "o": [
+     "Assaka (Ashmaka)",
+     "Anga",
+     "Kuru",
+     "Gandhara"
+    ],
+    "a": 0,
+    "e": "Assaka was on the Godavari river.",
+    "ml": "ദക്ഷിണേന്ത്യയിലെ ഏക മഹാജനപദം അസ്സക (ഗോദാവരി തീരം)."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Vajji was a:",
+    "o": [
+     "Republic (gana-sangha)",
+     "Kingdom of the Mauryas",
+     "Sea port",
+     "Temple town"
+    ],
+    "a": 0,
+    "e": "Vajji was a republic of clans; capital Vaishali.",
+    "ml": "വജ്ജി ഒരു ഗണസംഘം (റിപ്പബ്ലിക്); തലസ്ഥാനം വൈശാലി."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "Ajatashatru was the son of:",
+    "o": [
+     "Bimbisara",
+     "Ashoka",
+     "Udayin",
+     "Bindusara"
+    ],
+    "a": 0,
+    "e": "Ajatashatru, son of Bimbisara, ruled Magadha after him.",
+    "ml": "അജാതശത്രു ബിംബിസാരന്റെ മകൻ."
+   },
+   {
+    "s": "GA",
+    "t": "History",
+    "q": "The capital of Kosala was:",
+    "o": [
+     "Shravasti",
+     "Vaishali",
+     "Champa",
+     "Mathura"
+    ],
+    "a": 0,
+    "e": "Kosala's capital was Shravasti (Uttar Pradesh).",
+    "ml": "കോസലത്തിന്റെ തലസ്ഥാനം ശ്രാവസ്തി."
+   }
+  ]
+ }
 }

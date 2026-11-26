@@ -1,31 +1,537 @@
 {
-  "updated": "2026-11-25",
-  "days": [
+ "updated": "2026-11-26",
+ "days": [
+  {
+   "date": "2026-11-26",
+   "title": "Daily mock",
+   "q": [
     {
-      "date": "2026-11-25",
-      "title": "Daily mock",
-      "q": [
-        {"s": "Quant", "q": "What is 35% of 240?", "o": ["72", "84", "96", "80"], "a": 1, "e": "10% of 240 = 24, so 30% = 72 and 5% = 12. 72 + 12 = 84."},
-        {"s": "Quant", "q": "An article costs ₹500. It is sold at 12% profit. What is the selling price?", "o": ["₹550", "₹560", "₹612", "₹580"], "a": 1, "e": "Profit = 12% of 500 = 60. Selling price = 500 + 60 = ₹560."},
-        {"s": "Quant", "q": "What is the average of the first 10 natural numbers?", "o": ["5", "5.5", "6", "10"], "a": 1, "e": "1 + 2 + … + 10 = 55. Average = 55 ÷ 10 = 5.5."},
-        {"s": "Quant", "q": "Two numbers are in the ratio 2 : 3 and their difference is 15. What is the larger number?", "o": ["30", "45", "60", "75"], "a": 1, "e": "Difference of parts = 3 − 2 = 1 part = 15. Larger = 3 × 15 = 45."},
-        {"s": "Quant", "q": "Simple interest on ₹2000 at 5% per year for 4 years is:", "o": ["₹300", "₹400", "₹500", "₹200"], "a": 1, "e": "SI = 2000 × 5 × 4 ÷ 100 = ₹400."},
-        {"s": "Reasoning", "q": "Find the next number: 1, 4, 9, 16, 25, ?", "o": ["30", "32", "36", "49"], "a": 2, "e": "These are squares: 1², 2², 3², 4², 5². Next is 6² = 36."},
-        {"s": "Reasoning", "q": "Find the odd one out: Square, Triangle, Circle, Cube", "o": ["Square", "Triangle", "Circle", "Cube"], "a": 3, "e": "Square, triangle and circle are flat (2D) shapes. A cube is a solid (3D) shape."},
-        {"s": "Reasoning", "q": "If PEN is written as QFO, how is INK written?", "o": ["JOL", "JNL", "HMJ", "KOL"], "a": 0, "e": "Each letter moves 1 step forward: P→Q, E→F, N→O. So I→J, N→O, K→L = JOL."},
-        {"s": "Reasoning", "q": "Pointing to a boy, Ria says, \"He is the son of my mother's only son.\" How is the boy related to Ria?", "o": ["Brother", "Son", "Nephew", "Cousin"], "a": 2, "e": "Ria's mother's only son is Ria's brother. The son of her brother is her nephew."},
-        {"s": "Reasoning", "q": "Today is Monday. What day will it be after 10 days?", "o": ["Wednesday", "Thursday", "Friday", "Tuesday"], "a": 1, "e": "10 days = 1 week + 3 days. Monday + 3 days = Thursday."},
-        {"s": "English", "q": "Choose the synonym of HUGE.", "o": ["Tiny", "Enormous", "Weak", "Narrow"], "a": 1, "e": "Huge means very big, the same as enormous."},
-        {"s": "English", "q": "Choose the antonym of EXPAND.", "o": ["Grow", "Stretch", "Contract", "Increase"], "a": 2, "e": "Expand means become bigger. The opposite is contract (become smaller)."},
-        {"s": "English", "q": "Fill in the blank: He has been living here ___ 2015.", "o": ["for", "since", "from", "by"], "a": 1, "e": "Use 'since' with a point of time (2015). Use 'for' with a length of time (for 10 years)."},
-        {"s": "English", "q": "Fill in the blank: She is ___ honest girl.", "o": ["a", "an", "the", "no article"], "a": 1, "e": "'Honest' starts with a vowel sound (the h is silent), so we use 'an'."},
-        {"s": "English", "q": "What does the idiom \"break the ice\" mean?", "o": ["To break something cold", "To start a friendly talk in a quiet or awkward situation", "To get very angry", "To finish work quickly"], "a": 1, "e": "To break the ice means to start a conversation and make people feel relaxed."},
-        {"s": "GA", "q": "Who is known as the Father of the Indian Constitution?", "o": ["Jawaharlal Nehru", "B. R. Ambedkar", "Rajendra Prasad", "Sardar Patel"], "a": 1, "e": "Dr B. R. Ambedkar chaired the Drafting Committee of the Constitution."},
-        {"s": "GA", "q": "Which is the largest ocean in the world?", "o": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"], "a": 2, "e": "The Pacific Ocean is the largest and deepest ocean."},
-        {"s": "GA", "q": "The Hornbill Festival is celebrated in which state?", "o": ["Assam", "Nagaland", "Sikkim", "Manipur"], "a": 1, "e": "The Hornbill Festival is held in Nagaland every December."},
-        {"s": "GA", "q": "What is the SI unit of force?", "o": ["Joule", "Watt", "Newton", "Pascal"], "a": 2, "e": "Force is measured in newton (N). Joule = energy, watt = power, pascal = pressure."},
-        {"s": "GA", "q": "Kuchipudi is a classical dance of which state?", "o": ["Kerala", "Tamil Nadu", "Andhra Pradesh", "Odisha"], "a": 2, "e": "Kuchipudi comes from Andhra Pradesh. Kathakali and Mohiniyattam are from Kerala."}
-      ]
+     "s": "Quant",
+     "t": "Simplification",
+     "q": "48 × 25 = ?",
+     "o": [
+      "1200",
+      "1100",
+      "1250",
+      "960"
+     ],
+     "a": 0,
+     "e": "×25 = ×100 ÷ 4. 48 × 100 = 4800, ÷ 4 = 1200.",
+     "ml": "25 കൊണ്ട് ഗുണിക്കാൻ: ×100 ÷ 4. 4800 ÷ 4 = 1200."
+    },
+    {
+     "s": "Quant",
+     "t": "Percentage",
+     "q": "What is 15% of 640?",
+     "o": [
+      "96",
+      "86",
+      "106",
+      "64"
+     ],
+     "a": 0,
+     "e": "10% = 64, 5% = 32. 15% = 64 + 32 = 96.",
+     "ml": "10% = 64, 5% = 32. ആകെ 96."
+    },
+    {
+     "s": "Quant",
+     "t": "Simplification",
+     "q": "999 × 7 = ?",
+     "o": [
+      "6993",
+      "7007",
+      "6983",
+      "6999"
+     ],
+     "a": 0,
+     "e": "999 = 1000 − 1. So 7000 − 7 = 6993.",
+     "ml": "999 = 1000 − 1. 7000 − 7 = 6993."
+    },
+    {
+     "s": "Quant",
+     "t": "Fractions",
+     "q": "What is 3/5 of 450?",
+     "o": [
+      "270",
+      "250",
+      "300",
+      "180"
+     ],
+     "a": 0,
+     "e": "450 ÷ 5 = 90. 90 × 3 = 270.",
+     "ml": "450 ÷ 5 = 90, 90 × 3 = 270."
+    },
+    {
+     "s": "Quant",
+     "t": "Average",
+     "q": "Find the average of 12, 18, 24, 30, 36.",
+     "o": [
+      "24",
+      "22",
+      "26",
+      "30"
+     ],
+     "a": 0,
+     "e": "Numbers go up by 6, so the average is the middle number: 24.",
+     "ml": "ഒരേ വ്യത്യാസമുള്ള സംഖ്യകളുടെ ശരാശരി = നടുവിലെ സംഖ്യ = 24."
+    },
+    {
+     "s": "Reasoning",
+     "t": "Analogy",
+     "q": "Doctor : Hospital :: Teacher : ?",
+     "o": [
+      "School",
+      "Chalk",
+      "Student",
+      "Market"
+     ],
+     "a": 0,
+     "e": "A doctor works in a hospital; a teacher works in a school.",
+     "ml": "ഡോക്ടർ ആശുപത്രിയിൽ, അധ്യാപകൻ സ്കൂളിൽ ജോലി ചെയ്യുന്നു."
+    },
+    {
+     "s": "Reasoning",
+     "t": "Analogy",
+     "q": "4 : 16 :: 7 : ?",
+     "o": [
+      "49",
+      "28",
+      "14",
+      "56"
+     ],
+     "a": 0,
+     "e": "16 = 4². So 7² = 49.",
+     "ml": "16 = 4². അതുപോലെ 7² = 49."
+    },
+    {
+     "s": "Reasoning",
+     "t": "Number series",
+     "q": "Find the next number: 3, 7, 11, 15, ?",
+     "o": [
+      "19",
+      "18",
+      "21",
+      "17"
+     ],
+     "a": 0,
+     "e": "Add 4 each time: 15 + 4 = 19.",
+     "ml": "ഓരോ തവണയും 4 കൂട്ടുന്നു: 19."
+    },
+    {
+     "s": "Reasoning",
+     "t": "Odd one out",
+     "q": "Find the odd one out.",
+     "o": [
+      "Mango",
+      "Rose",
+      "Lotus",
+      "Jasmine"
+     ],
+     "a": 0,
+     "e": "Rose, Lotus and Jasmine are flowers; Mango is a fruit.",
+     "ml": "റോസ്, താമര, മുല്ല പൂക്കൾ; മാങ്ങ പഴം."
+    },
+    {
+     "s": "Reasoning",
+     "t": "Coding-decoding",
+     "q": "If PEN is coded as QFO, how is BOX coded?",
+     "o": [
+      "CPY",
+      "CPX",
+      "DPY",
+      "APW"
+     ],
+     "a": 0,
+     "e": "Each letter moves 1 forward: B→C, O→P, X→Y.",
+     "ml": "ഓരോ അക്ഷരവും ഒരു സ്ഥാനം മുന്നോട്ട്: CPY."
+    },
+    {
+     "s": "English",
+     "t": "Grammar",
+     "q": "Choose the correct option: She ___ tea every morning.",
+     "o": [
+      "drinks",
+      "drink",
+      "drank",
+      "drinking"
+     ],
+     "a": 0,
+     "e": "Habit + she → simple present with -s: drinks.",
+     "ml": "ശീലം + She → simple present, -s ചേർക്കുക: drinks."
+    },
+    {
+     "s": "English",
+     "t": "Synonyms",
+     "q": "Choose the word closest in meaning to: RAPID",
+     "o": [
+      "Quick",
+      "Slow",
+      "Heavy",
+      "Late"
+     ],
+     "a": 0,
+     "e": "Rapid means fast, so Quick.",
+     "ml": "Rapid = വേഗത്തിലുള്ള. സമാനാർത്ഥം Quick."
+    },
+    {
+     "s": "English",
+     "t": "Grammar",
+     "q": "Choose the correct option: He studies at ___ university near Kochi.",
+     "o": [
+      "a",
+      "an",
+      "the",
+      "no article"
+     ],
+     "a": 0,
+     "e": "'University' starts with a 'yoo' (consonant) sound, so use 'a'.",
+     "ml": "University-യുടെ ഉച്ചാരണം 'യൂ' (വ്യഞ്ജനശബ്ദം) ആയതിനാൽ 'a'."
+    },
+    {
+     "s": "English",
+     "t": "Grammar",
+     "q": "Find the error: 'They (A) / is playing (B) / in the ground (C) / No error (D)'",
+     "o": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "a": 1,
+     "e": "'They' is plural, so it needs 'are playing'.",
+     "ml": "They ബഹുവചനം; 'are playing' വേണം. തെറ്റ് B-യിൽ."
+    },
+    {
+     "s": "English",
+     "t": "Antonyms",
+     "q": "Choose the word opposite in meaning to: ANCIENT",
+     "o": [
+      "Modern",
+      "Old",
+      "Historic",
+      "Ruined"
+     ],
+     "a": 0,
+     "e": "Ancient means very old; the opposite is Modern.",
+     "ml": "Ancient = പുരാതനം. വിപരീതം Modern."
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "The dockyard of the Indus Valley Civilisation was found at:",
+     "o": [
+      "Lothal",
+      "Harappa",
+      "Mohenjo-daro",
+      "Kalibangan"
+     ],
+     "a": 0,
+     "e": "Lothal (Gujarat) had a dockyard for boats.",
+     "ml": "സിന്ധു നദീതട സംസ്കാരത്തിലെ കപ്പൽത്തുറ ലോഥലിൽ (ഗുജറാത്ത്)."
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "The Great Bath was found at:",
+     "o": [
+      "Mohenjo-daro",
+      "Lothal",
+      "Harappa",
+      "Dholavira"
+     ],
+     "a": 0,
+     "e": "The Great Bath is at Mohenjo-daro (now in Pakistan).",
+     "ml": "മഹാസ്നാനഘട്ടം മോഹൻജൊദാരോയിൽ."
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "Fire was first used by humans in which age?",
+     "o": [
+      "Palaeolithic",
+      "Neolithic",
+      "Mesolithic",
+      "Chalcolithic"
+     ],
+     "a": 0,
+     "e": "Early humans of the Palaeolithic (Old Stone) Age discovered fire.",
+     "ml": "തീ കണ്ടെത്തിയത് പ്രാചീന ശിലായുഗത്തിൽ (Palaeolithic)."
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "Farming (agriculture) began in which age?",
+     "o": [
+      "Neolithic",
+      "Palaeolithic",
+      "Mesolithic",
+      "Iron Age"
+     ],
+     "a": 0,
+     "e": "The Neolithic (New Stone) Age saw farming and settled villages.",
+     "ml": "കൃഷി തുടങ്ങിയത് നവീന ശിലായുഗത്തിൽ (Neolithic)."
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "The Indus script was:",
+     "o": [
+      "Pictographic",
+      "Brahmi",
+      "Kharosthi",
+      "Devanagari"
+     ],
+     "a": 0,
+     "e": "The Indus script used pictures and signs (pictographic) and is still not read.",
+     "ml": "സിന്ധു ലിപി ചിത്രലിപി (Pictographic) ആണ്; ഇതുവരെ വായിക്കാൻ കഴിഞ്ഞിട്ടില്ല."
     }
-  ]
+   ]
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Daily mock",
+   "q": [
+    {
+     "s": "Quant",
+     "q": "What is 35% of 240?",
+     "o": [
+      "72",
+      "84",
+      "96",
+      "80"
+     ],
+     "a": 1,
+     "e": "10% of 240 = 24, so 30% = 72 and 5% = 12. 72 + 12 = 84."
+    },
+    {
+     "s": "Quant",
+     "q": "An article costs ₹500. It is sold at 12% profit. What is the selling price?",
+     "o": [
+      "₹550",
+      "₹560",
+      "₹612",
+      "₹580"
+     ],
+     "a": 1,
+     "e": "Profit = 12% of 500 = 60. Selling price = 500 + 60 = ₹560."
+    },
+    {
+     "s": "Quant",
+     "q": "What is the average of the first 10 natural numbers?",
+     "o": [
+      "5",
+      "5.5",
+      "6",
+      "10"
+     ],
+     "a": 1,
+     "e": "1 + 2 + … + 10 = 55. Average = 55 ÷ 10 = 5.5."
+    },
+    {
+     "s": "Quant",
+     "q": "Two numbers are in the ratio 2 : 3 and their difference is 15. What is the larger number?",
+     "o": [
+      "30",
+      "45",
+      "60",
+      "75"
+     ],
+     "a": 1,
+     "e": "Difference of parts = 3 − 2 = 1 part = 15. Larger = 3 × 15 = 45."
+    },
+    {
+     "s": "Quant",
+     "q": "Simple interest on ₹2000 at 5% per year for 4 years is:",
+     "o": [
+      "₹300",
+      "₹400",
+      "₹500",
+      "₹200"
+     ],
+     "a": 1,
+     "e": "SI = 2000 × 5 × 4 ÷ 100 = ₹400."
+    },
+    {
+     "s": "Reasoning",
+     "q": "Find the next number: 1, 4, 9, 16, 25, ?",
+     "o": [
+      "30",
+      "32",
+      "36",
+      "49"
+     ],
+     "a": 2,
+     "e": "These are squares: 1², 2², 3², 4², 5². Next is 6² = 36."
+    },
+    {
+     "s": "Reasoning",
+     "q": "Find the odd one out: Square, Triangle, Circle, Cube",
+     "o": [
+      "Square",
+      "Triangle",
+      "Circle",
+      "Cube"
+     ],
+     "a": 3,
+     "e": "Square, triangle and circle are flat (2D) shapes. A cube is a solid (3D) shape."
+    },
+    {
+     "s": "Reasoning",
+     "q": "If PEN is written as QFO, how is INK written?",
+     "o": [
+      "JOL",
+      "JNL",
+      "HMJ",
+      "KOL"
+     ],
+     "a": 0,
+     "e": "Each letter moves 1 step forward: P→Q, E→F, N→O. So I→J, N→O, K→L = JOL."
+    },
+    {
+     "s": "Reasoning",
+     "q": "Pointing to a boy, Ria says, \"He is the son of my mother's only son.\" How is the boy related to Ria?",
+     "o": [
+      "Brother",
+      "Son",
+      "Nephew",
+      "Cousin"
+     ],
+     "a": 2,
+     "e": "Ria's mother's only son is Ria's brother. The son of her brother is her nephew."
+    },
+    {
+     "s": "Reasoning",
+     "q": "Today is Monday. What day will it be after 10 days?",
+     "o": [
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Tuesday"
+     ],
+     "a": 1,
+     "e": "10 days = 1 week + 3 days. Monday + 3 days = Thursday."
+    },
+    {
+     "s": "English",
+     "q": "Choose the synonym of HUGE.",
+     "o": [
+      "Tiny",
+      "Enormous",
+      "Weak",
+      "Narrow"
+     ],
+     "a": 1,
+     "e": "Huge means very big, the same as enormous."
+    },
+    {
+     "s": "English",
+     "q": "Choose the antonym of EXPAND.",
+     "o": [
+      "Grow",
+      "Stretch",
+      "Contract",
+      "Increase"
+     ],
+     "a": 2,
+     "e": "Expand means become bigger. The opposite is contract (become smaller)."
+    },
+    {
+     "s": "English",
+     "q": "Fill in the blank: He has been living here ___ 2015.",
+     "o": [
+      "for",
+      "since",
+      "from",
+      "by"
+     ],
+     "a": 1,
+     "e": "Use 'since' with a point of time (2015). Use 'for' with a length of time (for 10 years)."
+    },
+    {
+     "s": "English",
+     "q": "Fill in the blank: She is ___ honest girl.",
+     "o": [
+      "a",
+      "an",
+      "the",
+      "no article"
+     ],
+     "a": 1,
+     "e": "'Honest' starts with a vowel sound (the h is silent), so we use 'an'."
+    },
+    {
+     "s": "English",
+     "q": "What does the idiom \"break the ice\" mean?",
+     "o": [
+      "To break something cold",
+      "To start a friendly talk in a quiet or awkward situation",
+      "To get very angry",
+      "To finish work quickly"
+     ],
+     "a": 1,
+     "e": "To break the ice means to start a conversation and make people feel relaxed."
+    },
+    {
+     "s": "GA",
+     "q": "Who is known as the Father of the Indian Constitution?",
+     "o": [
+      "Jawaharlal Nehru",
+      "B. R. Ambedkar",
+      "Rajendra Prasad",
+      "Sardar Patel"
+     ],
+     "a": 1,
+     "e": "Dr B. R. Ambedkar chaired the Drafting Committee of the Constitution."
+    },
+    {
+     "s": "GA",
+     "q": "Which is the largest ocean in the world?",
+     "o": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Arctic Ocean"
+     ],
+     "a": 2,
+     "e": "The Pacific Ocean is the largest and deepest ocean."
+    },
+    {
+     "s": "GA",
+     "q": "The Hornbill Festival is celebrated in which state?",
+     "o": [
+      "Assam",
+      "Nagaland",
+      "Sikkim",
+      "Manipur"
+     ],
+     "a": 1,
+     "e": "The Hornbill Festival is held in Nagaland every December."
+    },
+    {
+     "s": "GA",
+     "q": "What is the SI unit of force?",
+     "o": [
+      "Joule",
+      "Watt",
+      "Newton",
+      "Pascal"
+     ],
+     "a": 2,
+     "e": "Force is measured in newton (N). Joule = energy, watt = power, pascal = pressure."
+    },
+    {
+     "s": "GA",
+     "q": "Kuchipudi is a classical dance of which state?",
+     "o": [
+      "Kerala",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Odisha"
+     ],
+     "a": 2,
+     "e": "Kuchipudi comes from Andhra Pradesh. Kathakali and Mohiniyattam are from Kerala."
+    }
+   ]
+  }
+ ]
 }

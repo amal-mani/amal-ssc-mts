@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-25",
+"updated": "2026-11-26",
 "note": "Question bank for full mocks and smart practice. Written fresh for this app in SSC MTS style. The 5 AM update adds new GA and English questions every day.",
 "q": [
 {
@@ -1265,6 +1265,486 @@
 "ml": "news singular ആണ്: The news is.",
 "id": "bk-78",
 "added": "2026-11-25"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Which Gupta king is called the 'Napoleon of India'?",
+"o": [
+"Samudragupta",
+"Chandragupta I",
+"Skandagupta",
+"Kumaragupta"
+],
+"a": 0,
+"e": "Historian V. A. Smith called Samudragupta the Napoleon of India for his conquests.",
+"ml": "'ഇന്ത്യൻ നെപ്പോളിയൻ' സമുദ്രഗുപ്തൻ.",
+"id": "bk-20261126-0",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "The state of Kerala was formed on:",
+"o": [
+"1 November 1956",
+"15 August 1947",
+"26 January 1950",
+"1 May 1960"
+],
+"a": 0,
+"e": "Kerala was formed on 1 November 1956 (Kerala Piravi).",
+"ml": "കേരളം രൂപീകരിച്ചത് 1956 നവംബർ 1 (കേരളപ്പിറവി).",
+"id": "bk-20261126-1",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the largest planet in the Solar System?",
+"o": [
+"Jupiter",
+"Saturn",
+"Earth",
+"Neptune"
+],
+"a": 0,
+"e": "Jupiter is the largest planet.",
+"ml": "ഏറ്റവും വലിയ ഗ്രഹം വ്യാഴം (Jupiter).",
+"id": "bk-20261126-2",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "The chemical symbol of gold is:",
+"o": [
+"Au",
+"Ag",
+"Go",
+"Gd"
+],
+"a": 0,
+"e": "Gold = Au (from Latin 'Aurum'). Silver = Ag.",
+"ml": "സ്വർണ്ണം = Au, വെള്ളി = Ag.",
+"id": "bk-20261126-3",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Polity",
+"q": "Who appoints the Chief Justice of India?",
+"o": [
+"The President",
+"The Prime Minister",
+"The Parliament",
+"The Law Minister"
+],
+"a": 0,
+"e": "The President appoints the Chief Justice of India (Article 124).",
+"ml": "ചീഫ് ജസ്റ്റിസിനെ നിയമിക്കുന്നത് രാഷ്ട്രപതി.",
+"id": "bk-20261126-4",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Static GK",
+"q": "Who was the first Indian to win a Nobel Prize?",
+"o": [
+"Rabindranath Tagore",
+"C. V. Raman",
+"Mother Teresa",
+"Amartya Sen"
+],
+"a": 0,
+"e": "Tagore won the Nobel Prize for Literature in 1913 for 'Gitanjali'.",
+"ml": "ആദ്യ ഇന്ത്യൻ നോബൽ ജേതാവ് ടാഗോർ (1913, ഗീതാഞ്ജലി).",
+"id": "bk-20261126-5",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "Which is the hottest planet?",
+"o": [
+"Venus",
+"Mercury",
+"Mars",
+"Jupiter"
+],
+"a": 0,
+"e": "Venus is hottest because its thick carbon dioxide air traps heat.",
+"ml": "ഏറ്റവും ചൂടുള്ള ഗ്രഹം ശുക്രൻ (Venus).",
+"id": "bk-20261126-6",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Science",
+"q": "An earthquake is measured by a:",
+"o": [
+"Seismograph",
+"Barometer",
+"Thermometer",
+"Hygrometer"
+],
+"a": 0,
+"e": "A seismograph records earthquakes. Barometer measures air pressure.",
+"ml": "ഭൂകമ്പം അളക്കുന്നത് സീസ്മോഗ്രാഫ്.",
+"id": "bk-20261126-7",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The capital of Australia is:",
+"o": [
+"Canberra",
+"Sydney",
+"Melbourne",
+"Perth"
+],
+"a": 0,
+"e": "Canberra is the capital; Sydney is the biggest city.",
+"ml": "ഓസ്ട്രേലിയയുടെ തലസ്ഥാനം കാൻബെറ.",
+"id": "bk-20261126-8",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Economy",
+"q": "Who is known as the Father of the Green Revolution in India?",
+"o": [
+"M. S. Swaminathan",
+"Verghese Kurien",
+"Norman Borlaug",
+"C. Subramaniam"
+],
+"a": 0,
+"e": "M. S. Swaminathan led India's Green Revolution. Verghese Kurien led the White Revolution (milk).",
+"ml": "ഹരിതവിപ്ലവത്തിന്റെ പിതാവ് എം. എസ്. സ്വാമിനാഥൻ.",
+"id": "bk-20261126-9",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Geography",
+"q": "The largest desert in India is the:",
+"o": [
+"Thar",
+"Rann of Kutch",
+"Ladakh",
+"Deccan"
+],
+"a": 0,
+"e": "The Thar Desert is mostly in Rajasthan.",
+"ml": "ഇന്ത്യയിലെ ഏറ്റവും വലിയ മരുഭൂമി ഥാർ.",
+"id": "bk-20261126-10",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "History",
+"q": "Who wrote 'The Discovery of India'?",
+"o": [
+"Jawaharlal Nehru",
+"Mahatma Gandhi",
+"B. R. Ambedkar",
+"Rabindranath Tagore"
+],
+"a": 0,
+"e": "Nehru wrote it in Ahmednagar Fort jail (1944).",
+"ml": "'ഡിസ്കവറി ഓഫ് ഇന്ത്യ' എഴുതിയത് നെഹ്റു.",
+"id": "bk-20261126-11",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "National Sports Day in India is on:",
+"o": [
+"29 August",
+"15 August",
+"14 November",
+"5 September"
+],
+"a": 0,
+"e": "29 August is the birthday of hockey legend Major Dhyan Chand.",
+"ml": "ദേശീയ കായിക ദിനം ഓഗസ്റ്റ് 29 (ധ്യാൻചന്ദിന്റെ ജന്മദിനം).",
+"id": "bk-20261126-12",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Computer",
+"q": "WWW stands for:",
+"o": [
+"World Wide Web",
+"World Web Wide",
+"Wide World Web",
+"Web World Wide"
+],
+"a": 0,
+"e": "WWW = World Wide Web, invented by Tim Berners-Lee.",
+"ml": "WWW = World Wide Web.",
+"id": "bk-20261126-13",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Theyyam is a ritual art form mainly of:",
+"o": [
+"North Kerala",
+"Tamil Nadu",
+"Goa",
+"Assam"
+],
+"a": 0,
+"e": "Theyyam is performed mainly in Kannur and Kasaragod.",
+"ml": "തെയ്യം പ്രധാനമായും വടക്കൻ കേരളത്തിൽ (കണ്ണൂർ, കാസർകോട്).",
+"id": "bk-20261126-14",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: She is senior ___ me.",
+"o": [
+"to",
+"than",
+"from",
+"with"
+],
+"a": 0,
+"e": "Words like senior, junior and prefer take 'to'.",
+"ml": "senior, junior എന്നിവയ്ക്ക് ശേഷം to.",
+"id": "bk-20261126-15",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: I have lived here ___ ten years.",
+"o": [
+"for",
+"since",
+"from",
+"by"
+],
+"a": 0,
+"e": "'For' + a length of time (ten years).",
+"ml": "കാലയളവ് (ten years) → for.",
+"id": "bk-20261126-16",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Find the error: 'He don't (A) / like (B) / coffee (C) / No error (D)'",
+"o": [
+"A",
+"B",
+"C",
+"D"
+],
+"a": 0,
+"e": "He/She/It takes 'doesn't': He doesn't like coffee.",
+"ml": "He-യോടൊപ്പം doesn't വേണം. തെറ്റ് A.",
+"id": "bk-20261126-17",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The children ___ playing in the park now.",
+"o": [
+"are",
+"is",
+"was",
+"has"
+],
+"a": 0,
+"e": "'Children' is plural and 'now' shows present: are playing.",
+"ml": "children ബഹുവചനം: are.",
+"id": "bk-20261126-18",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the passive form: 'Ravi writes a letter.'",
+"o": [
+"A letter is written by Ravi.",
+"A letter was written by Ravi.",
+"A letter is wrote by Ravi.",
+"A letter has written by Ravi."
+],
+"a": 0,
+"e": "Simple present passive: is/are + V3.",
+"ml": "Simple present passive: is + V3 (written).",
+"id": "bk-20261126-19",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: This is ___ best day of my life.",
+"o": [
+"the",
+"a",
+"an",
+"no article"
+],
+"a": 0,
+"e": "Superlatives (best, tallest) take 'the'.",
+"ml": "best പോലുള്ള superlative-ന് മുമ്പ് the.",
+"id": "bk-20261126-20",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Neither of the two answers ___ correct.",
+"o": [
+"is",
+"are",
+"were",
+"have"
+],
+"a": 0,
+"e": "'Neither of' takes a singular verb: is.",
+"ml": "'Neither of' → singular verb: is.",
+"id": "bk-20261126-21",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: He gave me ___ advice.",
+"o": [
+"some",
+"an",
+"many",
+"a"
+],
+"a": 0,
+"e": "'Advice' is uncountable: use some, not a/an.",
+"ml": "advice എണ്ണാൻ കഴിയാത്ത നാമം: some.",
+"id": "bk-20261126-22",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the indirect speech: She said, 'I like mangoes.'",
+"o": [
+"She said that she liked mangoes.",
+"She said that I like mangoes.",
+"She says she liked mangoes.",
+"She said that she likes mango."
+],
+"a": 0,
+"e": "Said (past) → like becomes liked; I becomes she.",
+"ml": "said → like മാറി liked; I → she.",
+"id": "bk-20261126-23",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The meeting starts ___ 9 o'clock.",
+"o": [
+"at",
+"on",
+"in",
+"by"
+],
+"a": 0,
+"e": "Use 'at' for an exact clock time.",
+"ml": "കൃത്യമായ സമയത്തിന് at.",
+"id": "bk-20261126-24",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Mathematics ___ my favourite subject.",
+"o": [
+"is",
+"are",
+"were",
+"have"
+],
+"a": 0,
+"e": "Subject names like Mathematics and Physics are singular.",
+"ml": "Mathematics singular ആണ്: is.",
+"id": "bk-20261126-25",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Improve the sentence: 'He is more taller than his brother.'",
+"o": [
+"taller",
+"most taller",
+"more tall",
+"No improvement"
+],
+"a": 0,
+"e": "Don't use 'more' with -er. Say: He is taller than his brother.",
+"ml": "-er ഉള്ളിടത്ത് more വേണ്ട: taller.",
+"id": "bk-20261126-26",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: The boy ___ won the prize is my cousin.",
+"o": [
+"who",
+"which",
+"whom",
+"whose"
+],
+"a": 0,
+"e": "'Who' is used for a person doing the action.",
+"ml": "ആളെക്കുറിച്ച് (subject) → who.",
+"id": "bk-20261126-27",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: I am looking forward to ___ you.",
+"o": [
+"meeting",
+"meet",
+"met",
+"be meet"
+],
+"a": 0,
+"e": "'Looking forward to' takes verb + -ing.",
+"ml": "looking forward to + -ing: meeting.",
+"id": "bk-20261126-28",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Grammar",
+"q": "Choose the correct option: Hardly had he left ___ it began to rain.",
+"o": [
+"when",
+"than",
+"then",
+"that"
+],
+"a": 0,
+"e": "'Hardly … when' is a fixed pair. ('No sooner … than' is the other.)",
+"ml": "Hardly-യോടൊപ്പം when; No sooner-ഓടൊപ്പം than.",
+"id": "bk-20261126-29",
+"added": "2026-11-26"
 }
 ],
 "vocab": [
@@ -1827,6 +2307,46 @@
 "syn": "Courteous",
 "ant": "Rude",
 "ex": "Be polite to everyone."
+},
+{
+"w": "Brief",
+"m": "short in time or words",
+"ml": "ചുരുക്കമായ",
+"syn": "Short",
+"ant": "Long",
+"ex": "Give a brief answer."
+},
+{
+"w": "Gigantic",
+"m": "extremely big",
+"ml": "ഭീമാകാരമായ",
+"syn": "Huge",
+"ant": "Tiny",
+"ex": "A gigantic wave hit the shore."
+},
+{
+"w": "Punctual",
+"m": "arriving at the right time",
+"ml": "കൃത്യനിഷ്ഠയുള്ള",
+"syn": "Timely",
+"ant": "Late",
+"ex": "Be punctual for your exam."
+},
+{
+"w": "Sincere",
+"m": "honest and true in feelings",
+"ml": "ആത്മാർത്ഥതയുള്ള",
+"syn": "Genuine",
+"ant": "Fake",
+"ex": "She is a sincere student."
+},
+{
+"w": "Courteous",
+"m": "polite and kind",
+"ml": "മര്യാദയുള്ള",
+"syn": "Polite",
+"ant": "Rude",
+"ex": "The courteous clerk helped everyone."
 }
 ],
 "idioms": [
@@ -1969,6 +2489,16 @@
 "i": "Through thick and thin",
 "m": "in good and bad times",
 "ml": "സുഖത്തിലും ദുഃഖത്തിലും"
+},
+{
+"i": "Hit the books",
+"m": "to start studying hard",
+"ml": "ഗൗരവമായി പഠിക്കാൻ തുടങ്ങുക"
+},
+{
+"i": "Keep your chin up",
+"m": "to stay brave and hopeful in a hard time",
+"ml": "പ്രയാസ സമയത്തും ധൈര്യം കൈവിടാതിരിക്കുക"
 }
 ],
 "ows": [
@@ -2083,6 +2613,14 @@
 {
 "p": "A speech made without preparation",
 "w": "Extempore"
+},
+{
+"p": "A person who works without pay",
+"w": "Volunteer"
+},
+{
+"p": "A place where clothes are washed",
+"w": "Laundry"
 }
 ],
 "spell": [

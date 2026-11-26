@@ -1,10 +1,34 @@
 {
-  "updated": "2026-11-25",
-  "items": [
-    {"date": "2026-11-25", "tag": "MTS", "title": "SSC MTS 2026 notification: not released yet", "text": "SSC has not published the MTS 2026 notice yet. The exam calendar had planned it for 30 June 2026, but it is late. In earlier years it came on 27 June 2024 and 26 June 2025. Good news for you: you still have time to finish your Quant and English basics before the form comes out.", "url": "https://vocab24.com/ssc-mts/2026"},
-    {"date": "2026-11-25", "tag": "MTS", "title": "SSC MTS 2025 final result still awaited", "text": "The MTS 2025 computer exam was held 4–20 February 2026, and the Havaldar PET/PST on 24–31 August 2026. The final result has not come yet.", "url": "https://vocab24.com/ssc-mts/2026"},
-    {"date": "2026-11-17", "tag": "Selection Post", "title": "Selection Post Phase 14 result: date not announced", "text": "The Phase 14 exam (the one you wrote on 16 September) was held 16–26 September 2026, and the answer key came on 9 October. SSC has not announced the result date. Based on past phases it may come between late November 2026 and early 2027.", "url": "https://www.skillupbihar.in/results/ssc-selection-post-phase-14-result-2026-kab-aayega-post-code-wise-cut-off"},
-    {"date": "2026-11-22", "tag": "Calendar", "title": "SSC CHSL 2026 exam: 30 Nov – 31 Dec 2026", "text": "As per SSC's revised calendar, the CHSL 2026 exam runs from 30 November to 31 December 2026.", "url": "https://testbook.com/news/ssc-new-exam-calendar-2026-27-out/"}
-  ],
-  "official": "https://ssc.gov.in"
+ "updated": "2026-11-26",
+ "items": [
+  {
+   "date": "2026-11-26",
+   "tag": "MTS",
+   "title": "SSC MTS 2026 notification: still not released",
+   "text": "Checked on 26 November: SSC has still not published the MTS 2026 notice. It was planned for 30 June 2026 but is late. Exam-news sites now expect it soon. Keep studying every day so you are ready when the form comes.",
+   "url": "https://www.pw.live/ssc/exams/ssc-mts-2026"
+  },
+  {
+   "date": "2026-11-25",
+   "tag": "MTS",
+   "title": "SSC MTS 2025 final result still awaited",
+   "text": "The MTS 2025 computer exam was held 4–20 February 2026, and the Havaldar PET/PST on 24–31 August 2026. The final result has not come yet.",
+   "url": "https://vocab24.com/ssc-mts/2026"
+  },
+  {
+   "date": "2026-11-26",
+   "tag": "Selection Post",
+   "title": "Selection Post Phase 14 result: date not announced",
+   "text": "The Phase 14 exam (the one you wrote on 16 September) was held 16–26 September 2026, and the answer key came on 9 October. SSC has not announced the result date. Based on past phases it may come between late November 2026 and early 2027.",
+   "url": "https://www.skillupbihar.in/results/ssc-selection-post-phase-14-result-2026-kab-aayega-post-code-wise-cut-off"
+  },
+  {
+   "date": "2026-11-22",
+   "tag": "Calendar",
+   "title": "SSC CHSL 2026 exam: 30 Nov – 31 Dec 2026",
+   "text": "As per SSC's revised calendar, the CHSL 2026 exam runs from 30 November to 31 December 2026.",
+   "url": "https://testbook.com/news/ssc-new-exam-calendar-2026-27-out/"
+  }
+ ],
+ "official": "https://ssc.gov.in"
 }
