@@ -174,6 +174,7 @@ details summary{cursor:pointer}
 .gs{display:inline-flex;align-items:center;gap:8px;color:var(--soft);font-size:.9rem;min-height:44px}.gs input{width:20px;height:20px}
 @media(max-width:900px){.simMain{grid-template-columns:minmax(0,1fr)}.simPal{position:static}.pal{grid-template-columns:repeat(8,1fr)}}
 @media(max-width:600px){.pal{grid-template-columns:repeat(6,1fr)}.simQ{padding:16px}}
+.fxd{display:inline-block;font-size:.78rem;padding:2px 8px;margin:4px 4px 2px 0;border-radius:99px;background:var(--card2);color:var(--soft)}.fxd.on{background:#1f6b45;color:#fff}
 </style>
 </head>
 <body>
@@ -994,6 +995,7 @@ const _drawEnd=drawEnd;drawEnd=function(){const c=qctx,pct=set.length?Math.round
   if(c&&c.rev&&pct>=PASS){st.revDone[c.rev]=dkey;save()}
   _drawEnd();
   if(c&&c.rev){const p=document.createElement('p');p.innerHTML=pct>=PASS?'<b style="color:#59d499">Revision done.</b> This class comes back for revision later, so you never forget it.':`<b style="color:#ff6b6b">Below ${PASS}%.</b> Read the class notes again, then retry this revision.`;$('quiz').prepend(p)}
+  if(c&&c.fix){const m=fixAfter(c.fix,pct),p=document.createElement('div');p.className='note';p.style.cssText='border-left:4px solid #c39bff;color:var(--ink)';p.innerHTML='<b>Topic doctor:</b> '+m+' <a href="#" data-px="tab" data-t="practice">See my topics</a>';$('quiz').prepend(p)}
   if(c&&c.small){const p=document.createElement('p');p.innerHTML='<b>Small win done.</b> You showed up today, and that is what counts. Now try one 25-minute focus session.';$('quiz').prepend(p)}
   try{drawPlusToday()}catch(e){}};
 const _refreshAll=refreshAll;refreshAll=function(){Object.keys(st.course).forEach(id=>{if(!st.passed[id])st.passed[id]=dkey});_refreshAll();try{drawPlusToday()}catch(e){}};
@@ -1054,6 +1056,7 @@ function drawPlusToday(){const el=$('plusToday');if(!el)return;const sk=streak()
   if(ys==='miss'&&y>=st.set.since)h+=`<div class="note" style="border-left:4px solid #ff6b6b;color:var(--ink)"><b>Yesterday was missed.</b> Never miss twice: do at least the minimum today (15 minutes + 10 questions).${st.set.buddyPh?` <a href="${waLink('I missed my study yesterday. Check on me tonight!')}" target="_blank" rel="noopener">Tell my study buddy ↗</a>`:''}</div>`;
   if(dl<=30&&dl>=0)h+=`<div class="panel" style="margin-top:14px;border-top:4px solid #ff6b6b"><h2>Crash plan: last ${dl} days</h2><ul class="rep"><li>One full mock every day (90 min) → <a href="#" data-px="fm">start</a></li><li>Review every wrong answer of that mock (30 min)</li><li>Smart practice on weak topics (30 min) → <a href="#" data-px="smart">start</a></li><li>Revise current affairs of the last 6 months and your formula cards (20 min)</li><li>No new chapters now. Revise, mock, repeat. Sleep 7 hours.</li></ul></div>`;
   if(rv.length)h+=`<h2 style="margin-top:22px">Revision due today</h2><ul class="plan">${rv.slice(0,4).map(x=>`<li style="--c:${COL[x.l.t]}"><span class="t">Day ${x.n} revision</span><span class="what">${esc(TNAME[x.l.t])}: ${esc(x.l.title)}<span class="how">Passed on ${esc(fmtDate(st.passed[x.l.id]))}${noteLink(x.l)}</span></span><button class="btn" style="padding:8px 14px" data-px="rev" data-k="${esc(x.key)}">Revise</button></li>`).join('')}</ul>${rv.length>4?`<p class="small">${rv.length-4} more after these.</p>`:''}`;
+  try{fixAuto();const fx=fixShow();if(fx.length)h+=`<h2 style="margin-top:22px">Topic doctor: fixing weak topics</h2><ul class="plan">${fx.map(fixRow).join('')}</ul>`}catch(e){}
   if(dow2===0){const r=report();h+=`<div class="panel" style="margin-top:14px;border-top:4px solid #4cc3ff"><h2>Your weekly report</h2>${reportHTML(r)}${st.set.buddyPh?`<a class="btn ghost" href="${waLink(repText(r))}" target="_blank" rel="noopener">Send to my study buddy ↗</a>`:''}</div>`}
   h+=`<div class="row" style="justify-content:flex-start;margin-top:14px"><button class="btn" data-px="focus">Focus mode</button><button class="btn ghost" data-px="smart">Smart practice</button><button class="btn ghost" data-px="low">Feeling low?</button></div>`;
   el.innerHTML=h}
@@ -1163,8 +1166,8 @@ function drawVocab(){const el=$('vocabBox');if(!el)return;const v=vocabToday();i
 function drawSmart(){const el=$('smart');if(!el)return;const w=weakTopics().slice(0,6);
   el.innerHTML=`<div class="panel" style="margin-bottom:20px;border-top:4px solid #c39bff"><h2>Smart practice</h2><p class="small" style="margin-top:-6px">Always new questions. 60% from your weak topics, 40% from strong ones, so nothing slips. The list updates after every answer.</p>
    <div class="row" style="justify-content:flex-start"><button class="btn" data-px="smart">Start smart practice (10)</button><button class="btn ghost" data-px="tab" data-t="exam">Full mock / sectional</button></div>
-   <h3 style="margin:18px 0 8px">My weak topics</h3>${w.length?`<ul class="plan">${w.map(x=>{const ls=Object.values(TRACKS).flat().filter(l=>l.t===x.s&&l.title.toLowerCase().includes(x.t.toLowerCase().split(' ')[0])).slice(0,1)[0];
-     return `<li style="--c:${COL[x.s]||'#ff7a59'}"><span class="t">${esc(SL(x.s))}</span><span class="what">${esc(x.t)}<span class="how">${Math.round(x.acc*100)}% right in ${x.a} tries · <b>1</b> learn → <b>2</b> practise → <b>3</b> sectional mock${ls?` · <a href="${dayUrl(ls.day)}" target="_blank" rel="noopener">Learn: Falcon Day ${ls.day} ↗</a>${noteLink(ls)}`:''}</span></span><button class="btn" style="padding:8px 14px" data-px="topic" data-s="${esc(x.s)}" data-t="${esc(x.t)}">Practise</button></li>`}).join('')}</ul>`
+   ${(()=>{try{fixAuto();return fixPanel()}catch(e){return""}})()}<h3 style="margin:18px 0 8px">My weak topics</h3>${w.length?`<ul class="plan">${w.map(x=>{const ls=Object.values(TRACKS).flat().filter(l=>l.t===x.s&&l.title.toLowerCase().includes(x.t.toLowerCase().split(' ')[0])).slice(0,1)[0];
+     return `<li style="--c:${COL[x.s]||'#ff7a59'}"><span class="t">${esc(SL(x.s))}</span><span class="what">${esc(x.t)}<span class="how">${Math.round(x.acc*100)}% right in ${x.a} tries · <b>1</b> learn → <b>2</b> practise → <b>3</b> sectional mock${ls?` · <a href="${dayUrl(ls.day)}" target="_blank" rel="noopener">Learn: Falcon Day ${ls.day} ↗</a>${noteLink(ls)}`:''}</span></span>${st.fix[fixKey(x.s,x.t)]&&!st.fix[fixKey(x.s,x.t)].done?'<span class="tick" aria-pressed="true" title="In Topic doctor">🩺</span>':`<button class="btn" style="padding:8px 14px" data-px="fixstart" data-s="${esc(x.s)}" data-t="${esc(x.t)}">Fix until strong</button>`}</li>`}).join('')}</ul>`
      :'<p class="small">No weak topics yet. Answer at least 3 questions in a topic and the app will find the weak ones.</p>'}
    <h3 style="margin:18px 0 8px">Practise one topic</h3><div class="chips" style="flex-wrap:wrap">${['Quant','Reasoning','English'].map(s=>Object.keys(GEN[s]).map(t=>`<button class="chip" data-px="topic" data-s="${s}" data-t="${esc(t)}">${esc(t)}</button>`).join('')).join('')}<button class="chip" data-px="topic" data-s="English" data-t="Grammar">Grammar</button><button class="chip" data-px="topic" data-s="GA" data-t="">General Awareness</button></div></div>`}
 
@@ -1238,6 +1241,81 @@ function drawExam(showLast){const el=$('examBody');if(!el)return;const run=st.fm
 function drawReview(){const L=st.fmLast;if(!L)return;let n=0;$('fmRev').innerHTML=L.parts.map((P,pi)=>`<h3 style="margin:18px 0 8px">${esc(PNAME[P.s])}</h3>`+P.qs.map((q,j)=>{const a=L.ans[qk(pi,j)],ok=a===q.a;n++;
   return `<div class="note" style="border-left:4px solid ${a==null?'#6f7787':ok?'#59d499':'#ff6b6b'}"><b>Q${j+1}.</b> ${esc(q.q)}<br>Your answer: ${a==null?'not answered':esc(q.o[a])}${ok?' ✓':''}${L.guess[qk(pi,j)]?' (guess)':''}<br>Correct: <span class="mark">${esc(q.o[q.a])}</span><br>${esc(q.e||'')}${q.ml?`<details><summary>മലയാളം</summary><p lang="ml">${esc(q.ml)}</p></details>`:''}</div>`}).join('')).join('')}
 
+/* ================= TOPIC DOCTOR: stay on a weak topic until it is strong ================= */
+const TIPS={
+ 'Percentage':['x% of N = N × x ÷ 100. Find 10% first (move the decimal one place), then build the rest.','x% = N × x ÷ 100. ആദ്യം 10% കണ്ടെത്തി ബാക്കി ഉണ്ടാക്കുക.'],
+ 'Profit and loss':['Profit = SP − CP. Profit % = Profit ÷ CP × 100. Always divide by CP, never by SP.','ലാഭം = SP − CP. ലാഭ% = ലാഭം ÷ CP × 100. എപ്പോഴും CP കൊണ്ട് ഹരിക്കുക.'],
+ 'Discount':['Discount is always on the Marked Price. SP = MP − discount.','കിഴിവ് എപ്പോഴും മാർക്കറ്റ് വിലയിൽ (MP). SP = MP − കിഴിവ്.'],
+ 'Simple interest':['SI = P × R × T ÷ 100. To find R: R = SI × 100 ÷ (P × T).','SI = P × R × T ÷ 100. നിരക്ക് R = SI × 100 ÷ (P × T).'],
+ 'Compound interest':['Amount = P × (1 + R/100)ᵀ. CI = Amount − P. For 2 years: CI = SI + interest on interest.','തുക = P × (1 + R/100)ᵀ. CI = തുക − P.'],
+ 'Ratio':['Add the ratio parts. One part = total ÷ parts. Then multiply by each share.','ഭാഗങ്ങൾ കൂട്ടുക. ഒരു ഭാഗം = ആകെ ÷ ഭാഗങ്ങൾ. പിന്നെ ഓരോ പങ്കും ഗുണിക്കുക.'],
+ 'Average':['Average = Sum ÷ Count. Sum = Average × Count. For equally spaced numbers, the middle one is the average.','ശരാശരി = തുക ÷ എണ്ണം. തുക = ശരാശരി × എണ്ണം.'],
+ 'Time and work':['Together = (A × B) ÷ (A + B) days. Or think in work per day: 1/A + 1/B.','ഒരുമിച്ച് = (A × B) ÷ (A + B) ദിവസം.'],
+ 'Speed and trains':['Speed = Distance ÷ Time. km/h → m/s: × 5/18. A train crossing a pole travels its own length.','വേഗം = ദൂരം ÷ സമയം. km/h → m/s: × 5/18. പോസ്റ്റ് കടക്കുമ്പോൾ ട്രെയിൻ സ്വന്തം നീളം ഓടുന്നു.'],
+ 'HCF and LCM':['HCF = biggest common factor. LCM = smallest common multiple. HCF × LCM = product of the two numbers.','HCF × LCM = രണ്ട് സംഖ്യകളുടെ ഗുണനഫലം.'],
+ 'Simplification':['BODMAS: Brackets, Of, ÷, ×, +, −. Do ÷ and × left to right before + and −.','BODMAS: ബ്രാക്കറ്റ്, Of, ÷, ×, +, −. ആദ്യം ÷, ×; പിന്നെ +, −.'],
+ 'Squares and roots':['Learn squares 1 to 30 by heart. A number ending in 5: 35² = 3×4 | 25 = 1225.','1 മുതൽ 30 വരെ വർഗ്ഗങ്ങൾ മനഃപാഠമാക്കുക. 35² = 3×4 | 25 = 1225.'],
+ 'Mensuration':['Rectangle: area = l × b, perimeter = 2(l + b). Circle: area = πr², circumference = 2πr (π = 22/7).','ചതുരം: l × b, ചുറ്റളവ് 2(l + b). വൃത്തം: πr², ചുറ്റളവ് 2πr.'],
+ 'Ages':['Bigger age = (sum + difference) ÷ 2. Smaller = (sum − difference) ÷ 2.','വലിയ വയസ്സ് = (തുക + വ്യത്യാസം) ÷ 2.'],
+ 'Fractions':['"Of" means ×. 3/5 of 450 = 450 ÷ 5 × 3. Divide first, then multiply.','"of" = ഗുണനം. ആദ്യം ഹരിക്കുക, പിന്നെ ഗുണിക്കുക.'],
+ 'Number series':['Write the differences under the numbers. Same gap → add it. Growing gap → look at gaps of gaps. Fast growth → × or squares.','വ്യത്യാസങ്ങൾ എഴുതുക. പെട്ടെന്ന് വലുതായാൽ ഗുണനം അല്ലെങ്കിൽ വർഗ്ഗം.'],
+ 'Letter series':['Turn letters into numbers (A=1 … Z=26) and find the gap. EJOTY = 5, 10, 15, 20, 25.','അക്ഷരങ്ങളെ സംഖ്യകളാക്കുക (A=1…Z=26). EJOTY = 5,10,15,20,25.'],
+ 'Coding-decoding':['Compare each letter with its code letter: count how many steps it moved (+1, +2, −1…). Use the same rule.','ഓരോ അക്ഷരവും എത്ര സ്ഥാനം മാറി എന്ന് നോക്കി അതേ നിയമം ഉപയോഗിക്കുക.'],
+ 'Odd one out':['Find what three of them share: divisible by the same number, all squares, all even, same group. The fourth is the answer.','മൂന്നെണ്ണത്തിന് പൊതുവായത് കണ്ടെത്തുക; നാലാമത്തേത് ഉത്തരം.'],
+ 'Analogy':['Find the link in the first pair (square, cube, ×2+1, worker–place), then use the same link.','ആദ്യ ജോഡിയിലെ ബന്ധം കണ്ടെത്തി രണ്ടാമത്തേതിൽ ഉപയോഗിക്കുക.'],
+ 'Alphabet':['Position from the left + steps to the right = new position. From the right: 27 − position. EJOTY helps you count fast.','വലത്തുനിന്നുള്ള സ്ഥാനം = 27 − ഇടത്തുനിന്നുള്ള സ്ഥാനം.'],
+ 'Direction':['Draw it! North up, East right. Right turn = clockwise. Two walks at a right angle: distance = √(a² + b²).','വരച്ചു നോക്കുക. വടക്ക് മുകളിൽ, കിഴക്ക് വലത്ത്. ദൂരം = √(a² + b²).'],
+ 'Blood relation':['Draw a small family tree: men as squares, women as circles. Go one step at a time.','ചെറിയ കുടുംബ വൃക്ഷം വരയ്ക്കുക. ഓരോ ബന്ധവും ഓരോന്നായി.'],
+ 'Ranking':['From right = total − from left + 1. Total = left + right − 1.','വലത്തുനിന്ന് = ആകെ − ഇടത്തുനിന്ന് + 1. ആകെ = ഇടത് + വലത് − 1.'],
+ 'Clock':['Angle = |30 × H − 5.5 × M|. If it is more than 180°, take 360 − angle.','കോൺ = |30H − 5.5M|. 180°-ൽ കൂടുതലെങ്കിൽ 360 − കോൺ.'],
+ 'Maths operations':['First rewrite the whole sum with the real signs. Then use BODMAS.','ആദ്യം ചിഹ്നങ്ങൾ മാറ്റി എഴുതുക, പിന്നെ BODMAS.'],
+ 'Dictionary order':['Compare the first letter, then the second, and so on, until they differ.','ആദ്യ അക്ഷരം, പിന്നെ രണ്ടാമത്തേത്… വ്യത്യാസം വരുന്നതുവരെ താരതമ്യം ചെയ്യുക.'],
+ 'Synonyms':['Say the word in a sentence, then try each option in its place. Learn 5 words a day from the Tricks tab.','വാക്ക് ഒരു വാക്യത്തിൽ പറഞ്ഞ് ഓരോ ഓപ്ഷനും വെച്ച് നോക്കുക.'],
+ 'Antonyms':['First think what the word means, then find the opposite. Beware of options that mean the same.','ആദ്യം അർത്ഥം ഓർക്കുക, പിന്നെ വിപരീതം കണ്ടെത്തുക.'],
+ 'Vocabulary':['Read the whole sentence. Find which word fits the meaning and the grammar.','വാക്യം മുഴുവൻ വായിക്കുക; അർത്ഥത്തിനും വ്യാകരണത്തിനും ചേരുന്ന വാക്ക്.'],
+ 'Idioms':['Idioms do not mean their words. Learn them with a picture in your mind: "break the ice" = start talking.','ഇഡിയത്തിന്റെ അർത്ഥം വാക്കുകളുടേതല്ല. ഒരു ചിത്രമായി ഓർക്കുക.'],
+ 'One word substitution':['Learn by groups: -cide (killing), -phobia (fear), -logy (study), a-/in- (not).','-cide = കൊല, -phobia = ഭയം, -logy = പഠനം.'],
+ 'Spelling':['Say the word slowly in parts: ac-com-mo-da-tion (double c, double m). Write hard words 3 times.','വാക്ക് ഭാഗങ്ങളായി പറയുക. കഠിനമായവ 3 തവണ എഴുതുക.'],
+ 'Grammar':['Check in this order: subject–verb (he goes / they go), tense words (yesterday, now, tomorrow), then articles and prepositions.','ക്രമം: subject–verb, tense സൂചന (yesterday, now, tomorrow), പിന്നെ article, preposition.']};
+const GA_TIP=['GA facts stick when you link them: make one line with a picture or a Kerala connection, say it aloud, and revise it tomorrow.','ഓരോ വസ്തുതയും ഒരു ചിത്രവുമായോ കേരളവുമായോ ബന്ധിപ്പിച്ച് ഉറക്കെ പറയുക; നാളെ വീണ്ടും നോക്കുക.'];
+const FIX_MAX=3,FIX_PASS=80,FIX_GAP=2,FIX_RECHECK=14;
+if(!st.fix||typeof st.fix!=='object')st.fix={};
+const fixKey=(s,t)=>s+'|'+t;
+const fixList=()=>Object.entries(st.fix).map(([k,f])=>Object.assign({k},f));
+const fixActive=()=>fixList().filter(f=>!f.done);
+function fixLesson(s,t){const lc=t.toLowerCase(),w=lc.split(' ')[0];return Object.values(TRACKS).flat().find(l=>l.t===s&&(l.title.toLowerCase()===lc||l.title.toLowerCase().includes(w)))}
+function fixStart(s,t,quiet){const k=fixKey(s,t);if(st.fix[k]&&!st.fix[k].done)return;st.fix[k]={s,t,start:dkey,stage:'learn',rounds:[],pass1:null,done:null};save();if(!quiet){drawPlusToday();drawSmart()}}
+function fixAuto(){let n=fixActive().length;
+  fixList().filter(f=>f.done&&addD(f.done,FIX_RECHECK)<=dkey&&f.stage!=='recheck').forEach(f=>{st.fix[f.k].stage='recheck'});
+  for(const w of weakTopics()){if(n>=FIX_MAX)break;if(w.a<5)continue;const k=fixKey(w.s,w.t),f=st.fix[k];if(f&&(!f.done||f.stage==='recheck'))continue;if(f&&f.done&&addD(f.done,FIX_RECHECK)>dkey)continue;fixStart(w.s,w.t,true);n++}}
+function fixNext(f){if(f.stage==='recheck')return{lbl:'Re-check (5 Q)',how:`Mastered on ${fmtDate(f.done)}. Quick check that you still remember.`};
+  if(f.done)return null;
+  if(f.stage==='learn')return{lbl:'Learn',how:'Step 1: read the tip and the worked example.'};
+  if(f.stage==='check'){const due=addD(f.pass1,FIX_GAP);return due<=dkey?{lbl:'Check round',how:'Step 3: one more round of 80% or more and this topic is mastered.'}:{lbl:'Wait',wait:true,how:`Passed ${FIX_PASS}%. Come back on ${fmtDate(due)} for the check round, so it stays in memory.`}}
+  const last=f.rounds.length?f.rounds[f.rounds.length-1].pct:null;return{lbl:'Practise round',how:`Step 2: 10 new questions. Need ${FIX_PASS}%.${last!=null?' Last: '+last+'%.':''}`}}
+function fixDots(f){const st3=f.done&&f.stage!=='recheck'?3:f.stage==='check'?2:f.stage==='practice'?1:f.stage==='recheck'?3:0;return ['Learn','Practise','Check'].map((x,i)=>`<span class="fxd${i<st3?' on':''}">${i<st3?'✓':i+1} ${x}</span>`).join('')}
+function fixRow(f){const nx=fixNext(f);if(!nx)return'';return `<li style="--c:${COL[f.s]||'#ff7a59'}"><span class="t">${esc(SL(f.s))}</span><span class="what">${esc(f.t)}<span class="how">${fixDots(f)}<br>${esc(nx.how)}${f.rounds.length?` · ${f.rounds.length} round${f.rounds.length===1?'':'s'}, best ${Math.max(...f.rounds.map(r=>r.pct))}%`:''}</span></span>${nx.wait?'<span class="tick" aria-pressed="false">⏳</span>':`<button class="btn" style="padding:8px 14px" data-px="fix" data-k="${esc(f.k)}">${esc(nx.lbl)}</button>`}</li>`}
+function fixGo(k){const f=st.fix[k];if(!f)return;const nx=fixNext(f);if(!nx||nx.wait)return;
+  if(f.stage==='learn')return fixLearn(k);
+  goPractice();const n=f.stage==='recheck'?5:10;let qs=fresh(f.s,n,f.t);if(qs.length<n)qs=qs.concat(fresh(f.s,n-qs.length));startQuiz(qs,true,{fix:k})}
+function fixLearn(k){const f=st.fix[k],tip=TIPS[f.t]||(f.s==='GA'||f.s==='CA'?GA_TIP:TIPS.Grammar),ex=fresh(f.s,1,f.t)[0],l=fixLesson(f.s,f.t),L=l&&TOP.lessons&&TOP.lessons[l.id];
+  pxBox(`<p class="small">Topic doctor · Step 1 of 3</p><h2>${esc(f.t)}</h2><div class="note" style="border-left:4px solid #59d499;color:var(--ink)"><b>Rule:</b> ${esc(tip[0])}<p lang="ml" style="margin:8px 0 0">${esc(tip[1])}</p></div>
+   ${L?`<p><b>From your class notes:</b></p><ul class="rep">${L.points.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+   ${ex?`<p style="margin-top:14px"><b>Worked example</b></p><p>${esc(ex.q)}</p><p>Answer: <span class="mark">${esc(ex.o[ex.a])}</span></p><p class="small">${esc(ex.e)}</p>${ex.ml?`<p class="small" lang="ml">${esc(ex.ml)}</p>`:''}`:''}
+   ${l?`<p class="small">Still confused? <a href="${dayUrl(l.day)}" target="_blank" rel="noopener">Watch Falcon Day ${l.day} again ↗</a></p>`:''}
+   <div class="row" style="justify-content:flex-end"><button class="btn ghost" id="flX">Later</button><button class="btn" id="flGo">I understood, start round</button></div>`);
+  $('flX').onclick=pxClose;$('flGo').onclick=()=>{st.fix[k].stage='practice';save();pxClose();fixGo(k)}}
+function fixAfter(k,pct){const f=st.fix[k];if(!f)return'';f.rounds.push({d:dkey,pct});if(f.rounds.length>40)f.rounds.shift();let m;
+  if(f.stage==='recheck'){if(pct>=60){f.stage='done';f.done=dkey;m=`<b style="color:#59d499">Still strong (${pct}%).</b> Next re-check in ${FIX_RECHECK} days.`}else{f.done=null;f.pass1=null;f.stage='learn';m=`<b style="color:#ff6b6b">${pct}%: you forgot some of it.</b> No problem. Read the tip again and do a few rounds.`}}
+  else if(f.stage==='check'){if(pct>=FIX_PASS){f.done=dkey;f.stage='done';m=`<b style="color:#59d499">Mastered ✓ ${esc(f.t)}!</b> ${pct}% on the check round. It comes back for a quick re-check in ${FIX_RECHECK} days.`;speak('Well done. '+f.t+' is mastered.')}else{f.pass1=null;f.stage='practice';m=`<b>${pct}%.</b> Not stable yet. Do one more practice round, then the check again.`}}
+  else if(pct>=FIX_PASS){f.pass1=dkey;f.stage='check';m=`<b style="color:#59d499">${pct}%! Passed.</b> Come back on ${esc(fmtDate(addD(dkey,FIX_GAP)))} for the check round. That proves it stays in your memory.`}
+  else if(pct<60){f.stage='learn';m=`<b style="color:#ff6b6b">${pct}%.</b> Let's go back to the rule and the worked example first, then try again.`}
+  else{f.stage='practice';m=`<b>${pct}%: close!</b> One more round of 10. You need ${FIX_PASS}%.`}
+  save();return m}
+function fixShow(){return fixList().filter(f=>!f.done||f.stage==='recheck')}
+function fixPanel(){const a=fixShow(),m=fixList().filter(f=>f.done&&f.stage!=='recheck');
+  return `<h3 style="margin:18px 0 8px">Topic doctor</h3><p class="small" style="margin-top:-4px">A weak topic stays here until you score ${FIX_PASS}% twice, ${FIX_GAP} days apart.</p>${a.length?`<ul class="plan">${a.map(fixRow).join('')}</ul>`:'<p class="small">No topic being fixed now.</p>'}${m.length?`<p class="small" style="margin-top:10px"><b>Mastered ✓</b> ${m.map(f=>esc(f.t)).join(', ')}</p>`:''}`}
+
 /* ---------- click actions ---------- */
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!b)return;e.preventDefault();const k=b.dataset.px;
   if(k==='fm')fmStart('full');else if(k==='sect')fmStart('sect',b.dataset.s);
@@ -1248,6 +1326,8 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!
   else if(k==='smart'){goPractice();startQuiz(smartSet(10),true,{smart:1})}
   else if(k==='topic'){goPractice();startQuiz(fresh(b.dataset.s,10,b.dataset.t||undefined),true)}
   else if(k==='rev')startRev(b.dataset.k);
+  else if(k==='fix')fixGo(b.dataset.k);
+  else if(k==='fixstart'){fixStart(b.dataset.s,b.dataset.t);fixGo(fixKey(b.dataset.s,b.dataset.t))}
   else if(k==='focus')openFocus();else if(k==='low')feelingLow();else if(k==='minday')minDay();
   else if(k==='alarms')setAlarms(false);
   else if(k==='blk'){const id=b.dataset.b;if(id==='am'){if(st.rtWake[dkey])openFocus('Morning study');else wakeCheck()}else if(id==='mock'){const d=$('dmBtn');if(d&&!d.disabled)d.click();else{goPractice();startQuiz(fresh('Quant',5).concat(fresh('Reasoning',5),fresh('English',5),fresh('GA',5)),true,{dm:1})}}else openFocus('Evening study')}
@@ -1267,7 +1347,7 @@ window.addEventListener('hashchange',()=>{wakeRoute();drawCurTab()});wakeRoute()
 if(st.fmRun){fm=st.fmRun;if(Date.now()>fm.end+6*3600e3){st.fmRun=null;fm=null;save()}}
 if(st.focusRun&&st.focusRun.left>0)fLen=st.focusRun.len||25;
 drawCurTab();
-window.__mts={GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
+window.__mts={fixAfter,fixAuto,fixStart,GEN,fresh,smartSet,weakTopics,bank:()=>BANK,mockBlock,dmBlock,streak,dayStatus,targetMin};
 
 /* ================= SYNC between phone and PC (phone/PC app only) =================
    Progress is saved in a private GitHub gist ("MTS Study sync") using the person's own GitHub key (gist scope only). */
