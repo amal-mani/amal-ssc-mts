@@ -2881,6 +2881,774 @@
 "ml": "If you practise every day, you will improve.",
 "id": "bk-exp-70",
 "added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'She writes a letter.'",
+"o": [
+"A letter is written by her.",
+"A letter was written by her.",
+"A letter is wrote by her.",
+"A letter has been written by her."
+],
+"a": 0,
+"e": "Simple present → is/are + past participle (V3).",
+"ml": "Simple present passive: is/are + V3.",
+"id": "lp26-180",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'They are building a bridge.'",
+"o": [
+"A bridge was being built by them.",
+"A bridge is being built by them.",
+"A bridge is built by them.",
+"A bridge has been built by them."
+],
+"a": 1,
+"e": "Present continuous → is/are + being + V3.",
+"ml": "Present continuous passive: is/are + being + V3.",
+"id": "lp26-181",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'Ravi has completed the work.'",
+"o": [
+"The work had been completed by Ravi.",
+"The work was completed by Ravi.",
+"The work has been completed by Ravi.",
+"The work is being completed by Ravi."
+],
+"a": 2,
+"e": "Present perfect → has/have + been + V3.",
+"ml": "Present perfect passive: has/have + been + V3.",
+"id": "lp26-182",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'The teacher will check the papers.'",
+"o": [
+"The papers would be checked by the teacher.",
+"The papers will checked by the teacher.",
+"The papers are checked by the teacher.",
+"The papers will be checked by the teacher."
+],
+"a": 3,
+"e": "Future → will + be + V3.",
+"ml": "Future passive: will + be + V3.",
+"id": "lp26-183",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'Close the door.'",
+"o": [
+"Let the door be closed.",
+"The door is closed.",
+"The door was closed.",
+"Let the door closed."
+],
+"a": 0,
+"e": "An order (imperative) → Let + object + be + V3.",
+"ml": "ആജ്ഞ (order) → Let + object + be + V3.",
+"id": "lp26-184",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'Who wrote this book?'",
+"o": [
+"Who was this book written?",
+"By whom was this book written?",
+"By whom this book was written?",
+"By whom is this book written?"
+],
+"a": 1,
+"e": "'Who' becomes 'By whom', and it stays a question: By whom was ... written?",
+"ml": "Who → By whom. ചോദ്യരൂപം നിലനിർത്തണം.",
+"id": "lp26-185",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'Mother was cooking food.'",
+"o": [
+"Food is being cooked by Mother.",
+"Food had been cooked by Mother.",
+"Food was being cooked by Mother.",
+"Food was cooked by Mother."
+],
+"a": 2,
+"e": "Past continuous → was/were + being + V3.",
+"ml": "Past continuous passive: was/were + being + V3.",
+"id": "lp26-186",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'The police caught the thief.'",
+"o": [
+"The thief is caught by the police.",
+"The thief had been caught by the police.",
+"The thief was being caught by the police.",
+"The thief was caught by the police."
+],
+"a": 3,
+"e": "Simple past → was/were + V3.",
+"ml": "Simple past passive: was/were + V3.",
+"id": "lp26-187",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the active form: 'The song was sung by Lata.'",
+"o": [
+"Lata sang the song.",
+"Lata sings the song.",
+"Lata has sung the song.",
+"Lata had sung the song."
+],
+"a": 0,
+"e": "'was sung' is simple past passive, so the active is simple past: sang.",
+"ml": "was sung = simple past. Active: Lata sang the song.",
+"id": "lp26-188",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the active form: 'The match will be won by India.'",
+"o": [
+"India would win the match.",
+"India will win the match.",
+"India wins the match.",
+"India will have won the match."
+],
+"a": 1,
+"e": "'will be won' is future passive, so the active is 'will win'.",
+"ml": "will be won → will win.",
+"id": "lp26-189",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'Can you lift this box?'",
+"o": [
+"Could this box be lifted by you?",
+"Can this box lifted by you?",
+"Can this box be lifted by you?",
+"Can this box be lift by you?"
+],
+"a": 2,
+"e": "Modal → modal + be + V3: Can this box be lifted by you?",
+"ml": "Modal (can) + be + V3.",
+"id": "lp26-190",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Choose the passive form: 'We must obey the rules.'",
+"o": [
+"The rules must obeyed by us.",
+"The rules must be obey by us.",
+"The rules should be obeyed by us.",
+"The rules must be obeyed by us."
+],
+"a": 3,
+"e": "Modal 'must' stays: must + be + V3.",
+"ml": "must + be + V3.",
+"id": "lp26-191",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: He said, \"I am tired.\"",
+"o": [
+"He said that he was tired.",
+"He said that I was tired.",
+"He said that he is tired.",
+"He told that he was tired."
+],
+"a": 0,
+"e": "Said (past) → present 'am' becomes 'was'; 'I' becomes 'he'.",
+"ml": "am → was, I → he.",
+"id": "lp26-192",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: She said to me, \"Where do you live?\"",
+"o": [
+"She asked me where did I live.",
+"She asked me where I lived.",
+"She said to me where I live.",
+"She asked me where do I live."
+],
+"a": 1,
+"e": "A question becomes 'asked'; the reported part is a normal sentence (no 'do'); live → lived.",
+"ml": "ചോദ്യം → asked. 'do' ഒഴിവാക്കി live → lived.",
+"id": "lp26-193",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: The teacher said, \"The earth goes round the sun.\"",
+"o": [
+"The teacher said that the earth went round the sun.",
+"The teacher said that the earth had gone round the sun.",
+"The teacher said that the earth goes round the sun.",
+"The teacher said that the earth is going round the sun."
+],
+"a": 2,
+"e": "A universal truth does not change tense.",
+"ml": "സാർവത്രിക സത്യം (universal truth) ആണെങ്കിൽ tense മാറില്ല.",
+"id": "lp26-194",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: He said to me, \"Please help me.\"",
+"o": [
+"He requested me to help me.",
+"He said me to help him.",
+"He requested me that help him.",
+"He requested me to help him."
+],
+"a": 3,
+"e": "'Please' → requested + to + verb; 'me' (the speaker) becomes 'him'.",
+"ml": "Please → requested ... to. me → him.",
+"id": "lp26-195",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: Ram said, \"I will come tomorrow.\"",
+"o": [
+"Ram said that he would come the next day.",
+"Ram said that he will come tomorrow.",
+"Ram said that he would come tomorrow.",
+"Ram said that I would come the next day."
+],
+"a": 0,
+"e": "will → would, tomorrow → the next day, I → he.",
+"ml": "will → would, tomorrow → the next day.",
+"id": "lp26-196",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: She said, \"I have finished my homework.\"",
+"o": [
+"She said that she has finished her homework.",
+"She said that she had finished her homework.",
+"She said that she finished my homework.",
+"She said that she had finished my homework."
+],
+"a": 1,
+"e": "has/have → had; I → she; my → her.",
+"ml": "have → had, my → her.",
+"id": "lp26-197",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: He said to her, \"Are you ready?\"",
+"o": [
+"He asked her if she is ready.",
+"He said to her was she ready.",
+"He asked her if she was ready.",
+"He asked her that she was ready."
+],
+"a": 2,
+"e": "Yes/no question → asked + if/whether; are → was.",
+"ml": "Yes/no ചോദ്യം → asked if. are → was.",
+"id": "lp26-198",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: The captain said to the players, \"Don't leave the ground.\"",
+"o": [
+"The captain ordered the players don't leave the ground.",
+"The captain said to the players that don't leave the ground.",
+"The captain ordered the players not leave the ground.",
+"The captain ordered the players not to leave the ground."
+],
+"a": 3,
+"e": "A negative order → ordered + not to + verb.",
+"ml": "Don't → not to.",
+"id": "lp26-199",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: She said, \"What a beautiful flower!\"",
+"o": [
+"She exclaimed that it was a very beautiful flower.",
+"She exclaimed what a beautiful flower it is.",
+"She said that what a beautiful flower.",
+"She exclaimed that it is a very beautiful flower."
+],
+"a": 0,
+"e": "An exclamation → exclaimed that + it was a very ...",
+"ml": "What a ...! → exclaimed that it was a very ...",
+"id": "lp26-200",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into direct speech: He told me that he was busy.",
+"o": [
+"He said to me, \"He is busy.\"",
+"He said to me, \"I am busy.\"",
+"He said to me, \"I was busy.\"",
+"He said to me, \"You are busy.\""
+],
+"a": 1,
+"e": "Back to the speaker's words: he → I, was → am.",
+"ml": "he → I, was → am.",
+"id": "lp26-201",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: He said, \"I was playing.\"",
+"o": [
+"He said that he is playing.",
+"He said that he has been playing.",
+"He said that he had been playing.",
+"He said that I was playing."
+],
+"a": 2,
+"e": "Past continuous → past perfect continuous: was playing → had been playing.",
+"ml": "was playing → had been playing.",
+"id": "lp26-202",
+"added": "2026-11-26"
+},
+{
+"s": "English",
+"t": "Voice and narration",
+"q": "Change into indirect speech: Mohan said, \"I can swim.\"",
+"o": [
+"Mohan said that he can swim.",
+"Mohan said that I could swim.",
+"Mohan told that he could swim.",
+"Mohan said that he could swim."
+],
+"a": 3,
+"e": "can → could; I → he. 'told' needs an object (told me).",
+"ml": "can → could.",
+"id": "lp26-203",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Bihu is a folk dance of which state?",
+"o": [
+"Assam",
+"Odisha",
+"Punjab",
+"Gujarat"
+],
+"a": 0,
+"e": "Bihu is the folk dance and festival of Assam.",
+"ml": "ബിഹു അസമിന്റെ നാടോടി നൃത്തം.",
+"id": "lp26-204",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Garba is a folk dance of which state?",
+"o": [
+"Rajasthan",
+"Gujarat",
+"Bihar",
+"Kerala"
+],
+"a": 1,
+"e": "Garba is from Gujarat, danced during Navratri.",
+"ml": "ഗർബ ഗുജറാത്തിൽ നിന്ന്, നവരാത്രിക്ക്.",
+"id": "lp26-205",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Bhangra is a folk dance of which state?",
+"o": [
+"Haryana",
+"Assam",
+"Punjab",
+"Manipur"
+],
+"a": 2,
+"e": "Bhangra is from Punjab, linked to the harvest.",
+"ml": "ഭാംഗ്ര പഞ്ചാബിന്റേത്.",
+"id": "lp26-206",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Lavani is a folk dance of which state?",
+"o": [
+"Karnataka",
+"Goa",
+"Tamil Nadu",
+"Maharashtra"
+],
+"a": 3,
+"e": "Lavani is from Maharashtra.",
+"ml": "ലാവണി മഹാരാഷ്ട്രയുടേത്.",
+"id": "lp26-207",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Ghoomar is a folk dance of which state?",
+"o": [
+"Rajasthan",
+"West Bengal",
+"Kerala",
+"Telangana"
+],
+"a": 0,
+"e": "Ghoomar is from Rajasthan.",
+"ml": "ഘൂമർ രാജസ്ഥാന്റേത്.",
+"id": "lp26-208",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Kuchipudi is a classical dance from which state?",
+"o": [
+"Tamil Nadu",
+"Andhra Pradesh",
+"Odisha",
+"Kerala"
+],
+"a": 1,
+"e": "Kuchipudi is named after a village in Andhra Pradesh.",
+"ml": "കുച്ചിപ്പുടി ആന്ധ്രാപ്രദേശിൽ നിന്ന്.",
+"id": "lp26-209",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Mohiniyattam is a classical dance from which state?",
+"o": [
+"Karnataka",
+"Manipur",
+"Kerala",
+"Assam"
+],
+"a": 2,
+"e": "Mohiniyattam is a classical dance of Kerala.",
+"ml": "മോഹിനിയാട്ടം കേരളത്തിന്റെ ശാസ്ത്രീയ നൃത്തം.",
+"id": "lp26-210",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Yakshagana is a traditional dance-drama of which state?",
+"o": [
+"Bihar",
+"Gujarat",
+"Punjab",
+"Karnataka"
+],
+"a": 3,
+"e": "Yakshagana is from coastal Karnataka.",
+"ml": "യക്ഷഗാനം കർണാടകയുടേത്.",
+"id": "lp26-211",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Cheraw, the bamboo dance, belongs to which state?",
+"o": [
+"Mizoram",
+"Sikkim",
+"Goa",
+"Haryana"
+],
+"a": 0,
+"e": "Cheraw (bamboo dance) is from Mizoram.",
+"ml": "ചെറാ (മുള നൃത്തം) മിസോറാമിന്റേത്.",
+"id": "lp26-212",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Pongal is mainly celebrated in which state?",
+"o": [
+"Kerala",
+"Tamil Nadu",
+"Assam",
+"Punjab"
+],
+"a": 1,
+"e": "Pongal is the harvest festival of Tamil Nadu.",
+"ml": "പൊങ്കൽ തമിഴ്നാടിന്റെ വിളവെടുപ്പ് ഉത്സവം.",
+"id": "lp26-213",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "The Hornbill Festival is held in which state?",
+"o": [
+"Manipur",
+"Tripura",
+"Nagaland",
+"Meghalaya"
+],
+"a": 2,
+"e": "The Hornbill Festival is held in Nagaland every December.",
+"ml": "ഹോൺബിൽ ഫെസ്റ്റിവൽ നാഗാലാൻഡിൽ, ഡിസംബറിൽ.",
+"id": "lp26-214",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Bathukamma is a flower festival of which state?",
+"o": [
+"Odisha",
+"Bihar",
+"Gujarat",
+"Telangana"
+],
+"a": 3,
+"e": "Bathukamma is a flower festival of Telangana.",
+"ml": "ബതുകമ്മ തെലങ്കാനയുടെ പൂക്കളുത്സവം.",
+"id": "lp26-215",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Culture",
+"q": "Losar, a new year festival, is celebrated mainly in:",
+"o": [
+"Ladakh",
+"Kerala",
+"Goa",
+"Gujarat"
+],
+"a": 0,
+"e": "Losar is the Tibetan Buddhist new year, celebrated in Ladakh (also Sikkim and Arunachal Pradesh).",
+"ml": "ലോസർ ലഡാക്കിലെ പുതുവർഷ ഉത്സവം.",
+"id": "lp26-216",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "The Ranji Trophy is associated with which sport?",
+"o": [
+"Cricket",
+"Football",
+"Badminton",
+"Kabaddi"
+],
+"a": 0,
+"e": "The Ranji Trophy is India's domestic first-class cricket championship.",
+"ml": "രഞ്ജി ട്രോഫി = ക്രിക്കറ്റ്.",
+"id": "lp26-217",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "The Thomas Cup is associated with which sport?",
+"o": [
+"Tennis",
+"Badminton",
+"Golf",
+"Hockey"
+],
+"a": 1,
+"e": "The Thomas Cup is the men's world team badminton championship.",
+"ml": "തോമസ് കപ്പ് = ബാഡ്മിന്റൺ.",
+"id": "lp26-218",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "The Davis Cup is associated with which sport?",
+"o": [
+"Table tennis",
+"Football",
+"Polo",
+"Tennis"
+],
+"a": 3,
+"e": "The Davis Cup is the men's international team event in tennis.",
+"ml": "ഡേവിസ് കപ്പ് = ടെന്നീസ്.",
+"id": "lp26-219",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "How many players does a hockey team have on the field?",
+"o": [
+"9",
+"10",
+"11",
+"12"
+],
+"a": 2,
+"e": "Each hockey team has 11 players on the field, including the goalkeeper.",
+"ml": "ഹോക്കി: ഒരു ടീമിൽ 11 കളിക്കാർ.",
+"id": "lp26-220",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "How many players does a kabaddi team have on the court?",
+"o": [
+"7",
+"6",
+"9",
+"11"
+],
+"a": 0,
+"e": "A kabaddi team has 7 players on the court.",
+"ml": "കബഡി: കോർട്ടിൽ 7 കളിക്കാർ.",
+"id": "lp26-221",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "The term 'checkmate' is used in which game?",
+"o": [
+"Carrom",
+"Chess",
+"Golf",
+"Polo"
+],
+"a": 1,
+"e": "Checkmate ends a game of chess.",
+"ml": "ചെക്ക്മേറ്റ് = ചെസ്.",
+"id": "lp26-222",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "National Sports Day in India is celebrated on:",
+"o": [
+"15 August",
+"2 October",
+"14 November",
+"29 August"
+],
+"a": 3,
+"e": "29 August, the birthday of hockey player Major Dhyan Chand.",
+"ml": "ആഗസ്റ്റ് 29, ധ്യാൻ ചന്ദിന്റെ ജന്മദിനം.",
+"id": "lp26-223",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "Where were the 2024 Summer Olympic Games held?",
+"o": [
+"Tokyo",
+"Paris",
+"Los Angeles",
+"London"
+],
+"a": 1,
+"e": "The 2024 Summer Olympics were held in Paris, France.",
+"ml": "2024 ഒളിമ്പിക്സ് പാരീസിൽ.",
+"id": "lp26-224",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "Which city will host the 2028 Summer Olympic Games?",
+"o": [
+"Los Angeles",
+"Brisbane",
+"Paris",
+"Beijing"
+],
+"a": 0,
+"e": "Los Angeles (USA) will host the 2028 Olympics; Brisbane hosts in 2032.",
+"ml": "2028 ഒളിമ്പിക്സ് ലോസ് ആഞ്ചലസ്.",
+"id": "lp26-225",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "Neeraj Chopra won Olympic gold at Tokyo 2020 in which event?",
+"o": [
+"Shot put",
+"Discus throw",
+"Javelin throw",
+"Long jump"
+],
+"a": 2,
+"e": "Neeraj Chopra won gold in javelin throw at Tokyo 2020.",
+"ml": "നീരജ് ചോപ്ര: ജാവലിൻ ത്രോ സ്വർണം.",
+"id": "lp26-226",
+"added": "2026-11-26"
+},
+{
+"s": "GA",
+"t": "Sports",
+"q": "The term 'bully' is used in which sport?",
+"o": [
+"Football",
+"Cricket",
+"Boxing",
+"Hockey"
+],
+"a": 3,
+"e": "A 'bully' (bully-off) is used to start or restart play in hockey.",
+"ml": "ബുള്ളി = ഹോക്കി.",
+"id": "lp26-227",
+"added": "2026-11-26"
 }
 ],
 "vocab": [
@@ -3402,7 +4170,7 @@
 "ml": "നിഷേധിക്കുക",
 "syn": "Refuse",
 "ant": "Accept",
-"ex": "He denied the charge."
+"ex": "He did not deny the charge."
 },
 {
 "w": "Fertile",
@@ -4147,6 +4915,170 @@
 "a": 0,
 "e": "A daily habit.",
 "ml": "daily habit = ദിനചര്യ."
+}
+]
+}
+],
+"rc": [
+{
+"id": "rc1",
+"p": "Meera lived in a small village near a river. Every morning she walked two kilometres to the bus stop to reach her office in the town. One rainy day the road was flooded and no bus came. Instead of going home, Meera helped an old man cross the water and then walked to the next village, where she found a jeep going to the town. She reached the office one hour late, but her manager praised her for not giving up.",
+"qs": [
+{
+"q": "Where did Meera live?",
+"o": [
+"In a village near a river",
+"In the town",
+"Near a bus depot",
+"In the next village"
+],
+"a": 0,
+"e": "The first line says she lived in a small village near a river.",
+"ml": "ആദ്യ വരി: പുഴയ്ക്കടുത്തുള്ള ഗ്രാമം."
+},
+{
+"q": "Why did no bus come that day?",
+"o": [
+"It was a holiday",
+"The road was flooded",
+"The driver was ill",
+"The bus broke down"
+],
+"a": 1,
+"e": "It was a rainy day and the road was flooded.",
+"ml": "റോഡിൽ വെള്ളം കയറി."
+},
+{
+"q": "How did Meera finally reach the town?",
+"o": [
+"By bus",
+"On foot all the way",
+"By a jeep",
+"By boat"
+],
+"a": 2,
+"e": "She found a jeep going to the town in the next village.",
+"ml": "ജീപ്പിൽ."
+},
+{
+"q": "What quality of Meera does the passage show?",
+"o": [
+"She is careless",
+"She is lazy",
+"She is always late",
+"She does not give up"
+],
+"a": 3,
+"e": "The manager praised her for not giving up.",
+"ml": "അവൾ തളരാതെ ശ്രമിക്കുന്നു."
+}
+]
+},
+{
+"id": "rc2",
+"p": "Trees are very important for life on earth. They give us oxygen and take in carbon dioxide. Their roots hold the soil together and stop it from being washed away by rain. Trees also give us shade, fruit and wood. Birds and many animals make their homes in them. Cutting down too many trees makes the land dry and the air hot. So, we should plant a tree for every tree we cut.",
+"qs": [
+{
+"q": "Which gas do trees take in?",
+"o": [
+"Carbon dioxide",
+"Oxygen",
+"Nitrogen",
+"Hydrogen"
+],
+"a": 0,
+"e": "They give oxygen and take in carbon dioxide.",
+"ml": "മരങ്ങൾ കാർബൺ ഡയോക്സൈഡ് എടുക്കുന്നു."
+},
+{
+"q": "How do the roots of trees help?",
+"o": [
+"They make the air hot",
+"They hold the soil together",
+"They give fruit",
+"They give shade"
+],
+"a": 1,
+"e": "Roots hold the soil together so rain cannot wash it away.",
+"ml": "വേരുകൾ മണ്ണിനെ പിടിച്ചുനിർത്തുന്നു."
+},
+{
+"q": "What happens when too many trees are cut?",
+"o": [
+"More rain falls",
+"The soil becomes stronger",
+"The land becomes dry and the air hot",
+"Birds get more homes"
+],
+"a": 2,
+"e": "The passage says the land becomes dry and the air hot.",
+"ml": "ഭൂമി ഉണങ്ങും, വായു ചൂടാകും."
+},
+{
+"q": "In the passage, the word 'shade' means:",
+"o": [
+"heavy rain",
+"a type of fruit",
+"dry land",
+"protection from the sun"
+],
+"a": 3,
+"e": "Shade is a cool place away from direct sunlight.",
+"ml": "shade = തണൽ."
+}
+]
+},
+{
+"id": "rc3",
+"p": "Raju runs a small tea shop at a railway station. Earlier, many customers left without buying tea because they had no change. Last year Raju put up a QR code so that people could pay with their mobile phones. Now he sells almost twice as many cups of tea in a day. He says the money goes straight into his bank account, so he does not have to worry about keeping cash safe.",
+"qs": [
+{
+"q": "Where is Raju's shop?",
+"o": [
+"At a railway station",
+"In a market",
+"Near a school",
+"At a bus stand"
+],
+"a": 0,
+"e": "The first line says it is at a railway station.",
+"ml": "റെയിൽവേ സ്റ്റേഷനിൽ."
+},
+{
+"q": "Why did customers leave without buying earlier?",
+"o": [
+"The tea was cold",
+"They had no change",
+"The shop was closed",
+"The prices were high"
+],
+"a": 1,
+"e": "They had no change (coins or small notes).",
+"ml": "ചില്ലറ ഇല്ലായിരുന്നു."
+},
+{
+"q": "What did Raju put up last year?",
+"o": [
+"A new signboard",
+"A price list",
+"A QR code",
+"A fan"
+],
+"a": 2,
+"e": "He put up a QR code for mobile payment.",
+"ml": "QR കോഡ്."
+},
+{
+"q": "What is the main idea of the passage?",
+"o": [
+"Tea is good for health",
+"Railway stations are crowded",
+"Raju wants to close his shop",
+"Mobile payment helped Raju's business grow"
+],
+"a": 3,
+"e": "After the QR code, he sells almost twice as much.",
+"ml": "മൊബൈൽ പേയ്മെന്റ് കച്ചവടം കൂട്ടി."
 }
 ]
 }

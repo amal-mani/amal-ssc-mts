@@ -1358,27 +1358,46 @@ GEN.Reasoning['Calendar']=[()=>{const D=['Sunday','Monday','Tuesday','Wednesday'
   if(Math.random()<.5){const d=rnd(8,30),r=(s+d-1)%7,M=any(['March','May','July','August','October']);return mkq('Reasoning','Calendar',`If 1 ${M} of a year is a ${D[s]}, what day of the week is ${d} ${M}?`,D[r],[D[(r+1)%7],D[(r+6)%7],D[(r+2)%7]],`${d} − 1 = ${d-1} days later. ${d-1} ÷ 7 leaves ${(d-1)%7} odd days. ${D[s]} + ${(d-1)%7} = ${D[r]}.`,`${d-1} ദിവസം കഴിഞ്ഞ്; ${(d-1)%7} ഒറ്റ ദിവസം. ഉത്തരം ${D[r]}.`)}
   const n=rnd(15,120),r=(s+n)%7;return mkq('Reasoning','Calendar',`Today is ${D[s]}. What day of the week will it be after ${n} days?`,D[r],[D[(r+1)%7],D[(r+6)%7],D[(r+3)%7]],`${n} ÷ 7 leaves ${n%7}. ${D[s]} + ${n%7} days = ${D[r]}.`,`${n} ÷ 7 ശിഷ്ടം ${n%7}. ഉത്തരം ${D[r]}.`)}];
 /* blueprint: question count per topic, from published SSC MTS 2024–25 shift analyses */
-const BLUEPRINT={
- Quant:[['Percentage',2],['Profit and loss',2],['Discount',1],['Simple interest',1],['Compound interest',1],['Ratio',2],['Average',2],['Number system',1],['HCF and LCM',1],['Simplification',2],['Time and work',1],['Speed and trains',2],['Mensuration',1],['Data interpretation',1]],
- Reasoning:[['Odd one out',3],['Analogy',2],['Number series',1],['Letter series',1],['Coding-decoding',2],['Maths operations',2],['Direction',1],['Blood relation',1],['Syllogism',1],['Word formation',1],['Set similarity',1],['Missing number',1],['Ranking',1],['Dictionary order',1],['Calendar',1]],
- GA:[['History',3],['Polity',3],['Geography',2],['Economy',1],['Static GK',4],['Biology',2],['Chemistry',3],['Physics',2],['Current affairs',5]],
- English:[['Cloze test',5],['Error spotting',2],['Sentence improvement',2],['Fill in the blanks',2],['Synonyms',2],['Antonyms',2],['Idioms',2],['One word substitution',2],['Spelling',2],['Voice and narration',2],['Para jumble',2]]};
-const GA_ALIAS={'Static GK':['Static GK','Sports','Culture','Computer','Awards']};
+/* mirror image (text-safe types: clock mirror and mirror-symmetric letters) */
+GEN.Reasoning['Mirror image']=[()=>{const h=rnd(1,12),m=rnd(1,11)*5,t=h%12*60+m,r=(720-t)%720,fm=x=>`${Math.floor(x/60)||12}:${String(x%60).padStart(2,'0')}`,ans=fm(r);
+  const d=[fm((r+60)%720),fm((t+360)%720),fm((720-t+30)%720)].filter((x,i,a)=>x!==ans&&a.indexOf(x)===i);while(d.length<3)d.push(fm((r+120*(d.length+1))%720));
+  return mkq('Reasoning','Mirror image',`A clock shows ${fm(t)}. What time does its mirror image show?`,ans,d.slice(0,3),`Mirror time = 11:60 − actual time. 11:60 − ${fm(t)} = ${ans}.`,`കണ്ണാടി സമയം = 11:60 − യഥാർത്ഥ സമയം = ${ans}.`)},
+ ()=>{const Y='AHIMOTUVWXY',N='BCDEFGJKLNPQRSZ',y=any([...Y]),n=shuffle([...N]).slice(0,3);
+  return mkq('Reasoning','Mirror image','Which capital letter looks exactly the same in a mirror placed to its right?',y,n,`${y} is the same on its left and right side. Letters like this: A H I M O T U V W X Y.`,`ഇടതും വലതും ഒരുപോലെയുള്ള അക്ഷരം: ${y}. (A H I M O T U V W X Y)`)}];
+/* blueprint: question count per topic, from analyses of the SSC MTS 2025 exam (held Feb 2026) */
+let BLUEPRINT={
+ Quant:[['Percentage',2],['Profit and loss',2],['Discount',1],['Simple interest',1],['Compound interest',1],['Ratio',1],['Average',1],['Time and work',2],['Speed and trains',2],['Mensuration',2],['Number system',1],['Simplification',2],['Data interpretation',1],['HCF and LCM',1]],
+ Reasoning:[['Analogy',4],['Number series',2],['Letter series',1],['Coding-decoding',3],['Mirror image',2],['Odd one out',3],['Maths operations',2],['Direction',1],['Blood relation',1],['Missing number',1]],
+ GA:[['Current affairs',9],['Sports',2],['Culture',2],['Polity',3],['History',2],['Geography',2],['Economy',1],['Static GK',1],['Physics',1],['Chemistry',1],['Biology',1]],
+ English:[['Voice and narration',8],['Cloze test',5],['Reading comprehension',4],['Fill in the blanks',3],['Error spotting',2],['Synonyms',1],['Antonyms',1],['Idioms',1]]};
+const GA_ALIAS={'Static GK':['Static GK','Computer','Awards']};
 function engSub(q){if(q.t&&q.t!=='Grammar')return q.t;const x=q.q;if(/^Find the error/i.test(x))return'Error spotting';if(/passive|active form|indirect speech|direct speech/i.test(x))return'Voice and narration';if(/^Improve/i.test(x))return'Sentence improvement';if(/___|Fill in the blank/i.test(x))return'Fill in the blanks';return'Grammar'}
 function topicMatch(q,s,t){if(s==='GA'){if(t==='Current affairs')return q.s==='CA';if(q.s!=='GA')return false;return(GA_ALIAS[t]||[t]).includes(topicOf(q))}
   if(q.s!==s)return false;return s==='English'?engSub(q)===t:topicOf(q)===t}
 function clozeQs(n){const out=[],P=shuffle(BANK.cloze||[]);for(const c of P){c.b.forEach((b,k)=>{if(out.length<n){const ix=shuffle([0,1,2,3]);out.push({id:c.id+'-'+k,s:'English',t:'Cloze test',q:`Read the passage and choose the word for blank (${k+1}).\n\n${c.p}`,o:ix.map(i=>b.o[i]),a:ix.indexOf(b.a),e:b.e,ml:b.ml})}});if(out.length>=n)break}return out}
+function rcQs(n){const out=[],P=shuffle(BANK.rc||[]);for(const c of P){if(out.length+c.qs.length>n&&out.length)break;c.qs.forEach((k,j)=>{if(out.length<n){const ix=shuffle([0,1,2,3]);out.push({id:c.id+'-'+j,s:'English',t:'Reading comprehension',q:`Read the passage and answer.\n\n${c.p}\n\nQ: ${k.q}`,o:ix.map(i=>k.o[i]),a:ix.indexOf(k.a),e:k.e,ml:k.ml})}})}return out}
 function bpPick(s,t,n){let out=[];
   if(t==='Cloze test')out=clozeQs(n);
+  else if(t==='Reading comprehension')out=rcQs(n);
   else if(GEN[s]&&GEN[s][t]&&(s!=='English'||BANK.vocab.length)){const seen=new Set();for(let i=0;out.length<n&&i<n*20;i++){const q=any(GEN[s][t])();if(!seen.has(q.q)){seen.add(q.q);out.push(q)}}}
   else{st.seen=st.seen||{};out=shuffle(Q.filter(q=>topicMatch(q,s,t))).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0)).slice(0,n).map(shufO)}
   return out}
 function bpSet(s){if(!BLUEPRINT[s])return null;const out=[],txt=new Set();BLUEPRINT[s].forEach(([t,n])=>{bpPick(s,t,n).forEach(q=>{if(!txt.has(q.q)){txt.add(q.q);out.push(q)}})});
   const need=BLUEPRINT[s].reduce((a,[,n])=>a+n,0);if(out.length<need)fresh(s==='GA'?'GA':s,need*2).forEach(q=>{if(out.length<need&&!txt.has(q.q)){txt.add(q.q);out.push(q)}});
   return out.slice(0,need)}
-function bpHTML(){const nm={Quant:'Maths (20)',Reasoning:'Reasoning (20)',GA:'General Awareness (25)',English:'English (25)'};
-  return `<div class="panel" style="margin-top:18px"><h2>Expected 2026 pattern</h2><p class="small" style="margin-top:-6px">Every full and sectional mock follows this topic plan. It is built from published topic tables of recent SSC MTS shifts (StudyIQ 2024 shift analysis, PW topic weightage). The real paper can change a little.</p>
-   <div class="grid2">${Object.keys(BLUEPRINT).map(s=>`<div><h3 style="margin:10px 0 6px">${nm[s]}</h3><p class="small">${BLUEPRINT[s].map(([t,n])=>`${esc(t)} <b>${n}</b>`).join(' · ')}</p></div>`).join('')}</div></div>`}
+let PAT=null;const BP_N={Quant:20,Reasoning:20,GA:25,English:25};
+getData('pattern.json').then(r=>r.json()).then(d=>{if(!d||typeof d!=='object')return;PAT=d;const nb={};
+  for(const k of Object.keys(BP_N)){const a=d[k];if(Array.isArray(a)&&a.every(x=>Array.isArray(x)&&typeof x[0]==='string'&&x[1]>0)&&a.reduce((t,x)=>t+(+x[1]),0)===BP_N[k])nb[k]=a.map(x=>[x[0],+x[1]])}
+  Object.assign(BLUEPRINT,nb);try{if(location.hash==='#exam')drawCurTab()}catch(e){}}).catch(()=>{});
+function bankStats(){const q=(BANK&&BANK.q)||[],wk=new Date(Date.now()-7*864e5).toISOString().slice(0,10);return{n:q.length,w:q.filter(x=>(x.added||'')>=wk).length}}
+function bpHTML(){const nm={Quant:'Maths (20)',Reasoning:'Reasoning (20)',GA:'General Awareness (25)',English:'English (25)'},P=PAT||{},bs=bankStats();
+  const notes=(P.notes&&P.notes.length?P.notes:['Current affairs is the biggest part of GK (about 8–12 questions), from events 6–18 months before the exam, plus the Union Budget.','English: active–passive and direct–indirect speech gave many questions; few synonyms or antonyms.','Reasoning was the easiest section and Maths was long to calculate: aim for all 40 in Session 1 (no negative marks).','GK was the hardest: a good score is 14–17 of 25. Do not guess blindly there (−1).','Reasoning also had picture questions (mirror images, paper folding, hidden figures). The app cannot show pictures, so practise those in the Falcon course or Testbook.']);
+  const log=(P.log||[]).slice(0,6);
+  return `<div class="panel" style="margin-top:18px"><h2>Expected 2026 pattern</h2><p class="small" style="margin-top:-6px">Every full and sectional mock follows this topic plan. It copies the last real paper: ${esc(P.exam||'SSC MTS 2025, held 4–19 February 2026')}, from exam-day analyses by candidates${P.updated?' (checked '+esc(P.updated)+')':''}. SSC does not publish question papers, so these counts are approximate.</p>
+   <div class="grid2">${Object.keys(BLUEPRINT).map(s=>`<div><h3 style="margin:10px 0 6px">${nm[s]}</h3><p class="small">${BLUEPRINT[s].map(([t,n])=>`${esc(t)} <b>${n}</b>`).join(' · ')}</p></div>`).join('')}</div>
+   <h3 style="margin:14px 0 6px">What the last paper told us</h3><p class="small">${notes.map(n=>'• '+esc(n)).join(' ')}</p>
+   <h3 style="margin:14px 0 6px">Question bank grows every day</h3><p class="small">${bs.n} questions now · <b>${bs.w} new this week</b>. Every morning the app reads new exam analyses of SSC MTS and other SSC exams at the same level (GD, CHSL, Selection Post, Stenographer) and adds fresh questions on the topics they asked.</p>
+   ${log.length?`<p class="small">${log.map(l=>`• ${esc(l.date||'')}: ${esc(l.exam||'')}: ${esc(l.what||'')}`).join('<br>')}</p>`:''}</div>`}
 
 /* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
 let MON={months:[]},monSel=0;
@@ -1468,7 +1487,7 @@ document.querySelectorAll('nav button[data-tab=cards]').forEach(b=>b.addEventLis
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){pxClose()}});
 
 /* ---------- load the bank, start ---------- */
-getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):''})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[],cloze:(d.cloze||[]).filter(c=>c&&c.p&&Array.isArray(c.b))};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
+getData('bank.json').then(r=>r.json()).then(d=>{BANK={q:(d.q||[]).filter(q=>Array.isArray(q.o)&&q.o.length===4&&q.s).map(q=>({id:q.id||('bk-'+q.q.slice(0,20)),s:q.s,t:q.t,q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):''})),vocab:d.vocab||[],idioms:d.idioms||[],ows:d.ows||[],spell:d.spell||[],cloze:(d.cloze||[]).filter(c=>c&&c.p&&Array.isArray(c.b)),rc:(d.rc||[]).filter(c=>c&&c.p&&Array.isArray(c.qs))};const have=new Set(Q.map(q=>q.id));BANK.q.forEach(q=>{if(!have.has(q.id))Q.push(q)});drawVocab();drawSmart()}).catch(()=>{});
 drawPlusToday();drawSmart();
 function wakeRoute(){if(location.hash==='#wake'){const nb=document.querySelector('nav button[data-tab=myday]');if(nb)nb.click();if(!st.rtWake[dkey])setTimeout(wakeCheck,300)}}
 function drawCurTab(){const h=location.hash.slice(1);if(h==='exam')drawExam();else if(h==='myday')drawMyDay()}
