@@ -145,7 +145,7 @@ tr.today td{background:rgba(255,122,89,.12)}
 @media(max-width:600px){.pxrow{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pxc{padding:12px}.pxc b{font-size:1.1rem}}
 .pxc{background:var(--card);border-radius:18px;padding:14px 16px;border-top:4px solid var(--c);display:flex;flex-direction:column;gap:4px}
 .pxc .k{font-size:.8rem;color:var(--soft);font-weight:600}.pxc b{font-size:1.35rem;line-height:1.2}
-.bar{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--mint);border-radius:99px}
+.pxc .bar{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:6px}.pxc .bar i{display:block;height:100%;background:var(--mint);border-radius:99px}
 .pxmsg{font-size:1.05rem;color:var(--ink);margin:18px 0 6px;font-style:italic}
 .rep{margin:6px 0;padding-left:1.2em;display:grid;gap:6px}
 .cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;max-width:420px;margin:10px 0}
@@ -280,8 +280,9 @@ details summary{cursor:pointer}
 </section>
 
 <section id="ca" hidden>
+  <div class="row" style="justify-content:flex-start;gap:8px;margin-bottom:14px"><button class="btn" type="button" data-jump="caDaily">Today's news ↓</button><button class="btn ghost" type="button" data-jump="monthBox">Monthly revision</button></div>
   <div id="monthBox"></div>
-  <h2>Daily current affairs</h2>
+  <h2 id="caDaily" style="scroll-margin-top:70px">Daily current affairs</h2>
   <p class="small" id="caUpdated">Loading…</p>
   <div class="chips" id="caDays"></div>
   <div class="cards" id="caItems"></div>
@@ -357,7 +358,7 @@ details summary{cursor:pointer}
     <div>
       <h2>How I'm doing</h2>
       <div class="bars" id="bars"></div>
-      <p class="small" style="margin-top:16px">Progress is saved in this browser on this device only.</p>
+      <p class="small" style="margin-top:16px">Progress is saved on this device. With sync on (My day → Sync), your phone and PC share it.</p>
       <div class="row" style="justify-content:flex-start;margin-top:8px">
         <button class="btn ghost" id="wipe">Clear my progress</button>
       </div>
@@ -1607,6 +1608,19 @@ function qqBind(){const el=$('qqSet');if(!el)return;const upd=()=>{save();qqPush
   $('qqTry').onclick=()=>{qqPush();try{if(window.AndroidApp&&AndroidApp.quickNow){AndroidApp.quickNow();return}if(window.mtsDesktop&&mtsDesktop.quickNow){mtsDesktop.quickNow();return}}catch(e){}qqInPage()}}
 const _qqMy=drawMyDay;drawMyDay=function(){_qqMy();try{const el=$('mydayBody');if(el&&!$('qqSet')){el.insertAdjacentHTML('beforeend',qqPanel());qqBind()}}catch(e){}};
 try{drawMyDay()}catch(e){}
+/* ===== Today: one clear "next step" card at the top, so a student never has to search for what to do ===== */
+function nextStepCard(){try{const sec=$('today');if(!sec)return;let c=$('nextStep');
+  const items=[...document.querySelectorAll('#plan > li')].filter(li=>li.querySelector('.what'));
+  const todo=items.find(li=>{const b=li.querySelector('button');return b&&!b.disabled&&!/done|✓|passed/i.test(b.textContent)})||null;
+  const rv=document.querySelector('#plusToday [data-px="rev"], #plusToday .revDue button');
+  let title='',hint='';
+  if(todo){const w=todo.querySelector('.what');title=(w.childNodes[0]&&w.childNodes[0].textContent||w.textContent).trim();const b=todo.querySelector('button');hint=b?b.textContent.trim():''}
+  if(!c){c=document.createElement('div');c.id='nextStep';c.className='panel';c.style.cssText='margin:14px 0 4px;border-left:5px solid var(--acc);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap';const h=sec.querySelector('.hello');h.insertAdjacentElement('afterend',c)}
+  if(!title){c.innerHTML='<div><b>All done for today.</b><div class="small">Nice work. Revise or take a learning mock if you have time.</div></div>';return}
+  c.innerHTML=`<div style="min-width:0"><div class="small">Your next step</div><b style="font-size:1.12rem">${esc(title)}</b>${hint?`<div class="small">Watch the class, then press: ${esc(hint)}</div>`:''}</div><button class="btn" type="button" id="nsGo">Go ↓</button>`;
+  $('nsGo').onclick=()=>{todo.scrollIntoView({behavior:'smooth',block:'center'});todo.style.outline='3px solid var(--acc)';setTimeout(()=>todo.style.outline='',2500)}}catch(e){}}
+const _nsPlan=drawPlan;drawPlan=function(){_nsPlan();nextStepCard()};
+try{nextStepCard()}catch(e){}
 
 /* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
 let MON={months:[]},monSel=0;
@@ -1637,6 +1651,8 @@ getData('monthly.json').then(r=>r.json()).then(d=>{MON=d||{months:[]};
   const have=new Set(Q.map(q=>q.id));(MON.months||[]).forEach(m=>(m.quiz||[]).forEach((q,j)=>{const id='mon-'+m.month+'-'+j;if(!have.has(id)&&Array.isArray(q.o)&&q.o.length===4)Q.push({id,s:'CA',t:'Current affairs',q:String(q.q),o:q.o.map(String),a:+q.a,e:String(q.e||''),ml:q.ml?String(q.ml):undefined,day:m.month,w:Array.isArray(q.w)&&q.w.length===4?q.w.map(x=>x?String(x):null):undefined})}));
   drawMonthly()}).catch(()=>{});
 document.querySelectorAll('nav button[data-tab=ca]').forEach(b=>b.addEventListener('click',()=>setTimeout(drawMonthly,50)));
+
+document.addEventListener('click',e=>{const b=e.target.closest('[data-jump]');if(b){const t=document.getElementById(b.dataset.jump);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})}});
 
 /* ================= LISTEN MODE: study notes read aloud like an audiobook ================= */
 let LS={list:[],i:0,name:'',playing:false,rate:+(st.lsRate||0.9)};
