@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-28",
  "exam": "SSC MTS 2025, held 4–19 February 2026",
  "sources": [
   {
@@ -207,6 +207,11 @@
   "Reasoning also had picture questions (mirror images, paper folding, hidden figures). The app cannot show pictures, so practise those in the Falcon course or Testbook."
  ],
  "log": [
+  {
+   "date": "2026-11-28",
+   "exam": "SSC CGL Tier 1 2026 (30 Sep – 3 Oct)",
+   "what": "Reasoning: odd one out, analogy, maths operations, ranking, syllogism. GA: Polity articles, Geography, festivals, Physics units. English: voice, narration, error spotting. 15 questions added."
+  },
   {
    "date": "2026-11-27",
    "exam": "App update",
