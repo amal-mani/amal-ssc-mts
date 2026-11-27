@@ -1835,7 +1835,7 @@ document.addEventListener('click',e=>{if(e.target&&e.target.id==='scrGo'){e.prev
 const _pwMy=drawMyDay;drawMyDay=function(){_pwMy();try{const el=$('mydayBody');if(!el)return;['rdSet','pwdSet'].forEach(id=>{const x=$(id);if(x)x.remove()});
   el.insertAdjacentHTML('afterbegin',pwdPanel()+rdPanel());rdBind();pwdBind();if(WN&&!$('wnAllBox')){const d=document.createElement('div');d.id='wnAllBox';d.innerHTML=wnAll();el.appendChild(d)}}catch(e){}};
 const _pwExam=drawExam;drawExam=function(){_pwExam();try{const el=$('examBody');if(!el)return;if(!$('exLook')){const f=el.querySelector('[data-px=fm]');if(f)f.insertAdjacentHTML('afterend',`<label class="chip" id="exLook" style="cursor:pointer;margin-top:10px;display:inline-flex;gap:8px"><input type="checkbox" ${st.rd.exam?'checked':''}> Real exam look (white screen like the SSC computer test)</label>`);const c=$('exLook');if(c)c.querySelector('input').onchange=e=>{st.rd.exam=e.target.checked;save();rdApply()}}const s=speedBox();if(s&&!$('spdBox')){const r=$('fmRes');(r||el.firstElementChild).insertAdjacentHTML('afterend',s)}}catch(e){}};
-function pwPractice(){try{const sec=$('practice');if(!sec||$('drBox'))return;const host=sec.querySelector('.grid2')||sec;host.insertAdjacentHTML('afterend',miniPanel()+drillPanel()+scribePanel());miniBind()}catch(e){}}
+function pwPractice(){try{const sec=$('practice');if(!sec||$('drBox'))return;const g=sec.querySelector('.grid2'),h=miniPanel()+drillPanel()+scribePanel();if(g&&g.parentElement&&sec.contains(g.parentElement))g.insertAdjacentHTML('afterend',h);else sec.insertAdjacentHTML('beforeend',h);miniBind()}catch(e){}}
 const _pwTod=drawPlusToday;drawPlusToday=function(){_pwTod();wnDraw();pwdToday()};
 try{pwPractice();drawMyDay();wnDraw()}catch(e){}
 window.addEventListener('hashchange',()=>{if(location.hash==='#practice')pwPractice()});
@@ -2161,16 +2161,17 @@ async function aiAsk(msgs){
   if(AI.prov==='claude'){const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':AI.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-haiku-5-5',max_tokens:1200,system:AI_SYS,messages:msgs})});
     const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(aiErr(r.status,j));return(j.content||[]).map(p=>p.text||'').join('')}
   throw new Error('AI is not set up yet.')}
+const aiNet=e=>{const m=(e&&e.message)||String(e);return /failed to fetch|networkerror|load failed|network request/i.test(m)?'Could not reach the AI. Check your internet and try again. If it still fails, use the AI mentor on the study page in the Claude app.':m};
 function aiErr(s,j){if(s===400&&/key/i.test(JSON.stringify(j)))return 'The key is not correct. Copy it again.';if(s===401||s===403)return 'The key is not correct or not allowed. Copy it again.';if(s===429)return 'Too many questions for now. Wait a few minutes, or try again tomorrow.';if(s>=500)return 'The AI service is busy. Try again in a few minutes.';return 'Could not reach the AI ('+s+'). Check the internet and try again.'}
 function aiMd(t){return esc(String(t||'')).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').split(/\n/).map(l=>{const h=l.match(/^#{1,4}\s*(.*)$/);if(h)return `<h4>${h[1]}</h4>`;if(/^\s*[-*•]\s+/.test(l))return `<li>${l.replace(/^\s*[-*•]\s+/,'')}</li>`;if(/^\s*\d+[.)]\s+/.test(l))return `<p class="mtNum">${l}</p>`;return l.trim()?`<p>${l}</p>`:''}).join('').replace(/(<li>.*?<\/li>)+/g,m=>`<ul>${m}</ul>`)}
 let mtBusy=false,mtChat=[];
 async function mtAiReport(){if(mtBusy)return;mtBusy=true;const out=$('mtAiOut');out.innerHTML='<p>Your mentor is reading your study data…</p>';
   const ask=`Here is my study data from the app:\n${mtData()}\n\nWrite my mentor report with these headings:\n1. Where you are now (2 lines; use first-attempt mocks only)\n2. Where you lose marks (3 points with numbers)\n3. This week's plan (5 short steps using the app: Coach, Full mock, Practice, Learning mock, Tricks)\n4. Next mock target (one realistic number)\n5. One line to keep going\nUse at most 230 words.`;
-  try{const t=await aiAsk([{role:'user',content:ask}]);mtChat=[{role:'user',content:ask},{role:'assistant',content:t}];st.mentorAi={d:dkey,t};save();mtDraw()}catch(e){out.innerHTML=`<p class="mtErr">${esc(e.message||String(e))}</p>`}mtBusy=false}
+  try{const t=await aiAsk([{role:'user',content:ask}]);mtChat=[{role:'user',content:ask},{role:'assistant',content:t}];st.mentorAi={d:dkey,t};save();mtDraw()}catch(e){out.innerHTML=`<p class="mtErr">${esc(aiNet(e))}</p>`}mtBusy=false}
 async function mtAiAsk(){const inp=$('mtQ');const q=(inp.value||'').trim();if(!q||mtBusy)return;mtBusy=true;inp.value='';
   if(!mtChat.length)mtChat=[{role:'user',content:'My study data:\n'+mtData()+'\n\nAnswer my questions about my study and marks.'},{role:'assistant',content:'OK. Ask me.'}];
   mtChat.push({role:'user',content:q});const box=$('mtChat');box.insertAdjacentHTML('beforeend',`<div class="mtMe">${esc(q)}</div><div class="mtAi" id="mtWait">Thinking…</div>`);
-  try{const t=await aiAsk(mtChat.slice(-12));mtChat.push({role:'assistant',content:t});$('mtWait').outerHTML=`<div class="mtAi">${aiMd(t)}</div>`}catch(e){mtChat.pop();$('mtWait').outerHTML=`<div class="mtAi mtErr">${esc(e.message||String(e))}</div>`}mtBusy=false}
+  try{const t=await aiAsk(mtChat.slice(-12));mtChat.push({role:'assistant',content:t});$('mtWait').outerHTML=`<div class="mtAi">${aiMd(t)}</div>`}catch(e){mtChat.pop();$('mtWait').outerHTML=`<div class="mtAi mtErr">${esc(aiNet(e))}</div>`}mtBusy=false}
 /* ---------- 7. Screen ---------- */
 function mtDraw(){const sec=$('mentor');if(!sec)return;mtTrack();const R=mtReport(),T=mtOnTime(14),M=mtMocks(),x=coachPick();
   const ic={level:'📊',warn:'⚠️',loss:'📉',gain:'🎯',good:'✅',target:'🏁'};
@@ -2211,7 +2212,7 @@ function mtDraw(){const sec=$('mentor');if(!sec)return;mtTrack();const R=mtRepor
   const ag=$('mtAiGo');if(ag)ag.onclick=mtAiReport;const as=$('mtAiSay');if(as)as.onclick=()=>speak(st.mentorAi.t.replace(/[#*]/g,''));
   const ak=$('mtAsk');if(ak){ak.onclick=mtAiAsk;$('mtQ').onkeydown=e=>{if(e.key==='Enter')mtAiAsk()}}
   $('mtKeySave').onclick=async()=>{const v=$('mtKey').value.trim();if(v&&!/^•+$/.test(v)){AI.key=v;AI.model=''}AI.prov=$('mtProv').value;if(!AI.key){$('mtKeyMsg').textContent='Paste your key first.';return}aiSave();$('mtKeyMsg').textContent='Testing…';
-    try{const t=await aiAsk([{role:'user',content:'Reply with only the word: ready'}]);$('mtKeyMsg').textContent=/ready/i.test(t)?'Working! The AI mentor is on.':'Connected.';setTimeout(mtDraw,900)}catch(e){$('mtKeyMsg').textContent=e.message||String(e)}};
+    try{const t=await aiAsk([{role:'user',content:'Reply with only the word: ready'}]);$('mtKeyMsg').textContent=/ready/i.test(t)?'Working! The AI mentor is on.':'Connected.';setTimeout(mtDraw,900)}catch(e){$('mtKeyMsg').textContent=aiNet(e)}};
   const kd=$('mtKeyDel');if(kd)kd.onclick=()=>{AI={prov:'',key:'',model:''};aiSave();mtDraw()}}
 /* practise the exact question patterns missed in the last app mock */
 function mtPatterns(){const L=st.fmLast;if(!L||!L.parts)return;const miss={};L.parts.forEach((P,pi)=>P.qs.forEach((q,j)=>{const a=L.ans[pi+'-'+j]!=null?L.ans[pi+'-'+j]:L.ans[pi+':'+j];if(a!==q.a){const t=(typeof lnTopic==='function'?lnTopic(q):q.t)||'';if(t&&t!=='Mixed'){const k=q.s+'|'+t;miss[k]=(miss[k]||0)+1}}}));
