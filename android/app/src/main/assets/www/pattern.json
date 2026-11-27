@@ -76,7 +76,11 @@
  "Reasoning": [
   [
    "Analogy",
-   4
+   3
+  ],
+  [
+   "Paper folding",
+   1
   ],
   [
    "Number series",
@@ -203,6 +207,11 @@
   "Reasoning also had picture questions (mirror images, paper folding, hidden figures). The app cannot show pictures, so practise those in the Falcon course or Testbook."
  ],
  "log": [
+  {
+   "date": "2026-11-27",
+   "exam": "App update",
+   "what": "picture questions added: mirror image, water image and paper folding (1 paper folding in every mock)"
+  },
   {
    "date": "2026-11-26",
    "exam": "SSC MTS 2025 (Feb 2026)",

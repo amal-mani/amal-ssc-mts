@@ -230,6 +230,17 @@ html.examlook #simBox .pb{background:#e9edf3;color:#111;border-color:#c9d2e0;bor
 html.examlook #simBox .pb.v{background:#d9363e;color:#fff}html.examlook #simBox .pb.a{background:#2e9e4f;color:#fff}html.examlook #simBox .pb.m,html.examlook #simBox .pb.am{background:#6a3fb5;color:#fff}
 html.examlook #simBox .btn{border-radius:4px}html.examlook #simBox .btn.ghost{background:#fff;color:#1d4f91;border:1px solid #1d4f91}
 #rdSet .chip,#exLook,#qqSet label.chip{flex:0 1 auto;max-width:100%;white-space:normal;text-align:left;line-height:1.35}
+/* picture questions, marks finder, weekly review, memory cards, report */
+.qimg{margin:-6px 0 14px;color:var(--ink,#eef1f6)}.qimg svg{max-width:100%;height:auto}
+.opt .pfig{display:block;color:currentColor}
+.mfRow{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line,#2a3140)}.mfRow .btn{flex:none}
+.wkGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}.wkGrid div{background:var(--card2,#202634);border-radius:10px;padding:10px}.wkGrid b{display:block;font-size:1.3rem}
+@media(max-width:600px){.wkGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mcOverlay{position:fixed;inset:0;z-index:80;background:#000a;display:grid;place-items:center;padding:16px}
+.mcCard{background:var(--card,#171b23);border:1px solid #2a3140;border-radius:16px;padding:18px;width:min(520px,100%);max-height:90vh;overflow:auto}
+.mcQ{font-size:1.2rem;font-weight:700;line-height:1.5}.mcAns{font-size:1.3rem;font-weight:800;color:#59d499}
+.rpBox{margin-top:10px}.rpBox .rpDone a{color:var(--acc)}
+html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
 </style>
 </head>
 <body>
@@ -710,8 +721,8 @@ function drawQ(){
   if(qi>=set.length)return drawEnd();
   answered=false;const q=set[qi];
   $('quiz').innerHTML=`<div class="qtop"><span>Question ${qi+1} of ${set.length} · ${SL(q.s)}</span><button class="speak" id="say">🔊 Read</button></div>
-  <p class="qtext">${esc(q.q)}</p>
-  <div class="opts">${q.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="b">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+  <p class="qtext">${esc(q.q)}</p>${q.img?`<div class="qimg">${q.img}</div>`:''}
+  <div class="opts">${q.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="b">${'ABCD'[i]}</span><span>${q&&q.oh?o:esc(o)}</span></button>`).join('')}</div>
   <div id="after"></div>
   <div class="row" style="justify-content:flex-start;margin-top:16px"><button class="btn ghost" id="skip">I don't know, skip</button></div>`;
   $('say').onclick=()=>speak(q.q+'. Option A: '+q.o[0]+'. B: '+q.o[1]+'. C: '+q.o[2]+'. D: '+q.o[3]);
@@ -726,7 +737,7 @@ function answer(i){
   else{st.stats[q.s].a++;if(ok){score.c++;st.stats[q.s].c++;st.mistakes=st.mistakes.filter(x=>x!==q.id)}else{score.w++;if(!st.mistakes.includes(q.id))st.mistakes.push(q.id)}}
   save();
   const head=i===-1?'Skipped. Here is how to solve it:':ok?'Correct! Well done.':'Not this time. Here is how to solve it:';
-  $('after').innerHTML=`<div class="note explain"><b>${head}</b>Answer: <span class="mark">${'ABCD'[q.a]}. ${esc(q.o[q.a])}</span><br>${esc(q.e)}</div>`;
+  $('after').innerHTML=`<div class="note explain"><b>${head}</b>Answer: <span class="mark">${'ABCD'[q.a]}. ${ot(q,q.a)}</span><br>${esc(q.e)}</div>`;
   $('skip').outerHTML=`<button class="btn" id="next">${qi+1<set.length?'Next question':'See my score'}</button> <button class="speak" id="sayE">🔊 Read answer</button>`;
   $('next').onclick=()=>{qi++;drawQ()};$('next').focus();
   $('sayE').onclick=()=>speak('The answer is '+q.o[q.a]+'. '+q.e);
@@ -772,7 +783,7 @@ function drawProgress(){
   $('bars').innerHTML=SECS.map(s=>{const x=st.stats[s];const p=x.a?Math.round(x.c/x.a*100):0;
     return `<div class="bar" style="--c:${COL[s]}"><div class="lab"><span>${SL(s)}</span><span>${x.a?`${x.c} right of ${x.a} · ${p}%`:'Not started'}</span></div><div class="track"><div class="fill" style="width:${p}%"></div></div></div>`}).join('');
   const m=st.mistakes.map(id=>Q.find(q=>q.id===id)).filter(Boolean);
-  $('mist').innerHTML=m.length?m.map(q=>`<li>${esc(q.q)}<br><span class="ans">Answer: ${esc(q.o[q.a])}</span></li>`).join(''):'<li class="empty">No mistakes saved yet. Wrong or skipped questions will appear here.</li>';
+  $('mist').innerHTML=m.length?m.map(q=>`<li>${esc(q.q)}<br><span class="ans">Answer: ${ot(q,q.a)}</span></li>`).join(''):'<li class="empty">No mistakes saved yet. Wrong or skipped questions will appear here.</li>';
   $('redo').disabled=!m.length;
 }
 $('redo').onclick=()=>{const m=st.mistakes.map(id=>Q.find(q=>q.id===id)).filter(Boolean);document.querySelector('nav button[data-tab=practice]').click();startQuiz(m)};
@@ -1236,7 +1247,7 @@ const FULL=[{s:'Quant',sess:1,n:20},{s:'Reasoning',sess:1,n:20},{s:'GA',sess:2,n
 const PNAME={Quant:'Numerical & Mathematical Ability',Reasoning:'Reasoning & Problem Solving',GA:'General Awareness',English:'English Language',CA:'Current Affairs (last 6 months)'};
 let fm=null,fmTick=null;
 function buildMock(kind,subj){const parts=kind==='full'?FULL:[{s:subj,sess:['GA','English','CA'].includes(subj)?2:1,n:['GA','English','CA'].includes(subj)?25:20}];
-  const P=parts.map(p=>({s:p.s,sess:p.sess,qs:((typeof bpSet==='function'&&bpSet(p.s))||fresh(p.s,p.n)).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen,w:q.w||undefined}))}));
+  const P=parts.map(p=>({s:p.s,sess:p.sess,qs:((typeof bpSet==='function'&&bpSet(p.s))||fresh(p.s,p.n)).slice(0,p.n).map(q=>({id:q.id,s:q.s,t:topicOf(q),q:q.q,o:q.o,a:q.a,e:q.e,ml:q.ml,gen:q.gen,w:q.w||undefined,img:q.img||undefined,oh:q.oh||undefined}))}));
   const sessions=[...new Set(P.map(p=>p.sess))],per=st.set.extra?60:45,mins=kind==='full'?per:Math.round(P[0].qs.length*(per/(P[0].sess===1?40:50)));
   return{kind,title:kind==='full'?'App full mock '+(st.fmHist.filter(r=>r.kind==='full').length+1):SL(subj)+' sectional mock',parts:P,sessions,si:0,mins,ans:{},mark:{},guess:{},vis:{},cur:{p:P.findIndex(p=>p.sess===sessions[0]),i:0},end:null,start:Date.now(),used:{}}}
 function fmStart(kind,subj){if(st.fmRun){fmResume();return}fm=buildMock(kind,subj);if(fm.parts.some(p=>!p.qs.length)){alert('Questions are still loading. Try again in a moment.');fm=null;return}st.fmRun=fm;fmSession();}
@@ -1249,8 +1260,8 @@ function fmDraw(){const b=$('simBox'),sess=fm.sessions[fm.si],ps=fm.parts.map((p
   const neg=sess===2;
   b.innerHTML=`<div class="simTop"><b>${esc(fm.title)}</b><span>${fm.kind==='full'?'Session '+sess+' of 2 · ':''}${neg?'+3 / −1':'+3 / no negative'}</span><span class="simT">⏱ <b id="simTime">--:--</b></span></div>
   <div class="simTabs">${ps.map(x=>`<button class="chip" data-sp="${x.i}" aria-pressed="${x.i===pi}">${esc(PNAME[x.p.s])}</button>`).join('')}</div>
-  <div class="simMain"><div class="simQ"><p class="small">Question ${qi2+1} of ${P.qs.length} · ${esc(PNAME[P.s])}</p><p class="qtext">${esc(q.q)}</p>
-   <div class="opts">${q.o.map((o,j)=>`<button class="opt${fm.ans[k]===j?' sel':''}" data-j="${j}"><span class="b">${'ABCD'[j]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+  <div class="simMain"><div class="simQ"><p class="small">Question ${qi2+1} of ${P.qs.length} · ${esc(PNAME[P.s])}</p><p class="qtext">${esc(q.q)}</p>${q.img?`<div class="qimg">${q.img}</div>`:''}
+   <div class="opts">${q.o.map((o,j)=>`<button class="opt${fm.ans[k]===j?' sel':''}" data-j="${j}"><span class="b">${'ABCD'[j]}</span><span>${q.oh?o:esc(o)}</span></button>`).join('')}</div>
    <div class="row" style="justify-content:flex-start;margin-top:14px"><button class="btn" id="smNext">Save &amp; next</button><button class="btn ghost" id="smMark">${fm.mark[k]?'Unmark':'Mark for review'} &amp; next</button><button class="btn ghost" id="smClr">Clear</button>
    <label class="gs"><input type="checkbox" id="smGuess" ${fm.guess[k]?'checked':''}> I'm guessing</label><button class="speak" id="smSay">🔊</button></div></div>
    <div class="simPal"><p class="small" style="margin:0 0 8px">${esc(PNAME[P.s])}</p><div class="pal">${P.qs.map((_,j)=>{const kk=qk(pi,j),a=fm.ans[kk]!=null,m=fm.mark[kk];return `<button class="pb ${a&&m?'am':m?'m':a?'a':fm.vis[kk]?'v':''}${j===qi2?' cur':''}" data-pj="${j}">${j+1}</button>`}).join('')}</div>
@@ -1300,7 +1311,7 @@ function drawExam(showLast){const el=$('examBody');if(!el)return;const run=st.fm
   if(h.length)x+=`<h2 style="margin-top:26px">My app mocks</h2><div class="scroll"><table><thead><tr><th>Date</th><th>Mock</th><th>Score</th><th>Session 2 negative</th></tr></thead><tbody>${h.slice(0,20).map(r=>`<tr><td>${esc(fmtDate(r.date))}</td><td>${esc(r.title)}</td><td><b>${r.score}</b> / ${r.max}</td><td>−${r.neg}</td></tr>`).join('')}</tbody></table></div>`;
   el.innerHTML=x;if(showLast&&$('fmRes'))setTimeout(()=>$('fmRes').scrollIntoView({block:'start'}),50)}
 function drawReview(){const L=st.fmLast;if(!L)return;let n=0;$('fmRev').innerHTML=L.parts.map((P,pi)=>`<h3 style="margin:18px 0 8px">${esc(PNAME[P.s])}</h3>`+P.qs.map((q,j)=>{const a=L.ans[qk(pi,j)],ok=a===q.a;n++;
-  return `<div class="note" style="border-left:4px solid ${a==null?'#6f7787':ok?'#59d499':'#ff6b6b'}"><b>Q${j+1}.</b> ${esc(q.q)}<br>Your answer: ${a==null?'not answered':esc(q.o[a])}${ok?' ✓':''}${L.guess[qk(pi,j)]?' (guess)':''}<br>Correct: <span class="mark">${esc(q.o[q.a])}</span><br>${esc(q.e||'')}${q.ml?`<details><summary>മലയാളം</summary><p lang="ml">${esc(q.ml)}</p></details>`:''}</div>`}).join('')).join('')}
+  return `<div class="note" style="border-left:4px solid ${a==null?'#6f7787':ok?'#59d499':'#ff6b6b'}"><b>Q${j+1}.</b> ${esc(q.q)}${q.img?`<div class="qimg">${q.img}</div>`:''}<br>Your answer: ${a==null?'not answered':ot(q,a)}${ok?' ✓':''}${L.guess[qk(pi,j)]?' (guess)':''}<br>Correct: <span class="mark">${ot(q,q.a)}</span><br>${esc(q.e||'')}${q.ml?`<details><summary>മലയാളം</summary><p lang="ml">${esc(q.ml)}</p></details>`:''}</div>`}).join('')).join('')}
 
 /* ================= TOPIC DOCTOR: stay on a weak topic until it is strong ================= */
 const TIPS={
@@ -1424,7 +1435,7 @@ GEN.Reasoning['Mirror image']=[()=>{const h=rnd(1,12),m=rnd(1,11)*5,t=h%12*60+m,
 /* blueprint: question count per topic, from analyses of the SSC MTS 2025 exam (held Feb 2026) */
 let BLUEPRINT={
  Quant:[['Percentage',2],['Profit and loss',2],['Discount',1],['Simple interest',1],['Compound interest',1],['Ratio',1],['Average',1],['Time and work',2],['Speed and trains',2],['Mensuration',2],['Number system',1],['Simplification',2],['Data interpretation',1],['HCF and LCM',1]],
- Reasoning:[['Analogy',4],['Number series',2],['Letter series',1],['Coding-decoding',3],['Mirror image',2],['Odd one out',3],['Maths operations',2],['Direction',1],['Blood relation',1],['Missing number',1]],
+ Reasoning:[['Analogy',3],['Paper folding',1],['Number series',2],['Letter series',1],['Coding-decoding',3],['Mirror image',2],['Odd one out',3],['Maths operations',2],['Direction',1],['Blood relation',1],['Missing number',1]],
  GA:[['Current affairs',9],['Sports',2],['Culture',2],['Polity',3],['History',2],['Geography',2],['Economy',1],['Static GK',1],['Physics',1],['Chemistry',1],['Biology',1]],
  English:[['Voice and narration',8],['Cloze test',5],['Reading comprehension',4],['Fill in the blanks',3],['Error spotting',2],['Synonyms',1],['Antonyms',1],['Idioms',1]]};
 const GA_ALIAS={'Static GK':['Static GK','Computer','Awards']};
@@ -1550,7 +1561,7 @@ function lnTopic(q){try{return q.s==='English'&&typeof engSub==='function'?engSu
 /* builds the learning panel inside box (an element) */
 function learnPanel(box,q,i,opts){opts=opts||{};const ML=q.ml&&!box.querySelector('#mlB');const S=lnSteps(q.e),tp=lnTopic(q),tr=TRICK[tp];let k=0;
   const d=document.createElement('div');d.className='learn';
-  d.innerHTML=`<div class="lnWhy"><b>${i===-1?'Skipped':'Why it went wrong'}</b>${i>=0?`<p>You chose <b>${esc(q.o[i])}</b>. ${esc(whyText(q,i))}</p>`:`<p>${esc(whyText(q,i))}</p>`}</div>
+  d.innerHTML=`<div class="lnWhy"><b>${i===-1?'Skipped':'Why it went wrong'}</b>${i>=0?`<p>You chose <b>${q.oh?'option '+'ABCD'[i]:esc(q.o[i])}</b>. ${esc(whyText(q,i))}</p>`:`<p>${esc(whyText(q,i))}</p>`}</div>
    <div class="lnStep"><div class="lnHead"><b>The right answer, step by step</b><span class="small lnN"></span></div><p class="lnT"></p>
    <div class="row" style="justify-content:flex-start;gap:8px"><button class="btn ghost lnB" type="button">◀ Back</button><button class="btn lnF" type="button">Next step ▶</button><button class="speak lnS" type="button">🔊 Read</button>${ML?'<button class="speak lnM" type="button">മലയാളം</button>':''}<button class="speak lnA" type="button">Show all</button></div>
    ${ML?`<p class="lnMl" lang="ml" hidden>${esc(q.ml)}</p>`:''}</div>
@@ -1592,7 +1603,7 @@ if(!st.qq||typeof st.qq!=='object')st.qq={on:true,from:'10:00',to:'17:00',every:
 if(!st.qqLog||typeof st.qqLog!=='object')st.qqLog={};
 const QQ_SUBJ=['Quant','Reasoning','English','GA','CA'];
 const qqNative=()=>!!((window.AndroidApp&&AndroidApp.quickSet)||(window.mtsDesktop&&mtsDesktop.quickSet));
-const qqShort=q=>q&&Array.isArray(q.o)&&q.o.length===4&&String(q.q).length<=230&&q.o.every(o=>String(o).length<=70)&&!/^Read the passage/.test(q.q);
+const qqShort=q=>q&&!q.oh&&!q.img&&Array.isArray(q.o)&&q.o.length===4&&String(q.q).length<=230&&q.o.every(o=>String(o).length<=70)&&!/^Read the passage/.test(q.q);
 function qqItem(q){q=shufO(q);const tp=(typeof lnTopic==='function'?lnTopic(q):q.t)||'';return{id:String(q.id),s:q.s,t:(typeof lnTopic==='function'?lnTopic(q):q.t)||'',q:String(q.q),o:q.o.map(String),a:q.a,e:String(q.e||''),ml:String(q.ml||''),w:Array.isArray(q.w)?q.w.map(x=>x||''):null,tr:(typeof TRICK!=='undefined'&&TRICK[tp])||''}}
 /* 40 questions: every subject in turn, current affairs from the latest days first */
 function qqPack(n){n=n||40;const by={},seen=new Set();
@@ -1775,7 +1786,7 @@ function scribeStart(){let L=[];try{L=learnSet().slice(0,10)}catch(e){L=fresh('G
 function scribeQ(){const R=$('scrRun');if(!R||!scr)return;const q=scr.L[scr.i];if(!q){const min=Math.round((Date.now()-scr.t0)/60000);R.innerHTML=`<div class="drCard"><b>Done: ${scr.ok} of ${scr.L.length} right in ${min} min.</b><p class="small">Practise speaking clearly: say the letter, then the answer words, e.g. "B, Kolkata".</p></div>`;scr=null;return}
   R.innerHTML=`<div class="drCard"><div class="small">Question ${scr.i+1} of ${scr.L.length} · read it aloud</div><p class="drQ" style="font-size:1.15rem">${esc(q.q)}</p>${q.o.map((o,k)=>`<p style="margin:6px 0"><b>${'ABCD'[k]}.</b> ${esc(o)}</p>`).join('')}
    <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn" type="button" id="scrMic">🎤 I am saying my answer</button>${'ABCD'.split('').map((c,k)=>`<button class="btn ghost scrL" type="button" data-k="${k}">I said ${c}</button>`).join('')}</div><div id="scrAfter"></div></div>`;
-  const pick=k=>{if(R.dataset.done==='1')return;R.dataset.done='1';const ok=k===q.a;if(ok)scr.ok++;const A=$('scrAfter');A.innerHTML=`<p><b style="color:${ok?'#59d499':'#ff6b6b'}">${ok?'Correct!':'Answer: '+'ABCD'[q.a]+'. '+esc(q.o[q.a])}</b></p>`;if(!ok&&typeof learnPanel==='function')learnPanel(A,q,k,{});A.insertAdjacentHTML('beforeend','<button class="btn" type="button" id="scrNext" style="margin-top:10px">Next question</button>');$('scrNext').onclick=()=>{scr.i++;R.dataset.done='';scribeQ()}};
+  const pick=k=>{if(R.dataset.done==='1')return;R.dataset.done='1';const ok=k===q.a;if(ok)scr.ok++;const A=$('scrAfter');A.innerHTML=`<p><b style="color:${ok?'#59d499':'#ff6b6b'}">${ok?'Correct!':'Answer: '+'ABCD'[q.a]+'. '+ot(q,q.a)}</b></p>`;if(!ok&&typeof learnPanel==='function')learnPanel(A,q,k,{});A.insertAdjacentHTML('beforeend','<button class="btn" type="button" id="scrNext" style="margin-top:10px">Next question</button>');$('scrNext').onclick=()=>{scr.i++;R.dataset.done='';scribeQ()}};
   R.dataset.done='';R.querySelectorAll('.scrL').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
   $('scrMic').onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('scrMic').textContent='Say it aloud, then tap the letter';return}
     try{const r=new SR();r.lang='en-IN';r.maxAlternatives=3;$('scrMic').textContent='Listening…';r.onresult=e=>{const said=[...e.results[0]].map(x=>x.transcript.trim().toUpperCase()).join(' ');const m=said.match(/\b(A|B|C|D)\b|^(A|B|C|D)/)||said.match(/\b(AY|BE|BEE|SEE|SEA|DEE)\b/);
@@ -1791,6 +1802,128 @@ function pwPractice(){try{const sec=$('practice');if(!sec||$('drBox'))return;con
 const _pwTod=drawPlusToday;drawPlusToday=function(){_pwTod();wnDraw();pwdToday()};
 try{pwPractice();drawMyDay();wnDraw()}catch(e){}
 window.addEventListener('hashchange',()=>{if(location.hash==='#practice')pwPractice()});
+
+/* ================= PASS THIS YEAR: marks finder, target score, picture reasoning, Sunday review,
+   GK memory cards, report a wrong question ================= */
+function ot(q,i){return q&&q.oh?String(q.o[i]):esc(q.o[i])}
+if(!st.tw||typeof st.tw!=='object')st.tw={};          // topic results by day (for the weekly review)
+if(!st.cards||typeof st.cards!=='object')st.cards={};  // GK memory cards
+if(!Array.isArray(st.hiddenQ))st.hiddenQ=[];           // reported questions, hidden from practice
+if(typeof st.target!=='number')st.target=0;
+
+/* ---------- 3. Picture reasoning (mirror image, water image, paper folding) ---------- */
+const PIC_CH='FGJLPQR2457'.split('');
+const picTxt=()=>shuffle(PIC_CH.slice()).slice(0,4).join('');
+const fig=(t,sx,sy,line)=>`<svg viewBox="0 0 170 64" width="150" height="56" role="img" aria-label="figure" class="pfig"><rect x="6" y="4" width="${line==='v'?140:158}" height="${line==='h'?48:56}" rx="6" fill="none" stroke="currentColor" stroke-opacity=".25"/><g transform="translate(76 30) scale(${sx} ${sy}) translate(-76 -30)"><text x="76" y="42" text-anchor="middle" font-size="31" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="currentColor">${t}</text></g>${line==='v'?'<line x1="156" y1="2" x2="156" y2="62" stroke="#ff7a59" stroke-width="3" stroke-dasharray="5 4"/><text x="160" y="12" font-size="10" fill="#ff7a59">M</text>':''}${line==='h'?'<line x1="2" y1="58" x2="168" y2="58" stroke="#5aa9ff" stroke-width="3" stroke-dasharray="5 4"/>':''}</svg>`;
+function picQ(t,q,opts,a,e,ml,w,img){const ix=shuffle([0,1,2,3]);return{id:'g'+Date.now().toString(36)+(gseq++),s:'Reasoning',t,q,img,o:ix.map(i=>opts[i]),a:ix.indexOf(a),e,ml,w:ix.map(i=>w[i]),gen:1,oh:1}}
+GEN.Reasoning['Mirror image'].push(()=>{const t=picTxt();
+  return picQ('Mirror image','A mirror is placed on the right side of the figure (dashed line). Which option is its mirror image?',[fig(t,-1,1),fig(t,1,-1),fig(t,-1,-1),fig(t,1,1)],0,
+   'In a mirror, left and right swap. Top stays top. So the figure is turned left-to-right only.','കണ്ണാടിയിൽ ഇടതും വലതും മാറും; മുകളും താഴെയും മാറില്ല.',
+   ['','That is the water image (upside down). A mirror on the side swaps only left and right.','That is the figure turned around (180°). A mirror does not turn it upside down.','That is the same figure. A mirror swaps left and right.'],fig(t,1,1,'v'))},
+ ()=>{const t=picTxt();
+  return picQ('Mirror image','Which option is the water image of the figure (water below it, blue line)?',[fig(t,1,-1),fig(t,-1,1),fig(t,-1,-1),fig(t,1,1)],0,
+   'In water, top and bottom swap. Left and right stay the same. So the figure is turned upside down only.','ജലപ്രതിബിംബത്തിൽ മുകളും താഴെയും മാറും; ഇടതും വലതും മാറില്ല.',
+   ['','That is the mirror image (left-right). Water swaps top and bottom.','That is the figure turned around (180°): both directions swapped.','That is the same figure.'],fig(t,1,1,'h'))});
+/* paper folding: 4x4 sheet, holes as [col,row] */
+const sheet=(holes,fold,punch)=>{const S=18,O=6;let g=`<svg viewBox="0 0 84 84" width="78" height="78" role="img" aria-label="paper" class="pfig"><rect x="${O}" y="${O}" width="${S*4}" height="${S*4}" rx="3" fill="none" stroke="currentColor" stroke-opacity=".55"/>`;
+  if(fold==='v')g+=`<rect x="${O}" y="${O}" width="${S*2}" height="${S*4}" fill="currentColor" fill-opacity=".10"/><line x1="${O+S*2}" y1="2" x2="${O+S*2}" y2="82" stroke="#ff7a59" stroke-width="2" stroke-dasharray="4 3"/><path d="M${O+8} ${O+S*2} q14 -16 ${S*2+6} 0" fill="none" stroke="#ff7a59" stroke-width="2"/><path d="M${O+S*2+14} ${O+S*2-3} l-2 5 l-4 -4z" fill="#ff7a59"/>`;
+  if(fold==='h')g+=`<rect x="${O}" y="${O}" width="${S*4}" height="${S*2}" fill="currentColor" fill-opacity=".10"/><line x1="2" y1="${O+S*2}" x2="82" y2="${O+S*2}" stroke="#5aa9ff" stroke-width="2" stroke-dasharray="4 3"/><path d="M${O+S*2} ${O+8} q-16 14 0 ${S*2+6}" fill="none" stroke="#5aa9ff" stroke-width="2"/>`;
+  holes.forEach(([c,r])=>{g+=`<circle cx="${O+S*c+S/2}" cy="${O+S*r+S/2}" r="5" fill="${punch?'#ff7a59':'currentColor'}"/>`});return g+'</svg>'};
+const hkey=h=>h.map(x=>x.join(',')).sort().join(';');
+GEN.Reasoning['Paper folding']=[()=>{const v=Math.random()<.5,fold=v?'v':'h';const c=v?rnd(2,3):rnd(0,3),r=v?rnd(0,3):rnd(2,3);
+  const right=v?[[c,r],[3-c,r]]:[[c,r],[c,3-r]],wrongAxis=v?[[c,r],[c,3-r]]:[[c,r],[3-c,r]],one=[[c,r]],diag=[[c,r],[3-c,3-r]];
+  let opts=[right,wrongAxis,one,diag];const seen=new Set();opts=opts.map(h=>{let k=hkey(h);if(seen.has(k)){h=[[c,r],[(c+1)%4,r]];k=hkey(h)}seen.add(k);return h});
+  return picQ('Paper folding',`A square paper is folded ${v?'from left to right':'from top to bottom'} along the dashed line, and one hole is punched (orange dot). How does it look when opened?`,
+   opts.map(h=>sheet(h)),0,`One fold makes two layers, so one punch gives 2 holes. The second hole is the mirror of the first across the fold line (${v?'left–right':'top–bottom'}).`,'ഒരു മടക്ക് = 2 പാളി = 2 ദ്വാരങ്ങൾ. മടക്ക് വരയുടെ മറുവശത്ത് കണ്ണാടി പോലെ.',
+   ['',`The second hole goes across the fold line. This fold is ${v?'up–down':'left–right'}, so the copy must be on the ${v?'left':'top'} side.`,'Two layers were punched, so there must be 2 holes.','The copy is a mirror across the fold only, not to the opposite corner.'],sheet([[c,r]],fold,true))},
+ ()=>{const c=rnd(2,3),r=rnd(2,3);const right=[[c,r],[3-c,r],[c,3-r],[3-c,3-r]];
+  const opts=[right,[[c,r],[3-c,r]],[[c,r],[c,3-r]],[[c,r],[3-c,3-r]]];
+  const img=`<svg viewBox="0 0 200 84" width="190" height="80" role="img" aria-label="two folds" class="pfig">${sheet([],'v').replace(/<\/?svg[^>]*>/g,'')}<g transform="translate(108 0)"><rect x="6" y="6" width="36" height="72" fill="none" stroke="currentColor" stroke-opacity=".55"/><rect x="6" y="6" width="36" height="36" fill="currentColor" fill-opacity=".10"/><line x1="2" y1="42" x2="46" y2="42" stroke="#5aa9ff" stroke-width="2" stroke-dasharray="4 3"/><circle cx="${6+(c-2)*18+9}" cy="${6+r*18+9}" r="5" fill="#ff7a59"/></g><text x="92" y="46" font-size="18" fill="currentColor">→</text></svg>`;
+  return picQ('Paper folding','A square paper is folded twice: first left to right, then top to bottom. One hole is punched (orange dot). How does it look when opened?',opts.map(h=>sheet(h)),0,
+   'Two folds make 4 layers, so one punch gives 4 holes. Open the top–bottom fold (2 holes), then the left–right fold (4 holes).','രണ്ട് മടക്ക് = 4 പാളി = 4 ദ്വാരങ്ങൾ.',
+   ['','That is only one fold opened. Two folds make 4 holes.','That is only one fold opened. Two folds make 4 holes.','There are 4 layers, so there must be 4 holes, not 2.'],img)}];
+if(typeof TRICK!=='undefined'){TRICK['Paper folding']='Each fold doubles the layers: 1 fold = 2 holes, 2 folds = 4 holes. Copy each hole across every fold line, like a mirror.'}
+
+/* ---------- 1. Marks finder: biggest marks to gain for the time ---------- */
+function topicAcc(s,t){const keys=s==='GA'&&t==='Current affairs'?['CA|Current affairs']:(s==='GA'&&t==='Static GK'?['GA|Static GK','GA|Computer','GA|Awards']:[s+'|'+t]);
+  let a=0,c=0;keys.forEach(k=>{const T=st.top[k];if(T){a+=T.a;c+=T.c}});return{a,c,acc:a>=3?c/a:null}}
+function marksFinder(){const out=[];for(const s in BLUEPRINT)BLUEPRINT[s].forEach(([t,n])=>{const x=topicAcc(s,t),acc=x.acc==null?.5:x.acc;out.push({s,t,n,a:x.a,acc:x.acc,gain:+(n*3*(1-acc)).toFixed(1)})});
+  return out.sort((a,b)=>b.gain-a.gain||b.n-a.n)}
+const SUBN={Quant:'Maths',Reasoning:'Reasoning',English:'English',GA:'GK'};
+function mfStart(s,t){let L=[];try{L=bpPick(s,t,10)}catch(e){}if(L.length<5)try{L=L.concat(fresh(s==='GA'&&t==='Current affairs'?'CA':s,10-L.length,t))}catch(e){}
+  if(!L.length){alert('No questions for this topic yet.');return}goPractice();setTimeout(()=>{startQuiz(L.slice(0,10),true,{learn:true});try{$('quiz').scrollIntoView({behavior:'smooth'})}catch(e){}},60)}
+function mfCard(n){const M=marksFinder().slice(0,n||3);
+  return `<div class="panel" id="mfBox" style="margin:12px 0;border-left:5px solid #ffc65c"><div class="row" style="justify-content:space-between;align-items:baseline"><b>Marks finder</b><span class="small">where your study time gains the most marks</span></div>
+   ${M.map(m=>`<div class="mfRow"><div style="min-width:0"><b>${esc(SUBN[m.s])}: ${esc(m.t)}</b><div class="small">${m.n} question${m.n>1?'s':''} in the exam · ${m.acc==null?'not practised yet':'you get '+Math.round(m.acc*100)+'% right'} · about <b>${m.gain}</b> marks to gain</div></div><button class="btn ghost" type="button" data-mf="${esc(m.s)}|${esc(m.t)}">Practise 10</button></div>`).join('')}</div>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-mf]');if(b){e.preventDefault();const [s,t]=b.dataset.mf.split('|');mfStart(s,t)}});
+
+/* ---------- 2. Target score from the cut-off ---------- */
+function lastMock(){const L=st.fmLast;return L&&L.r?L.r:null}
+function targetBox(){const P=(typeof PWD!=='undefined'&&PWD)||{},co=P.cutoff;const T=st.target||(co&&co.marks?Math.ceil(co.marks):0),r=lastMock();
+  let gap='';if(T&&r){const need=Math.max(0,Math.ceil(T-r.score));
+    if(!need)gap=`<p><b style="color:#59d499">Your last full mock (${r.score}) is above your target. Keep it there.</b></p>`;
+    else{const room=r.parts.map(p=>({s:p.s,room:Math.max(0,p.max-p.score)}));const tot=room.reduce((a,x)=>a+x.room,0)||1;
+      gap=`<p>Last full mock: <b>${r.score} / ${r.max}</b>. You need <b>${need} more marks</b>:</p><p class="small">${room.map(x=>`${esc(PNAME[x.s]||x.s)}: +${Math.round(need*x.room/tot)}`).join(' · ')}</p>`}}
+  else if(T)gap='<p class="small">Take a full mock to see how far you are.</p>';
+  return `<div class="panel" style="margin-top:18px" id="tgBox"><h2>My target score</h2>
+   <p class="small" style="margin-top:-6px">${co&&co.marks?`Last cut-off for ${esc(co.category||'PwD')}${co.region?' ('+esc(co.region)+')':''}: <b>${esc(String(co.marks))}</b>${co.year?' · '+esc(co.year):''}. Aim a little above it.`:'SSC MTS cut-offs are set state by state. The app adds the latest PwD cut-off here when SSC publishes it. Until then, set your own target.'}</p>
+   <div class="row" style="justify-content:flex-start;gap:8px;align-items:center;flex-wrap:wrap"><label>Target <input id="tgIn" type="number" min="30" max="270" step="1" value="${T||''}" placeholder="e.g. 120" style="width:100px;min-height:44px;font-size:16px;border-radius:10px;padding:0 10px"> / 270</label><button class="btn ghost" id="tgSave" type="button">Save</button></div>${gap}</div>`}
+function tgBind(){if(!$('tgBox'))return;$('tgSave').onclick=()=>{const v=Math.round(+$('tgIn').value);if(v>=30&&v<=270){st.target=v;save();try{drawExam()}catch(e){}}}}
+
+/* ---------- 4. Weekly (Sunday) review ---------- */
+const _psRec=rec;rec=function(q,ok,skip){_psRec(q,ok,skip);try{if(skip)return;const t=(q.s==='CA'?'Current affairs':topicOf(q)),k=q.s+'|'+t,D=st.tw[dkey]||(st.tw[dkey]={}),x=D[k]||(D[k]={a:0,c:0});x.a++;if(ok)x.c++;
+  const ks=Object.keys(st.tw).sort();while(ks.length>28)delete st.tw[ks.shift()];
+  if(!ok&&(q.s==='GA'||q.s==='CA')&&q.o&&q.o[q.a]!=null&&!q.oh){st.cards[q.id||q.q]={q:q.q,a:String(q.o[q.a]),e:q.e||'',ml:q.ml||'',s:q.s,step:0,due:addD(dkey,1)};const C=Object.keys(st.cards);if(C.length>400)C.slice(0,C.length-400).forEach(k=>delete st.cards[k])}}catch(e){}};
+function weekSum(endD){let a=0,c=0,m=0,cls=0;const T={};for(let i=0;i<7;i++){const d=addD(endD,-i),D=st.tw[d]||{};for(const k in D){a+=D[k].a;c+=D[k].c;const x=T[k]||(T[k]={a:0,c:0});x.a+=D[k].a;x.c+=D[k].c}m+=totMin(d);try{cls+=classesOn(d)}catch(e){}}
+  return{a,c,m,cls,T}}
+function weekReview(){const W=weekSum(dkey),P=weekSum(addD(dkey,-7)),acc=W.a?Math.round(W.c/W.a*100):0,pacc=P.a?Math.round(P.c/P.a*100):null;
+  const wrong=Object.entries(W.T).map(([k,x])=>({k,w:x.a-x.c,a:x.a})).filter(x=>x.w>0).sort((a,b)=>b.w-a.w).slice(0,3);
+  const focus=marksFinder().slice(0,3);const arrow=(n,p)=>p==null?'':n>p?` <span style="color:#59d499">▲ from ${p}</span>`:n<p?` <span style="color:#ff6b6b">▼ from ${p}</span>`:' (same)';
+  return `<div class="panel" id="wkRev" style="margin:12px 0;border-left:5px solid #5aa9ff"><h2 style="margin-bottom:4px">${new Date().getDay()===0?'Sunday review':'This week so far'}</h2><p class="small" style="margin-top:0">Last 7 days</p>
+   <div class="wkGrid"><div><b>${W.m}</b><span class="small">minutes${arrow(W.m,P.a||P.m?P.m:null)}</span></div><div><b>${W.cls}</b><span class="small">classes</span></div><div><b>${W.a}</b><span class="small">questions${arrow(W.a,P.a||null)}</span></div><div><b>${acc}%</b><span class="small">right${pacc==null?'':arrow(acc,pacc)}</span></div></div>
+   ${wrong.length?`<p style="margin:10px 0 4px"><b>Most mistakes this week</b></p><p class="small" style="margin:0">${wrong.map(x=>{const [s,t]=x.k.split('|');return `${esc(t)} (${x.w} wrong of ${x.a})`}).join(' · ')}</p>`:''}
+   <p style="margin:10px 0 4px"><b>Next week, focus on</b></p><p class="small" style="margin:0">${focus.map(f=>`${esc(SUBN[f.s])}: ${esc(f.t)}`).join(' · ')}</p></div>`}
+
+/* ---------- 5. GK memory cards (1 → 3 → 7 → 14 → 30 days) ---------- */
+const STEPS=[1,3,7,14,30];
+const dueCards=()=>Object.entries(st.cards).filter(([k,c])=>c.due<=dkey).map(([k,c])=>Object.assign({k},c));
+function cardsBtn(){const n=dueCards().length,t=Object.keys(st.cards).length;if(!t)return '';
+  return `<div class="panel" id="mcBox" style="margin:12px 0;border-left:5px solid #c39bff;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap"><div><b>GK memory cards</b><div class="small">${n?`${n} card${n>1?'s':''} to revise today`:'All revised for today'} · ${t} in total (from GK questions you got wrong)</div></div>${n?'<button class="btn" type="button" id="mcGo">Revise now</button>':''}</div>`}
+function cardRun(){const L=shuffle(dueCards());if(!L.length)return;let i=0,know=0;const box=document.createElement('div');box.id='mcRun';box.className='mcOverlay';document.body.appendChild(box);
+  const end=()=>{box.innerHTML=`<div class="mcCard"><b>Done: ${know} of ${L.length} remembered.</b><p class="small">Cards you forgot come back tomorrow. Cards you knew come back later.</p><button class="btn" id="mcClose" type="button">Close</button></div>`;$('mcClose').onclick=()=>{box.remove();save();try{drawPlusToday()}catch(e){}}};
+  const show=()=>{const c=L[i];if(!c)return end();box.innerHTML=`<div class="mcCard"><div class="small">Card ${i+1} of ${L.length} · ${c.s==='CA'?'Current affairs':'GK'}</div><p class="mcQ">${esc(c.q)}</p><button class="btn" id="mcShow" type="button">Show answer</button><div id="mcA" hidden><p class="mcAns">${esc(c.a)}</p><p class="small">${esc(c.e)}</p>${c.ml?`<p class="small" lang="ml">${esc(c.ml)}</p>`:''}<div class="row" style="justify-content:flex-start;gap:8px"><button class="btn ghost" id="mcNo" type="button">I forgot</button><button class="btn" id="mcYes" type="button">I knew it</button></div></div><button class="speak" id="mcX" type="button" style="margin-top:10px">Stop for now</button></div>`;
+    $('mcShow').onclick=()=>{$('mcA').hidden=false;$('mcShow').hidden=true;try{speak(c.a)}catch(e){}};
+    const grade=ok=>{const C=st.cards[c.k];if(C){C.step=ok?Math.min(STEPS.length-1,C.step+1):0;C.due=addD(dkey,ok?STEPS[C.step]:1);if(ok&&C.step===STEPS.length-1&&c.step===STEPS.length-1)delete st.cards[c.k]}if(ok)know++;i++;show()};
+    $('mcNo').onclick=()=>grade(false);$('mcYes').onclick=()=>grade(true);$('mcX').onclick=()=>{box.remove();save();try{drawPlusToday()}catch(e){}}};show()}
+document.addEventListener('click',e=>{if(e.target&&e.target.id==='mcGo'){e.preventDefault();cardRun()}});
+
+/* ---------- 6. Report a wrong question ---------- */
+const REPO_ISSUE='https://github.com/amal-mani/amal-ssc-mts/issues/new';
+function reportUrl(q,why){const o=q.oh?['(picture A)','(picture B)','(picture C)','(picture D)']:q.o;
+  const body=`Problem: ${why}\n\nQuestion: ${q.q}\nA) ${o[0]}\nB) ${o[1]}\nC) ${o[2]}\nD) ${o[3]}\nApp answer: ${'ABCD'[q.a]}\nExplanation: ${q.e||''}\nid: ${q.id||''} · topic: ${q.t||''} · subject: ${q.s||''}\n\n(Reported from the MTS Study app. The morning update will check and fix or remove this question.)`;
+  return REPO_ISSUE+'?labels=wrong-question&title='+encodeURIComponent('Wrong question: '+String(q.q).slice(0,70))+'&body='+encodeURIComponent(body.slice(0,6000))}
+function reportBox(host,q){if(!host||host.querySelector('.rpBox'))return;const d=document.createElement('div');d.className='rpBox';
+  d.innerHTML=`<button class="speak rpOpen" type="button">⚑ Report this question</button><div class="rpForm" hidden><p class="small" style="margin:8px 0 4px">What is wrong?</p><div class="row" style="justify-content:flex-start;gap:6px;flex-wrap:wrap">${['The answer is wrong','A fact is wrong','The question is confusing','Two answers are right'].map(x=>`<button class="btn ghost rpWhy" type="button">${x}</button>`).join('')}</div></div><p class="small rpDone" hidden></p>`;
+  host.appendChild(d);d.querySelector('.rpOpen').onclick=()=>{d.querySelector('.rpForm').hidden=false};
+  d.querySelectorAll('.rpWhy').forEach(b=>b.onclick=()=>{const why=b.textContent,key=q.id||q.q;if(!st.hiddenQ.includes(key))st.hiddenQ.push(key);st.hiddenQ=st.hiddenQ.slice(-500);(st.reports=st.reports||[]).push({d:dkey,id:q.id,q:String(q.q).slice(0,200),why});st.reports=st.reports.slice(-100);save();
+    for(let i=Q.length-1;i>=0;i--)if(Q[i].id===q.id||Q[i].q===q.q)Q.splice(i,1);
+    d.querySelector('.rpForm').hidden=true;d.querySelector('.rpOpen').hidden=true;const done=d.querySelector('.rpDone');done.hidden=false;
+    done.innerHTML=`Thank you. This question is hidden from your practice now. <a href="${esc(reportUrl(q,why))}" target="_blank" rel="noopener">Send it to the morning update ↗</a> (opens GitHub; tap "Submit new issue").`})}
+const _psAns=answer;answer=function(i){if(answered)return;const q=set[qi];_psAns(i);try{reportBox($('after'),q)}catch(e){}};
+const hid=x=>st.hiddenQ.length&&(st.hiddenQ.includes(x.id)||st.hiddenQ.includes(x.q));
+const _psFresh=fresh;fresh=function(){return _psFresh.apply(this,arguments).filter(x=>!hid(x))};
+const _psPick=bpPick;bpPick=function(){return _psPick.apply(this,arguments).filter(x=>!hid(x))};
+
+/* ---------- place everything ---------- */
+const _psTod=drawPlusToday;drawPlusToday=function(){_psTod();try{['mfBox','wkRev','mcBox'].forEach(id=>{const x=$(id);if(x)x.remove()});
+  const after=$('pwdRemind')||$('wnBox')||$('nextStep')||document.querySelector('#today .hello');let h=cardsBtn()+mfCard(3);if(new Date().getDay()===0)h=weekReview()+h;after.insertAdjacentHTML('afterend',h)}catch(e){}};
+const _psExam=drawExam;drawExam=function(){_psExam();try{const el=$('examBody');if(el&&!$('tgBox')){const a=$('spdBox')||$('fmRes')||el.firstElementChild;a.insertAdjacentHTML('afterend',targetBox());tgBind()}}catch(e){}};
+function drawProgPlus(){try{const sec=$('progress');if(!sec)return;['wkRev2','mfAll'].forEach(id=>{const x=$(id);if(x)x.remove()});
+  const h=document.createElement('div');h.id='wkRev2';h.innerHTML=weekReview();sec.querySelector('h1,h2').insertAdjacentElement('afterend',h);
+  const M=marksFinder();const t=document.createElement('div');t.id='mfAll';t.className='panel';t.style.marginTop='18px';
+  t.innerHTML=`<h2>All topics by marks to gain</h2><p class="small" style="margin-top:-6px">Questions in the exam × how often you get it wrong. Top of the list = best use of your time.</p>${M.map(m=>`<div class="mfRow"><div style="min-width:0"><b>${esc(SUBN[m.s])}: ${esc(m.t)}</b><div class="small">${m.n} in exam · ${m.acc==null?'not practised':Math.round(m.acc*100)+'% right'} · ${m.gain} marks to gain</div></div><button class="btn ghost" type="button" data-mf="${esc(m.s)}|${esc(m.t)}">Practise</button></div>`).join('')}`;h.insertAdjacentElement('afterend',t)}catch(e){}}
+window.addEventListener('hashchange',()=>{if(location.hash==='#progress')drawProgPlus()});
+try{drawPlusToday()}catch(e){}if(location.hash==='#progress')drawProgPlus();
 
 /* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
 let MON={months:[]},monSel=0;
