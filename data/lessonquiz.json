@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-28",
  "passMark": 60,
  "quizzes": {
   "Quant0": [
@@ -1223,6 +1223,814 @@
     "a": 0,
     "e": "Kosala's capital was Shravasti (Uttar Pradesh).",
     "ml": "കോസലത്തിന്റെ തലസ്ഥാനം ശ്രാവസ്തി."
+   }
+  ],
+  "Quant4": [
+   {
+    "t": "Percentage",
+    "q": "25% of 80 = ?",
+    "o": [
+     "20",
+     "25",
+     "16",
+     "32"
+    ],
+    "a": 0,
+    "e": "25% = 1/4. 80 ÷ 4 = 20.",
+    "ml": "25% = 1/4. 80 ÷ 4 = 20.",
+    "w": [
+     "",
+     "You took 25 as the answer itself.",
+     "That is 20% of 80.",
+     "That is 40% of 80."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "15% of 200 = ?",
+    "o": [
+     "30",
+     "15",
+     "20",
+     "35"
+    ],
+    "a": 0,
+    "e": "1% of 200 = 2. 15% = 15 × 2 = 30.",
+    "ml": "200-ന്റെ 1% = 2. 15% = 30.",
+    "w": [
+     "",
+     "15% of 100 is 15, but this is 200.",
+     "That is 10% of 200.",
+     "You added an extra 5."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "40% of 350 = ?",
+    "o": [
+     "140",
+     "120",
+     "175",
+     "160"
+    ],
+    "a": 0,
+    "e": "10% of 350 = 35. 40% = 4 × 35 = 140.",
+    "ml": "350-ന്റെ 10% = 35. 40% = 140.",
+    "w": [
+     "",
+     "You may have taken 10% as 30.",
+     "That is 50% of 350.",
+     "You may have taken 10% as 40."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "Write 3/4 as a percentage.",
+    "o": [
+     "75%",
+     "34%",
+     "60%",
+     "80%"
+    ],
+    "a": 0,
+    "e": "3/4 = 75/100 = 75%.",
+    "ml": "3/4 = 75/100 = 75%.",
+    "w": [
+     "",
+     "You wrote the digits 3 and 4 together.",
+     "3/5 is 60%, not 3/4.",
+     "4/5 is 80%."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "Write 20% as a fraction.",
+    "o": [
+     "1/5",
+     "1/4",
+     "1/20",
+     "2/5"
+    ],
+    "a": 0,
+    "e": "20% = 20/100 = 1/5.",
+    "ml": "20% = 20/100 = 1/5.",
+    "w": [
+     "",
+     "1/4 is 25%.",
+     "1/20 is 5%.",
+     "2/5 is 40%."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "What percentage of 72 is 18?",
+    "o": [
+     "25%",
+     "18%",
+     "20%",
+     "30%"
+    ],
+    "a": 0,
+    "e": "18 ÷ 72 = 1/4 = 25%.",
+    "ml": "18 ÷ 72 = 1/4 = 25%.",
+    "w": [
+     "",
+     "You took the number 18 as the percent.",
+     "20% of 72 is 14.4.",
+     "30% of 72 is 21.6."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "120% of 50 = ?",
+    "o": [
+     "60",
+     "70",
+     "55",
+     "120"
+    ],
+    "a": 0,
+    "e": "120% = 100% + 20%. 50 + 10 = 60.",
+    "ml": "50-ന്റെ 120% = 50 + 10 = 60.",
+    "w": [
+     "",
+     "You added 20 instead of 20% of 50 (= 10).",
+     "That is 110% of 50.",
+     "You took 120 as the answer."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "5% of 640 = ?",
+    "o": [
+     "32",
+     "64",
+     "30",
+     "3.2"
+    ],
+    "a": 0,
+    "e": "10% of 640 = 64. 5% is half: 32.",
+    "ml": "10% = 64. 5% = പകുതി = 32.",
+    "w": [
+     "",
+     "That is 10%, not 5%.",
+     "Close, but 5% of 640 is exactly 32.",
+     "That is 0.5%. Move the decimal one place less."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "35% of 120 = ?",
+    "o": [
+     "42",
+     "35",
+     "48",
+     "38"
+    ],
+    "a": 0,
+    "e": "10% of 120 = 12. 30% = 36 and 5% = 6. 36 + 6 = 42.",
+    "ml": "30% = 36, 5% = 6. ആകെ 42.",
+    "w": [
+     "",
+     "You took 35 as the answer.",
+     "That is 40% of 120.",
+     "You may have taken 5% as 2."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "A student scored 9 marks out of 45. What is his percentage?",
+    "o": [
+     "20%",
+     "9%",
+     "25%",
+     "45%"
+    ],
+    "a": 0,
+    "e": "9 ÷ 45 = 1/5 = 20%.",
+    "ml": "9 ÷ 45 = 1/5 = 20%.",
+    "w": [
+     "",
+     "You took the marks as the percent.",
+     "25% of 45 is 11.25.",
+     "You took the total as the percent."
+    ],
+    "s": "Quant"
+   }
+  ],
+  "Quant5": [
+   {
+    "t": "Percentage",
+    "q": "1/8 as a percentage = ?",
+    "o": [
+     "12.5%",
+     "8%",
+     "18%",
+     "15%"
+    ],
+    "a": 0,
+    "e": "From the table: 1/8 = 12.5%.",
+    "ml": "പട്ടിക: 1/8 = 12.5%.",
+    "w": [
+     "",
+     "You took 8 as the percent.",
+     "You wrote 1 and 8 together.",
+     "1/8 is less than 15%. It is 12.5%."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "1/3 as a percentage = ?",
+    "o": [
+     "33⅓%",
+     "30%",
+     "3%",
+     "13%"
+    ],
+    "a": 0,
+    "e": "1/3 = 33⅓% (about 33.33%).",
+    "ml": "1/3 = 33⅓%.",
+    "w": [
+     "",
+     "1/3 is a little more than 30%.",
+     "You took 3 as the percent.",
+     "You wrote 1 and 3 together."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "1/6 as a percentage = ?",
+    "o": [
+     "16⅔%",
+     "6%",
+     "15%",
+     "20%"
+    ],
+    "a": 0,
+    "e": "1/6 = half of 1/3 = half of 33⅓% = 16⅔%.",
+    "ml": "1/6 = 16⅔%.",
+    "w": [
+     "",
+     "You took 6 as the percent.",
+     "1/6 is a little more than 15%.",
+     "1/5 is 20%, not 1/6."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "Increase 300 by 20%.",
+    "o": [
+     "360",
+     "320",
+     "340",
+     "600"
+    ],
+    "a": 0,
+    "e": "20% of 300 = 60. 300 + 60 = 360.",
+    "ml": "300-ന്റെ 20% = 60. 300 + 60 = 360.",
+    "w": [
+     "",
+     "You added 20, not 20% of 300.",
+     "You added 40. 20% of 300 is 60.",
+     "You doubled it."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "Decrease 500 by 10%.",
+    "o": [
+     "450",
+     "490",
+     "400",
+     "550"
+    ],
+    "a": 0,
+    "e": "10% of 500 = 50. 500 − 50 = 450.",
+    "ml": "500 − 50 = 450.",
+    "w": [
+     "",
+     "You took away 10, not 10% of 500.",
+     "You took away 20%.",
+     "You increased it instead of decreasing."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "Increase 800 by 25%.",
+    "o": [
+     "1000",
+     "825",
+     "900",
+     "1025"
+    ],
+    "a": 0,
+    "e": "25% = 1/4. 800 ÷ 4 = 200. 800 + 200 = 1000.",
+    "ml": "25% = 1/4. 800 + 200 = 1000.",
+    "w": [
+     "",
+     "You added 25, not 25% of 800.",
+     "You added 100. 25% of 800 is 200.",
+     "You added 225."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "A number increased by 20% becomes 60. What is the number?",
+    "o": [
+     "50",
+     "48",
+     "40",
+     "72"
+    ],
+    "a": 0,
+    "e": "120% of the number = 60. Number = 60 ÷ 1.2 = 50.",
+    "ml": "120% = 60. സംഖ്യ = 60 ÷ 1.2 = 50.",
+    "w": [
+     "",
+     "You took 20% of 60 away. The 20% is on the old number.",
+     "You took 1/3 off.",
+     "You increased 60 by 20%."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "1/5 = 20%. So 2/5 = ?",
+    "o": [
+     "40%",
+     "25%",
+     "20%",
+     "50%"
+    ],
+    "a": 0,
+    "e": "2/5 is twice 1/5. 2 × 20% = 40%.",
+    "ml": "2/5 = 2 × 20% = 40%.",
+    "w": [
+     "",
+     "2/5 is not 25%. 1/4 is 25%.",
+     "That is 1/5, not 2/5.",
+     "1/2 is 50%."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "What is 75% as a fraction?",
+    "o": [
+     "3/4",
+     "7/5",
+     "3/5",
+     "1/75"
+    ],
+    "a": 0,
+    "e": "75% = 75/100 = 3/4.",
+    "ml": "75% = 3/4.",
+    "w": [
+     "",
+     "You wrote 7 and 5 as a fraction.",
+     "3/5 is 60%.",
+     "That is 0.0133, not 75%."
+    ],
+    "s": "Quant"
+   },
+   {
+    "t": "Percentage",
+    "q": "Price goes up from ₹40 to ₹50. What is the percentage increase?",
+    "o": [
+     "25%",
+     "20%",
+     "10%",
+     "50%"
+    ],
+    "a": 0,
+    "e": "Increase = 10. 10 ÷ 40 = 1/4 = 25%. Always divide by the old price.",
+    "ml": "കൂടിയത് 10. 10 ÷ 40 = 25%.",
+    "w": [
+     "",
+     "You divided by the new price (50). Use the old price.",
+     "You took the increase (10) as the percent.",
+     "50% of 40 is 20, not 10."
+    ],
+    "s": "Quant"
+   }
+  ],
+  "Reasoning3": [
+   {
+    "t": "Number series",
+    "q": "2, 5, 10, 17, 26, ?",
+    "o": [
+     "37",
+     "35",
+     "36",
+     "39"
+    ],
+    "a": 0,
+    "e": "The gaps are 3, 5, 7, 9, 11 (odd numbers). 26 + 11 = 37.",
+    "ml": "വ്യത്യാസം 3, 5, 7, 9, 11. 26 + 11 = 37.",
+    "w": [
+     "",
+     "You added 9 again. The gap grows by 2.",
+     "You added 10.",
+     "You added 13."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Number series",
+    "q": "1, 4, 9, 16, 25, ?",
+    "o": [
+     "36",
+     "30",
+     "35",
+     "49"
+    ],
+    "a": 0,
+    "e": "These are squares: 1², 2², 3², 4², 5². Next is 6² = 36.",
+    "ml": "വർഗ്ഗങ്ങൾ. 6² = 36.",
+    "w": [
+     "",
+     "You added 5.",
+     "You added 10.",
+     "That is 7², one too far."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Number series",
+    "q": "1, 8, 27, 64, ?",
+    "o": [
+     "125",
+     "100",
+     "81",
+     "216"
+    ],
+    "a": 0,
+    "e": "These are cubes: 1³, 2³, 3³, 4³. Next is 5³ = 125.",
+    "ml": "ഘനങ്ങൾ. 5³ = 125.",
+    "w": [
+     "",
+     "100 is 10², not a cube.",
+     "81 is 9², not the next cube.",
+     "216 is 6³, one too far."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Number series",
+    "q": "5, 11, 23, 47, ?",
+    "o": [
+     "95",
+     "94",
+     "71",
+     "96"
+    ],
+    "a": 0,
+    "e": "Each number is ×2 + 1. 47 × 2 + 1 = 95.",
+    "ml": "×2 + 1. 47 × 2 + 1 = 95.",
+    "w": [
+     "",
+     "You did ×2 only. Add 1 too.",
+     "You added 24.",
+     "You did ×2 + 2."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Number series",
+    "q": "100, 95, 85, 70, ?",
+    "o": [
+     "50",
+     "55",
+     "45",
+     "60"
+    ],
+    "a": 0,
+    "e": "The gaps are −5, −10, −15, −20. 70 − 20 = 50.",
+    "ml": "−5, −10, −15, −20. 70 − 20 = 50.",
+    "w": [
+     "",
+     "You subtracted 15 again.",
+     "You subtracted 25.",
+     "You subtracted 10."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Letter series",
+    "q": "A, C, E, G, ?",
+    "o": [
+     "I",
+     "H",
+     "J",
+     "K"
+    ],
+    "a": 0,
+    "e": "Skip one letter each time: A (B) C (D) E (F) G (H) I.",
+    "ml": "ഓരോ അക്ഷരം ഒഴിവാക്കുന്നു. G-ക്ക് ശേഷം I.",
+    "w": [
+     "",
+     "H is the very next letter. You must skip one.",
+     "You skipped two letters.",
+     "You skipped three letters."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Letter series",
+    "q": "Z, X, V, T, ?",
+    "o": [
+     "R",
+     "S",
+     "Q",
+     "U"
+    ],
+    "a": 0,
+    "e": "The letters go back by 2: Z, X, V, T, R.",
+    "ml": "2 അക്ഷരം പിന്നോട്ട്. T → R.",
+    "w": [
+     "",
+     "S is only one step back.",
+     "Q is three steps back.",
+     "U goes forward, not back."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Letter series",
+    "q": "B, E, H, K, ?",
+    "o": [
+     "N",
+     "M",
+     "O",
+     "L"
+    ],
+    "a": 0,
+    "e": "Each step is +3: B(2), E(5), H(8), K(11), N(14).",
+    "ml": "+3 വീതം. K(11) + 3 = N(14).",
+    "w": [
+     "",
+     "M is +2.",
+     "O is +4.",
+     "L is +1."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Letter series",
+    "q": "AZ, BY, CX, DW, ?",
+    "o": [
+     "EV",
+     "EU",
+     "FV",
+     "EW"
+    ],
+    "a": 0,
+    "e": "First letter goes forward (A, B, C, D, E). Second letter goes back (Z, Y, X, W, V). Answer: EV.",
+    "ml": "ആദ്യ അക്ഷരം മുന്നോട്ട്, രണ്ടാമത്തേത് പിന്നോട്ട്: EV.",
+    "w": [
+     "",
+     "The second letter after W is V, not U.",
+     "The first letter after D is E, not F.",
+     "The second letter must change from W to V."
+    ],
+    "s": "Reasoning"
+   },
+   {
+    "t": "Number series",
+    "q": "2, 6, 12, 20, 30, ?",
+    "o": [
+     "42",
+     "40",
+     "36",
+     "44"
+    ],
+    "a": 0,
+    "e": "Gaps are 4, 6, 8, 10, 12. 30 + 12 = 42.",
+    "ml": "വ്യത്യാസം 4, 6, 8, 10, 12. 30 + 12 = 42.",
+    "w": [
+     "",
+     "You added 10 again.",
+     "You added 6.",
+     "You added 14."
+    ],
+    "s": "Reasoning"
+   }
+  ],
+  "English3": [
+   {
+    "t": "Fill in the blanks",
+    "q": "Which word is a proper noun?",
+    "o": [
+     "Kochi",
+     "city",
+     "river",
+     "teacher"
+    ],
+    "a": 0,
+    "e": "A proper noun is the name of a particular person, place or thing. Kochi is the name of one city, so it starts with a capital letter.",
+    "ml": "Proper noun = പ്രത്യേക പേര്. Kochi.",
+    "w": [
+     "",
+     "'city' is a common noun.",
+     "'river' is a common noun.",
+     "'teacher' is a common noun."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "Which word is a collective noun?",
+    "o": [
+     "herd",
+     "cow",
+     "grass",
+     "farm"
+    ],
+    "a": 0,
+    "e": "A collective noun names a group. A herd is a group of cows.",
+    "ml": "Collective noun = കൂട്ടം. herd.",
+    "w": [
+     "",
+     "'cow' is one animal, a common noun.",
+     "'grass' is a material noun.",
+     "'farm' is a common noun for a place."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "Which word is an abstract noun?",
+    "o": [
+     "honesty",
+     "table",
+     "gold",
+     "boy"
+    ],
+    "a": 0,
+    "e": "An abstract noun is a quality or feeling we cannot touch. Honesty is a quality.",
+    "ml": "Abstract noun = തൊടാൻ കഴിയാത്തത്. honesty.",
+    "w": [
+     "",
+     "A table can be touched. It is a common noun.",
+     "Gold is a material noun.",
+     "Boy is a common noun."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "Which word is a material noun?",
+    "o": [
+     "silver",
+     "happiness",
+     "army",
+     "Delhi"
+    ],
+    "a": 0,
+    "e": "A material noun names a substance things are made of. Silver is a material.",
+    "ml": "Material noun = വസ്തു. silver.",
+    "w": [
+     "",
+     "Happiness is an abstract noun.",
+     "Army is a collective noun.",
+     "Delhi is a proper noun."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "A ____ of fish.",
+    "o": [
+     "school",
+     "herd",
+     "flock",
+     "pack"
+    ],
+    "a": 0,
+    "e": "A group of fish is called a school (or shoal).",
+    "ml": "മീൻ കൂട്ടം = school.",
+    "w": [
+     "",
+     "Herd is for cattle.",
+     "Flock is for birds or sheep.",
+     "Pack is for wolves or dogs."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "A ____ of birds.",
+    "o": [
+     "flock",
+     "herd",
+     "swarm",
+     "pride"
+    ],
+    "a": 0,
+    "e": "A group of birds is a flock.",
+    "ml": "പക്ഷിക്കൂട്ടം = flock.",
+    "w": [
+     "",
+     "Herd is for cattle.",
+     "Swarm is for bees or insects.",
+     "Pride is for lions."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Error spotting",
+    "q": "Find the error: The jury (A) / have given (B) / its decision. (C) / No error (D)",
+    "o": [
+     "B",
+     "A",
+     "C",
+     "D"
+    ],
+    "a": 0,
+    "e": "Here the jury acts as one group ('its decision'), so the verb is singular: 'has given'. The error is in B.",
+    "ml": "Jury ഒരു ഗ്രൂപ്പായി പ്രവർത്തിക്കുന്നു: has given.",
+    "w": [
+     "",
+     "'The jury' is correct.",
+     "'its decision' is correct, it matches one group.",
+     "There is an error in B."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "Choose the abstract noun of 'brave'.",
+    "o": [
+     "bravery",
+     "bravely",
+     "braver",
+     "braves"
+    ],
+    "a": 0,
+    "e": "The noun form of the quality 'brave' is 'bravery'.",
+    "ml": "Brave-ന്റെ abstract noun: bravery.",
+    "w": [
+     "",
+     "Bravely is an adverb.",
+     "Braver is a comparative adjective.",
+     "Braves is not the noun of the quality."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "Which is a countable noun?",
+    "o": [
+     "chair",
+     "water",
+     "milk",
+     "sugar"
+    ],
+    "a": 0,
+    "e": "We can count chairs: one chair, two chairs. Water, milk and sugar are uncountable.",
+    "ml": "Chair എണ്ണാം. ബാക്കി എണ്ണാൻ കഴിയില്ല.",
+    "w": [
+     "",
+     "Water is uncountable.",
+     "Milk is uncountable.",
+     "Sugar is uncountable."
+    ],
+    "s": "English"
+   },
+   {
+    "t": "Fill in the blanks",
+    "q": "Choose the correct plural of 'child'.",
+    "o": [
+     "children",
+     "childs",
+     "childes",
+     "childrens"
+    ],
+    "a": 0,
+    "e": "'Child' has an irregular plural: 'children'.",
+    "ml": "Child-ന്റെ plural: children.",
+    "w": [
+     "",
+     "Child does not take -s.",
+     "Child does not take -es.",
+     "Children is already plural, no -s."
+    ],
+    "s": "English"
    }
   ]
  }

@@ -1,6 +1,412 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-28",
  "days": [
+  {
+   "date": "2026-11-28",
+   "title": "Daily mock",
+   "q": [
+    {
+     "s": "Quant",
+     "t": "Simplification",
+     "q": "36 × 15 = ?",
+     "o": [
+      "540",
+      "520",
+      "560",
+      "450"
+     ],
+     "a": 0,
+     "e": "36 × 15 = 36 × 10 + 36 × 5. That is 360 + 180 = 540.",
+     "ml": "36 × 10 = 360, 36 × 5 = 180. ആകെ 540.",
+     "w": [
+      "",
+      "You may have taken 36 × 5 as 160. It is 180.",
+      "You added an extra 20.",
+      "You did 30 × 15 only and forgot 6 × 15."
+     ]
+    },
+    {
+     "s": "Quant",
+     "t": "Simplification",
+     "q": "18 × 12 + 64 ÷ 8 = ?",
+     "o": [
+      "224",
+      "35",
+      "216",
+      "232"
+     ],
+     "a": 0,
+     "e": "BODMAS: do × and ÷ first. 18 × 12 = 216 and 64 ÷ 8 = 8. Then 216 + 8 = 224.",
+     "ml": "ആദ്യം ഗുണനവും ഹരണവും: 216 + 8 = 224.",
+     "w": [
+      "",
+      "You worked left to right without BODMAS.",
+      "You forgot to add 64 ÷ 8 = 8.",
+      "You added 16 instead of 8. 64 ÷ 8 = 8."
+     ]
+    },
+    {
+     "s": "Quant",
+     "t": "Percentage",
+     "q": "60% of 450 = ?",
+     "o": [
+      "270",
+      "250",
+      "300",
+      "290"
+     ],
+     "a": 0,
+     "e": "10% of 450 is 45. 60% is 6 × 45 = 270.",
+     "ml": "450-ന്റെ 10% = 45. 60% = 45 × 6 = 270.",
+     "w": [
+      "",
+      "You may have taken 10% as 41.6. It is 45.",
+      "300 is 2/3 of 450, not 60%.",
+      "You added an extra 20."
+     ]
+    },
+    {
+     "s": "Quant",
+     "t": "Simplification",
+     "q": "999 × 7 = ?",
+     "o": [
+      "6993",
+      "6939",
+      "7993",
+      "6999"
+     ],
+     "a": 0,
+     "e": "999 × 7 = 1000 × 7 − 7. That is 7000 − 7 = 6993.",
+     "ml": "999 × 7 = 7000 − 7 = 6993.",
+     "w": [
+      "",
+      "You swapped the last two digits.",
+      "You added 1000 instead of subtracting 7.",
+      "You subtracted 1 instead of 7."
+     ]
+    },
+    {
+     "s": "Quant",
+     "t": "Simplification",
+     "q": "625 ÷ 25 = ?",
+     "o": [
+      "25",
+      "35",
+      "15",
+      "20"
+     ],
+     "a": 0,
+     "e": "25 × 25 = 625. So 625 ÷ 25 = 25.",
+     "ml": "25 × 25 = 625. അതുകൊണ്ട് ഉത്തരം 25.",
+     "w": [
+      "",
+      "25 × 35 = 875, too big.",
+      "25 × 15 = 375, too small.",
+      "25 × 20 = 500, too small."
+     ]
+    },
+    {
+     "s": "Reasoning",
+     "t": "Analogy",
+     "q": "Doctor : Hospital :: Teacher : ?",
+     "o": [
+      "School",
+      "Book",
+      "Student",
+      "Chalk"
+     ],
+     "a": 0,
+     "e": "A doctor works in a hospital. A teacher works in a school. The pair is worker : workplace.",
+     "ml": "ഡോക്ടർ ജോലി ചെയ്യുന്നത് ആശുപത്രിയിൽ. അധ്യാപകൻ സ്കൂളിൽ.",
+     "w": [
+      "",
+      "A book is a tool, not a workplace.",
+      "A student is a person taught, not a place.",
+      "Chalk is a tool, not a workplace."
+     ]
+    },
+    {
+     "s": "Reasoning",
+     "t": "Analogy",
+     "q": "4 : 16 :: 7 : ?",
+     "o": [
+      "49",
+      "28",
+      "14",
+      "56"
+     ],
+     "a": 0,
+     "e": "4 × 4 = 16, so the rule is square. 7 × 7 = 49.",
+     "ml": "4-ന്റെ വർഗം 16. 7-ന്റെ വർഗം 49.",
+     "w": [
+      "",
+      "You did × 4. The rule is the square of the number.",
+      "You did × 2.",
+      "You did × 8."
+     ]
+    },
+    {
+     "s": "Reasoning",
+     "t": "Analogy",
+     "q": "Bird : Fly :: Fish : ?",
+     "o": [
+      "Swim",
+      "Water",
+      "Fins",
+      "Crawl"
+     ],
+     "a": 0,
+     "e": "A bird moves by flying. A fish moves by swimming. The pair is animal : how it moves.",
+     "ml": "പക്ഷി പറക്കുന്നു, മീൻ നീന്തുന്നു.",
+     "w": [
+      "",
+      "Water is where it lives, not how it moves.",
+      "Fins are body parts, not an action.",
+      "Snakes crawl, not fish."
+     ]
+    },
+    {
+     "s": "Reasoning",
+     "t": "Number series",
+     "q": "3, 6, 12, 24, ?",
+     "o": [
+      "48",
+      "36",
+      "30",
+      "42"
+     ],
+     "a": 0,
+     "e": "Each number is doubled. 24 × 2 = 48.",
+     "ml": "ഓരോ സംഖ്യയും ഇരട്ടിയാകുന്നു. 24 × 2 = 48.",
+     "w": [
+      "",
+      "You added 12. The rule is × 2.",
+      "You added 6.",
+      "You added 18."
+     ]
+    },
+    {
+     "s": "Reasoning",
+     "t": "Odd one out",
+     "q": "Find the odd one: Apple, Mango, Potato, Banana",
+     "o": [
+      "Potato",
+      "Apple",
+      "Mango",
+      "Banana"
+     ],
+     "a": 0,
+     "e": "Apple, mango and banana are fruits. Potato is a vegetable.",
+     "ml": "ആപ്പിൾ, മാങ്ങ, പഴം പഴങ്ങളാണ്. ഉരുളക്കിഴങ്ങ് പച്ചക്കറി.",
+     "w": [
+      "",
+      "Apple is a fruit like the others.",
+      "Mango is a fruit like the others.",
+      "Banana is a fruit like the others."
+     ]
+    },
+    {
+     "s": "English",
+     "t": "Fill in the blanks",
+     "q": "She ____ to the office every day.",
+     "o": [
+      "goes",
+      "go",
+      "going",
+      "gone"
+     ],
+     "a": 0,
+     "e": "The subject 'she' is singular. In simple present, add -es: she goes.",
+     "ml": "She ഒറ്റ ആളായതിനാൽ goes ആണ് ശരി.",
+     "w": [
+      "",
+      "Go is for I, you, we, they.",
+      "Going needs 'is': she is going.",
+      "Gone needs 'has': she has gone."
+     ]
+    },
+    {
+     "s": "English",
+     "t": "Fill in the blanks",
+     "q": "They ____ cricket yesterday.",
+     "o": [
+      "played",
+      "play",
+      "plays",
+      "are playing"
+     ],
+     "a": 0,
+     "e": "'Yesterday' shows the past. Use simple past: played.",
+     "ml": "Yesterday ഭൂതകാലം കാണിക്കുന്നു, അതിനാൽ played.",
+     "w": [
+      "",
+      "Play is present tense.",
+      "Plays is present tense for he/she.",
+      "Are playing is present continuous."
+     ]
+    },
+    {
+     "s": "English",
+     "t": "Error spotting",
+     "q": "Find the error: He (A) / do not like (B) / cold coffee. (C) / No error (D)",
+     "o": [
+      "B",
+      "A",
+      "C",
+      "D"
+     ],
+     "a": 0,
+     "e": "'He' is singular, so we use 'does not', not 'do not'. The error is in part B.",
+     "ml": "He-യോടൊപ്പം does not ആണ് വേണ്ടത്.",
+     "w": [
+      "",
+      "'He' is correct.",
+      "'cold coffee' is correct.",
+      "There is an error: do should be does."
+     ]
+    },
+    {
+     "s": "English",
+     "t": "Synonyms",
+     "q": "Choose the synonym of BRAVE.",
+     "o": [
+      "Courageous",
+      "Afraid",
+      "Weak",
+      "Lazy"
+     ],
+     "a": 0,
+     "e": "Brave means not afraid. Courageous has the same meaning.",
+     "ml": "Brave = ധീരൻ. Courageous-നും അതേ അർത്ഥം.",
+     "w": [
+      "",
+      "Afraid is the opposite of brave.",
+      "Weak is not the same as brave.",
+      "Lazy means not wanting to work."
+     ]
+    },
+    {
+     "s": "English",
+     "t": "Antonyms",
+     "q": "Choose the antonym of ANCIENT.",
+     "o": [
+      "Modern",
+      "Old",
+      "Historic",
+      "Early"
+     ],
+     "a": 0,
+     "e": "Ancient means very old. The opposite is modern.",
+     "ml": "Ancient = പുരാതനം. വിപരീതം Modern.",
+     "w": [
+      "",
+      "Old is a synonym, not an opposite.",
+      "Historic is close in meaning, not opposite.",
+      "Early is close in meaning, not opposite."
+     ]
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "Which metal did Stone Age people NOT use?",
+     "o": [
+      "Iron",
+      "Stone",
+      "Bone",
+      "Wood"
+     ],
+     "a": 0,
+     "e": "In the Stone Age, people made tools from stone, bone and wood. Iron came much later, in the Iron Age.",
+     "ml": "ശിലായുഗത്തിൽ ഇരുമ്പ് ഉപയോഗിച്ചിരുന്നില്ല.",
+     "w": [
+      "",
+      "Stone was their main material.",
+      "They did use bone tools.",
+      "They did use wooden tools."
+     ]
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "Bhimbetka rock shelters, famous for Stone Age paintings, are in which state?",
+     "o": [
+      "Madhya Pradesh",
+      "Rajasthan",
+      "Maharashtra",
+      "Odisha"
+     ],
+     "a": 0,
+     "e": "Bhimbetka is in Madhya Pradesh, near Bhopal. It is a UNESCO World Heritage Site.",
+     "ml": "ഭീംബേട്ക മധ്യപ്രദേശിലാണ്.",
+     "w": [
+      "",
+      "Rajasthan has other sites, not Bhimbetka.",
+      "Maharashtra has Ajanta and Ellora caves.",
+      "Odisha is not the answer."
+     ]
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "The Great Bath was found at which Indus Valley site?",
+     "o": [
+      "Mohenjo-daro",
+      "Harappa",
+      "Lothal",
+      "Kalibangan"
+     ],
+     "a": 0,
+     "e": "The Great Bath was found at Mohenjo-daro.",
+     "ml": "ഗ്രേറ്റ് ബാത്ത് മോഹൻജൊദാരോയിൽ.",
+     "w": [
+      "",
+      "Harappa is known for granaries.",
+      "Lothal is known for its dockyard.",
+      "Kalibangan is known for ploughed fields."
+     ]
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "The dockyard of the Indus Valley Civilisation was at which place?",
+     "o": [
+      "Lothal",
+      "Mohenjo-daro",
+      "Dholavira",
+      "Rakhigarhi"
+     ],
+     "a": 0,
+     "e": "Lothal in Gujarat had a dockyard for boats.",
+     "ml": "ഗുജറാത്തിലെ ലോഥലിലാണ് ഡോക്ക്‌യാർഡ്.",
+     "w": [
+      "",
+      "Mohenjo-daro is known for the Great Bath.",
+      "Dholavira is known for its water system.",
+      "Rakhigarhi is a large site, but not the dockyard."
+     ]
+    },
+    {
+     "s": "GA",
+     "t": "History",
+     "q": "Harappa was found on the bank of which river?",
+     "o": [
+      "Ravi",
+      "Indus",
+      "Sutlej",
+      "Ghaggar"
+     ],
+     "a": 0,
+     "e": "Harappa is on the bank of the Ravi river, now in Pakistan. Mohenjo-daro is on the Indus.",
+     "ml": "ഹരപ്പ രവി നദിയുടെ തീരത്താണ്.",
+     "w": [
+      "",
+      "Mohenjo-daro is on the Indus, not Harappa.",
+      "Rupar is near the Sutlej.",
+      "Kalibangan is near the Ghaggar."
+     ]
+    }
+   ]
+  },
   {
    "date": "2026-11-26",
    "title": "Daily mock",
