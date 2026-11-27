@@ -1,6 +1,12 @@
 {
  "items": [
   {
+   "id": "2026-11-27-mentor",
+   "date": "27 Nov 2026",
+   "title": "New: your Mentor",
+   "text": "Open More → Mentor. It saves every question you get wrong and makes new questions of the same type until you get each one right twice. It picks your weak topic each day, checks your mocks, and changes how it teaches when a topic stays wrong. Turn on 'Let the mentor run my day' to see its plan on Today."
+  },
+  {
    "id": "2026-11-27-csir",
    "date": "27 Nov 2026",
    "title": "Exam alerts: CSIR and ISRO added",

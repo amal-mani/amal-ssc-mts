@@ -130,7 +130,7 @@ tr.today td{background:rgba(255,122,89,.12)}
  .rail{position:fixed;inset:auto 0 0 0;height:auto;top:auto;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));border-right:0;border-top:1px solid var(--line);z-index:5;flex-direction:row}
  .rail .brand,.rail .size{display:none}
  nav{flex-direction:row;overflow-x:visible;width:100%;justify-content:space-around}
- nav button[data-tab=course],nav button[data-tab=news],nav button[data-tab=mocks],nav button[data-tab=cards],nav button[data-tab=progress],nav button[data-tab=exam],nav button[data-tab=myday]{display:none}
+ nav button[data-tab=course],nav button[data-tab=news],nav button[data-tab=mocks],nav button[data-tab=cards],nav button[data-tab=progress],nav button[data-tab=exam],nav button[data-tab=myday],nav button[data-tab=mentor]{display:none}
  #moreBtn{display:flex}
  nav button{flex:1 1 0;flex-direction:column;gap:2px;font-size:.68rem;padding:6px 2px;min-width:0;border-radius:12px;align-items:center;text-align:center;line-height:1.2}
  .topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px 0}
@@ -259,6 +259,22 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
 .exGrp{margin:18px 0 4px}.exRem{border:2px solid #c62828;margin-top:14px}
 .exRemRow{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
 .exLang{color:var(--ink);font-weight:600}
+/* mentor */
+.mtCoach{border:2px solid #5aa9ff}.mtBig{font-size:1.25em;margin:4px 0}
+.mtSteps{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}.mtStep{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--card2);font-weight:700}.mtStep.on{background:#2e7d32;color:#fff}
+.mtLine{margin:8px 0;line-height:1.6}.mt-warn{color:var(--ink)}.mtList li{grid-template-columns:auto minmax(0,1fr) auto!important}
+.mtK{font-size:.8em;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}.mt-on{background:#2e7d32;color:#fff}.mt-late{background:#f9a825;color:#222}.mt-miss{background:#c62828;color:#fff}.mt-today{background:var(--card2)}
+.mtTrend{display:flex;gap:8px;align-items:flex-end;height:140px;margin:8px 0 16px;overflow-x:auto}.mtBar{flex:0 0 40px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;font-size:.75em}.mtBar div{width:28px;background:#5aa9ff;border-radius:6px 6px 0 0}.mtBar em{font-style:normal;color:var(--soft)}
+.mtTbl{width:100%;border-collapse:collapse;margin:6px 0 10px}.mtTbl th,.mtTbl td{text-align:left;padding:6px;border-top:1px solid var(--line)}
+.mtAiOut{margin-top:10px;line-height:1.6}.mtAiOut h4{margin:12px 0 4px}.mtErr{color:#ff6b6b}
+.mtChatBox{margin-top:10px}.mtMe{background:var(--card2);padding:8px 12px;border-radius:12px;margin:8px 0 4px auto;max-width:85%;width:fit-content}.mtAi{padding:4px 0}
+.mtAskRow{gap:8px;margin-top:8px;flex-wrap:nowrap}.mtAskRow input{flex:1;min-width:0;min-height:44px;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1em}
+.mtSet{margin-top:14px}.mtSet summary{cursor:pointer;font-weight:700;min-height:44px;padding:8px 0}.mtSet input,.mtSet select{min-height:44px;padding:8px 10px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);max-width:100%}
+.mtToday{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;border:2px solid #5aa9ff}.mtWarn{margin-top:4px}
+.mtCoachEnd{border:2px solid #59d499;margin-bottom:12px}
+.mtRepair{border:2px solid #ff7a59}.mtLesson{border:2px solid #f9a825}.mtOrig{font-size:1.1em;font-weight:600}.mtLesson ol{padding-left:22px;line-height:1.7}
+.mtChg{padding-left:18px;line-height:1.6}.mtSw{display:flex;gap:10px;align-items:center;min-height:44px;cursor:pointer}.mtSw input{width:24px;height:24px}
+.mtAuto{display:block}.mtPlan{list-style:none;padding:0;margin:8px 0}.mtPlan li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}.mtPlan li>span{min-width:0}.mtPlan li.done{opacity:.6}
 </style>
 </head>
 <body>
@@ -277,6 +293,7 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
     <button role="tab" data-tab="progress" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Progress</span></button>
     <button role="tab" data-tab="myday" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span>My day</span></button>
     <button role="tab" data-tab="exam" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg><span>Full mock</span></button>
+    <button role="tab" data-tab="mentor" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><span>Mentor</span></button>
     <button id="moreBtn" aria-expanded="false" aria-controls="moreSheet"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>
   </nav>
   <div id="moreSheet" hidden></div>
@@ -439,6 +456,7 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
 </section>
 <section id="myday" hidden><div class="hello"><div><h1>My day</h1><p>Routine, streak, motivation and exam settings.</p></div></div><div id="mydayBody"></div></section>
 <section id="exam" hidden><div class="hello"><div><h1>Full mock test</h1><p>Real SSC MTS pattern, new questions every time, with a timer and question palette.</p></div></div><div id="examBody"></div></section>
+<section id="mentor" hidden></section>
 <div id="noteBox" hidden><div class="panel" style="max-width:560px;width:100%;max-height:85vh;overflow:auto">
     <p class="small" id="nbSub"></p><h2 id="nbTitle"></h2><div id="nbBody"></div>
     <div class="row" style="justify-content:flex-end;margin-top:14px"><button class="speak" type="button" id="nbRead">🔊 Read</button><button class="btn ghost" type="button" id="nbClose">Close</button></div></div></div>
@@ -582,7 +600,7 @@ function speak(t){if(window.AndroidTTS){try{AndroidTTS.speak(String(t))}catch(e)
 /* tabs */
 document.querySelectorAll('nav button[data-tab]').forEach(b=>b.onclick=()=>{
   $('moreSheet').hidden=true;$('moreBtn').setAttribute('aria-expanded','false');
-  const sec=['myday','exam','course','news','mocks','cards','progress'].includes(b.dataset.tab);$('moreBtn').setAttribute('aria-selected',sec);
+  const sec=['mentor','myday','exam','course','news','mocks','cards','progress'].includes(b.dataset.tab);$('moreBtn').setAttribute('aria-selected',sec);
   document.querySelectorAll('nav button[data-tab]').forEach(x=>x.setAttribute('aria-selected',x===b));
   document.querySelectorAll('main section').forEach(s=>s.hidden=s.id!==b.dataset.tab);
   if(b.dataset.tab==='progress')drawProgress();
@@ -595,7 +613,7 @@ document.querySelectorAll('nav button[data-tab]').forEach(b=>b.onclick=()=>{
 });
 
 /* phone "More" menu */
-$('moreSheet').innerHTML=['myday','exam','course','news','mocks','cards','progress'].map(t=>{const b=document.querySelector(`nav button[data-tab=${t}]`);return `<button data-go="${t}">${b.querySelector('svg').outerHTML}<span>${b.querySelector('span').textContent}</span></button>`}).join('');
+$('moreSheet').innerHTML=['mentor','myday','exam','course','news','mocks','cards','progress'].map(t=>{const b=document.querySelector(`nav button[data-tab=${t}]`);return `<button data-go="${t}">${b.querySelector('svg').outerHTML}<span>${b.querySelector('span').textContent}</span></button>`}).join('');
 $('moreSheet').querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>document.querySelector(`nav button[data-tab=${x.dataset.go}]`).click());
 $('moreBtn').onclick=()=>{const o=$('moreSheet').hidden;$('moreSheet').hidden=!o;$('moreBtn').setAttribute('aria-expanded',o)};
 /* today */
@@ -2045,6 +2063,236 @@ function exToday(){const old=$('exRemind');if(old)old.remove();const due=EX.item
   hello.insertAdjacentHTML('afterend',`<div id="exRemind" class="panel exRem"><b>⏰ Application closing soon</b>${due.map(x=>`<div class="exRemRow"><div style="min-width:0">${esc(x.name)}<div class="small">Last date ${esc(exNice(x.end))} · <b>${esc(exLeft(x))}</b></div></div><button class="btn ghost" type="button" data-exgo="${esc(x.id)}">See</button></div>`).join('')}</div>`)}
 const _exTod=drawPlusToday;drawPlusToday=function(){_exTod();try{exToday()}catch(e){}};
 getData('exams.json').then(r=>r.json()).then(d=>{if(d&&Array.isArray(d.items)){EX=d;exDraw();exToday()}}).catch(()=>{});
+
+/* ================= MENTOR: study monitor + mock analysis + auto coach (+ optional AI) ================= */
+st.coach=st.coach||{m:{},cur:null,hist:[]};st.act=st.act||[];
+const mtKey=(s,t)=>s+'|'+t;const COACH_PASS=8,COACH_N=10,COACH_LV=3,COACH_GAP=[0,3,7,21];
+/* ---------- 1. Study diary: record every study action with the time ---------- */
+function mtSnap(){return{p:Object.keys(st.passed||{}),d:Object.keys(st.doneOn||{}),f:(st.fmHist||[]).map(r=>r.id),m:Object.keys(st.dmDone||{})}}
+function mtTrack(){try{const now=new Date(),hm=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  if(!st.actSnap){st.actSnap=mtSnap();save();return}const o=st.actSnap,n=mtSnap(),add=(k,txt)=>st.act.unshift({d:dkey,hm,k,txt});let ch=0;
+  const title=id=>{for(const day of SCHED)for(const it of day.items)if(it.l&&it.l.id===id)return it.l.title;return id};
+  n.p.filter(x=>!o.p.includes(x)).forEach(id=>{add('test','Passed class test: '+title(id));ch++});
+  n.d.filter(x=>!o.d.includes(x)&&!n.p.includes(x)).forEach(id=>{add('class','Class done: '+title(id));ch++});
+  (st.fmHist||[]).filter(r=>!o.f.includes(r.id)).forEach(r=>{add('mock',`Mock: ${r.title} ${r.score}/${r.max}`);ch++});
+  n.m.filter(x=>!o.m.includes(x)).forEach(d=>{add('mock','Daily mock done: '+(st.dmDone[d]!=null?st.dmDone[d]+' right':''));ch++});
+  if(ch){st.act=st.act.slice(0,300);st.actSnap=n;save()}}catch(e){}}
+/* ---------- 2. On-time check against the class plan ---------- */
+function mtOnTime(days){const from=addD(dkey,-days),res={on:0,late:0,miss:0,today:0,list:[]};
+  for(const day of SCHED){if(day.date<from||day.date>dkey)continue;if(st.set&&st.set.since&&day.date<st.set.since)continue;
+    for(const it of day.items){if(!it.l)continue;const id=it.l.id,dd=(st.passed&&st.passed[id])||(st.doneOn&&st.doneOn[id])||(st.course&&st.course[id]?day.date:null);
+      let k;if(dd)k=dd<=day.date?'on':'late';else k=day.date<dkey?'miss':'today';res[k]++;res.list.push({date:day.date,title:it.l.title,id,k,dd})}}
+  const due=res.on+res.late+res.miss;res.pct=due?Math.round(res.on*100/due):null;return res}
+/* ---------- 3. Mock analysis ---------- */
+function mtMocks(){const all=[...(typeof MOCKS!=='undefined'?MOCKS:[]),...(st.myMocks||[])].filter(m=>m&&+m.max>0).sort((a,b)=>a.date<b.date?-1:a.date>b.date?1:0);
+  const first=all.filter(m=>m.attempt!=='reattempt'),full=first.filter(m=>m.type==='Full mock'||m.type==='Real exam');
+  const last=all.length?all[all.length-1].date:null,gap=last?daysBetween(last,dkey):null;
+  const re=all.filter(m=>m.attempt==='reattempt');const avg=a=>a.length?Math.round(a.reduce((x,m)=>x+m.score*100/m.max,0)/a.length):null;
+  const app=(st.fmHist||[]).filter(r=>r.kind==='full');let loss=null;
+  if(app.length){const r=app[0];loss=r.parts.map(x=>({s:x.s,lost:x.max-x.score,w:x.w,sk:x.sk,c:x.c,n:x.c+x.w+x.sk})).sort((a,b)=>b.lost-a.lost);loss.neg=r.neg;loss.blank1=r.blank1;loss.r=r}
+  return{all,first,full,gap,last,re,firstAvg:avg(full.slice(-3)),reAvg:avg(re.slice(-3)),loss}}
+/* ---------- 4. Auto coach: picks the topic, teaches, practises until correct every time ---------- */
+function coachCands(){let L=[];try{L=marksFinder()}catch(e){}
+  return L.filter(x=>{try{return fresh(x.s,1,x.t).length>0}catch(e){return false}}).map(x=>({...x,k:mtKey(x.s,x.t),c:st.coach.m[mtKey(x.s,x.t)]||null}))}
+function coachPick(){const C=coachCands();if(!C.length)return null;
+  const due=C.filter(x=>x.c&&x.c.lv>0&&x.c.next&&x.c.next<=dkey).sort((a,b)=>a.c.next<b.c.next?-1:1);if(due.length)return{...due[0],why:'recheck'};
+  if(st.coach.cur){const c=C.find(x=>x.k===st.coach.cur);if(c&&(!c.c||c.c.lv<COACH_LV)&&!(c.c&&c.c.next>dkey))return{...c,why:'continue'}}
+  const open=C.filter(x=>!(x.c&&(x.c.lv>=COACH_LV||(x.c.next&&x.c.next>dkey)))).sort((a,b)=>b.gain-a.gain);
+  return open.length?{...open[0],why:'new'}:null}
+function coachState(k){return st.coach.m[k]||{lv:0,tries:0,best:0}}
+function coachStart(x){if(!x)return;st.coach.cur=x.k;save();let qs=[];try{qs=fresh(x.s,COACH_N,x.t)}catch(e){}
+  if(qs.length<COACH_N){try{for(let i=0;qs.length<COACH_N&&i<30;i++){const more=fresh(x.s,1,x.t);if(more[0]&&!qs.some(q=>q.q===more[0].q))qs.push(more[0])}}catch(e){}}
+  if(!qs.length)return;const b=document.querySelector('nav button[data-tab=practice]');if(b)b.click();
+  setTimeout(()=>{startQuiz(qs,true,{learn:true,coach:x.k,coachS:x.s,coachT:x.t});const el=$('quiz');if(el)el.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+const _mtEnd=drawEnd;drawEnd=function(){const c=qctx&&qctx.coach?qctx:null;const r=_mtEnd.apply(this,arguments);
+  if(c){try{const n=score.c+score.w+score.sk||set.length,ok=score.c,k=c.coach,S=coachState(k);S.tries=(S.tries||0)+1;S.best=Math.max(S.best||0,ok);S.lastScore=ok+'/'+n;S.last=dkey;
+    const pass=ok>=Math.ceil(n*COACH_PASS/COACH_N);let msg;
+    if(pass&&S.passDay!==dkey){S.lv=Math.min(COACH_LV,(S.lv||0)+1);S.passDay=dkey;S.next=S.lv>=COACH_LV?addD(dkey,COACH_GAP[3]):addD(dkey,COACH_GAP[S.lv]);
+      msg=S.lv>=COACH_LV?`<b>Mastered!</b> You got ${ok}/${n}, and you have passed this topic ${COACH_LV} times on different days. The coach will check it again on ${esc(fmtDate(S.next))} so you never forget it.`:`<b>Passed: ${ok}/${n}.</b> Step ${S.lv} of ${COACH_LV} done. To make sure you answer it correctly every time, the coach will test this topic again on <b>${esc(fmtDate(S.next))}</b>.`}
+    else if(pass)msg=`<b>${ok}/${n}. Good!</b> You already passed this topic today. Come back on ${esc(fmtDate(S.next||addD(dkey,1)))} for the next step.`;
+    else{if(S.lv>0&&S.next&&S.next<=dkey){S.lv=Math.max(0,S.lv-1)}msg=`<b>${ok}/${n}.</b> You need ${Math.ceil(n*COACH_PASS/COACH_N)} right to pass. Read the trick below, look at the steps for the ones you missed, then try 10 new questions.`}
+    st.coach.m[k]=S;st.coach.hist.unshift({d:dkey,k,ok,n});st.coach.hist=st.coach.hist.slice(0,200);if(S.lv>=COACH_LV&&st.coach.cur===k)st.coach.cur=null;save();
+    const tr=(typeof TRICK!=='undefined'&&TRICK[c.coachT])||'';const nx=coachPick();
+    const box=document.createElement('div');box.className='panel mtCoachEnd';box.innerHTML=`<h3>🧭 Coach: ${esc(c.coachT)}</h3><p>${msg}</p>${!pass&&tr?`<p class="small"><b>Trick:</b> ${esc(tr)}</p>`:''}<div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap">${!pass?`<button class="btn" type="button" id="mtAgain">Try 10 new questions</button>`:''}${pass&&nx?`<button class="btn" type="button" id="mtNext">Next: ${esc(nx.t)}</button>`:''}<button class="btn ghost" type="button" id="mtOpen">Open Mentor</button></div>`;
+    const q=$('quiz');if(q)q.prepend(box);const a=$('mtAgain');if(a)a.onclick=()=>coachStart({s:c.coachS,t:c.coachT,k});const nb=$('mtNext');if(nb)nb.onclick=()=>coachStart(nx);$('mtOpen').onclick=()=>{location.hash='#mentor'};
+    try{mtDraw()}catch(e){}}catch(e){}}
+  return r};
+/* ---------- 5. Mentor report (works with no AI) ---------- */
+function mtReport(){const M=mtMocks(),T7=mtOnTime(7),T14=mtOnTime(14),out=[];let mf=[];try{mf=marksFinder().sort((a,b)=>b.gain-a.gain).slice(0,3)}catch(e){}
+  if(M.firstAvg!=null)out.push(['level',`Your real level: about <b>${M.firstAvg}%</b> in full mocks (average of your last ${Math.min(3,M.full.length)} first attempts).${M.reAvg!=null&&M.reAvg-M.firstAvg>10?` Repeat mocks show ${M.reAvg}%, but that is memory, not your level.`:''}`]);
+  else out.push(['level','No first-attempt full mock yet. Take one full mock to see your real level.']);
+  if(M.gap==null||M.gap>7)out.push(['warn',M.gap==null?'You have not taken any mock yet.':`<b>${M.gap} days since your last mock.</b> Take one full mock every week, on Sunday. Without mocks, you cannot see your mistakes.`]);
+  if(M.loss){const L=M.loss;out.push(['loss',`In your last app full mock (${esc(fmtDate(L.r.date))}) you lost most marks in <b>${esc(L[0].s)}</b> (${L[0].lost} marks: ${L[0].w} wrong, ${L[0].sk} left blank), then ${esc(L[1]?L[1].s:'')}.`+(L.neg?` Wrong answers in Session 2 cost you ${L.neg} marks.`:'')+(L.blank1?` You left ${L.blank1} Session 1 questions blank. Session 1 has no minus marks, so always answer.`:'')])}
+  if(mf.length)out.push(['gain','Biggest marks you can win in the real exam: '+mf.map(x=>`<b>${esc(x.t)}</b> (${x.n} question${x.n>1?'s':''}, up to +${x.gain} marks)`).join(', ')+'. The coach works on these first.']);
+  if(T14.pct!=null)out.push([T14.pct>=70?'good':'warn',`Classes on time in the last 14 days: <b>${T14.pct}%</b> (${T14.on} on time, ${T14.late} late, ${T14.miss} missed).${T7.miss?` This week ${T7.miss} class${T7.miss>1?'es are':' is'} still missing. Do them first.`:''}`]);
+  let mins=0,dd=0;for(let i=0;i<7;i++){const m=totMin(addD(dkey,-i));mins+=m;if(m>0)dd++}let tg=0;try{tg=targetMin()}catch(e){}
+  out.push([dd>=6?'good':'warn',`Last 7 days: you studied on <b>${dd} of 7 days</b>, ${Math.round(mins/60*10)/10} hours in total${tg?` (your daily goal is ${tg} min)`:''}.`]);
+  const lastFull=M.full.length?M.full[M.full.length-1]:null;if(lastFull)out.push(['target',`Next mock target: <b>${Math.min(lastFull.max,Math.round(lastFull.score+lastFull.max*.07))} / ${lastFull.max}</b>. Your last first attempt was ${lastFull.score}. Small steps every week add up.`]);
+  return out}
+function mtData(){const M=mtMocks(),T=mtOnTime(14),L=[];
+  L.push('Today: '+dkey+'. Exam date in app: '+((st.set&&st.set.exam)||'not set')+'.');
+  L.push('First-attempt mocks (old to new): '+(M.first.slice(-10).map(m=>`${m.date} ${m.type||''}${m.subject?' '+m.subject:''} ${m.score}/${m.max}`).join('; ')||'none'));
+  if(M.re.length)L.push(M.re.length+' mocks were re-attempts of old tests (memory, ignore for level).');
+  L.push('Days since last mock: '+(M.gap==null?'no mock yet':M.gap));
+  (st.fmHist||[]).slice(0,4).forEach(r=>L.push(`App mock ${r.date} "${r.title}" ${r.score}/${r.max}: `+r.parts.map(x=>`${x.s} ${x.c} right, ${x.w} wrong, ${x.sk} blank`).join('; ')+`. Negative marks ${r.neg}. Session 1 blanks ${r.blank1}. Guesses ${r.guess?r.guess.n:0} (net ${r.guess?r.guess.net:0}). Time ${r.minutes} min.`));
+  L.push('Practice accuracy: '+SECS.map(s=>{const x=st.stats[s]||{a:0,c:0};return `${s} ${x.a?Math.round(x.c*100/x.a)+'%':'-'} of ${x.a}`}).join(', '));
+  try{const w=weakTopics().slice(0,8);if(w.length)L.push('Weak topics: '+w.map(x=>`${x.s}/${x.t} ${Math.round(x.acc*100)}% of ${x.a}`).join(', '))}catch(e){}
+  try{L.push('Exam-weighted gains: '+marksFinder().sort((a,b)=>b.gain-a.gain).slice(0,6).map(x=>`${x.s}/${x.t} ${x.n}q now ${x.acc==null?'not practised':Math.round(x.acc*100)+'%'}`).join(', '))}catch(e){}
+  if(T.pct!=null)L.push(`Classes in last 14 days: ${T.on} on time, ${T.late} late, ${T.miss} missed.`);
+  let mins=0,dd=0;for(let i=0;i<7;i++){const m=totMin(addD(dkey,-i));mins+=m;if(m>0)dd++}L.push(`Last 7 days: studied ${dd} days, ${mins} minutes.`);
+  const C=Object.entries(st.coach.m||{});if(C.length)L.push('Coach topics: '+C.map(([k,v])=>`${k.replace('|','/')} step ${v.lv||0}/${COACH_LV} last ${v.lastScore||'-'}`).join(', '));
+  try{L.push('Streak '+streak()+' days.')}catch(e){}if(st.target)L.push('Target score: '+st.target);
+  return L.join('\n')}
+/* ---------- 6. Optional AI mentor: Claude on the study page, or your own key in the phone/PC app ---------- */
+let AI={prov:'',key:'',model:''};try{AI=Object.assign(AI,JSON.parse(localStorage.getItem('mtsAi')||'{}'))}catch(e){}
+const aiSave=()=>{try{localStorage.setItem('mtsAi',JSON.stringify(AI))}catch(e){}};let aiSample=null;
+try{if(window.claude&&typeof window.claude.use==='function')window.claude.use('sample').then(s=>{if(s){aiSample=s;try{mtDraw()}catch(e){}}}).catch(()=>{})}catch(e){}
+const aiReady=()=>!!aiSample||!!(AI.prov&&AI.key);
+const AI_SYS=`You are the study mentor inside an SSC MTS preparation app. The student lives in Kerala, works full time, and has a specific learning disability. The exam: Session 1 has 20 Maths and 20 Reasoning questions with no negative marking; Session 2 has 25 General Awareness and 25 English questions with minus 1 for each wrong answer; every right answer gives 3 marks; total 270. Your job: watch the study data and mocks, find exactly where marks are lost, and say what to do to raise the marks. Write in very simple English: short sentences, one idea per line, common words, no jargon. Speak to the student as "you". Be honest and kind. Use only the numbers in the data. Never invent scores, dates, cut-offs or news. If data is missing, say which action in the app will give it (for example: take a full mock).`;
+async function aiAsk(msgs){
+  if(aiSample){const arr=msgs.map((m,i)=>({role:m.role,content:i===0?AI_SYS+'\n\n'+m.content:m.content}));const r=await aiSample(arr,{modelTier:'default',cache:false});return r.text||''}
+  if(AI.prov==='gemini'){const H={'Content-Type':'application/json','x-goog-api-key':AI.key};
+    if(!AI.model){const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200',{headers:H});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(aiErr(r.status,j));
+      const ms=(j.models||[]).filter(m=>(m.supportedGenerationMethods||[]).includes('generateContent')&&/flash/.test(m.name)&&!/image|tts|audio|live|embed|vision|thinking/.test(m.name));
+      const stable=ms.filter(m=>!/preview|exp/.test(m.name)&&!/lite/.test(m.name));const pick=(stable.find(m=>/flash-latest/.test(m.name))||stable.sort((a,b)=>b.name.localeCompare(a.name,undefined,{numeric:true}))[0]||ms[0]);if(!pick)throw new Error('No free Gemini model found for this key.');AI.model=pick.name;aiSave()}
+    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/${AI.model}:generateContent`,{method:'POST',headers:H,body:JSON.stringify({systemInstruction:{parts:[{text:AI_SYS}]},contents:msgs.map(m=>({role:m.role==='assistant'?'model':'user',parts:[{text:m.content}]})),generationConfig:{maxOutputTokens:1200}})});
+    const j=await r.json().catch(()=>({}));if(!r.ok){if(r.status===404){AI.model='';aiSave()}throw new Error(aiErr(r.status,j))}
+    return((j.candidates&&j.candidates[0]&&j.candidates[0].content&&j.candidates[0].content.parts)||[]).map(p=>p.text||'').join('')}
+  if(AI.prov==='claude'){const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':AI.key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-haiku-5-5',max_tokens:1200,system:AI_SYS,messages:msgs})});
+    const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(aiErr(r.status,j));return(j.content||[]).map(p=>p.text||'').join('')}
+  throw new Error('AI is not set up yet.')}
+function aiErr(s,j){if(s===400&&/key/i.test(JSON.stringify(j)))return 'The key is not correct. Copy it again.';if(s===401||s===403)return 'The key is not correct or not allowed. Copy it again.';if(s===429)return 'Too many questions for now. Wait a few minutes, or try again tomorrow.';if(s>=500)return 'The AI service is busy. Try again in a few minutes.';return 'Could not reach the AI ('+s+'). Check the internet and try again.'}
+function aiMd(t){return esc(String(t||'')).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').split(/\n/).map(l=>{const h=l.match(/^#{1,4}\s*(.*)$/);if(h)return `<h4>${h[1]}</h4>`;if(/^\s*[-*•]\s+/.test(l))return `<li>${l.replace(/^\s*[-*•]\s+/,'')}</li>`;if(/^\s*\d+[.)]\s+/.test(l))return `<p class="mtNum">${l}</p>`;return l.trim()?`<p>${l}</p>`:''}).join('').replace(/(<li>.*?<\/li>)+/g,m=>`<ul>${m}</ul>`)}
+let mtBusy=false,mtChat=[];
+async function mtAiReport(){if(mtBusy)return;mtBusy=true;const out=$('mtAiOut');out.innerHTML='<p>Your mentor is reading your study data…</p>';
+  const ask=`Here is my study data from the app:\n${mtData()}\n\nWrite my mentor report with these headings:\n1. Where you are now (2 lines; use first-attempt mocks only)\n2. Where you lose marks (3 points with numbers)\n3. This week's plan (5 short steps using the app: Coach, Full mock, Practice, Learning mock, Tricks)\n4. Next mock target (one realistic number)\n5. One line to keep going\nUse at most 230 words.`;
+  try{const t=await aiAsk([{role:'user',content:ask}]);mtChat=[{role:'user',content:ask},{role:'assistant',content:t}];st.mentorAi={d:dkey,t};save();mtDraw()}catch(e){out.innerHTML=`<p class="mtErr">${esc(e.message||String(e))}</p>`}mtBusy=false}
+async function mtAiAsk(){const inp=$('mtQ');const q=(inp.value||'').trim();if(!q||mtBusy)return;mtBusy=true;inp.value='';
+  if(!mtChat.length)mtChat=[{role:'user',content:'My study data:\n'+mtData()+'\n\nAnswer my questions about my study and marks.'},{role:'assistant',content:'OK. Ask me.'}];
+  mtChat.push({role:'user',content:q});const box=$('mtChat');box.insertAdjacentHTML('beforeend',`<div class="mtMe">${esc(q)}</div><div class="mtAi" id="mtWait">Thinking…</div>`);
+  try{const t=await aiAsk(mtChat.slice(-12));mtChat.push({role:'assistant',content:t});$('mtWait').outerHTML=`<div class="mtAi">${aiMd(t)}</div>`}catch(e){mtChat.pop();$('mtWait').outerHTML=`<div class="mtAi mtErr">${esc(e.message||String(e))}</div>`}mtBusy=false}
+/* ---------- 7. Screen ---------- */
+function mtDraw(){const sec=$('mentor');if(!sec)return;mtTrack();const R=mtReport(),T=mtOnTime(14),M=mtMocks(),x=coachPick();
+  const ic={level:'📊',warn:'⚠️',loss:'📉',gain:'🎯',good:'✅',target:'🏁'};
+  const cs=x?coachState(x.k):null;const mastered=Object.entries(st.coach.m||{}).filter(([k,v])=>v.lv>=COACH_LV);
+  const inprog=Object.entries(st.coach.m||{}).filter(([k,v])=>v.lv>0&&v.lv<COACH_LV);
+  const coachHTML=x?`<div class="panel mtCoach"><h2>🧭 Today's coach topic</h2><p class="mtBig"><b>${esc(x.t)}</b> <span class="small">(${esc(x.s)})</span></p>
+    <p>${x.why==='recheck'?'Time to check this topic again, so you keep getting it right.':x.why==='continue'?'Keep going with this topic until you pass it.':`The coach picked this because it has ${x.n} question${x.n>1?'s':''} in the real exam and you can win up to +${x.gain} marks.`}</p>
+    <div class="mtSteps">${[1,2,3].map(i=>`<span class="mtStep${cs.lv>=i?' on':''}">${cs.lv>=i?'✓':i}</span>`).join('')}<span class="small">Pass ${COACH_PASS} of ${COACH_N} on 3 different days = mastered</span></div>
+    ${(typeof TRICK!=='undefined'&&TRICK[x.t])?`<p class="small"><b>Trick:</b> ${esc(TRICK[x.t])}</p>`:''}
+    <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap"><button class="btn" type="button" id="mtGo">Start 10 questions</button><a class="btn ghost" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent('SSC MTS '+x.t+' tricks')}">Watch a lesson ↗</a></div>
+    ${cs.lastScore?`<p class="small">Last try: ${esc(cs.lastScore)} on ${esc(fmtDate(cs.last))}.</p>`:''}</div>`:`<div class="panel"><h2>🧭 Coach</h2><p>Practise a few questions first, so the coach can see your weak topics.</p></div>`;
+  const ont=T.list.slice(-14).reverse().map(l=>`<li><span>${esc(fmtDate(l.date))}</span><span class="t">${esc(l.title)}</span><span class="mtK mt-${l.k}">${l.k==='on'?'On time':l.k==='late'?'Late ('+esc(fmtDate(l.dd))+')':l.k==='miss'?'Missed':'Today'}</span></li>`).join('');
+  const diary=(st.act||[]).slice(0,12).map(a=>`<li><span>${esc(fmtDate(a.d))} ${esc(a.hm)}</span><span class="t">${esc(a.txt)}</span></li>`).join('');
+  const trend=M.full.slice(-8).map(m=>{const p=Math.round(m.score*100/m.max);return `<div class="mtBar" title="${esc(m.name)}"><div style="height:${Math.max(4,p)}%"></div><span>${p}%</span><em>${esc(m.date.slice(5))}</em></div>`}).join('');
+  const lossHTML=M.loss?`<table class="mtTbl"><tr><th>Subject</th><th>Right</th><th>Wrong</th><th>Blank</th><th>Marks lost</th></tr>${M.loss.map(l=>`<tr><td>${esc(l.s)}</td><td>${l.c}</td><td>${l.w}</td><td>${l.sk}</td><td><b>${l.lost}</b></td></tr>`).join('')}</table>`:'<p class="small">Take a full mock in the app (Full mock tab) to see marks lost in each subject.</p>';
+  const aiBlock=`<div class="panel"><h2>🤖 AI mentor</h2>${aiReady()?`<p class="small">${aiSample?'Uses Claude on this study page.':'Uses your '+(AI.prov==='gemini'?'Google Gemini':'Claude')+' key on this device.'} It reads only your scores and study times, not your name.</p>
+    <button class="btn" type="button" id="mtAiGo">${st.mentorAi?'Get a new report':'Get my mentor report'}</button><div id="mtAiOut" class="mtAiOut">${st.mentorAi?`<p class="small">Report from ${esc(fmtDate(st.mentorAi.d))}</p>${aiMd(st.mentorAi.t)}<button class="speak" type="button" id="mtAiSay">🔊 Read</button>`:''}</div>
+    <div id="mtChat" class="mtChatBox"></div><div class="row mtAskRow"><input id="mtQ" type="text" placeholder="Ask your mentor about your study or marks" aria-label="Ask your mentor"><button class="btn" type="button" id="mtAsk">Ask</button></div>`:
+    `<p>The report above works without AI. For a written report and answers to your questions, turn on the AI mentor.</p>`}
+    <details class="mtSet"${aiReady()||aiSample?'':' open'}><summary>AI settings for the phone and PC app</summary>
+    <p class="small">On the study page in the Claude app, the AI mentor works without a key. In the phone and PC app, add your own key:</p>
+    <ol class="small"><li>Free: open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>, sign in with Google, tap <b>Create API key</b>, and copy it.</li><li>Or paid: a Claude key from <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a>.</li></ol>
+    <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap"><select id="mtProv" aria-label="AI service"><option value="gemini"${AI.prov!=='claude'?' selected':''}>Google Gemini (free)</option><option value="claude"${AI.prov==='claude'?' selected':''}>Claude (paid)</option></select>
+    <input id="mtKey" type="password" placeholder="Paste key here" value="${AI.key?'••••••••':''}" aria-label="AI key" autocomplete="off"><button class="btn" type="button" id="mtKeySave">Save and test</button>${AI.key?'<button class="btn ghost" type="button" id="mtKeyDel">Remove key</button>':''}</div>
+    <p class="small" id="mtKeyMsg">The key stays only on this device. It is never sent to GitHub or synced. With the free Gemini key, Google may use what you send to improve its service, so do not type private details.</p></details></div>`;
+  sec.innerHTML=`<div class="hello"><div><h1>Mentor</h1><p>Watches your study, checks your mocks, and picks what to fix next.</p></div></div>
+   ${coachHTML}
+   <div class="panel"><h2>📋 Mentor report</h2>${R.map(([k,t])=>`<p class="mtLine mt-${k}">${ic[k]||'•'} ${t}</p>`).join('')}<button class="speak" type="button" id="mtSay">🔊 Read report</button></div>
+   <div class="panel"><h2>📈 Mock analysis</h2>${trend?`<p class="small">First-attempt full mocks (% score):</p><div class="mtTrend">${trend}</div>`:'<p class="small">No first-attempt full mock yet.</p>'}${lossHTML}
+     ${M.loss&&M.loss.r?`<button class="btn ghost" type="button" id="mtPat">Practise the patterns I got wrong</button>`:''}</div>
+   <div class="panel"><h2>⏰ On time</h2>${T.pct!=null?`<p><b>${T.pct}%</b> of classes done on time in the last 14 days.</p>`:''}<ul class="plan mtList">${ont||'<li>No classes due yet.</li>'}</ul></div>
+   <div class="panel"><h2>📒 Study diary</h2><p class="small">The app writes down each class, test and mock with the time you did it.</p><ul class="plan mtList">${diary||'<li>Nothing yet. Finish a class or a test.</li>'}</ul></div>
+   ${mastered.length||inprog.length?`<div class="panel"><h2>🏅 Coach progress</h2>${inprog.length?`<p><b>In progress:</b> ${inprog.map(([k,v])=>esc(k.split('|')[1])+' ('+v.lv+'/'+COACH_LV+')').join(', ')}</p>`:''}${mastered.length?`<p><b>Mastered:</b> ${mastered.map(([k])=>esc(k.split('|')[1])).join(', ')}</p>`:''}</div>`:''}
+   ${aiBlock}`;
+  const g=$('mtGo');if(g)g.onclick=()=>coachStart(x);
+  $('mtSay').onclick=()=>speak(R.map(r=>r[1].replace(/<[^>]+>/g,'')).join(' '));
+  const pt=$('mtPat');if(pt)pt.onclick=()=>mtPatterns();
+  const ag=$('mtAiGo');if(ag)ag.onclick=mtAiReport;const as=$('mtAiSay');if(as)as.onclick=()=>speak(st.mentorAi.t.replace(/[#*]/g,''));
+  const ak=$('mtAsk');if(ak){ak.onclick=mtAiAsk;$('mtQ').onkeydown=e=>{if(e.key==='Enter')mtAiAsk()}}
+  $('mtKeySave').onclick=async()=>{const v=$('mtKey').value.trim();if(v&&!/^•+$/.test(v)){AI.key=v;AI.model=''}AI.prov=$('mtProv').value;if(!AI.key){$('mtKeyMsg').textContent='Paste your key first.';return}aiSave();$('mtKeyMsg').textContent='Testing…';
+    try{const t=await aiAsk([{role:'user',content:'Reply with only the word: ready'}]);$('mtKeyMsg').textContent=/ready/i.test(t)?'Working! The AI mentor is on.':'Connected.';setTimeout(mtDraw,900)}catch(e){$('mtKeyMsg').textContent=e.message||String(e)}};
+  const kd=$('mtKeyDel');if(kd)kd.onclick=()=>{AI={prov:'',key:'',model:''};aiSave();mtDraw()}}
+/* practise the exact question patterns missed in the last app mock */
+function mtPatterns(){const L=st.fmLast;if(!L||!L.parts)return;const miss={};L.parts.forEach((P,pi)=>P.qs.forEach((q,j)=>{const a=L.ans[pi+'-'+j]!=null?L.ans[pi+'-'+j]:L.ans[pi+':'+j];if(a!==q.a){const t=(typeof lnTopic==='function'?lnTopic(q):q.t)||'';if(t&&t!=='Mixed'){const k=q.s+'|'+t;miss[k]=(miss[k]||0)+1}}}));
+  const top=Object.entries(miss).sort((a,b)=>b[1]-a[1]).slice(0,5);let qs=[];top.forEach(([k,n])=>{const [s,t]=k.split('|');try{qs.push(...fresh(s,Math.min(4,n+1),t))}catch(e){}});
+  if(!qs.length){try{qs=smartSet(10)}catch(e){}}if(!qs.length)return;const b=document.querySelector('nav button[data-tab=practice]');if(b)b.click();setTimeout(()=>startQuiz(shuffle(qs).slice(0,12),true,{learn:true}),60)}
+/* Today card */
+function mtToday(){const old=$('mtTodayCard');if(old)old.remove();const x=coachPick();const T=mtOnTime(7),M=mtMocks();const hello=document.querySelector('#today .hello');if(!hello)return;
+  const warn=[];if(T.miss)warn.push(`${T.miss} class${T.miss>1?'es':''} missed this week`);if(M.gap==null||M.gap>7)warn.push(M.gap==null?'no mock yet':M.gap+' days since last mock');
+  const cs=x?coachState(x.k):null;
+  hello.insertAdjacentHTML('afterend',`<div id="mtTodayCard" class="panel mtToday"><div style="min-width:0"><b>🧭 Coach:</b> ${x?`today fix <b>${esc(x.t)}</b> (${cs.lv}/${COACH_LV} done)`:'practise a few questions so I can pick your topic'}${warn.length?`<div class="small mtWarn">⚠️ ${esc(warn.join(' · '))}</div>`:''}</div><div class="row" style="gap:8px">${x?'<button class="btn" type="button" id="mtTGo">Start</button>':''}<button class="btn ghost" type="button" id="mtTOpen">Mentor</button></div></div>`);
+  const g=$('mtTGo');if(g)g.onclick=()=>coachStart(x);$('mtTOpen').onclick=()=>{location.hash='#mentor'}}
+const _mtTod=drawPlusToday;drawPlusToday=function(){_mtTod();try{mtTrack();mtToday()}catch(e){}};
+window.addEventListener('hashchange',()=>{if(location.hash==='#mentor')try{mtDraw()}catch(e){}});
+document.addEventListener('click',e=>{const b=e.target.closest('nav button[data-tab=mentor],#moreSheet [data-go=mentor]');if(b)setTimeout(()=>{try{mtDraw()}catch(e){}},30)});
+setInterval(mtTrack,30000);setTimeout(()=>{try{mtTrack();mtToday();if(location.hash==='#mentor')mtDraw()}catch(e){}},1800);
+window.__mtc={qset:()=>({set,qi}),coachPick,coachStart,mtReport,mtOnTime,mtMocks,mtData,mtPatterns,coachState};
+/* ================= 8. Mistake repair: every wrong answer becomes a lesson ================= */
+st.wrongLog=st.wrongLog||[];st.method=st.method||{};st.auto=st.auto||{on:false};
+const METHODS=['Question first, steps if wrong','Solved example first, then a question like it','Solved example + picture + trick, read aloud','Very small steps, one at a time, then a question like it'];
+const mtTopicOf=q=>(typeof lnTopic==='function'?lnTopic(q):q.t)||q.t||'Mixed';
+const mtSnapQ=q=>{const pic=!!(q.img||q.oh);return{id:String(q.id||q.q),s:q.s,t:mtTopicOf(q),q:q.q,o:pic?null:q.o,a:q.a,e:q.e||'',ml:q.ml||'',w:pic?null:(q.w||null),gen:!!q.gen,pic}};
+const _mtRec=rec;rec=function(q,ok,skip){const r=_mtRec.apply(this,arguments);
+  try{if(!ok&&q&&q.s&&!(qctx&&(qctx.repair||qctx.coach))){const id=String(q.id||q.q);const ex=st.wrongLog.find(x=>x.id===id&&!x.fixed);
+    const src=(typeof fm!=='undefined'&&fm)?'Full mock':qctx&&qctx.lesson?'Class test':qctx&&qctx.dm?'Daily mock':'Practice';
+    if(ex){ex.n=(ex.n||1)+1;ex.d=dkey;ex.src=src;ex.fix=0}else{st.wrongLog.unshift(Object.assign(mtSnapQ(q),{d:dkey,src,blank:!!skip,fix:0,n:1}));st.wrongLog=st.wrongLog.slice(0,400)}}}catch(e){}return r};
+const mtOpen=()=>st.wrongLog.filter(x=>!x.fixed);
+function mtMeth(k){return st.method[k]||(st.method[k]={lv:0,fails:0,wins:0,log:[]})}
+function mtMethMove(k,ok,t){const M=mtMeth(k);if(ok){M.wins++;M.fails=0;if(M.wins>=4&&M.lv>0){M.log.unshift({d:dkey,from:M.lv,to:M.lv-1,why:'You got 4 right in a row, so less help is needed.'});M.lv--;M.wins=0}}
+  else{M.fails++;M.wins=0;if(M.fails>=2&&M.lv<3){M.log.unshift({d:dkey,from:M.lv,to:M.lv+1,why:'You got it wrong twice, so I changed how I teach it.'});M.lv++;M.fails=0}}M.log=M.log.slice(0,10);return M}
+let mtRQ=[],mtRDone={ok:0,bad:0};
+function mtRStart(){const op=mtOpen();if(!op.length)return;const today=op.filter(x=>x.d===dkey),old=op.filter(x=>x.d!==dkey);
+  mtRQ=[...today,...old].slice(0,10).map(x=>x.id);mtRDone={ok:0,bad:0};const b=document.querySelector('nav button[data-tab=practice]');if(b)b.click();setTimeout(mtRNext,60)}
+function mtVariant(it){let v=null;try{v=similarQ({...it,o:it.o||['','','',''],t:it.t,lesson:null})}catch(e){}
+  if(!v){try{v=fresh(it.s,1,it.t)[0]}catch(e){}}if(!v&&it.o){v=shufO({id:it.id+'r',s:it.s,t:it.t,q:it.q,o:it.o,a:it.a,e:it.e,ml:it.ml,w:it.w})}return v}
+function mtRNext(){const q=$('quiz');if(!q)return;const id=mtRQ.shift();const it=id&&st.wrongLog.find(x=>x.id===id&&!x.fixed);
+  if(!it){if(mtRQ.length)return mtRNext();q.innerHTML=`<div class="panel mtCoachEnd"><h3>🛠 Mistake repair done</h3><p><b>${mtRDone.ok}</b> right, <b>${mtRDone.bad}</b> to try again. ${mtOpen().length?mtOpen().length+' mistakes are still open. The mentor will bring them back tomorrow.':'All your mistakes are fixed. Great work!'}</p><button class="btn" type="button" id="mtRHome">Back to Mentor</button></div>`;$('mtRHome').onclick=()=>{location.hash='#mentor'};try{mtDraw()}catch(e){}return}
+  const k=it.s+'|'+it.t,M=mtMeth(k),v=mtVariant(it);if(!v){it.fixed=dkey;save();return mtRNext()}
+  const go=()=>startQuiz([v],true,{learn:true,repair:it.id,rk:k});
+  if(M.lv===0)return go();
+  const steps=lnSteps(it.e),tr=(typeof TRICK!=='undefined'&&TRICK[it.t])||'';let pic='';try{const p=mathPic(it);if(p)pic=`<div class="lnPic">${p.svg}<p>${esc(p.cap)}</p></div>`}catch(e){}
+  const ans=it.o?esc(String(it.o[it.a])):'';
+  q.innerHTML=`<div class="panel mtLesson"><p class="small">🛠 Learn the method first · ${esc(it.t)} · way of teaching: ${esc(METHODS[M.lv])}</p>
+   <h3>This is the question you got wrong</h3><p class="mtOrig">${esc(it.q)}</p>${ans?`<p>Right answer: <b>${ans}</b></p>`:''}
+   <div id="mtLSteps">${M.lv>=3?`<p class="mtNum" id="mtLS"></p><button class="btn ghost" type="button" id="mtLNext">Next step ▶</button>`:`<ol>${steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>`}</div>
+   ${M.lv>=2?pic+(tr?`<p><b>Trick:</b> ${esc(tr)}</p>`:''):''}${M.lv>=2&&it.ml?`<details><summary>മലയാളം</summary><p>${esc(it.ml)}</p></details>`:''}
+   <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="speak" type="button" id="mtLRead">🔊 Read</button><button class="btn" type="button" id="mtLGo"${M.lv>=3&&steps.length>1?' disabled':''}>I understand. Give me a question like it</button></div></div>`;
+  const all=it.q+'. Answer: '+(ans||'')+'. '+steps.join(' ')+(M.lv>=2&&tr?' Trick: '+tr:'');$('mtLRead').onclick=()=>speak(all);if(M.lv>=2)speak(all);
+  if(M.lv>=3){let i=0;const sh=()=>{$('mtLS').textContent=`Step ${i+1} of ${steps.length}: ${steps[i]}`;if(i>=steps.length-1){$('mtLNext').disabled=true;$('mtLGo').disabled=false}};sh();$('mtLNext').onclick=()=>{i++;sh();speak(steps[i])}}
+  $('mtLGo').onclick=go}
+const _mtEnd2=drawEnd;drawEnd=function(){const c=qctx&&qctx.repair?qctx:null;const r=_mtEnd2.apply(this,arguments);
+  if(c){try{const ok=score.c>0,it=st.wrongLog.find(x=>x.id===c.repair&&!x.fixed),M=mtMethMove(c.rk,ok);let msg;
+    if(it){if(ok){it.fix=(it.fix||0)+1;mtRDone.ok++;if(it.fix>=2){it.fixed=dkey;msg='<b>Fixed!</b> You got this pattern right twice. It is out of your mistake list.'}else{mtRQ.push(it.id);msg='<b>Right!</b> One more question like this later to be sure.'}}
+      else{it.fix=0;mtRDone.bad++;mtRQ.push(it.id);msg=`<b>Not yet.</b> Read the steps above. ${M.lv>0?'Next time I will teach it in a new way: '+esc(METHODS[M.lv])+'.':'You will get one more question like it soon.'}`}}
+    save();const box=document.createElement('div');box.className='panel mtCoachEnd';box.innerHTML=`<h3>🛠 Mistake repair</h3><p>${msg||''}</p><p class="small">${mtRQ.length} left in this round.</p><button class="btn" type="button" id="mtRGo">${mtRQ.length?'Next':'Finish'}</button>`;
+    const q=$('quiz');if(q)q.prepend(box);$('mtRGo').onclick=mtRNext}catch(e){}}return r};
+function mtRepairHTML(){const op=mtOpen();const byDay={};st.wrongLog.slice(0,200).forEach(x=>{(byDay[x.d]=byDay[x.d]||{n:0,open:0,top:{}});const D=byDay[x.d];D.n++;if(!x.fixed)D.open++;D.top[x.t]=(D.top[x.t]||0)+1});
+  const days=Object.keys(byDay).sort().reverse().slice(0,7).map(d=>{const D=byDay[d];const tt=Object.entries(D.top).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([t,n])=>`${esc(t)} ×${n}`).join(', ');return `<li><span>${esc(fmtDate(d))}</span><span class="t">${D.n} mistake${D.n>1?'s':''}: ${tt}</span><span class="mtK ${D.open?'mt-miss':'mt-on'}">${D.open?D.open+' open':'All fixed'}</span></li>`}).join('');
+  const ch=[];Object.entries(st.method).forEach(([k,M])=>(M.log||[]).forEach(l=>ch.push({k,...l})));ch.sort((a,b)=>a.d<b.d?1:-1);
+  return `<div class="panel mtRepair"><h2>🛠 Mistake repair</h2><p>Every question you get wrong in a mock, class test or practice is saved here. The mentor makes a new question with the same pattern, and you practise it until you get it right <b>twice</b>.</p>
+   ${op.length?`<p class="mtBig"><b>${op.length}</b> mistake${op.length>1?'s':''} to fix${op.filter(x=>x.d===dkey).length?` (${op.filter(x=>x.d===dkey).length} from today)`:''}</p><button class="btn" type="button" id="mtRStart">Fix my mistakes now</button>`:'<p>✅ No open mistakes. Do practice or a mock, and the mentor will catch your new mistakes.</p>'}
+   ${days?`<h3 style="margin-top:16px">Mistakes by day</h3><ul class="plan mtList">${days}</ul>`:''}
+   ${ch.length?`<h3 style="margin-top:16px">How the mentor changed your teaching</h3><ul class="mtChg">${ch.slice(0,6).map(c=>`<li><b>${esc(c.k.split('|')[1])}</b>: ${esc(METHODS[c.to])}. <span class="small">${esc(c.why)} (${esc(fmtDate(c.d))})</span></li>`).join('')}</ul>`:''}</div>`}
+/* ================= 9. Let the mentor run my day ================= */
+function mtPlan(){const P=[],op=mtOpen(),x=coachPick(),M=mtMocks();
+  P.push({id:'fix',t:op.length?`Fix ${Math.min(10,op.length)} mistake${op.length>1?'s':''} (${op.length} open)`:'No mistakes to fix',done:!op.length||st.wrongLog.filter(w=>w.fixed===dkey).length>=Math.min(10,op.length+st.wrongLog.filter(w=>w.fixed===dkey).length),go:op.length?'fix':null});
+  if(x){const cs=coachState(x.k);P.push({id:'coach',t:`Coach topic: ${x.t} (${cs.lv}/${COACH_LV})`,done:cs.passDay===dkey,go:'coach'})}
+  let due=0,left=0;for(const day of SCHED)if(day.date===dkey)for(const it of day.items)if(it.l){due++;if(!((st.passed&&st.passed[it.l.id])||(st.doneOn&&st.doneOn[it.l.id])))left++}
+  const T=mtOnTime(7);if(due||T.miss)P.push({id:'class',t:due?`Today's classes: ${due-left} of ${due} done`+(T.miss?` · ${T.miss} missed this week`:''):`${T.miss} missed class${T.miss>1?'es':''} this week`,done:!left&&!T.miss,go:'sched'});
+  const sun=new Date(dkey+'T12:00:00').getDay()===0;if(sun||M.gap==null||M.gap>7)P.push({id:'mock',t:sun?'Sunday full mock':'Full mock (it has been '+(M.gap==null?'a long time':M.gap+' days')+')',done:(st.fmHist||[]).some(r=>r.date===dkey&&r.kind==='full'),go:'exam'});
+  return P}
+function mtPlanGo(g){if(g==='fix')mtRStart();else if(g==='coach')coachStart(coachPick());else location.hash='#'+g}
+const _mtToday1=mtToday;mtToday=function(){if(!st.auto.on){_mtToday1();const c=$('mtTodayCard');if(c&&!$('mtAutoOn')){c.insertAdjacentHTML('beforeend',`<div style="flex-basis:100%"><button class="btn ghost" type="button" id="mtAutoOn">Let the mentor run my day</button></div>`);$('mtAutoOn').onclick=()=>{st.auto={on:true,since:dkey};save();mtToday();try{mtDraw()}catch(e){}}}return}
+  const old=$('mtTodayCard');if(old)old.remove();const hello=document.querySelector('#today .hello');if(!hello)return;const P=mtPlan(),nd=P.filter(p=>p.done).length;
+  hello.insertAdjacentHTML('afterend',`<div id="mtTodayCard" class="panel mtToday mtAuto"><div style="flex-basis:100%"><b>🧭 Mentor's plan for today</b> <span class="small">${nd} of ${P.length} done</span></div>
+   <ol class="mtPlan">${P.map((p,i)=>`<li class="${p.done?'done':''}"><span>${p.done?'✅':i+1+'.'} ${esc(p.t)}</span>${!p.done&&p.go?`<button class="btn${i===P.findIndex(z=>!z.done)?'':' ghost'}" type="button" data-mtgo="${p.go}">Start</button>`:''}</li>`).join('')}</ol>
+   <div class="row" style="gap:8px;flex-basis:100%"><button class="btn ghost" type="button" id="mtTOpen">Mentor</button></div></div>`);
+  document.querySelectorAll('#mtTodayCard [data-mtgo]').forEach(b=>b.onclick=()=>mtPlanGo(b.dataset.mtgo));$('mtTOpen').onclick=()=>{location.hash='#mentor'}};
+const _mtDraw1=mtDraw;mtDraw=function(){_mtDraw1();const sec=$('mentor');if(!sec)return;const h=sec.querySelector('.hello');if(!h)return;
+  h.insertAdjacentHTML('afterend',`<div class="panel mtAutoBox"><label class="mtSw"><input type="checkbox" id="mtAutoSw"${st.auto.on?' checked':''}> <b>Let the mentor run my day</b></label><p class="small">When this is on, Today shows the mentor's plan: fix mistakes, coach topic, classes and mocks. The mentor also changes how it teaches you when a topic stays wrong.</p></div>${mtRepairHTML()}`);
+  $('mtAutoSw').onchange=e=>{st.auto={on:e.target.checked,since:dkey};save();mtToday()};const rs=$('mtRStart');if(rs)rs.onclick=mtRStart};
+Object.assign(window.__mtc,{mtRStart,mtOpen,mtPlan,wrong:()=>st.wrongLog,method:()=>st.method});
 
 /* ---------- click actions ---------- */
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!b)return;e.preventDefault();const k=b.dataset.px;
