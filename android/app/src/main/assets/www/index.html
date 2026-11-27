@@ -1748,11 +1748,11 @@ function pwdToday(){try{const P=PWD;if(!P||!P.checklist)return;const left=examDa
 
 /* ---------- What's new messages (whatsnew.json) ---------- */
 getData('whatsnew.json').then(r=>r.json()).then(d=>{if(d&&Array.isArray(d.items)){WN=d;wnDraw()}}).catch(()=>{});
-function wnDraw(){try{if(!WN)return;const items=WN.items.filter(x=>x&&x.id&&!st.wnSeen.includes(x.id)).slice(0,3);let b=$('wnBox');
+function wnDraw(){try{if(!WN)return;const all=WN.items.filter(x=>x&&x.id&&!st.wnSeen.includes(x.id)),items=all.slice(0,3),more=all.length-items.length;let b=$('wnBox');
   if(!items.length){if(b)b.remove();return}
   if(!b){b=document.createElement('div');b.id='wnBox';b.className='panel';b.style.cssText='margin:12px 0;border-left:5px solid #59d499';const n=document.querySelector('#today .hello');n.insertAdjacentElement('afterend',b)}
-  b.innerHTML=`<div class="row" style="justify-content:space-between;align-items:center"><b>What's new</b><button class="btn ghost" type="button" id="wnOk">Got it</button></div>${items.map(x=>`<div style="margin-top:8px"><b>${esc(x.title)}</b> <span class="small">${esc(x.date||'')}</span><p style="margin:4px 0 0">${esc(x.text)}</p></div>`).join('')}`;
-  $('wnOk').onclick=()=>{items.forEach(x=>st.wnSeen.push(x.id));st.wnSeen=st.wnSeen.slice(-200);save();wnDraw()}}catch(e){}}
+  b.innerHTML=`<div class="row" style="justify-content:space-between;align-items:center"><b>What's new</b><button class="btn ghost" type="button" id="wnOk">Got it</button></div>${items.map(x=>`<div style="margin-top:8px"><b>${esc(x.title)}</b> <span class="small">${esc(x.date||'')}</span><p style="margin:4px 0 0">${esc(x.text)}</p></div>`).join('')}${more>0?`<p class="small" style="margin-top:8px">+ ${more} more. See all in My day → All app updates.</p>`:''}`;
+  $('wnOk').onclick=()=>{all.forEach(x=>st.wnSeen.push(x.id));st.wnSeen=st.wnSeen.slice(-200);save();wnDraw()}}catch(e){}}
 function wnAll(){if(!WN)return '';return `<div class="panel" style="margin-top:18px"><h2>All app updates</h2>${WN.items.slice(0,15).map(x=>`<p style="margin:8px 0"><b>${esc(x.title)}</b> <span class="small">${esc(x.date||'')}</span><br>${esc(x.text)}</p>`).join('')}</div>`}
 
 /* ---------- 2. Speed goal after a full mock ---------- */
