@@ -1,6 +1,12 @@
 {
  "items": [
   {
+   "id": "2026-11-27-popup-sound",
+   "date": "27 Nov 2026",
+   "title": "Pop-up quiz: sound and shorter gaps",
+   "text": "Pop-up questions now play a sound on the phone and PC (turn it off in My day → Pop-up quiz → Sound). You can also choose a gap of 5, 10, 15, 20 or 25 minutes."
+  },
+  {
    "id": "2026-11-27-pwd",
    "date": "27 Nov 2026",
    "title": "New: help for PwD students",

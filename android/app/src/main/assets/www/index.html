@@ -1599,7 +1599,7 @@ function qqPack(n){n=n||40;const by={},seen=new Set();
   by.GA=shuffle(Q.filter(q=>q.s==='GA'&&qqShort(q))).sort((a,b)=>(st.seen[a.id]||0)-(st.seen[b.id]||0));
   const out=[];for(let r=0;out.length<n&&r<n;r++)for(const s of QQ_SUBJ){const L=by[s]||[];while(L.length){const q=L.shift();if(!seen.has(q.q)){seen.add(q.q);out.push(qqItem(q));break}}if(out.length>=n)break}
   return out}
-function qqCfg(){const c=st.qq;return{on:!!c.on,from:c.from||'10:00',to:c.to||'17:00',every:+c.every||60,days:(c.days||[]).map(Number)}}
+function qqCfg(){const c=st.qq;return{on:!!c.on,from:c.from||'10:00',to:c.to||'17:00',every:+c.every||60,days:(c.days||[]).map(Number),sound:c.sound!==false}}
 function qqPush(){try{const cfg=JSON.stringify(qqCfg()),qs=JSON.stringify(qqPack(40));
   if(window.AndroidApp&&AndroidApp.quickSet)AndroidApp.quickSet(cfg,qs);
   else if(window.mtsDesktop&&mtsDesktop.quickSet)mtsDesktop.quickSet(cfg,qs)}catch(e){}}
@@ -1630,14 +1630,15 @@ function qqPanel(){const c=qqCfg(),L=st.qqLog[dkey]||{n:0,c:0},D=['Sun','Mon','T
   return `<div class="panel" style="margin-top:18px" id="qqSet"><h2>Pop-up quiz at work</h2><p class="small" style="margin-top:-6px">One short question pops up during your work hours: on the phone as a notification, and on the PC as a small box in the corner. It mixes Maths, Reasoning, English, GK and the latest current affairs. A wrong answer shows why, step by step. Today: <b>${L.n} answered, ${L.c} right</b>.</p>
   <div class="row" style="justify-content:flex-start;gap:10px;flex-wrap:wrap;align-items:center">
    <label class="chip" style="cursor:pointer"><input type="checkbox" id="qqOn" ${c.on?'checked':''}> On</label>
+   <label class="chip" style="cursor:pointer"><input type="checkbox" id="qqSnd" ${c.sound?'checked':''}> 🔔 Sound</label>
    <label class="small">From <input type="time" id="qqFrom" value="${esc(c.from)}"></label>
    <label class="small">To <input type="time" id="qqTo" value="${esc(c.to)}"></label>
-   <label class="small">Every <select id="qqEvery">${[30,45,60,90,120].map(m=>`<option value="${m}" ${m===c.every?'selected':''}>${m} min</option>`).join('')}</select></label></div>
+   <label class="small">Every <select id="qqEvery">${[5,10,15,20,25,30,45,60,90,120].map(m=>`<option value="${m}" ${m===c.every?'selected':''}>${m} min</option>`).join('')}</select></label></div>
   <div class="row" style="justify-content:flex-start;gap:6px;margin-top:10px;flex-wrap:wrap">${D.map((d,i)=>`<button class="chip qqDay ${c.days.includes(i)?'on':''}" data-d="${i}" type="button" aria-pressed="${c.days.includes(i)}">${d}</button>`).join('')}</div>
   <div class="row" style="justify-content:flex-start;margin-top:12px"><button class="btn ghost" id="qqTry" type="button">Try one now</button></div>
   ${qqNative()?'':'<p class="small">The pop-ups work in the phone app and the PC app. On this page, "Try one now" shows a quick question here.</p>'}</div>`}
 function qqBind(){const el=$('qqSet');if(!el)return;const upd=()=>{save();qqPush()};
-  $('qqOn').onchange=e=>{st.qq.on=e.target.checked;upd()};$('qqFrom').onchange=e=>{st.qq.from=e.target.value;upd()};$('qqTo').onchange=e=>{st.qq.to=e.target.value;upd()};
+  $('qqOn').onchange=e=>{st.qq.on=e.target.checked;upd()};$('qqSnd').onchange=e=>{st.qq.sound=e.target.checked;upd()};$('qqFrom').onchange=e=>{st.qq.from=e.target.value;upd()};$('qqTo').onchange=e=>{st.qq.to=e.target.value;upd()};
   $('qqEvery').onchange=e=>{st.qq.every=+e.target.value;upd()};
   el.querySelectorAll('.qqDay').forEach(b=>b.onclick=()=>{const d=+b.dataset.d,s=new Set(st.qq.days||[]);s.has(d)?s.delete(d):s.add(d);st.qq.days=[...s].sort();b.classList.toggle('on');b.setAttribute('aria-pressed',s.has(d));upd()});
   $('qqTry').onclick=()=>{qqPush();try{if(window.AndroidApp&&AndroidApp.quickNow){AndroidApp.quickNow();return}if(window.mtsDesktop&&mtsDesktop.quickNow){mtsDesktop.quickNow();return}}catch(e){}qqInPage()}}

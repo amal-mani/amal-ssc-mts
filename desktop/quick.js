@@ -15,7 +15,7 @@ const dayOn = (cfg, dow) => Array.isArray(cfg.days) ? cfg.days.includes(dow) : d
 /** time of the next pop-up inside the work window, or 0 when off */
 function nextTime(cfg, now) {
   if (!cfg || !cfg.on) return 0;
-  const from = mins(cfg.from, 600), to = mins(cfg.to, 1020), every = Math.max(15, +cfg.every || 60);
+  const from = mins(cfg.from, 600), to = mins(cfg.to, 1020), every = Math.max(5, +cfg.every || 60);
   if (to <= from) return 0;
   for (let d = 0; d < 8; d++) {
     const day = new Date(now); day.setHours(0, 0, 0, 0); day.setDate(day.getDate() + d);
@@ -35,15 +35,15 @@ function nextQ() {
 function show(q) {
   if (!q) return;
   popQ = q;
-  if (pop && !pop.isDestroyed()) { pop.webContents.send('qq-question', q); pop.showInactive(); return; }
+  if (pop && !pop.isDestroyed()) { pop.webContents.send('qq-question', q); pop.showInactive(); try { pop.flashFrame(true); } catch (e) {} return; }
   const wa = screen.getPrimaryDisplay().workArea, W = 420, H = 560;
   pop = new BrowserWindow({ width: W, height: H, x: wa.x + wa.width - W - 16, y: wa.y + wa.height - H - 16,
     frame: false, resizable: false, alwaysOnTop: true, skipTaskbar: true, show: false, backgroundColor: '#171b23',
     icon: path.join(__dirname, 'build', 'icon.png'), title: 'Quick question',
-    webPreferences: { contextIsolation: true, sandbox: true, preload: path.join(__dirname, 'quickPreload.js') } });
+    webPreferences: { contextIsolation: true, sandbox: true, autoplayPolicy: 'no-user-gesture-required', preload: path.join(__dirname, 'quickPreload.js') } });
   pop.setAlwaysOnTop(true, 'floating');
   pop.loadFile(path.join(__dirname, 'quick.html'));
-  pop.once('ready-to-show', () => { pop.showInactive(); });
+  pop.once('ready-to-show', () => { pop.showInactive(); try { pop.flashFrame(true); } catch (e) {} });
   pop.on('closed', () => { pop = null; popQ = null; });
   // close by itself after 10 minutes if not answered
   const p = pop; setTimeout(() => { if (p && !p.isDestroyed() && !p.__answered) p.close(); }, 10 * 60000);
@@ -75,6 +75,7 @@ function setup(onChange) {
   ipcMain.on('mts-quick-now', () => show(nextQ()));
   // pop-up window
   ipcMain.on('qq-get', e => { e.returnValue = popQ; });
+  ipcMain.on('qq-sound', e => { e.returnValue = S.cfg.sound !== false; });
   ipcMain.on('qq-answer', (e, i) => {
     if (!popQ) return;
     const d = new Date(), pad = n => String(n).padStart(2, '0');

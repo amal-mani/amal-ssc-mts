@@ -2,6 +2,7 @@
 const { contextBridge, ipcRenderer } = require('electron');
 contextBridge.exposeInMainWorld('qq', {
   get: () => ipcRenderer.sendSync('qq-get'),
+  sound: () => ipcRenderer.sendSync('qq-sound'),
   answer: i => ipcRenderer.send('qq-answer', i),
   more: () => ipcRenderer.send('qq-more'),
   close: () => ipcRenderer.send('qq-close'),

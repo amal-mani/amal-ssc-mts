@@ -19,7 +19,7 @@ import java.util.Locale;
 
 /** Pop-up quiz during work hours: one question as a notification; tapping it opens a small answer window. */
 public class QuickQuiz extends BroadcastReceiver {
-    static final String PREFS = "mtsqq", CHANNEL = "quick_quiz", ACTION = "com.amalmani.mtsstudy.QUICK", DISMISS = "com.amalmani.mtsstudy.QUICK_LATER";
+    static final String PREFS = "mtsqq", CHANNEL = "quick_quiz_sound", CHANNEL_QUIET = "quick_quiz_quiet", ACTION = "com.amalmani.mtsstudy.QUICK", DISMISS = "com.amalmani.mtsstudy.QUICK_LATER";
     static final int NOTE_ID = 700;
 
     static SharedPreferences p(Context c) { return c.getSharedPreferences(PREFS, Context.MODE_PRIVATE); }
@@ -83,7 +83,7 @@ public class QuickQuiz extends BroadcastReceiver {
     static long nextTime(JSONObject cfg, long now) {
         if (!cfg.optBoolean("on", false)) return -1;
         int from = mins(cfg.optString("from", "10:00"), 600), to = mins(cfg.optString("to", "17:00"), 1020);
-        int every = Math.max(15, cfg.optInt("every", 60));
+        int every = Math.max(5, cfg.optInt("every", 60));
         if (to <= from) return -1;
         for (int d = 0; d < 8; d++) {
             Calendar day = Calendar.getInstance();
@@ -134,11 +134,26 @@ public class QuickQuiz extends BroadcastReceiver {
         if (q == null) return;
         NotificationManager nm = (NotificationManager) c.getSystemService(Context.NOTIFICATION_SERVICE);
         if (nm == null) return;
-        if (Build.VERSION.SDK_INT >= 26 && nm.getNotificationChannel(CHANNEL) == null) {
-            NotificationChannel ch = new NotificationChannel(CHANNEL, "Pop-up quiz", NotificationManager.IMPORTANCE_HIGH);
-            ch.setDescription("One quick question during work hours");
-            ch.enableVibration(true);
-            nm.createNotificationChannel(ch);
+        boolean sound = cfg(c).optBoolean("sound", true);
+        String chId = sound ? CHANNEL : CHANNEL_QUIET;
+        if (Build.VERSION.SDK_INT >= 26) {
+            if (nm.getNotificationChannel("quick_quiz") != null) nm.deleteNotificationChannel("quick_quiz");
+            if (nm.getNotificationChannel(CHANNEL) == null) {
+                NotificationChannel ch = new NotificationChannel(CHANNEL, "Pop-up quiz (with sound)", NotificationManager.IMPORTANCE_HIGH);
+                ch.setDescription("One quick question during work hours, with a sound");
+                ch.enableVibration(true);
+                ch.setVibrationPattern(new long[]{0, 250, 150, 250});
+                ch.setSound(android.media.RingtoneManager.getDefaultUri(android.media.RingtoneManager.TYPE_NOTIFICATION),
+                        new android.media.AudioAttributes.Builder().setUsage(android.media.AudioAttributes.USAGE_NOTIFICATION)
+                                .setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION).build());
+                nm.createNotificationChannel(ch);
+            }
+            if (nm.getNotificationChannel(CHANNEL_QUIET) == null) {
+                NotificationChannel q = new NotificationChannel(CHANNEL_QUIET, "Pop-up quiz (silent)", NotificationManager.IMPORTANCE_DEFAULT);
+                q.setSound(null, null);
+                q.enableVibration(false);
+                nm.createNotificationChannel(q);
+            }
         }
         String key = String.valueOf(System.currentTimeMillis());
         p(c).edit().putString("q_" + key, q.toString()).apply();
@@ -150,14 +165,14 @@ public class QuickQuiz extends BroadcastReceiver {
         JSONArray o = q.optJSONArray("o");
         StringBuilder big = new StringBuilder(q.optString("q"));
         if (o != null) for (int i = 0; i < o.length() && i < 4; i++) big.append("\n").append("ABCD".charAt(i)).append(") ").append(o.optString(i));
-        Notification.Builder nb = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(c, CHANNEL) : new Notification.Builder(c);
+        Notification.Builder nb = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(c, chId) : new Notification.Builder(c);
         nb.setSmallIcon(android.R.drawable.ic_menu_help).setContentTitle("Quick question · " + subj(q.optString("s")))
                 .setContentText(q.optString("q")).setStyle(new Notification.BigTextStyle().bigText(big.toString()))
                 .setContentIntent(tap).setAutoCancel(true)
                 .addAction(new Notification.Action.Builder(null, "Answer", tap).build())
                 .addAction(new Notification.Action.Builder(null, "Not now", later).build());
-        if (Build.VERSION.SDK_INT >= 26) nb.setTimeoutAfter(Math.max(15, cfg(c).optInt("every", 60)) * 60000L);
-        else nb.setPriority(Notification.PRIORITY_HIGH).setDefaults(Notification.DEFAULT_VIBRATE);
+        if (Build.VERSION.SDK_INT >= 26) nb.setTimeoutAfter(Math.max(5, cfg(c).optInt("every", 60)) * 60000L);
+        else nb.setPriority(Notification.PRIORITY_HIGH).setDefaults(sound ? Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE : 0);
         try { nm.notify(NOTE_ID, nb.build()); } catch (SecurityException e) { }
         // keep only the last 5 stored questions
         SharedPreferences.Editor ed = p(c).edit();

@@ -41,6 +41,7 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 const SUB={Quant:'Maths',Reasoning:'Reasoning',English:'English',GA:'GK',CA:'Current affairs'};
 let q=null,done=false;
 function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-IN';u.rate=.95;speechSynthesis.speak(u)}catch(e){}}
+function chime(){try{if(qq.sound&&!qq.sound())return;const A=new (window.AudioContext||window.webkitAudioContext)(),t=A.currentTime;[[880,0],[1175,.18],[1568,.36]].forEach(([f,d])=>{const o=A.createOscillator(),g=A.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t+d);g.gain.linearRampToValueAtTime(.35,t+d+.02);g.gain.exponentialRampToValueAtTime(.001,t+d+.45);o.connect(g);g.connect(A.destination);o.start(t+d);o.stop(t+d+.5)});setTimeout(()=>A.close(),1500)}catch(e){}}
 function steps(e){return String(e||'').split(/(?<=[.!?])\s+(?=[A-Z0-9₹(√"'])/).filter(Boolean)}
 function draw(){done=false;const m=$('m');
   if(!q){m.innerHTML='<p>No questions yet. Open MTS Study once so it can load your questions.</p><div class="row"><button class="btn" id="c">Close</button></div>';$('c').onclick=()=>qq.close();return}
@@ -62,8 +63,8 @@ function pick(i){if(done)return;done=true;qq.answer(i);const ok=i===q.a;
 $('x').onclick=()=>qq.close();
 $('say').onclick=()=>{if(q)speak(q.q+'. '+q.o.map((o,i)=>'Option '+'ABCD'[i]+': '+o).join('. '))};
 document.addEventListener('keydown',e=>{if(!done&&/^[a-dA-D1-4]$/.test(e.key)){const k=isNaN(+e.key)?'abcd'.indexOf(e.key.toLowerCase()):+e.key-1;pick(k)}else if(e.key==='Escape')qq.close()});
-qq.onQuestion(n=>{q=n;draw()});
-q=qq.get();draw();
+qq.onQuestion(n=>{q=n;draw();chime()});
+q=qq.get();draw();chime();
 </script>
 </body>
 </html>
