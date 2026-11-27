@@ -1,6 +1,12 @@
 {
  "items": [
   {
+   "id": "2026-11-27-attend",
+   "date": "27 Nov 2026",
+   "title": "Classes you attend now count",
+   "text": "When you pass a class test (or tap Mark done), that day counts as studied: 1 class = a study day, 2 classes = a full day, and each class adds 45 minutes to Today's study. Days when you already passed a test are fixed too."
+  },
+  {
    "id": "2026-11-27-popup-sound",
    "date": "27 Nov 2026",
    "title": "Pop-up quiz: sound and shorter gaps",

@@ -638,7 +638,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-lt]');if(!
   if(k==='test')startLessonTest(id);else if(k==='score')openScore(id,'score');else if(k==='weekly')startWeekly(b.dataset.date);
   else if(k==='notes'){e.preventDefault();openNotes(id)}
   else if(k==='rew'){e.preventDefault();const key=b.dataset.date+'|'+id;if(st.rev[key])delete st.rev[key];else st.rev[key]=true;save();refreshAll()}
-  else if(k==='done'){st.course[id]=true;st.today.ids[id]=(findL(id)||{}).t;save();refreshAll()}else if(k==='undo'){delete st.course[id];delete st.lq[id];save();refreshAll()}});
+  else if(k==='done'){(st.course[id]=true,(st.doneOn=st.doneOn||{})[id]=(st.doneOn[id]||dkey));st.today.ids[id]=(findL(id)||{}).t;save();refreshAll()}else if(k==='undo'){delete st.course[id];delete st.lq[id];save();refreshAll()}});
 function lessonFor(slot,taken){
   if(slot==='Review'||slot==='Weekly')return null;
   const order=[slot].concat(FALLBACK.filter(x=>x!==slot));
@@ -734,7 +734,7 @@ function answer(i){
 function drawEnd(){
   if(qctx){const pct=Math.round(score.c/set.length*100);
     if(qctx.lesson){const l=findL(qctx.lesson);const best=Math.max(pct,st.lq[l.id]||0);st.lq[l.id]=best;let msg;
-      if(pct>=PASS){st.course[l.id]=true;st.today.ids[l.id]=l.t;const a=TRACKS[l.t],nx=a[a.indexOf(l)+1];msg=`<p class="result" style="color:#59d499">Passed: ${pct}%</p><p>Well done! ${nx?`Next class unlocked: <b>${esc(nx.title)}</b> (Falcon Day ${nx.day}).`:'You finished this subject!'}</p>`}
+      if(pct>=PASS){(st.course[l.id]=true,(st.doneOn=st.doneOn||{})[l.id]=(st.doneOn[l.id]||dkey));st.today.ids[l.id]=l.t;const a=TRACKS[l.t],nx=a[a.indexOf(l)+1];msg=`<p class="result" style="color:#59d499">Passed: ${pct}%</p><p>Well done! ${nx?`Next class unlocked: <b>${esc(nx.title)}</b> (Falcon Day ${nx.day}).`:'You finished this subject!'}</p>`}
       else msg=`<p class="result" style="color:#ff6b6b">${pct}%: not yet</p><p>You need ${PASS}% to unlock the next class. Read the explanations, <a href="${dayUrl(l.day)}" target="_blank" rel="noopener">watch Day ${l.day} again ↗</a>, then retry.</p>`;
       save();refreshAll();
       $('quiz').innerHTML=`<p class="small">${esc(TNAME[l.t])} test: ${esc(l.title)}</p>${msg}<p class="small">${score.c} of ${set.length} correct</p><div class="row" style="justify-content:flex-start"><button class="btn${pct>=PASS?' ghost':''}" data-lt="test" data-id="${l.id}">Retry test</button><button class="btn${pct>=PASS?'':' ghost'}" id="toSched">Back to my schedule</button></div>`;
@@ -778,7 +778,7 @@ function drawProgress(){
 $('redo').onclick=()=>{const m=st.mistakes.map(id=>Q.find(q=>q.id===id)).filter(Boolean);document.querySelector('nav button[data-tab=practice]').click();startQuiz(m)};
 $('wipe').onclick=()=>{$('wipeAsk').hidden=false};
 $('wipeNo').onclick=()=>{$('wipeAsk').hidden=true};
-$('wipeYes').onclick=()=>{st.stats={};SECS.forEach(s=>st.stats[s]={a:0,c:0});st.mistakes=[];st.done={};st.pomo={};st.course={};st.today={d:dkey,ids:{}};save();drawCourse();$('wipeAsk').hidden=true;$('pomos').textContent=0;drawPlan();drawProgress()};
+$('wipeYes').onclick=()=>{st.stats={};SECS.forEach(s=>st.stats[s]={a:0,c:0});st.mistakes=[];st.done={};st.pomo={};st.course={};st.doneOn={};st.today={d:dkey,ids:{}};save();drawCourse();$('wipeAsk').hidden=true;$('pomos').textContent=0;drawPlan();drawProgress()};
 /* current affairs + SSC updates, loaded from files the daily task refreshes */
 let CA=null,caSel=0;
 const fmtDate=d=>{try{return new Date(d+'T00:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'})}catch(e){return d}};
@@ -840,8 +840,8 @@ $('sbClose').onclick=()=>{$('scoreBox').hidden=true};
 $('sbForm').onsubmit=e=>{e.preventDefault();const box=$('scoreBox'),id=box.dataset.id,kind=box.dataset.kind,l=findL(id);const sc=+$('sbS').value,mx=+$('sbM').value;
   if(!(mx>0)||sc<0||sc>mx){$('sbText').textContent='Please check the score.';return}
   const pct=Math.round(sc/mx*100);
-  if(kind==='score'){st.course[id]=true;st.today.ids[id]=l.t;st.lq[id]=pct;st.myMocks.push({date:dkey,name:'Falcon '+l.title,type:mx===150?'Full mock':'Sectional',score:sc,max:mx,attempt:'first',source:'Falcon'});save();box.hidden=true;refreshAll();try{drawMocks()}catch(e){}return}
-  st.lq[id]=Math.max(pct,st.lq[id]||0);if(pct>=PASS){st.course[id]=true;st.today.ids[id]=l.t}save();refreshAll();
+  if(kind==='score'){(st.course[id]=true,(st.doneOn=st.doneOn||{})[id]=(st.doneOn[id]||dkey));st.today.ids[id]=l.t;st.lq[id]=pct;st.myMocks.push({date:dkey,name:'Falcon '+l.title,type:mx===150?'Full mock':'Sectional',score:sc,max:mx,attempt:'first',source:'Falcon'});save();box.hidden=true;refreshAll();try{drawMocks()}catch(e){}return}
+  st.lq[id]=Math.max(pct,st.lq[id]||0);if(pct>=PASS){(st.course[id]=true,(st.doneOn=st.doneOn||{})[id]=(st.doneOn[id]||dkey));st.today.ids[id]=l.t}save();refreshAll();
   $('sbForm').hidden=true;$('sbText').textContent=pct>=PASS?`Passed with ${pct}%. The next class is unlocked.`:`${pct}%: you need ${PASS}%. Watch the video again, redo the practice, then enter your new score.`};
 const mockRO=new ResizeObserver(drawMockChart);mockRO.observe($('mockSvg'));
 try{$('mfDate').value=dkey}catch(e){}
@@ -1070,10 +1070,13 @@ const _drawPlan=drawPlan;drawPlan=function(){_drawPlan();const mb=mockBlock(),db
 /* ---------- routine, targets, streak ---------- */
 const DAYMS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 function targetMin(d){const w=Math.floor(Math.max(0,daysBetween(st.set.since,d))/7),base=Math.min(210,120+15*Math.max(0,w-1));return new Date(d+'T12:00:00').getDay()===0?Math.min(300,base+60):base}
-const totMin=d=>{const L=st.log[d]||{};return(L.am||0)+(L.pm||0)+(L.fmMin||0)};
+/* classes attended (test passed or marked done) count as study: 45 minutes each */
+const CLASS_MIN=45;
+const classesOn=d=>{const P=st.passed||{},D=st.doneOn||{},ids=new Set();for(const k in P)if(P[k]===d)ids.add(k);for(const k in D)if(D[k]===d)ids.add(k);return ids.size};
+const totMin=d=>{const L=st.log[d]||{};return(L.am||0)+(L.pm||0)+(L.fmMin||0)+classesOn(d)*CLASS_MIN};
 const mockOn=d=>st.dmDone[d]!=null||st.fmHist.some(r=>r.date===d);
 function blockDone(d,id){const L=st.log[d]||{};if(id==='mock')return mockOn(d);if(id==='am')return !!st.rtWake[d]&&(L.am||0)>=30;if(id==='pm')return(L.pm||0)>=30;return false}
-function dayStatus(d){if(d<st.set.since)return'none';const m=totMin(d),L=st.log[d]||{};
+function dayStatus(d){if(d<st.set.since)return'none';const m=totMin(d),L=st.log[d]||{},nc=classesOn(d);if(nc>=2)return'done';if(nc>=1&&d<dkey)return'min';
   if(m>=targetMin(d)||(blockDone(d,'am')&&blockDone(d,'mock')&&blockDone(d,'pm')))return'done';
   if(m>=15&&((L.q||0)>=10||mockOn(d)))return'min';return d<dkey?'miss':'open'}
 function streak(){let n=0,d=dkey;if(['done','min'].includes(dayStatus(d)))n++;d=addD(d,-1);while(d>=st.set.since&&['done','min'].includes(dayStatus(d))){n++;d=addD(d,-1)}st.bestStreak=Math.max(st.bestStreak||0,n);return n}
@@ -1105,7 +1108,7 @@ const waLink=t=>'https://wa.me/'+(st.set.buddyPh||'').replace(/\D/g,'')+'?text='
 function drawPlusToday(){const el=$('plusToday');if(!el)return;const sk=streak(),y=addD(dkey,-1),ys=dayStatus(y),tm=targetMin(dkey),m=totMin(dkey),dl=examDays(),rv=revDue(),dow2=new Date(dkey+'T12:00:00').getDay();
   let h=`<div class="pxrow">
    <div class="pxc" style="--c:#ff7a59"><span class="k">Exam countdown</span><b>${dl>0?dl:0} days</b><span class="small">${st.set.examSet?'to '+esc(fmtDate(st.set.exam)):'estimated date, set it in My day'}</span></div>
-   <div class="pxc" style="--c:#59d499"><span class="k">Today's study</span><b>${m} / ${tm} min</b><span class="bar"><i style="width:${Math.min(100,Math.round(m/tm*100))}%"></i></span></div>
+   <div class="pxc" style="--c:#59d499"><span class="k">Today's study</span><b>${m} / ${tm} min</b><span class="bar"><i style="width:${Math.min(100,Math.round(m/tm*100))}%"></i></span>${classesOn(dkey)?`<span class="small" style="display:block;margin-top:4px">includes ${classesOn(dkey)} class${classesOn(dkey)>1?'es':''} (45 min each)</span>`:''}</div>
    <div class="pxc" style="--c:#f0c674"><span class="k">Streak</span><b>🔥 ${sk} day${sk===1?'':'s'}</b><span class="small">best ${st.bestStreak||sk}</span></div>
    <div class="pxc" style="--c:#c39bff"><span class="k">Mock target</span><b>${Math.round(targetPct()*2.7)} / 270</b><span class="small">aim for ${targetPct()}% today</span></div></div>
    <p class="pxmsg">“${esc(todayMsg())}”</p>`;
