@@ -241,6 +241,23 @@ html.examlook #simBox .btn{border-radius:4px}html.examlook #simBox .btn.ghost{ba
 .mcQ{font-size:1.2rem;font-weight:700;line-height:1.5}.mcAns{font-size:1.3rem;font-weight:800;color:#59d499}
 .rpBox{margin-top:10px}.rpBox .rpDone a{color:var(--acc)}
 html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
+/* exam alerts */
+.exCard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:10px 0}
+.exCard h3{margin:6px 0 4px;font-size:1.12em;line-height:1.35}.exCard p{margin:8px 0;line-height:1.6}
+.exCard.ex-closed{opacity:.75}.exCard.ex-open{border-color:#2e7d32}
+.exHead{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.exBody{font-weight:700;font-size:.85em;color:var(--soft)}
+.exSt{font-size:.8em;font-weight:700;padding:3px 10px;border-radius:999px}
+.exOpen{background:#2e7d32;color:#fff}.exSoon{background:#f9a825;color:#222}.exClosed{background:var(--card2);color:var(--soft)}.exDone{background:#1565c0;color:#fff}
+.exDate{font-size:1.02em;margin:4px 0}.exUrg{color:#c62828}
+.exRow{display:flex;gap:10px;padding:6px 0;border-top:1px solid var(--line);font-size:.95em}.exRow>span{flex:0 0 96px;font-weight:700;color:var(--soft)}.exRow>div{min-width:0}
+.exPosts{margin:8px 0}.exPosts summary{cursor:pointer;font-weight:700;padding:8px 0;min-height:44px}
+.exPost{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.exPost>div{min-width:0}
+.exTag{flex:0 1 auto;max-width:48%;font-size:.78em;font-weight:700;padding:3px 9px;border-radius:10px;text-align:right}
+.exAll{background:#e8f5e9;color:#1b5e20}.exOnly{background:var(--card2);color:var(--soft)}
+.exBtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.exBtns .btn{flex:0 1 auto;text-decoration:none}
+.exGrp{margin:18px 0 4px}.exRem{border:2px solid #c62828;margin-top:14px}
+.exRemRow{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -252,7 +269,7 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
     <button role="tab" data-tab="course" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M10 8l5 3-5 3z"/></svg><span>Course</span></button>
     <button role="tab" data-tab="sched" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Schedule</span></button>
     <button role="tab" data-tab="ca" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg><span>Current affairs</span></button>
-    <button role="tab" data-tab="news" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>SSC updates</span></button>
+    <button role="tab" data-tab="news" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>Exam alerts</span></button>
     <button role="tab" data-tab="practice" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><span>Practice</span></button>
     <button role="tab" data-tab="mocks" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg><span>My mocks</span></button>
     <button role="tab" data-tab="cards" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg><span>Tricks</span></button>
@@ -337,7 +354,8 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
 </section>
 
 <section id="news" hidden>
-  <h2>SSC updates</h2>
+  <div id="exBox"></div>
+  <h2 style="margin-top:26px">SSC news</h2>
   <p class="small" id="newsUpdated">Loading…</p>
   <ul class="plan" id="newsList"></ul>
   <p class="small" style="margin-top:14px">Always confirm dates on the official site: <a href="https://ssc.gov.in" target="_blank" rel="noopener">ssc.gov.in</a></p>
@@ -1991,6 +2009,40 @@ function lsMenu(){const L=lsLists();pxBox(`<h2>🎧 Listen mode</h2><p class="sm
   <div class="row" style="justify-content:flex-end;margin-top:12px"><button class="btn ghost" id="lsX">Close</button></div>`);
   $('lsX').onclick=pxClose;$('pxBox').querySelectorAll('[data-lsp]').forEach(b=>b.onclick=()=>lsPlay(L[+b.dataset.lsp],0))}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px=listen]');if(!b)return;e.preventDefault();e.stopPropagation();const k=b.dataset.k;if(k){const p=lsLists().find(x=>x.k===k);if(p)return lsPlay(p,0)}lsMenu()},true);
+
+/* ---------- Exam alerts: application dates, apply links, simple English ---------- */
+let EX={items:[]};st.applied=st.applied||{};let exF='All';
+const exDays=d=>d?Math.round((new Date(d+'T12:00:00')-new Date(dkey+'T12:00:00'))/864e5):null;
+const exNice=d=>{if(!d)return '';try{return new Date(d+'T12:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'})}catch(e){return d}};
+function exState(x){if(x.status==='open'&&x.end&&exDays(x.end)<0)return 'closed';if(x.status==='soon'&&x.start&&exDays(x.start)<=0&&x.end&&exDays(x.end)>=0)return 'open';return x.status}
+const exTag=t=>/open to all/i.test(t)?'exAll':'exOnly';
+function exLeft(x){const n=exDays(x.end);if(n==null)return '';if(n<0)return 'Closed';if(n===0)return 'Last day TODAY';if(n===1)return '1 day left';return n+' days left'}
+function exCard(x){const s=exState(x),ap=st.applied[x.id],n=exDays(x.end),urgent=s==='open'&&n!=null&&n<=7&&!ap;
+  const posts=(x.posts||[]).length?`<details class="exPosts"><summary>See all ${x.posts.length} posts</summary>${x.posts.map(p=>`<div class="exPost"><div><b>${esc(p[1])}</b><div class="small">Cat. ${esc(p[0])} · ${esc(p[2])}</div></div><span class="exTag ${exTag(p[3])}">${esc(p[3])}</span></div>`).join('')}</details>`:'';
+  const dates=s==='soon'?`<div class="exDate">Date not announced yet</div>`:`<div class="exDate${urgent?' exUrg':''}">${s==='open'?'Last date':'Closed on'}: <b>${esc(exNice(x.end))}</b>${x.endTime?' ('+esc(x.endTime)+')':''}${s==='open'?` · <b>${esc(exLeft(x))}</b>`:''}</div>${x.start?`<div class="small">Opened ${esc(exNice(x.start))}</div>`:''}`;
+  const rows=[['Who can apply',x.who||x.level],['Fee',x.fee],['PwD',x.pwd],['Exam',x.exam]].filter(r=>r[1]).map(r=>`<div class="exRow"><span>${r[0]}</span><div>${esc(r[1])}</div></div>`).join('');
+  return `<div class="exCard ex-${s}" data-ex="${esc(x.id)}"><div class="exHead"><span class="exBody">${esc(x.body)}</span>${s==='open'?'<span class="exSt exOpen">Open now</span>':s==='soon'?'<span class="exSt exSoon">Coming soon</span>':'<span class="exSt exClosed">Closed</span>'}${ap?'<span class="exSt exDone">✓ Applied</span>':''}</div>
+  <h3>${esc(x.name)}</h3>${dates}<p>${esc(x.text)}</p>${rows}${posts}
+  <div class="exBtns">${s!=='closed'?`<a class="btn" href="${esc(x.apply)}" target="_blank" rel="noopener">${s==='open'?'Apply (official site) ↗':'Official site ↗'}</a>`:''}${x.notice&&x.notice!==x.apply?`<a class="btn ghost" href="${esc(x.notice)}" target="_blank" rel="noopener">Read notice ↗</a>`:''}<button class="btn ghost" type="button" data-exsay="${esc(x.id)}">🔊 Read aloud</button>${s==='open'?`<button class="btn ghost" type="button" data-exap="${esc(x.id)}">${ap?'Undo applied':'I applied ✓'}</button>`:''}</div></div>`}
+function exDraw(){const sec=$('news');if(!sec)return;let box=$('exBox');if(!box){box=document.createElement('div');box.id='exBox';sec.insertBefore(box,sec.firstChild)}
+  const bodies=['All',...Array.from(new Set(EX.items.map(x=>x.body)))];const list=EX.items.filter(x=>exF==='All'||x.body===exF);
+  const grp=[['open','Open now — apply before the last date'],['soon','Coming soon'],['closed','Closed recently']];
+  const ord=(a,b)=>(exDays(a.end)??9999)-(exDays(b.end)??9999);
+  box.innerHTML=`<h2>Exam alerts</h2><p class="small" style="margin-top:-6px">Application dates and official apply links, in simple English. Checked ${esc(exNice(EX.updated))}. Refreshed every morning.</p>
+  <div class="row exFil" style="justify-content:flex-start;gap:8px;flex-wrap:wrap;margin:10px 0 6px">${bodies.map(b=>`<button class="chip" type="button" data-exf="${esc(b)}" aria-pressed="${b===exF}">${esc(b)}</button>`).join('')}</div>
+  ${grp.map(([k,t])=>{const g=list.filter(x=>exState(x)===k).sort(k==='closed'?(a,b)=>ord(b,a):ord);return g.length?`<h3 class="exGrp">${t}</h3>${g.map(exCard).join('')}`:''}).join('')||'<p>No exams in this list.</p>'}
+  <p class="small">${esc(EX.note||'')} NCA means "No Candidate Available": the post is filled again only from one community. SR means special recruitment.</p>`}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-exf],[data-exap],[data-exsay],[data-exgo]');if(!t)return;
+  if(t.dataset.exf){exF=t.dataset.exf;exDraw();return}
+  if(t.dataset.exgo){location.hash='#news';setTimeout(()=>{const c=document.querySelector(`[data-ex="${t.dataset.exgo}"]`);if(c)c.scrollIntoView({behavior:'smooth',block:'start'})},250);return}
+  const x=EX.items.find(i=>i.id===(t.dataset.exap||t.dataset.exsay));if(!x)return;
+  if(t.dataset.exap){if(st.applied[x.id])delete st.applied[x.id];else st.applied[x.id]=dkey;save();exDraw();try{drawPlusToday()}catch(e){}return}
+  const s=exState(x);speak(x.name+'. '+(s==='open'?'Last date '+exNice(x.end)+'. '+exLeft(x)+'. ':s==='soon'?'Date not announced yet. ':'Closed. ')+x.text+' '+(x.who||''))});
+function exToday(){const old=$('exRemind');if(old)old.remove();const due=EX.items.filter(x=>exState(x)==='open'&&!st.applied[x.id]&&exDays(x.end)!=null&&exDays(x.end)<=10).sort((a,b)=>exDays(a.end)-exDays(b.end));
+  if(!due.length)return;const hello=document.querySelector('#today .hello');if(!hello)return;
+  hello.insertAdjacentHTML('afterend',`<div id="exRemind" class="panel exRem"><b>⏰ Application closing soon</b>${due.map(x=>`<div class="exRemRow"><div style="min-width:0">${esc(x.name)}<div class="small">Last date ${esc(exNice(x.end))} · <b>${esc(exLeft(x))}</b></div></div><button class="btn ghost" type="button" data-exgo="${esc(x.id)}">See</button></div>`).join('')}</div>`)}
+const _exTod=drawPlusToday;drawPlusToday=function(){_exTod();try{exToday()}catch(e){}};
+getData('exams.json').then(r=>r.json()).then(d=>{if(d&&Array.isArray(d.items)){EX=d;exDraw();exToday()}}).catch(()=>{});
 
 /* ---------- click actions ---------- */
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!b)return;e.preventDefault();const k=b.dataset.px;

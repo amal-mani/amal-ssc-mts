@@ -63,6 +63,27 @@ if lq:
         for i, q in enumerate(v): chk(q, f'lessonquiz {k} q{i}')
 for n in ('topics.json', 'updates.json', 'schedule.json', 'mocks.json'): load(n)
 
+import datetime, re
+ex = load('exams.json')
+if ex:
+    ids = set()
+    for x in ex.get('items', []):
+        w = f"exams {x.get('id')}"
+        for k in ('id', 'body', 'name', 'status', 'text', 'apply'):
+            if not x.get(k): E.append(f'{w}: missing {k}')
+        if x.get('id') in ids: E.append(f'{w}: duplicate id')
+        ids.add(x.get('id'))
+        if x.get('status') not in ('open', 'soon', 'closed'): E.append(f'{w}: bad status')
+        for k in ('start', 'end'):
+            if x.get(k):
+                try: datetime.date.fromisoformat(x[k])
+                except Exception: E.append(f'{w}: bad date {k}')
+        if x.get('status') == 'open' and not x.get('end'): E.append(f'{w}: open but no last date')
+        for k in ('apply', 'notice', 'src'):
+            if x.get(k) and not re.match(r'https://', x[k]): E.append(f'{w}: {k} not https')
+        for pp in x.get('posts', []):
+            if len(pp) != 4: E.append(f'{w}: post needs [cat,name,dept,tag]')
+
 if E:
     print('PROBLEMS:', len(E)); [print(' -', e) for e in E[:60]]; sys.exit(1)
 print('OK')

@@ -1,36 +1,6 @@
 {
  "items": [
   {
-   "id": "2026-11-27-mf",
-   "date": "27 Nov 2026",
-   "title": "New: Marks finder and target score",
-   "text": "Today shows the 3 topics where your study time gains the most marks. Tap Practise 10 to start. Set your target score on the Full mock page; after each mock it shows how many more marks you need in each subject."
-  },
-  {
-   "id": "2026-11-27-pics",
-   "date": "27 Nov 2026",
-   "title": "New: picture questions",
-   "text": "Mirror image, water image and paper folding questions with real pictures. Every full mock now has a paper folding question."
-  },
-  {
-   "id": "2026-11-27-cards",
-   "date": "27 Nov 2026",
-   "title": "New: GK memory cards and Sunday review",
-   "text": "Every GK or current affairs question you get wrong becomes a card that comes back after 1, 3, 7, 14 and 30 days. On Sundays, Today shows your week: minutes, classes, questions, your most common mistakes and next week's focus."
-  },
-  {
-   "id": "2026-11-27-report",
-   "date": "27 Nov 2026",
-   "title": "New: report a wrong question",
-   "text": "After answering, tap ⚑ Report this question if something is wrong. It is hidden from your practice at once, and you can send it to the morning update to fix."
-  },
-  {
-   "id": "2026-11-27-attend",
-   "date": "27 Nov 2026",
-   "title": "Classes you attend now count",
-   "text": "When you pass a class test (or tap Mark done), that day counts as studied: 1 class = a study day, 2 classes = a full day, and each class adds 45 minutes to Today's study. Days when you already passed a test are fixed too."
-  },
-  {
    "id": "2026-11-27-popup-sound",
    "date": "27 Nov 2026",
    "title": "Pop-up quiz: sound and shorter gaps",
@@ -53,6 +23,12 @@
    "date": "27 Nov 2026",
    "title": "Current affairs for 26 November added",
    "text": "16 news items and an 8-question quiz. From now on the update runs every morning at 4:45 AM, and you will see a message here when something important changes."
+  },
+  {
+   "id": "2026-11-27-exams",
+   "date": "27 Nov 2026",
+   "title": "New: Exam alerts",
+   "text": "Open More → Exam alerts. You will see application start and last dates, exam dates and the official apply link for SSC, Railway and Kerala PSC, all in simple English. Kerala PSC posts are explained in English. Tap 'I applied' after you apply. Today will remind you 10 days before a last date."
   }
  ]
 }
