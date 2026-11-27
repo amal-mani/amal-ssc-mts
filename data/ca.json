@@ -1,6 +1,265 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "days": [
+  {
+   "date": "2026-11-27",
+   "items": [
+    {
+     "cat": "Important days",
+     "title": "Constitution Day (26 November)",
+     "text": "India marked Constitution Day, also called Samvidhan Diwas. The Constitution was released in all 22 Scheduled Languages.",
+     "gk": "The Constituent Assembly adopted the Constitution on 26 November 1949. Dr. B.R. Ambedkar chaired the Drafting Committee."
+    },
+    {
+     "cat": "Important days",
+     "title": "National Milk Day (26 November)",
+     "text": "National Milk Day honours Dr. Verghese Kurien on his birth anniversary. The 2026 event was held in Patna, Bihar, with the National Gopal Ratna Awards.",
+     "gk": "Verghese Kurien is called the Father of the White Revolution. National Milk Day was first observed in 2014."
+    },
+    {
+     "cat": "Important days",
+     "title": "World Sustainable Transport Day (26 November)",
+     "text": "The UN day is about safe, cheap and clean transport. 2026 is its 4th observance.",
+     "gk": "Turkmenistan started this day. The first UN Global Sustainable Transport Conference was held in Ashgabat in 2016."
+    },
+    {
+     "cat": "Economy",
+     "title": "₹2,632 crore for India Post schemes",
+     "text": "The Union Cabinet approved two Department of Posts schemes, Postal Operations and Estates Management, for FY27 to FY31. The total cost is ₹2,632 crore.",
+     "gk": "The Department of Posts is under the Ministry of Communications."
+    },
+    {
+     "cat": "Economy",
+     "title": "₹11,000 crore scheme for construction machines",
+     "text": "The Cabinet approved a scheme to make more construction and infrastructure equipment (CIE) in India. The Ministry of Heavy Industries will run it."
+    },
+    {
+     "cat": "National",
+     "title": "New airport near Silchar, Assam",
+     "text": "The Cabinet approved a ₹2,014 crore greenfield airport at Doloo, near Silchar in Assam. The Airports Authority of India (AAI) will build it.",
+     "gk": "Greenfield means built on new land, not on an old site."
+    },
+    {
+     "cat": "Banking",
+     "title": "SBI Mutual Fund can buy 9.99% of South Indian Bank",
+     "text": "The RBI allowed SBI Mutual Fund to buy up to 9.99% of the shares or voting rights of South Indian Bank.",
+     "gk": "South Indian Bank has its head office in Thrissur, Kerala."
+    },
+    {
+     "cat": "Schemes",
+     "title": "ESIC benefits without filing claims",
+     "text": "ESIC notified new General Regulations 2026 from 21 November 2026. Sickness and maternity benefits can now reach workers by DBT without a separate claim. The wage limit is ₹21,000 a month, and ₹25,000 for persons with disabilities.",
+     "gk": "ESIC is under the Ministry of Labour and Employment."
+    },
+    {
+     "cat": "Awards",
+     "title": "Miss Universe 2026: Jennifer Barreto",
+     "text": "Jennifer Barreto of Puerto Rico won the 75th Miss Universe. She is the first married woman and mother to win. India's contestant Kaziah Liz Mejo, from Mavelikkara in Kerala, is the first woman from Kerala to become Miss Universe India."
+    },
+    {
+     "cat": "Defence",
+     "title": "Exercise SURYAKIRAN XX: India and Nepal",
+     "text": "The 20th India–Nepal army exercise SURYAKIRAN began on 25 November 2026 at Saljhandi, Nepal. It focuses on counter-terrorism and working together."
+    },
+    {
+     "cat": "Defence",
+     "title": "Bhargavastra counter-drone system",
+     "text": "India's own Bhargavastra counter-drone system finished development trials at the Pokhran ranges in Rajasthan."
+    },
+    {
+     "cat": "Science",
+     "title": "Satish Dhawan biography released",
+     "text": "The book 'Innovating for the Nation' about Satish Dhawan was released on 23 November 2026. The authors are S. Chandrashekar and Y.S. Rajan.",
+     "gk": "Satish Dhawan was ISRO Chairman from 1972 to 1984, after Vikram Sarabhai."
+    },
+    {
+     "cat": "Sports",
+     "title": "World Chess Championship: Gukesh vs Sindarov",
+     "text": "D. Gukesh and Javokhir Sindarov were level at 1.5–1.5 after the third game, which was drawn."
+    },
+    {
+     "cat": "Sports",
+     "title": "New Delhi to host Thomas and Uber Cup 2028",
+     "text": "New Delhi will host the 2028 Thomas and Uber Cup Finals.",
+     "gk": "The Thomas Cup (men) and Uber Cup (women) are world team championships in badminton."
+    },
+    {
+     "cat": "Appointments",
+     "title": "Sampath Kumar: Meghalaya Chief Secretary",
+     "text": "Sampath Kumar, a 1997-batch IAS officer, will be Chief Secretary of Meghalaya from 1 December 2026.",
+     "gk": "The capital of Meghalaya is Shillong."
+    },
+    {
+     "cat": "International",
+     "title": "China launches Shenzhou-24",
+     "text": "China sent the Shenzhou-24 spacecraft with three astronauts to its Tiangong space station."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "The Constitution of India was adopted on which date?",
+     "o": [
+      "26 January 1950",
+      "15 August 1947",
+      "26 November 1949",
+      "2 October 1949"
+     ],
+     "a": 2,
+     "e": "Constitution Day is on 26 November. On that day in 1949, the Constituent Assembly adopted the Constitution. It came into force later, on 26 January 1950.",
+     "t": "Current affairs",
+     "ml": "1949 നവംബർ 26-നാണ് ഭരണഘടന അംഗീകരിച്ചത്. അതുകൊണ്ടാണ് നവംബർ 26 ഭരണഘടനാ ദിനം.",
+     "w": [
+      "That is when it came into force (Republic Day), not when it was adopted.",
+      "That is Independence Day.",
+      "",
+      "That is Gandhi Jayanti, not linked to the Constitution."
+     ]
+    },
+    {
+     "q": "National Milk Day (26 November) honours whom?",
+     "o": [
+      "M.S. Swaminathan",
+      "Verghese Kurien",
+      "Norman Borlaug",
+      "C. Subramaniam"
+     ],
+     "a": 1,
+     "e": "National Milk Day is on Verghese Kurien's birth anniversary. He is the Father of the White Revolution.",
+     "t": "Current affairs",
+     "ml": "ദേശീയ ക്ഷീര ദിനം വർഗീസ് കുര്യന്റെ ജന്മദിനമാണ്. അദ്ദേഹം ധവള വിപ്ലവത്തിന്റെ പിതാവാണ്.",
+     "w": [
+      "He is linked to the Green Revolution in India, not milk.",
+      "",
+      "He was the father of the Green Revolution worldwide.",
+      "He was a minister linked to the Green Revolution, not milk."
+     ]
+    },
+    {
+     "q": "A new greenfield airport has been approved at Doloo, near which city?",
+     "o": [
+      "Silchar",
+      "Guwahati",
+      "Imphal",
+      "Agartala"
+     ],
+     "a": 0,
+     "e": "The airport will be at Doloo near Silchar in Assam. It will cost ₹2,014 crore.",
+     "t": "Current affairs",
+     "ml": "അസമിലെ സിൽചറിനടുത്തുള്ള ഡോലൂവിലാണ് പുതിയ വിമാനത്താവളം.",
+     "w": [
+      "",
+      "Guwahati is in Assam, but the new airport is near Silchar.",
+      "Imphal is in Manipur.",
+      "Agartala is in Tripura."
+     ]
+    },
+    {
+     "q": "RBI allowed SBI Mutual Fund to buy up to 9.99% of which bank? (Its head office is in Thrissur.)",
+     "o": [
+      "Federal Bank",
+      "CSB Bank",
+      "Dhanlaxmi Bank",
+      "South Indian Bank"
+     ],
+     "a": 3,
+     "e": "The bank is South Indian Bank. Its head office is in Thrissur, Kerala.",
+     "t": "Current affairs",
+     "ml": "സൗത്ത് ഇന്ത്യൻ ബാങ്കിന്റെ 9.99% ഓഹരി വാങ്ങാൻ SBI മ്യൂച്വൽ ഫണ്ടിന് RBI അനുമതി നൽകി.",
+     "w": [
+      "Federal Bank is in Aluva, Kerala, but it is not in this news.",
+      "CSB Bank is in Thrissur, but it is not in this news.",
+      "Dhanlaxmi Bank is in Thrissur, but it is not in this news.",
+      ""
+     ]
+    },
+    {
+     "q": "Under the new ESIC rules, what is the monthly wage limit for persons with disabilities?",
+     "o": [
+      "₹15,000",
+      "₹21,000",
+      "₹25,000",
+      "₹30,000"
+     ],
+     "a": 2,
+     "e": "The normal ESIC wage limit is ₹21,000 a month. For persons with disabilities it is higher: ₹25,000.",
+     "t": "Current affairs",
+     "ml": "ഭിന്നശേഷിക്കാർക്ക് ESIC വേതന പരിധി മാസം ₹25,000 ആണ്.",
+     "w": [
+      "That is too low. The normal limit is ₹21,000.",
+      "That is the limit for other workers, not for persons with disabilities.",
+      "",
+      "That number is not in the rules."
+     ]
+    },
+    {
+     "q": "Who won Miss Universe 2026?",
+     "o": [
+      "Fátima Bosch",
+      "Jennifer Barreto",
+      "Melissa Núñez",
+      "Kaziah Liz Mejo"
+     ],
+     "a": 1,
+     "e": "Jennifer Barreto of Puerto Rico won Miss Universe 2026. She is the first married woman and mother to win.",
+     "t": "Current affairs",
+     "ml": "പ്യൂർട്ടോ റിക്കോയുടെ ജെന്നിഫർ ബാരെറ്റോ ആണ് മിസ് യൂണിവേഴ്സ് 2026.",
+     "w": [
+      "She was Miss Universe 2025. She crowned the new winner.",
+      "",
+      "She was the 1st runner-up.",
+      "She was India's contestant, from Kerala."
+     ]
+    },
+    {
+     "q": "Exercise SURYAKIRAN is held between India and which country?",
+     "o": [
+      "Bhutan",
+      "Sri Lanka",
+      "Nepal",
+      "Bangladesh"
+     ],
+     "a": 2,
+     "e": "SURYAKIRAN is the India–Nepal army exercise. The 20th edition is at Saljhandi, Nepal.",
+     "t": "Current affairs",
+     "ml": "സൂര്യകിരൺ ഇന്ത്യയും നേപ്പാളും തമ്മിലുള്ള സൈനിക അഭ്യാസമാണ്.",
+     "w": [
+      "The India–Bhutan exercise is not SURYAKIRAN.",
+      "India–Sri Lanka army exercise is Mitra Shakti.",
+      "",
+      "India–Bangladesh army exercise is Sampriti."
+     ]
+    },
+    {
+     "q": "The Thomas Cup and Uber Cup are linked to which sport?",
+     "o": [
+      "Tennis",
+      "Table tennis",
+      "Hockey",
+      "Badminton"
+     ],
+     "a": 3,
+     "e": "The Thomas Cup (men) and Uber Cup (women) are world team championships in badminton. New Delhi will host them in 2028.",
+     "t": "Current affairs",
+     "ml": "തോമസ് കപ്പും ഊബർ കപ്പും ബാഡ്മിന്റൺ ടൂർണമെന്റുകളാണ്.",
+     "w": [
+      "Tennis team cups are the Davis Cup and Billie Jean King Cup.",
+      "Table tennis has the Swaythling Cup.",
+      "Hockey has the World Cup and Champions Trophy.",
+      ""
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "AffairsCloud, Current Affairs 27 November 2026",
+     "url": "https://affairscloud.com/current-affairs-27-november-2026/"
+    },
+    {
+     "name": "JKAD World, Daily Current Affairs 27 Nov 2026",
+     "url": "https://jkadworld.com/next-exam/daily-current-affairs/daily-current-affairs-27-nov-2026/"
+    }
+   ]
+  },
   {
    "date": "2026-11-26",
    "items": [

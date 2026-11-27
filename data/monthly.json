@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "note": "Monthly current affairs revision (last 6 months). Video buttons open YouTube search results for that month.",
  "months": [
   {
    "month": "2026-11",
-   "name": "November 2026 (till 26 Nov)",
+   "name": "November 2026 (till 27 Nov)",
    "items": [
     {
      "cat": "States",
@@ -93,6 +93,23 @@
      "title": "Retail inflation crosses 6%",
      "text": "Retail inflation rose to 6.09% in October 2026. This is above the RBI's upper limit of 6% for the first time under the new CPI series (base year 2024). Food inflation was 8.94%.",
      "gk": "The RBI's inflation target is 4%, with a band of 2% to 6%."
+    },
+    {
+     "cat": "Banking",
+     "title": "SBI Mutual Fund can buy 9.99% of South Indian Bank",
+     "text": "The RBI allowed SBI Mutual Fund to buy up to 9.99% of the shares or voting rights of South Indian Bank.",
+     "gk": "South Indian Bank has its head office in Thrissur, Kerala."
+    },
+    {
+     "cat": "Schemes",
+     "title": "ESIC benefits without filing claims",
+     "text": "ESIC notified new General Regulations 2026 from 21 November 2026. Sickness and maternity benefits can now reach workers by DBT without a separate claim. The wage limit is ₹21,000 a month, and ₹25,000 for persons with disabilities.",
+     "gk": "ESIC is under the Ministry of Labour and Employment."
+    },
+    {
+     "cat": "Awards",
+     "title": "Miss Universe 2026: Jennifer Barreto",
+     "text": "Jennifer Barreto of Puerto Rico won the 75th Miss Universe. She is the first married woman and mother to win. India's contestant Kaziah Liz Mejo, from Mavelikkara in Kerala, is the first woman from Kerala to become Miss Universe India."
     }
    ],
    "quiz": [
@@ -211,6 +228,44 @@
       "5.3% was S&P's forecast for the whole year.",
       "4% is the RBI's target, not the October figure."
      ]
+    },
+    {
+     "q": "RBI allowed SBI Mutual Fund to buy up to 9.99% of which bank? (Its head office is in Thrissur.)",
+     "o": [
+      "Federal Bank",
+      "CSB Bank",
+      "Dhanlaxmi Bank",
+      "South Indian Bank"
+     ],
+     "a": 3,
+     "e": "The bank is South Indian Bank. Its head office is in Thrissur, Kerala.",
+     "t": "Current affairs",
+     "ml": "സൗത്ത് ഇന്ത്യൻ ബാങ്കിന്റെ 9.99% ഓഹരി വാങ്ങാൻ SBI മ്യൂച്വൽ ഫണ്ടിന് RBI അനുമതി നൽകി.",
+     "w": [
+      "Federal Bank is in Aluva, Kerala, but it is not in this news.",
+      "CSB Bank is in Thrissur, but it is not in this news.",
+      "Dhanlaxmi Bank is in Thrissur, but it is not in this news.",
+      ""
+     ]
+    },
+    {
+     "q": "Under the new ESIC rules, what is the monthly wage limit for persons with disabilities?",
+     "o": [
+      "₹15,000",
+      "₹21,000",
+      "₹25,000",
+      "₹30,000"
+     ],
+     "a": 2,
+     "e": "The normal ESIC wage limit is ₹21,000 a month. For persons with disabilities it is higher: ₹25,000.",
+     "t": "Current affairs",
+     "ml": "ഭിന്നശേഷിക്കാർക്ക് ESIC വേതന പരിധി മാസം ₹25,000 ആണ്.",
+     "w": [
+      "That is too low. The normal limit is ₹21,000.",
+      "That is the limit for other workers, not for persons with disabilities.",
+      "",
+      "That number is not in the rules."
+     ]
     }
    ],
    "sources": [
@@ -237,6 +292,14 @@
     {
      "name": "Cracktarget, Current affairs 26 November 2026",
      "url": "https://cracktarget.com/current-affairs-26-november-2026/"
+    },
+    {
+     "name": "AffairsCloud, Current Affairs 27 November 2026",
+     "url": "https://affairscloud.com/current-affairs-27-november-2026/"
+    },
+    {
+     "name": "JKAD World, Daily Current Affairs 27 Nov 2026",
+     "url": "https://jkadworld.com/next-exam/daily-current-affairs/daily-current-affairs-27-nov-2026/"
     }
    ],
    "videos": [
