@@ -149,10 +149,10 @@ public class QuickQuiz extends BroadcastReceiver {
                 nm.createNotificationChannel(ch);
             }
             if (nm.getNotificationChannel(CHANNEL_QUIET) == null) {
-                NotificationChannel q = new NotificationChannel(CHANNEL_QUIET, "Pop-up quiz (silent)", NotificationManager.IMPORTANCE_DEFAULT);
-                q.setSound(null, null);
-                q.enableVibration(false);
-                nm.createNotificationChannel(q);
+                NotificationChannel quiet = new NotificationChannel(CHANNEL_QUIET, "Pop-up quiz (silent)", NotificationManager.IMPORTANCE_DEFAULT);
+                quiet.setSound(null, null);
+                quiet.enableVibration(false);
+                nm.createNotificationChannel(quiet);
             }
         }
         String key = String.valueOf(System.currentTimeMillis());
