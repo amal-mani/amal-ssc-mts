@@ -195,6 +195,41 @@ details summary{cursor:pointer}
 #qqBox .qqQ{font-size:1.08rem;line-height:1.5}
 #qqBox .opt{margin:6px 0;width:100%}
 .chip.qqDay.on{background:var(--acc);color:var(--accInk)}
+/* PwD reading settings */
+html.rd-lexend body,html.rd-lexend button,html.rd-lexend input,html.rd-lexend select{font-family:Lexend,system-ui,sans-serif}
+html.rd-atkinson body,html.rd-atkinson button,html.rd-atkinson input,html.rd-atkinson select{font-family:"Atkinson Hyperlegible",system-ui,sans-serif}
+html.rd-ls1 body{line-height:1.8}html.rd-ls1 p,html.rd-ls1 li{line-height:1.8}
+html.rd-ls2 body{line-height:2.1;letter-spacing:.02em;word-spacing:.08em}html.rd-ls2 p,html.rd-ls2 li{line-height:2.1}
+html.rd-cream body::after,html.rd-blue body::after,html.rd-green body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90}
+html.rd-cream body::after{background:rgba(255,214,140,.10)}html.rd-blue body::after{background:rgba(120,170,255,.10)}html.rd-green body::after{background:rgba(120,220,160,.10)}
+#rdRuler{position:fixed;left:0;right:0;top:40%;height:44px;background:rgba(255,198,92,.13);border-top:2px solid rgba(255,198,92,.55);border-bottom:2px solid rgba(255,198,92,.55);pointer-events:none;z-index:95}
+.rdw.on{background:#ffc65c;color:#1a1200;border-radius:4px;box-shadow:0 0 0 2px #ffc65c}
+.rdGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.rdGrid label{display:grid;gap:4px;font-weight:600}
+.rdGrid select{min-height:44px;font-size:16px;border-radius:10px;background:var(--card2,#202634);color:var(--ink,#eef1f6);border:1px solid var(--line,#2a3140);padding:0 10px}
+/* simple mode: fewer sections */
+html.simple nav button[data-tab=course],html.simple nav button[data-tab=sched],html.simple nav button[data-tab=news],html.simple nav button[data-tab=mocks],html.simple nav button[data-tab=cards],html.simple nav button[data-tab=progress],
+html.simple #moreSheet [data-tab=course],html.simple #moreSheet [data-tab=sched],html.simple #moreSheet [data-tab=news],html.simple #moreSheet [data-tab=mocks],html.simple #moreSheet [data-tab=cards],html.simple #moreSheet [data-tab=progress]{display:none!important}
+/* PwD checklist, drills, pictures, speed goal */
+.pwdCk{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line,#2a3140);cursor:pointer}.pwdCk input{width:22px;height:22px;flex:none;margin-top:2px}
+.drCard{margin-top:12px;padding:14px;border-radius:12px;background:var(--card2,#202634)}.drQ{font-size:1.6rem;font-weight:800;margin:10px 0}
+#drIn{font-size:1.4rem;min-height:48px;width:100%;max-width:240px;border-radius:10px;border:2px solid var(--line,#2a3140);background:#11151c;color:inherit;padding:0 12px}
+.learn .lnPic{border-left:4px solid #5aa9ff;background:#5aa9ff12;padding:12px 14px;border-radius:10px}.learn .lnPic svg{display:block;margin:8px 0}.learn .lnPic p{margin:6px 0 0}
+.spd{position:relative;height:12px;border-radius:99px;background:var(--line,#2a3140);overflow:hidden}.spd i{display:block;height:100%;background:#5aa9ff}.spd em{position:absolute;top:0;bottom:0;left:75%;width:2px;background:#fff}
+/* Real exam look: white screen like the SSC computer test */
+html.examlook #simBox{background:#f3f5f9;color:#111}
+html.examlook #simBox .simTop{background:#1d4f91;color:#fff;border-bottom:0}
+html.examlook #simBox .simTabs .btn,html.examlook #simBox .simTabs button{background:#fff;color:#1d4f91;border:1px solid #1d4f91;border-radius:4px}
+html.examlook #simBox .simTabs [aria-pressed=true],html.examlook #simBox .simTabs .on{background:#1d4f91;color:#fff}
+html.examlook #simBox .simQ,html.examlook #simBox .simPal{background:#fff;border-radius:4px;border:1px solid #c9d2e0;color:#111}
+html.examlook #simBox .simQ .small,html.examlook #simBox .simPal .small{color:#444}
+html.examlook #simBox .opt{background:#fff;color:#111;border:1px solid #c9d2e0;border-radius:4px}
+html.examlook #simBox .opt .b{background:#fff;color:#111;border:2px solid #555;border-radius:50%}
+html.examlook #simBox .opt.sel,html.examlook #simBox .opt[aria-pressed=true]{background:#e6efff;border-color:#1d4f91}
+html.examlook #simBox .opt.sel .b,html.examlook #simBox .opt[aria-pressed=true] .b{background:#1d4f91;color:#fff;border-color:#1d4f91}
+html.examlook #simBox .pb{background:#e9edf3;color:#111;border-color:#c9d2e0;border-radius:4px}
+html.examlook #simBox .pb.v{background:#d9363e;color:#fff}html.examlook #simBox .pb.a{background:#2e9e4f;color:#fff}html.examlook #simBox .pb.m,html.examlook #simBox .pb.am{background:#6a3fb5;color:#fff}
+html.examlook #simBox .btn{border-radius:4px}html.examlook #simBox .btn.ghost{background:#fff;color:#1d4f91;border:1px solid #1d4f91}
+#rdSet .chip,#exLook,#qqSet label.chip{flex:0 1 auto;max-width:100%;white-space:normal;text-align:left;line-height:1.35}
 </style>
 </head>
 <body>
@@ -1621,6 +1656,137 @@ function nextStepCard(){try{const sec=$('today');if(!sec)return;let c=$('nextSte
   $('nsGo').onclick=()=>{todo.scrollIntoView({behavior:'smooth',block:'center'});todo.style.outline='3px solid var(--acc)';setTimeout(()=>todo.style.outline='',2500)}}catch(e){}}
 const _nsPlan=drawPlan;drawPlan=function(){_nsPlan();nextStepCard()};
 try{nextStepCard()}catch(e){}
+
+/* ================= PwD SUPPORT: exam rules, reading settings, maths pictures, speed drills, mini sets,
+   simple mode, scribe practice, speed goal, and "What's new" messages ================= */
+let PWD=null,WN=null;
+if(!st.rd||typeof st.rd!=='object')st.rd={font:'',ls:'',tint:'',ruler:false,hl:true,simple:false};
+if(!st.pwdChk||typeof st.pwdChk!=='object')st.pwdChk={};
+if(!Array.isArray(st.wnSeen))st.wnSeen=[];
+if(!st.drill||typeof st.drill!=='object')st.drill={};
+
+/* ---------- 3. Reading settings + 7. Simple mode ---------- */
+function rdApply(){const h=document.documentElement,r=st.rd;
+  ['rd-lexend','rd-atkinson','rd-ls1','rd-ls2','rd-cream','rd-blue','rd-green','rd-ruler','simple','examlook'].forEach(c=>h.classList.remove(c));
+  if(r.font){h.classList.add('rd-'+r.font);if(!document.getElementById('rdFont')){const l=document.createElement('link');l.id='rdFont';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap';document.head.appendChild(l)}}
+  if(r.ls)h.classList.add('rd-'+r.ls);if(r.tint)h.classList.add('rd-'+r.tint);if(r.ruler)h.classList.add('rd-ruler');if(r.simple)h.classList.add('simple');if(r.exam)h.classList.add('examlook');
+  let ru=document.getElementById('rdRuler');if(r.ruler&&!ru){ru=document.createElement('div');ru.id='rdRuler';ru.setAttribute('aria-hidden','true');document.body.appendChild(ru)}if(ru)ru.hidden=!r.ruler}
+const rdMove=y=>{const ru=document.getElementById('rdRuler');if(ru&&!ru.hidden)ru.style.top=(y-22)+'px'};
+document.addEventListener('mousemove',e=>rdMove(e.clientY),{passive:true});document.addEventListener('touchmove',e=>{if(e.touches[0])rdMove(e.touches[0].clientY)},{passive:true});document.addEventListener('touchstart',e=>{if(e.touches[0])rdMove(e.touches[0].clientY)},{passive:true});
+rdApply();
+/* highlight each word while the app reads it aloud */
+let rdTimer=null;
+function rdHighlight(t){if(!st.rd.hl)return;try{clearInterval(rdTimer);document.querySelectorAll('.rdWords').forEach(x=>{x.outerHTML=esc(x.dataset.t)});
+  const T=String(t).trim();if(T.length<3)return;
+  const C=[...document.querySelectorAll('p,span,b,h3,div,li')].filter(e=>e.offsetParent&&e.children.length===0&&!e.closest('nav,button')&&e.textContent.trim().length>=8&&T.includes(e.textContent.trim()));const el=C.sort((a,b)=>b.textContent.length-a.textContent.length)[0];if(!el)return;const T2=el.textContent.trim();
+  const W=T2.split(/(\s+)/);const sp=document.createElement('span');sp.className='rdWords';sp.dataset.t=T2;sp.innerHTML=W.map(w=>/\s+/.test(w)?w:`<span class="rdw">${esc(w)}</span>`).join('');el.textContent='';el.appendChild(sp);
+  const ws=[...sp.querySelectorAll('.rdw')];let k=Math.max(0,T.indexOf(T2))?0:0;const lead=T.indexOf(T2)>0?T.slice(0,T.indexOf(T2)).split(/\s+/).length:0;k=-lead;const per=Math.max(250,60000/(150*((st.set&&st.set.rate)||.85)));
+  rdTimer=setInterval(()=>{ws.forEach((w,j)=>w.classList.toggle('on',j===k));k++;if(k>ws.length){clearInterval(rdTimer);setTimeout(()=>{if(sp.isConnected)sp.outerHTML=esc(T2)},600)}},per)}catch(e){}}
+const _rdSpeak=speak;speak=function(t){_rdSpeak(t);rdHighlight(t)};
+function rdPanel(){const r=st.rd,opt=(k,v,l)=>`<option value="${v}" ${r[k]===v?'selected':''}>${l}</option>`;
+  return `<div class="panel" style="margin-top:18px" id="rdSet"><h2>Reading and screen</h2><p class="small" style="margin-top:-6px">Make reading easier. These settings are only for you and change the whole app.</p>
+   <div class="rdGrid">
+    <label>Font <select id="rdFontSel">${opt('font','','Normal')}${opt('font','lexend','Lexend (easy to read)')}${opt('font','atkinson','Atkinson (clear letters)')}</select></label>
+    <label>Space between lines <select id="rdLs">${opt('ls','','Normal')}${opt('ls','ls1','More')}${opt('ls','ls2','Much more')}</select></label>
+    <label>Background colour <select id="rdTint">${opt('tint','','None')}${opt('tint','cream','Warm cream')}${opt('tint','blue','Soft blue')}${opt('tint','green','Soft green')}</select></label></div>
+   <div class="row" style="justify-content:flex-start;gap:14px;flex-wrap:wrap;margin-top:12px">
+    <label class="chip" style="cursor:pointer"><input type="checkbox" id="rdRu" ${r.ruler?'checked':''}> Reading ruler (a bar that follows your finger or mouse)</label>
+    <label class="chip" style="cursor:pointer"><input type="checkbox" id="rdHl" ${r.hl?'checked':''}> Light up each word when the app reads aloud</label>
+    <label class="chip" style="cursor:pointer"><input type="checkbox" id="rdSimple" ${r.simple?'checked':''}> Simple mode (only Today, Practice, Current affairs, Full mock, My day)</label></div>
+   <p class="small" style="margin-top:10px">Text size: use the <b>A−</b> and <b>A+</b> buttons at the top.</p></div>`}
+function rdBind(){const u=()=>{save();rdApply()};if(!$('rdSet'))return;
+  $('rdFontSel').onchange=e=>{st.rd.font=e.target.value;u()};$('rdLs').onchange=e=>{st.rd.ls=e.target.value;u()};$('rdTint').onchange=e=>{st.rd.tint=e.target.value;u()};
+  $('rdRu').onchange=e=>{st.rd.ruler=e.target.checked;u()};$('rdHl').onchange=e=>{st.rd.hl=e.target.checked;u()};$('rdSimple').onchange=e=>{st.rd.simple=e.target.checked;u()}}
+
+/* ---------- 1. PwD exam rules + checklist (pwd.json, kept up to date every morning) ---------- */
+const PWD_DEF={updated:'2026-11-27',rules:[],checklist:[]};
+getData('pwd.json').then(r=>r.json()).then(d=>{if(d&&Array.isArray(d.rules)){PWD=d;try{drawMyDay();pwdToday()}catch(e){}}}).catch(()=>{});
+function pwdPanel(){const P=PWD||PWD_DEF;if(!P.rules.length)return '';const ck=P.checklist||[];const done=ck.filter((c,i)=>st.pwdChk[c.id||i]).length;
+  return `<div class="panel" style="margin-top:18px;border-left:5px solid #c39bff" id="pwdSet"><h2>PwD exam rules and checklist</h2><p class="small" style="margin-top:-6px">For candidates with a disability (PwD/PwBD). Checked every morning from SSC notices${P.updated?' · last checked '+esc(P.updated):''}. Always confirm in the official notice.</p>
+   ${P.rules.map(r=>`<div class="note" style="margin:8px 0"><b>${esc(r.title)}</b><p style="margin:4px 0 0">${esc(r.text)}</p>${r.src?`<a class="small" href="${esc(r.src)}" target="_blank" rel="noopener">source ↗</a>`:''}</div>`).join('')}
+   ${ck.length?`<h3 style="margin:14px 0 6px">My PwD checklist (${done} of ${ck.length} done)</h3>${ck.map((c,i)=>{const k=c.id||i;return `<label class="pwdCk"><input type="checkbox" data-k="${esc(String(k))}" ${st.pwdChk[k]?'checked':''}><span><b>${esc(c.title)}</b>${c.when?` <span class="small">· ${esc(c.when)}</span>`:''}${c.text?`<br><span class="small">${esc(c.text)}</span>`:''}</span></label>`}).join('')}`:''}</div>`}
+function pwdBind(){const el=$('pwdSet');if(!el)return;el.querySelectorAll('input[data-k]').forEach(x=>x.onchange=()=>{st.pwdChk[x.dataset.k]=x.checked;save();try{drawMyDay()}catch(e){}})}
+/* on Today: a reminder in the last 10 days before the exam, while checklist items are open */
+function pwdToday(){try{const P=PWD;if(!P||!P.checklist)return;const left=examDays(),open=P.checklist.filter((c,i)=>!st.pwdChk[c.id||i]);let b=$('pwdRemind');
+  if(!(left<=10&&left>=0&&open.length)){if(b)b.remove();return}
+  if(!b){b=document.createElement('div');b.id='pwdRemind';b.className='note';b.style.cssText='border-left:5px solid #c39bff;margin:12px 0';const n=$('nextStep')||document.querySelector('#today .hello');n.insertAdjacentElement('afterend',b)}
+  b.innerHTML=`<b>Exam in ${left} day${left===1?'':'s'}: PwD checklist.</b> ${open.slice(0,3).map(c=>esc(c.title)).join(' · ')}${open.length>3?' …':''} <a href="#myday">Open checklist</a>`}catch(e){}}
+
+/* ---------- What's new messages (whatsnew.json) ---------- */
+getData('whatsnew.json').then(r=>r.json()).then(d=>{if(d&&Array.isArray(d.items)){WN=d;wnDraw()}}).catch(()=>{});
+function wnDraw(){try{if(!WN)return;const items=WN.items.filter(x=>x&&x.id&&!st.wnSeen.includes(x.id)).slice(0,3);let b=$('wnBox');
+  if(!items.length){if(b)b.remove();return}
+  if(!b){b=document.createElement('div');b.id='wnBox';b.className='panel';b.style.cssText='margin:12px 0;border-left:5px solid #59d499';const n=document.querySelector('#today .hello');n.insertAdjacentElement('afterend',b)}
+  b.innerHTML=`<div class="row" style="justify-content:space-between;align-items:center"><b>What's new</b><button class="btn ghost" type="button" id="wnOk">Got it</button></div>${items.map(x=>`<div style="margin-top:8px"><b>${esc(x.title)}</b> <span class="small">${esc(x.date||'')}</span><p style="margin:4px 0 0">${esc(x.text)}</p></div>`).join('')}`;
+  $('wnOk').onclick=()=>{items.forEach(x=>st.wnSeen.push(x.id));st.wnSeen=st.wnSeen.slice(-200);save();wnDraw()}}catch(e){}}
+function wnAll(){if(!WN)return '';return `<div class="panel" style="margin-top:18px"><h2>All app updates</h2>${WN.items.slice(0,15).map(x=>`<p style="margin:8px 0"><b>${esc(x.title)}</b> <span class="small">${esc(x.date||'')}</span><br>${esc(x.text)}</p>`).join('')}</div>`}
+
+/* ---------- 2. Speed goal after a full mock ---------- */
+const _pwFin=fmFinish;fmFinish=function(){try{st.fmUsed=Object.assign({},fm.used)}catch(e){}return _pwFin.apply(this,arguments)};
+function speedBox(){const u=st.fmUsed;if(!u||!Object.keys(u).length)return '';const rows=Object.entries(u).map(([k,m])=>{const p=Math.min(100,Math.round(m/60*100)),ok=m<=45;
+  return `<div style="margin:6px 0"><div class="row" style="justify-content:space-between"><span>Session ${esc(k)}</span><b style="color:${ok?'#59d499':'#ffc65c'}">${m} min ${ok?'✓ inside 45':'(goal: 45)'}</b></div><div class="spd"><i style="width:${p}%"></i><em></em></div></div>`}).join('');
+  return `<div class="panel" style="margin-top:18px" id="spdBox"><h2>Speed goal</h2><p class="small" style="margin-top:-6px">You get 60 minutes per session with PwD compensatory time. Aim to finish in 45, so the extra 15 minutes are for checking. The line marks 45 minutes.</p>${rows}</div>`}
+
+/* ---------- 4a. Pictures for Maths explanations ---------- */
+const gcd=(a,b)=>b?gcd(b,a%b):a;
+function mathPic(q){try{const t=lnTopic(q);let m;
+  if(t==='Ratio'&&(m=q.q.match(/₹(\d+) is divided between A and B in the ratio (\d+) : (\d+)/))){const tot=+m[1],x=+m[2],y=+m[3],k=tot/(x+y),W=300,bw=Math.min(36,W/(x+y)-4);let s='';
+    for(let i=0;i<x+y;i++){const isA=i<x;s+=`<rect x="${10+i*(bw+4)}" y="${isA?20:20}" width="${bw}" height="34" rx="5" fill="${isA?'#5aa9ff':'#ff7a59'}"/><text x="${10+i*(bw+4)+bw/2}" y="42" font-size="11" text-anchor="middle" fill="#0e1014">${k}</text>`}
+    return {svg:`<svg viewBox="0 0 ${20+(x+y)*(bw+4)} 80" width="100%" style="max-width:${30+(x+y)*(bw+4)}px" role="img" aria-label="Ratio picture"><text x="10" y="14" font-size="11" fill="#9aa3b2">A = ${x} boxes</text><text x="${10+x*(bw+4)}" y="14" font-size="11" fill="#9aa3b2">B = ${y} boxes</text>${s}<text x="10" y="72" font-size="11" fill="#eef1f6">${x+y} boxes = ₹${tot}, so 1 box = ₹${k}</text></svg>`,cap:`Draw ${x+y} boxes: ${x} for A and ${y} for B. Every box has the same money, ₹${k}. B gets ${y} boxes = ₹${y*k}.`}}
+  if(t==='Time and work'&&(m=q.q.match(/in (\d+) days and B can finish it in (\d+) days/))){const a=+m[1],b=+m[2],L=a*b/gcd(a,b),pa=L/a,pb=L/b,d=L/(pa+pb);
+    const bar=(n,c,y,l)=>`<rect x="10" y="${y}" width="${Math.max(8,n/L*280)}" height="18" rx="4" fill="${c}"/><text x="${16+Math.max(8,n/L*280)}" y="${y+13}" font-size="11" fill="#eef1f6">${l}</text>`;
+    return {svg:`<svg viewBox="0 0 360 120" width="100%" style="max-width:420px" role="img" aria-label="Work picture"><rect x="10" y="8" width="280" height="18" rx="4" fill="#2a3140"/><text x="16" y="21" font-size="11" fill="#eef1f6">Whole work = ${L} units</text>${bar(pa,'#5aa9ff',36,'A: '+pa+' units a day')}${bar(pb,'#ff7a59',60,'B: '+pb+' units a day')}${bar(pa+pb,'#59d499',84,'Together: '+(pa+pb)+' a day')}<text x="10" y="114" font-size="11" fill="#9aa3b2">${L} ÷ ${pa+pb} = ${d} days</text></svg>`,cap:`Make the work ${L} units (a number both ${a} and ${b} divide). A does ${pa} a day, B does ${pb} a day. Together ${pa+pb} a day, so ${L} ÷ ${pa+pb} = ${d} days.`}}
+  if(t==='Speed and trains'&&(m=q.q.match(/(\d+) km\/h/))){const v=+m[1];if(v%18)return null;
+    return {svg:`<svg viewBox="0 0 360 70" width="100%" style="max-width:420px" role="img" aria-label="Speed picture"><rect x="10" y="10" width="120" height="30" rx="6" fill="#5aa9ff"/><text x="70" y="30" font-size="12" text-anchor="middle" fill="#0e1014">${v} km/h</text><text x="165" y="30" font-size="12" text-anchor="middle" fill="#eef1f6">× 5/18 →</text><rect x="210" y="10" width="120" height="30" rx="6" fill="#59d499"/><text x="270" y="30" font-size="12" text-anchor="middle" fill="#0e1014">${v*5/18} m/s</text><text x="10" y="60" font-size="11" fill="#9aa3b2">Every 18 km/h = 5 m/s</text></svg>`,cap:`Train lengths are in metres, so change km/h to m/s first: ${v} × 5 ÷ 18 = ${v*5/18} m/s.`}}
+  return null}catch(e){return null}}
+const _pwLP=learnPanel;learnPanel=function(box,q,i,opts){const d=_pwLP(box,q,i,opts);try{const p=mathPic(q);if(p){const s=d.querySelector('.lnStep');s.insertAdjacentHTML('afterend',`<div class="lnPic"><b>See it as a picture</b>${p.svg}<p>${esc(p.cap)}</p></div>`)}}catch(e){}return d};
+
+/* ---------- 4b. Two-minute speed drills ---------- */
+const DRILL={tables:{n:'Tables (up to 20 × 10)',mk:()=>{const a=rnd(2,20),b=rnd(2,10);return[`${a} × ${b}`,a*b]}},
+ squares:{n:'Squares and cubes',mk:()=>{if(Math.random()<.7){const a=rnd(2,30);return[`${a}²`,a*a]}const a=rnd(2,15);return[`${a}³`,a*a*a]}},
+ percent:{n:'Fractions to %',mk:()=>{const P=[[1,2,50],[1,3,33.33],[2,3,66.67],[1,4,25],[3,4,75],[1,5,20],[2,5,40],[1,6,16.67],[1,7,14.29],[1,8,12.5],[3,8,37.5],[5,8,62.5],[1,9,11.11],[1,10,10],[1,11,9.09],[1,12,8.33],[1,15,6.67],[1,16,6.25],[1,20,5],[1,25,4]];const p=any(P);return[`${p[0]}/${p[1]} = ? %`,p[2]]}}};
+let dr=null;
+function drillPanel(){const best=k=>Math.max(0,...Object.values(st.drill).map(x=>x[k]||0));
+  return `<div class="panel" style="margin-top:18px" id="drBox"><h2>2-minute speed drills</h2><p class="small" style="margin-top:-6px">No calculator in the exam, so fast basics save minutes. Type the answer and press Enter.</p>
+   <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap">${Object.entries(DRILL).map(([k,v])=>`<button class="btn ghost" type="button" data-drill="${k}">${v.n}<span class="small" style="display:block">best ${best(k)}</span></button>`).join('')}</div><div id="drRun"></div></div>`}
+function drillStart(k){const R=$('drRun');if(!R)return;clearInterval(dr&&dr.t);dr={k,ok:0,n:0,end:Date.now()+120000,cur:DRILL[k].mk()};
+  R.innerHTML=`<div class="drCard"><div class="row" style="justify-content:space-between"><b id="drT">2:00</b><span id="drS">0 right</span></div><p class="drQ" id="drQ"></p><input id="drIn" inputmode="decimal" autocomplete="off" aria-label="Your answer" placeholder="answer"><p class="small" id="drMsg"></p></div>`;
+  const show=()=>{$('drQ').textContent=dr.cur[0];$('drIn').value='';$('drIn').focus()};show();
+  $('drIn').onkeydown=e=>{if(e.key!=='Enter')return;const v=parseFloat($('drIn').value.replace(',','.'));if(isNaN(v))return;dr.n++;const want=dr.cur[1],ok=Math.abs(v-want)<0.6;if(ok)dr.ok++;$('drMsg').textContent=ok?'✓':`✗ ${dr.cur[0].replace(' = ? %','')} = ${want}`;$('drS').textContent=dr.ok+' right';dr.cur=DRILL[k].mk();show()};
+  dr.t=setInterval(()=>{const s=Math.max(0,Math.round((dr.end-Date.now())/1000));if($('drT'))$('drT').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+    if(!s){clearInterval(dr.t);const D=st.drill[dkey]||(st.drill[dkey]={});D[k]=Math.max(D[k]||0,dr.ok);const ks=Object.keys(st.drill).sort();while(ks.length>60)delete st.drill[ks.shift()];save();
+      R.innerHTML=`<div class="drCard"><b>Time up! ${dr.ok} right out of ${dr.n}.</b><p class="small">Do one drill every day. Your best score goes up week by week.</p><button class="btn" type="button" data-drill="${k}">Again</button></div>`}},250)}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-drill]');if(b){e.preventDefault();drillStart(b.dataset.drill)}});
+
+/* ---------- 5. Mini sets and 15-minute study blocks ---------- */
+function miniPanel(){return `<div class="panel" style="margin-top:18px" id="miniBox"><h2>Short sessions</h2><p class="small" style="margin-top:-6px">Tired after work? Small steps still count. Short sessions are easier on your eyes and brain.</p>
+  <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap"><button class="btn" type="button" id="miniSet">5-question mini set</button><button class="btn ghost" type="button" id="miniBlock">15-minute study block</button></div></div>`}
+function miniBind(){if(!$('miniBox'))return;$('miniSet').onclick=()=>{let L=[];try{L=smartSet(5)}catch(e){L=fresh('Quant',5)}goPractice();startQuiz(L.slice(0,5),true,{small:1});try{$('quiz').scrollIntoView({behavior:'smooth'})}catch(e){}};
+  $('miniBlock').onclick=()=>{try{fLen=15;fLeft=900}catch(e){}openFocus('15-minute study block')}}
+
+/* ---------- 8. Scribe practice ---------- */
+let scr=null;
+function scribePanel(){return `<div class="panel" style="margin-top:18px" id="scrBox"><h2>Scribe practice</h2><p class="small" style="margin-top:-6px">Only if you will use a scribe in the exam. Read each question aloud, then say your answer (A, B, C or D) out loud, the way you will tell your scribe. ${('webkitSpeechRecognition' in window||'SpeechRecognition' in window)?'The app listens for your answer.':'Then tap the letter you said.'}</p><button class="btn ghost" type="button" id="scrGo">Start scribe practice (10 questions)</button><div id="scrRun"></div></div>`}
+function scribeStart(){let L=[];try{L=learnSet().slice(0,10)}catch(e){L=fresh('GA',10)}scr={L,i:0,ok:0,t0:Date.now()};scribeQ()}
+function scribeQ(){const R=$('scrRun');if(!R||!scr)return;const q=scr.L[scr.i];if(!q){const min=Math.round((Date.now()-scr.t0)/60000);R.innerHTML=`<div class="drCard"><b>Done: ${scr.ok} of ${scr.L.length} right in ${min} min.</b><p class="small">Practise speaking clearly: say the letter, then the answer words, e.g. "B, Kolkata".</p></div>`;scr=null;return}
+  R.innerHTML=`<div class="drCard"><div class="small">Question ${scr.i+1} of ${scr.L.length} · read it aloud</div><p class="drQ" style="font-size:1.15rem">${esc(q.q)}</p>${q.o.map((o,k)=>`<p style="margin:6px 0"><b>${'ABCD'[k]}.</b> ${esc(o)}</p>`).join('')}
+   <div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn" type="button" id="scrMic">🎤 I am saying my answer</button>${'ABCD'.split('').map((c,k)=>`<button class="btn ghost scrL" type="button" data-k="${k}">I said ${c}</button>`).join('')}</div><div id="scrAfter"></div></div>`;
+  const pick=k=>{if(R.dataset.done==='1')return;R.dataset.done='1';const ok=k===q.a;if(ok)scr.ok++;const A=$('scrAfter');A.innerHTML=`<p><b style="color:${ok?'#59d499':'#ff6b6b'}">${ok?'Correct!':'Answer: '+'ABCD'[q.a]+'. '+esc(q.o[q.a])}</b></p>`;if(!ok&&typeof learnPanel==='function')learnPanel(A,q,k,{});A.insertAdjacentHTML('beforeend','<button class="btn" type="button" id="scrNext" style="margin-top:10px">Next question</button>');$('scrNext').onclick=()=>{scr.i++;R.dataset.done='';scribeQ()}};
+  R.dataset.done='';R.querySelectorAll('.scrL').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+  $('scrMic').onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$('scrMic').textContent='Say it aloud, then tap the letter';return}
+    try{const r=new SR();r.lang='en-IN';r.maxAlternatives=3;$('scrMic').textContent='Listening…';r.onresult=e=>{const said=[...e.results[0]].map(x=>x.transcript.trim().toUpperCase()).join(' ');const m=said.match(/\b(A|B|C|D)\b|^(A|B|C|D)/)||said.match(/\b(AY|BE|BEE|SEE|SEA|DEE)\b/);
+      const map={AY:'A',BE:'B',BEE:'B',SEE:'C',SEA:'C',DEE:'D'};const L=m?(m[1]||m[2]||map[m[1]]):null;if(L&&'ABCD'.includes(L))pick('ABCD'.indexOf(L));else $('scrMic').textContent='Did not catch it. Tap the letter you said.'};
+      r.onerror=()=>{$('scrMic').textContent='Microphone not available. Tap the letter you said.'};r.start()}catch(e){$('scrMic').textContent='Tap the letter you said'}}}
+document.addEventListener('click',e=>{if(e.target&&e.target.id==='scrGo'){e.preventDefault();scribeStart()}});
+
+/* ---------- place the panels ---------- */
+const _pwMy=drawMyDay;drawMyDay=function(){_pwMy();try{const el=$('mydayBody');if(!el)return;['rdSet','pwdSet'].forEach(id=>{const x=$(id);if(x)x.remove()});
+  el.insertAdjacentHTML('afterbegin',pwdPanel()+rdPanel());rdBind();pwdBind();if(WN&&!$('wnAllBox')){const d=document.createElement('div');d.id='wnAllBox';d.innerHTML=wnAll();el.appendChild(d)}}catch(e){}};
+const _pwExam=drawExam;drawExam=function(){_pwExam();try{const el=$('examBody');if(!el)return;if(!$('exLook')){const f=el.querySelector('[data-px=fm]');if(f)f.insertAdjacentHTML('afterend',`<label class="chip" id="exLook" style="cursor:pointer;margin-top:10px;display:inline-flex;gap:8px"><input type="checkbox" ${st.rd.exam?'checked':''}> Real exam look (white screen like the SSC computer test)</label>`);const c=$('exLook');if(c)c.querySelector('input').onchange=e=>{st.rd.exam=e.target.checked;save();rdApply()}}const s=speedBox();if(s&&!$('spdBox')){const r=$('fmRes');(r||el.firstElementChild).insertAdjacentHTML('afterend',s)}}catch(e){}};
+function pwPractice(){try{const sec=$('practice');if(!sec||$('drBox'))return;const host=sec.querySelector('.grid2')||sec;host.insertAdjacentHTML('afterend',miniPanel()+drillPanel()+scribePanel());miniBind()}catch(e){}}
+const _pwTod=drawPlusToday;drawPlusToday=function(){_pwTod();wnDraw();pwdToday()};
+try{pwPractice();drawMyDay();wnDraw()}catch(e){}
+window.addEventListener('hashchange',()=>{if(location.hash==='#practice')pwPractice()});
 
 /* ================= MONTHLY CURRENT AFFAIRS (last 6 months) + YouTube videos ================= */
 let MON={months:[]},monSel=0;

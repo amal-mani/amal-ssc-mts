@@ -1,0 +1,83 @@
+{
+ "updated": "2026-11-27",
+ "rules": [
+  {
+   "title": "Extra time: 20 minutes per hour",
+   "text": "Eligible PwD candidates get compensatory time of 20 minutes for every hour of the exam. In SSC MTS, each 45-minute session becomes 60 minutes.",
+   "src": "https://www.sscer.org/sscerorg_old/MATTER/notice_09012019.pdf"
+  },
+  {
+   "title": "Claim it in the application form",
+   "text": "Ask for compensatory time (and a scribe, if you need one) in the online form and upload your disability certificate there. It cannot be asked for on exam day.",
+   "src": "https://www.pw.live/ssc/exams/ssc-important-notice-for-pwd-pwbd-candidates"
+  },
+  {
+   "title": "Carry the ORIGINAL certificate to the exam",
+   "text": "Since 2025, SSC gives extra time or a scribe only if you show the original disability certificate at the exam centre. A photocopy or phone photo is not accepted.",
+   "src": "https://news.careers360.com/ssc-mandates-original-disability-documents-at-exam-centre-for-availing-compensatory-time-scribe-facility"
+  },
+  {
+   "title": "Check your admit card",
+   "text": "Your admit card shows whether you get compensatory time and a scribe. Read it as soon as it comes. If it is wrong, contact SSC quickly.",
+   "src": "https://sscmpr.gov.in/newlook/downloads/noticeboard/Important Notice_0792026.pdf"
+  },
+  {
+   "title": "Less than 40% disability?",
+   "text": "Government rules (DEPwD, 10 August 2022) also allow a scribe and compensatory time for people with less than 40% disability who have difficulty writing, with a medical certificate in the prescribed format.",
+   "src": "https://cdnbbsr.s3waas.gov.in/s39fb7b048c96d44a0337f049e0a61ff06/uploads/2026/04/202604131082083488.pdf"
+  },
+  {
+   "title": "Scribe rules are changing",
+   "text": "In 2025 the rules changed so that exam bodies, including SSC, provide scribes from their own list. Read the scribe part of the SSC MTS 2026 notice carefully before you fill the form.",
+   "src": "https://news.careers360.com/centre-tightens-scribe-rules-for-pwd-candidates-upsc-ssc-nta-to-create-own-scribe-pools-within-two-years/amp"
+  }
+ ],
+ "checklist": [
+  {
+   "id": "udid",
+   "title": "Disability certificate and UDID card ready",
+   "when": "now",
+   "text": "Make sure both are valid and your name and date of birth match your other ID."
+  },
+  {
+   "id": "form",
+   "title": "Claim compensatory time in the MTS 2026 form",
+   "when": "when the form opens",
+   "text": "Tick PwD, choose compensatory time (and scribe if you need one), and upload the certificate."
+  },
+  {
+   "id": "admit",
+   "title": "Admit card shows compensatory time",
+   "when": "when the admit card comes",
+   "text": "Check the PwD, compensatory time and scribe lines."
+  },
+  {
+   "id": "orig",
+   "title": "Pack the ORIGINAL disability certificate",
+   "when": "day before the exam",
+   "text": "Also the admit card and an original photo ID (Aadhaar, voter ID, etc.)."
+  },
+  {
+   "id": "copies",
+   "title": "Keep 2 photocopies for document verification",
+   "when": "after the result",
+   "text": "You must show the same certificate again at document verification."
+  },
+  {
+   "id": "speed",
+   "title": "Practise full mocks with the 45-minute goal",
+   "when": "every week",
+   "text": "Use 60 minutes per session in the app's full mock, but try to finish in 45."
+  }
+ ],
+ "sources": [
+  {
+   "name": "SSC (ER) notice on scribe and compensatory time",
+   "url": "https://www.sscer.org/sscerorg_old/MATTER/notice_09012019.pdf"
+  },
+  {
+   "name": "Careers360: SSC mandates original PwD documents (July 2025)",
+   "url": "https://news.careers360.com/ssc-mandates-original-disability-documents-at-exam-centre-for-availing-compensatory-time-scribe-facility"
+  }
+ ]
+}
