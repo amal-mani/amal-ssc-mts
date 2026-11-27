@@ -258,6 +258,7 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
 .exBtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.exBtns .btn{flex:0 1 auto;text-decoration:none}
 .exGrp{margin:18px 0 4px}.exRem{border:2px solid #c62828;margin-top:14px}
 .exRemRow{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.exLang{color:var(--ink);font-weight:600}
 </style>
 </head>
 <body>
@@ -2015,12 +2016,13 @@ let EX={items:[]};st.applied=st.applied||{};let exF='All';
 const exDays=d=>d?Math.round((new Date(d+'T12:00:00')-new Date(dkey+'T12:00:00'))/864e5):null;
 const exNice=d=>{if(!d)return '';try{return new Date(d+'T12:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'})}catch(e){return d}};
 function exState(x){if(x.status==='open'&&x.end&&exDays(x.end)<0)return 'closed';if(x.status==='soon'&&x.start&&exDays(x.start)<=0&&x.end&&exDays(x.end)>=0)return 'open';return x.status}
+const exLang={em:'Questions: English + Malayalam',en:'Questions: English only (usual for this kind of post)',chk:'Question language: check the exam programme'};
 const exTag=t=>/open to all/i.test(t)?'exAll':'exOnly';
 function exLeft(x){const n=exDays(x.end);if(n==null)return '';if(n<0)return 'Closed';if(n===0)return 'Last day TODAY';if(n===1)return '1 day left';return n+' days left'}
 function exCard(x){const s=exState(x),ap=st.applied[x.id],n=exDays(x.end),urgent=s==='open'&&n!=null&&n<=7&&!ap;
-  const posts=(x.posts||[]).length?`<details class="exPosts"><summary>See all ${x.posts.length} posts</summary>${x.posts.map(p=>`<div class="exPost"><div><b>${esc(p[1])}</b><div class="small">Cat. ${esc(p[0])} · ${esc(p[2])}</div></div><span class="exTag ${exTag(p[3])}">${esc(p[3])}</span></div>`).join('')}</details>`:'';
+  const posts=(x.posts||[]).length?`<details class="exPosts"><summary>See all ${x.posts.length} posts</summary>${x.posts.map(p=>`<div class="exPost"><div><b>${esc(p[1])}</b><div class="small">Cat. ${esc(p[0])} · ${esc(p[2])}</div>${p[4]?`<div class="small exLang">🗣 ${esc(exLang[p[4]]||p[4])}</div>`:''}</div><span class="exTag ${exTag(p[3])}">${esc(p[3])}</span></div>`).join('')}</details>`:'';
   const dates=s==='soon'?`<div class="exDate">Date not announced yet</div>`:`<div class="exDate${urgent?' exUrg':''}">${s==='open'?'Last date':'Closed on'}: <b>${esc(exNice(x.end))}</b>${x.endTime?' ('+esc(x.endTime)+')':''}${s==='open'?` · <b>${esc(exLeft(x))}</b>`:''}</div>${x.start?`<div class="small">Opened ${esc(exNice(x.start))}</div>`:''}`;
-  const rows=[['Who can apply',x.who||x.level],['Fee',x.fee],['PwD',x.pwd],['Exam',x.exam]].filter(r=>r[1]).map(r=>`<div class="exRow"><span>${r[0]}</span><div>${esc(r[1])}</div></div>`).join('');
+  const rows=[['Who can apply',x.who||x.level],['Question language',x.lang],['Fee',x.fee],['PwD',x.pwd],['Exam',x.exam]].filter(r=>r[1]).map(r=>`<div class="exRow"><span>${r[0]}</span><div>${esc(r[1])}</div></div>`).join('');
   return `<div class="exCard ex-${s}" data-ex="${esc(x.id)}"><div class="exHead"><span class="exBody">${esc(x.body)}</span>${s==='open'?'<span class="exSt exOpen">Open now</span>':s==='soon'?'<span class="exSt exSoon">Coming soon</span>':'<span class="exSt exClosed">Closed</span>'}${ap?'<span class="exSt exDone">✓ Applied</span>':''}</div>
   <h3>${esc(x.name)}</h3>${dates}<p>${esc(x.text)}</p>${rows}${posts}
   <div class="exBtns">${s!=='closed'?`<a class="btn" href="${esc(x.apply)}" target="_blank" rel="noopener">${s==='open'?'Apply (official site) ↗':'Official site ↗'}</a>`:''}${x.notice&&x.notice!==x.apply?`<a class="btn ghost" href="${esc(x.notice)}" target="_blank" rel="noopener">Read notice ↗</a>`:''}<button class="btn ghost" type="button" data-exsay="${esc(x.id)}">🔊 Read aloud</button>${s==='open'?`<button class="btn ghost" type="button" data-exap="${esc(x.id)}">${ap?'Undo applied':'I applied ✓'}</button>`:''}</div></div>`}

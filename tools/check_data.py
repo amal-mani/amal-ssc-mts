@@ -82,7 +82,7 @@ if ex:
         for k in ('apply', 'notice', 'src'):
             if x.get(k) and not re.match(r'https://', x[k]): E.append(f'{w}: {k} not https')
         for pp in x.get('posts', []):
-            if len(pp) != 4: E.append(f'{w}: post needs [cat,name,dept,tag]')
+            if len(pp) not in (4, 5) or (len(pp) == 5 and pp[4] not in ('em', 'en', 'chk')): E.append(f'{w}: post needs [cat,name,dept,tag,lang em|en|chk]')
 
 if E:
     print('PROBLEMS:', len(E)); [print(' -', e) for e in E[:60]]; sys.exit(1)

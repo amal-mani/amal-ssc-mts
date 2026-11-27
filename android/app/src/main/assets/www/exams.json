@@ -21,108 +21,126 @@
      "175/2026",
      "Systems Manager",
      "Kerala State Housing Board",
-     "Open to all"
+     "Open to all",
+     "en"
     ],
     [
      "176/2026",
      "Divisional Accounts Officer",
      "KSEB",
-     "Only KSEB staff (by transfer)"
+     "Only KSEB staff (by transfer)",
+     "en"
     ],
     [
      "177/2026",
      "Marketing Executive",
      "KTDC",
-     "Open to all"
+     "Open to all",
+     "en"
     ],
     [
      "178/2026",
      "Revenue Surveyor Gr. II",
      "Kerala State Housing Board",
-     "Open to all"
+     "Open to all",
+     "en"
     ],
     [
      "179/2026",
      "ECG Technician Gr. II",
      "Health Services",
-     "Open to all"
+     "Open to all",
+     "en"
     ],
     [
      "180/2026",
      "Palmgur Instructor",
      "Khadi and Village Industries Board",
-     "Open to all"
+     "Open to all",
+     "chk"
     ],
     [
      "181/2026",
      "Field Supervisor Gr. II",
      "State Farming Corporation",
-     "Open to all"
+     "Open to all",
+     "en"
     ],
     [
      "182/2026",
      "LD Clerk",
      "Travancore Sugars & Chemicals",
-     "Open to all"
+     "Open to all",
+     "em"
     ],
     [
      "183/2026",
      "Saddler",
      "NCC",
-     "Ex-servicemen only"
+     "Ex-servicemen only",
+     "chk"
     ],
     [
      "184/2026",
      "Assistant Motor Vehicle Inspector",
      "Motor Vehicles Department",
-     "Only ST (special recruitment)"
+     "Only ST (special recruitment)",
+     "en"
     ],
     [
      "185/2026",
      "Computer Assistant Gr. II",
      "Enquiry Commissioner and Special Judges Office",
-     "Only ST (special recruitment)"
+     "Only ST (special recruitment)",
+     "em"
     ],
     [
      "186-187/2026",
      "Assistant Professor in Pharmacology",
      "Medical Education",
-     "Only Dheevara / SCCC (NCA)"
+     "Only Dheevara / SCCC (NCA)",
+     "en"
     ],
     [
      "188/2026",
      "Motor Transport Inspector (Technical)",
      "Police (MT Wing)",
-     "Only SC (NCA)"
+     "Only SC (NCA)",
+     "en"
     ],
     [
      "189/2026",
      "Blood Bank Technician",
      "Health Services",
-     "Only Ezhava/Billava/Thiyya (NCA)"
+     "Only Ezhava/Billava/Thiyya (NCA)",
+     "en"
     ],
     [
      "190/2026",
      "Mortuary Technician Gr. II",
      "Health Services",
-     "Only Muslim (NCA)"
+     "Only Muslim (NCA)",
+     "en"
     ],
     [
      "191/2026",
      "Police Constable Driver / Woman Police Constable Driver",
      "Kerala Police",
-     "Only SC (NCA)"
+     "Only SC (NCA)",
+     "em"
     ],
     [
      "192/2026",
      "Electrician",
      "Kerala State Film Development Corporation",
-     "Only Ezhava/Billava/Thiyya (NCA)"
+     "Only Ezhava/Billava/Thiyya (NCA)",
+     "en"
     ]
    ],
    "apply": "https://thulasi.psc.kerala.gov.in/thulasi/",
    "notice": "https://www.keralapsc.gov.in/extra-ordinary-gazette-date-16112026",
-   "src": "https://www.keralapsc.gov.in/notifications"
+   "src": "https://www.keralapsc.gov.in/notifications",
+   "lang": "Kerala PSC: general posts (clerk, attender, police) have each question in English and Malayalam side by side. Technical posts are usually English only. The exact medium is in the exam programme."
   },
   {
    "id": "kpsc-2026-10-30",
@@ -143,66 +161,77 @@
      "162/2026",
      "Laboratory Assistant (Dairy/CFP), Part I",
      "Milma (KCMMF)",
-     "Open to all"
+     "Open to all",
+     "en"
     ],
     [
      "163/2026",
      "Laboratory Assistant (Dairy/CFP), Part II",
      "Milma (KCMMF)",
-     "Society category only"
+     "Society category only",
+     "en"
     ],
     [
      "164/2026",
      "Attender",
      "Travancore-Cochin Chemicals",
-     "Only ST (special recruitment)"
+     "Only ST (special recruitment)",
+     "em"
     ],
     [
      "165-166/2026",
      "Assistant Professor in Cardiology",
      "Medical Education",
-     "Only Muslim / LC-AI (NCA)"
+     "Only Muslim / LC-AI (NCA)",
+     "en"
     ],
     [
      "167/2026",
      "Assistant Professor in Pathology",
      "Medical Education",
-     "Only Dheevara (NCA)"
+     "Only Dheevara (NCA)",
+     "en"
     ],
     [
      "168/2026",
      "Assistant Professor in Cardiology",
      "Medical Education",
-     "Only SC (NCA)"
+     "Only SC (NCA)",
+     "en"
     ],
     [
      "169/2026",
      "Assistant Professor in CVTS",
      "Medical Education",
-     "Only Dheevara (NCA)"
+     "Only Dheevara (NCA)",
+     "en"
     ],
     [
      "170-171/2026",
      "CSR Technician / Sterilisation Technician Gr. II",
      "Medical Education",
-     "Only SC / LC-AI (NCA)"
+     "Only SC / LC-AI (NCA)",
+     "en"
     ],
     [
      "172/2026",
      "Police Constable (Armed Police Battalion)",
      "Kerala Police",
-     "Only LC/AI (NCA)"
+     "Only LC/AI (NCA)",
+     "em"
     ],
     [
      "173/2026",
      "LD Typist / Clerk Typist",
      "NCC / Sainik Welfare",
-     "Ex-servicemen, SC only (NCA)"
+     "Ex-servicemen, SC only (NCA)",
+     "em"
     ]
    ],
    "apply": "https://thulasi.psc.kerala.gov.in/thulasi/",
    "notice": "https://www.keralapsc.gov.in/extra-ordinary-gazette-date-30102026",
-   "src": "https://www.keralapsc.gov.in/notifications"
+   "src": "https://www.keralapsc.gov.in/notifications",
+   "lang": "Kerala PSC: general posts (clerk, attender, police) have each question in English and Malayalam side by side. Technical posts are usually English only. The exact medium is in the exam programme."
   },
   {
    "id": "ssc-mts-2026",
@@ -219,7 +248,8 @@
    "pwd": "PwD candidates get extra time and can ask for a scribe. See 'PwD rules' in My day.",
    "apply": "https://ssc.gov.in",
    "notice": "https://ssc.gov.in",
-   "src": "https://www.adda247.com/jobs/ssc-mts-ga-gk-questions"
+   "src": "https://www.adda247.com/jobs/ssc-mts-ga-gk-questions",
+   "lang": "English or Hindi. SSC MTS can also be taken in Malayalam and other regional languages; the English section is always in English. Confirm in the notice."
   },
   {
    "id": "ssc-gd-2027",
@@ -236,7 +266,8 @@
    "pwd": "GD Constable is a physical post. PwD candidates are usually not eligible. Check the notice.",
    "apply": "https://ssc.gov.in",
    "notice": "https://ssc.gov.in",
-   "src": "https://www.oliveboard.in/ssc-gd-notification/"
+   "src": "https://www.oliveboard.in/ssc-gd-notification/",
+   "lang": "English or Hindi. SSC MTS can also be taken in Malayalam and other regional languages; the English section is always in English. Confirm in the notice."
   },
   {
    "id": "kpsc-next",
@@ -253,7 +284,8 @@
    "pwd": "",
    "apply": "https://thulasi.psc.kerala.gov.in/thulasi/",
    "notice": "https://www.keralapsc.gov.in/notifications",
-   "src": "https://www.keralapsc.gov.in/notifications"
+   "src": "https://www.keralapsc.gov.in/notifications",
+   "lang": "Kerala PSC: general posts (clerk, attender, police) have each question in English and Malayalam side by side. Technical posts are usually English only. The exact medium is in the exam programme."
   },
   {
    "id": "ssc-chsl-2026",
@@ -271,7 +303,8 @@
    "pwd": "",
    "apply": "https://ssc.gov.in",
    "notice": "https://ssc.gov.in",
-   "src": "https://www.pw.live/ssc/exams/ssc-releases-chsl-2026-recruitment-notice"
+   "src": "https://www.pw.live/ssc/exams/ssc-releases-chsl-2026-recruitment-notice",
+   "lang": "English or Hindi. SSC MTS can also be taken in Malayalam and other regional languages; the English section is always in English. Confirm in the notice."
   },
   {
    "id": "rrb-ntpc-ug-2026",
@@ -288,7 +321,8 @@
    "pwd": "",
    "apply": "https://www.rrbapply.gov.in",
    "notice": "https://www.rrbapply.gov.in",
-   "src": "https://www.rrbapply.gov.in"
+   "src": "https://www.rrbapply.gov.in",
+   "lang": "RRB exams can be taken in English, Hindi or a regional language such as Malayalam. You choose when you apply."
   },
   {
    "id": "rrb-ntpc-grad-2026",
@@ -305,7 +339,8 @@
    "pwd": "",
    "apply": "https://www.rrbapply.gov.in",
    "notice": "https://www.rrbapply.gov.in",
-   "src": "https://www.rrbapply.gov.in"
+   "src": "https://www.rrbapply.gov.in",
+   "lang": "RRB exams can be taken in English, Hindi or a regional language such as Malayalam. You choose when you apply."
   },
   {
    "id": "rrb-groupd-2025",
@@ -322,7 +357,8 @@
    "pwd": "",
    "apply": "https://www.rrbapply.gov.in",
    "notice": "https://www.rrbapply.gov.in",
-   "src": "https://prepp.in/rrb-group-d-exam/notification"
+   "src": "https://prepp.in/rrb-group-d-exam/notification",
+   "lang": "RRB exams can be taken in English, Hindi or a regional language such as Malayalam. You choose when you apply."
   },
   {
    "id": "csir-hq-ra-02-2026",
@@ -340,7 +376,8 @@
    "pwd": "PwD candidates can apply for MTS. Upload your disability certificate and UDID. Security and Driver posts are not for PwD.",
    "apply": "https://recruitment.csir.res.in",
    "notice": "https://www.csir.res.in/sites/default/files/2026-11/combined_advt.pdf",
-   "src": "https://www.freejobalert.com/articles/csir-recruitment-2026-mts-driver-3083131"
+   "src": "https://www.freejobalert.com/articles/csir-recruitment-2026-mts-driver-3083131",
+   "lang": "Check the notice. The English section is in English."
   },
   {
    "id": "csir-npl-mts-2026",
@@ -358,7 +395,8 @@
    "pwd": "Check the notice for PwD seats.",
    "apply": "https://www.nplindia.org",
    "notice": "https://www.nplindia.org",
-   "src": "https://indianewjobs.com/csir-npl-mts-recruitment-2026/"
+   "src": "https://indianewjobs.com/csir-npl-mts-recruitment-2026/",
+   "lang": "Check the notice. The English section is in English."
   },
   {
    "id": "rrb-isolated-09-2026",
@@ -376,7 +414,8 @@
    "pwd": "",
    "apply": "https://www.rrbapply.gov.in",
    "notice": "https://www.rrbapply.gov.in",
-   "src": "https://www.careerpower.in/blog/?p=290490"
+   "src": "https://www.careerpower.in/blog/?p=290490",
+   "lang": "RRB exams can be taken in English, Hindi or a regional language such as Malayalam. You choose when you apply."
   },
   {
    "id": "isro-kerala-watch",
@@ -393,7 +432,8 @@
    "pwd": "ISRO notices list which posts suit PwD.",
    "apply": "https://www.vssc.gov.in",
    "notice": "https://www.lpsc.gov.in",
-   "src": "https://www.pw.live/news/isro-recruitment-2026-97-vacancies-apply-online-last-date"
+   "src": "https://www.pw.live/news/isro-recruitment-2026-97-vacancies-apply-online-last-date",
+   "lang": "Usually English and Hindi. Check each notice."
   }
  ]
 }
