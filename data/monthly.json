@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "note": "Monthly current affairs revision (last 6 months). Video buttons open YouTube search results for that month.",
  "months": [
   {
    "month": "2026-11",
-   "name": "November 2026 (till 25 Nov)",
+   "name": "November 2026 (till 26 Nov)",
    "items": [
     {
      "cat": "States",
@@ -75,6 +75,24 @@
      "cat": "Sports",
      "title": "Glenn Maxwell retires",
      "text": "The Australian all-rounder left international cricket on 2 November."
+    },
+    {
+     "cat": "Economy",
+     "title": "₹11,000 crore scheme for building machines",
+     "text": "The Union Cabinet approved a ₹11,000 crore scheme to make construction and infrastructure equipment (like tunnel boring machines) in India. The Ministry of Heavy Industries will run it for eight years from 2026-27.",
+     "gk": "India now imports most tunnel boring machines, mainly from China and Europe."
+    },
+    {
+     "cat": "International",
+     "title": "US plans 25% tariff on Indian goods",
+     "text": "The US proposed a 25% tariff on Indian goods under Section 301 of its trade law. Among 14 economies, only Vietnam (35%) got a higher rate. India says it has no excess capacity and wants a trade deal with the US.",
+     "gk": "A tariff is a tax on goods coming from another country."
+    },
+    {
+     "cat": "Banking",
+     "title": "Retail inflation crosses 6%",
+     "text": "Retail inflation rose to 6.09% in October 2026. This is above the RBI's upper limit of 6% for the first time under the new CPI series (base year 2024). Food inflation was 8.94%.",
+     "gk": "The RBI's inflation target is 4%, with a band of 2% to 6%."
     }
    ],
    "quiz": [
@@ -155,6 +173,44 @@
      "e": "Both in Manila, Philippines.",
      "t": "Current affairs",
      "ml": "ASEAN–ഇന്ത്യ, ക്വാഡ് ഉച്ചകോടികൾ മനിലയിൽ."
+    },
+    {
+     "t": "Current affairs",
+     "q": "The Cabinet approved a ₹11,000 crore scheme to make which items in India?",
+     "o": [
+      "Mobile phones",
+      "Electric buses",
+      "Construction and infrastructure equipment",
+      "Solar panels"
+     ],
+     "a": 2,
+     "e": "The scheme is for construction and infrastructure equipment, like tunnel boring machines. The Ministry of Heavy Industries runs it.",
+     "ml": "നിർമ്മാണ യന്ത്രങ്ങൾ (CIE) ഇന്ത്യയിൽ ഉണ്ടാക്കാൻ ₹11,000 കോടി.",
+     "w": [
+      "Mobile phones have a different PLI scheme.",
+      "Electric buses were not part of this news.",
+      "",
+      "Solar panels were not part of this news."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "Retail inflation in October 2026 crossed the RBI's upper limit. What was it?",
+     "o": [
+      "6.09%",
+      "8.94%",
+      "5.3%",
+      "4%"
+     ],
+     "a": 0,
+     "e": "Retail inflation was 6.09%. The RBI's upper limit is 6%.",
+     "ml": "ചില്ലറ വിലക്കയറ്റം 6.09% — RBI പരിധി 6%.",
+     "w": [
+      "",
+      "8.94% was food inflation only.",
+      "5.3% was S&P's forecast for the whole year.",
+      "4% is the RBI's target, not the October figure."
+     ]
     }
    ],
    "sources": [
@@ -173,6 +229,14 @@
     {
      "name": "Bankersadda daily current affairs, 25 Nov 2026",
      "url": "https://www.bankersadda.com/daily-current-affairs-and-gk-updates-25th-november-2026/"
+    },
+    {
+     "name": "C4S Courses, Daily current affairs 26 Nov 2026",
+     "url": "https://c4scourses.in/current-affairs/daily-current-affairs-dca-26-november-2026/"
+    },
+    {
+     "name": "Cracktarget, Current affairs 26 November 2026",
+     "url": "https://cracktarget.com/current-affairs-26-november-2026/"
     }
    ],
    "videos": [

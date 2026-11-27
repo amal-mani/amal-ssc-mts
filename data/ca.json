@@ -1,6 +1,271 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "days": [
+  {
+   "date": "2026-11-26",
+   "items": [
+    {
+     "cat": "Important days",
+     "title": "77th Constitution Day (26 November)",
+     "text": "India marked Constitution Day (Samvidhan Divas) on 26 November 2026. The Constituent Assembly adopted the Constitution on this day in 1949. The day was officially declared in 2015.",
+     "gk": "The Constitution came into force on 26 January 1950 (Republic Day)."
+    },
+    {
+     "cat": "Economy",
+     "title": "₹11,000 crore scheme for building machines",
+     "text": "The Union Cabinet approved a ₹11,000 crore scheme to make construction and infrastructure equipment (like tunnel boring machines) in India. The Ministry of Heavy Industries will run it for eight years from 2026-27.",
+     "gk": "India now imports most tunnel boring machines, mainly from China and Europe."
+    },
+    {
+     "cat": "National",
+     "title": "New airport for Silchar, Assam",
+     "text": "On 25 November, the Cabinet Committee on Economic Affairs approved a new (greenfield) airport at Doloo in Cachar district, Assam, costing ₹2,014 crore. The Airports Authority of India will build it.",
+     "gk": "Silchar is the main city of Assam's Barak Valley."
+    },
+    {
+     "cat": "Economy",
+     "title": "Six urea plants to be expanded",
+     "text": "Six existing (brownfield) urea plants will get new units worth about ₹54,000 crore. Each will make 12.7 lakh tonnes a year. Sites include Nangal (Punjab), Shahjahanpur (UP) and Panagarh (West Bengal).",
+     "gk": "Urea is the most used nitrogen fertiliser in India."
+    },
+    {
+     "cat": "International",
+     "title": "US plans 25% tariff on Indian goods",
+     "text": "The US proposed a 25% tariff on Indian goods under Section 301 of its trade law. Among 14 economies, only Vietnam (35%) got a higher rate. India says it has no excess capacity and wants a trade deal with the US.",
+     "gk": "A tariff is a tax on goods coming from another country."
+    },
+    {
+     "cat": "Banking",
+     "title": "Retail inflation crosses 6%",
+     "text": "Retail inflation rose to 6.09% in October 2026. This is above the RBI's upper limit of 6% for the first time under the new CPI series (base year 2024). Food inflation was 8.94%.",
+     "gk": "The RBI's inflation target is 4%, with a band of 2% to 6%."
+    },
+    {
+     "cat": "Banking",
+     "title": "Forex reserves at US$ 737.78 billion",
+     "text": "India's foreign exchange reserves rose to US$ 737.78 billion by the end of September 2026, from US$ 691.11 billion, says the RBI's half-yearly report.",
+     "gk": "The RBI manages India's foreign exchange reserves."
+    },
+    {
+     "cat": "Defence",
+     "title": "Exercise Surya Kiran (India–Nepal)",
+     "text": "The 20th India–Nepal army exercise Surya Kiran began on 25 November 2026 at Saljhandi, Nepal. It runs till 8 December. India sent soldiers from the Kumaon Regiment.",
+     "gk": "Surya Kiran is the India–Nepal army exercise (also the name of the IAF aerobatic team)."
+    },
+    {
+     "cat": "Defence",
+     "title": "INS Ashank joins the Navy",
+     "text": "GRSE delivered INS Ashank to the Navy at Visakhapatnam on 23 November. It is the sixth of eight Arnala-class anti-submarine shallow water craft and GRSE's 120th warship.",
+     "gk": "GRSE (Garden Reach Shipbuilders and Engineers) is in Kolkata."
+    },
+    {
+     "cat": "Defence",
+     "title": "JWALA MK-1 anti-drone missile tested",
+     "text": "The JWALA MK-1 counter-drone micro-missile had its first flight test on 23 November at Pokhran, Rajasthan. It can hit drones up to 5 km away.",
+     "gk": "Pokhran is also where India did its nuclear tests (1974 and 1998)."
+    },
+    {
+     "cat": "Sports",
+     "title": "India to host 2028 Thomas and Uber Cup",
+     "text": "The Badminton World Federation gave New Delhi the 2028 Thomas Cup (men) and Uber Cup (women). India last hosted them in 2014.",
+     "gk": "Thomas Cup = men's team badminton; Uber Cup = women's team badminton."
+    },
+    {
+     "cat": "International",
+     "title": "India hosts IORA ministers' meeting",
+     "text": "India hosts the 25th Council of Ministers meeting of the Indian Ocean Rim Association (IORA) in New Delhi on 27 November 2026.",
+     "gk": "IORA's secretariat is in Mauritius."
+    },
+    {
+     "cat": "Schemes",
+     "title": "5th Kashi Tamil Sangamam",
+     "text": "The 5th Kashi Tamil Sangamam will be held in Varanasi from 28 November to 12 December 2026. Its theme is learning the Thirukkural.",
+     "gk": "The Thirukkural was written by the Tamil poet Thiruvalluvar."
+    },
+    {
+     "cat": "Awards",
+     "title": "India wins Visitors' Lion at Venice",
+     "text": "India's pavilion won the Visitors' Lion for Best National Participation at the 61st Venice Art Biennale in Italy.",
+     "gk": "The Venice Biennale is one of the world's oldest art exhibitions."
+    },
+    {
+     "cat": "States",
+     "title": "Kerala dairy farmer wins Gopal Ratna",
+     "text": "Muralidharan Nair from Kerala is among the first-prize winners of the National Gopal Ratna Award 2026 for dairy. The first prize is ₹5 lakh.",
+     "gk": "Gopal Ratna Awards are given under the Rashtriya Gokul Mission."
+    },
+    {
+     "cat": "Science",
+     "title": "Two new geckos found in Meghalaya",
+     "text": "Scientists described two new cave-dwelling bent-toed geckos from the Khasi Hills of Meghalaya.",
+     "gk": "Meghalaya's capital is Shillong."
+    }
+   ],
+   "quiz": [
+    {
+     "t": "Current affairs",
+     "q": "On which date is Constitution Day (Samvidhan Divas) observed in India?",
+     "o": [
+      "26 January",
+      "26 November",
+      "15 August",
+      "2 October"
+     ],
+     "a": 1,
+     "e": "The Constitution was adopted on 26 November 1949. So Constitution Day is 26 November.",
+     "ml": "ഭരണഘടനാ ദിനം നവംബർ 26.",
+     "w": [
+      "26 January is Republic Day, when the Constitution came into force.",
+      "",
+      "15 August is Independence Day.",
+      "2 October is Gandhi Jayanti."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "The Cabinet approved a ₹11,000 crore scheme to make which items in India?",
+     "o": [
+      "Mobile phones",
+      "Electric buses",
+      "Construction and infrastructure equipment",
+      "Solar panels"
+     ],
+     "a": 2,
+     "e": "The scheme is for construction and infrastructure equipment, like tunnel boring machines. The Ministry of Heavy Industries runs it.",
+     "ml": "നിർമ്മാണ യന്ത്രങ്ങൾ (CIE) ഇന്ത്യയിൽ ഉണ്ടാക്കാൻ ₹11,000 കോടി.",
+     "w": [
+      "Mobile phones have a different PLI scheme.",
+      "Electric buses were not part of this news.",
+      "",
+      "Solar panels were not part of this news."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "Where will the new greenfield airport for Silchar be built?",
+     "o": [
+      "Agartala (Tripura)",
+      "Dibrugarh (Assam)",
+      "Doloo, Cachar (Assam)",
+      "Imphal (Manipur)"
+     ],
+     "a": 2,
+     "e": "The airport will be at Doloo in Cachar district, Assam. It costs ₹2,014 crore.",
+     "ml": "സിൽചറിനായി ദോലൂ (കച്ചാർ, അസം) വിമാനത്താവളം.",
+     "w": [
+      "Agartala is in Tripura.",
+      "Dibrugarh is in Assam but far from Silchar.",
+      "",
+      "Imphal is in Manipur; Silchar is in Assam."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "Retail inflation in October 2026 crossed the RBI's upper limit. What was it?",
+     "o": [
+      "6.09%",
+      "8.94%",
+      "5.3%",
+      "4%"
+     ],
+     "a": 0,
+     "e": "Retail inflation was 6.09%. The RBI's upper limit is 6%.",
+     "ml": "ചില്ലറ വിലക്കയറ്റം 6.09% — RBI പരിധി 6%.",
+     "w": [
+      "",
+      "8.94% was food inflation only.",
+      "5.3% was S&P's forecast for the whole year.",
+      "4% is the RBI's target, not the October figure."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "Exercise Surya Kiran is a joint military exercise between India and which country?",
+     "o": [
+      "Sri Lanka",
+      "Nepal",
+      "Bangladesh",
+      "Bhutan"
+     ],
+     "a": 1,
+     "e": "Surya Kiran is the India–Nepal army exercise. The 20th edition is at Saljhandi, Nepal.",
+     "ml": "സൂര്യ കിരൺ: ഇന്ത്യ–നേപ്പാൾ സൈനിക അഭ്യാസം.",
+     "w": [
+      "Mitra Shakti is the India–Sri Lanka exercise.",
+      "",
+      "Sampriti is the India–Bangladesh exercise.",
+      "Bhutan was not part of this exercise."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "Which city will host the 2028 Thomas and Uber Cup badminton finals?",
+     "o": [
+      "Bengaluru",
+      "New Delhi",
+      "Lucknow",
+      "Hyderabad"
+     ],
+     "a": 1,
+     "e": "The BWF gave New Delhi the 2028 Thomas and Uber Cup. India last hosted them in 2014.",
+     "ml": "2028 തോമസ്–ഊബർ കപ്പ് ന്യൂഡൽഹിയിൽ.",
+     "w": [
+      "Bengaluru was not named as the host.",
+      "",
+      "Lucknow hosts other badminton events, not this one.",
+      "Hyderabad was not named as the host."
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "INS Ashank, delivered to the Navy, was built by which shipyard?",
+     "o": [
+      "Cochin Shipyard",
+      "Mazagon Dock, Mumbai",
+      "Goa Shipyard",
+      "GRSE, Kolkata"
+     ],
+     "a": 3,
+     "e": "GRSE built INS Ashank. It is GRSE's 120th warship.",
+     "ml": "INS അശാങ്ക് നിർമ്മിച്ചത് GRSE, കൊൽക്കത്ത.",
+     "w": [
+      "Cochin Shipyard built other Arnala-class ships, not INS Ashank.",
+      "Mazagon Dock builds submarines and destroyers; not this ship.",
+      "Goa Shipyard did not build this ship.",
+      ""
+     ]
+    },
+    {
+     "t": "Current affairs",
+     "q": "The 5th Kashi Tamil Sangamam (2026) has which theme?",
+     "o": [
+      "Silk",
+      "Millets",
+      "Thirukkural",
+      "Yoga"
+     ],
+     "a": 2,
+     "e": "The theme is learning the Thirukkural. It runs in Varanasi from 28 November to 12 December.",
+     "ml": "കാശി തമിഴ് സംഗമം: തിരുക്കുറൾ.",
+     "w": [
+      "Silk was not the theme.",
+      "Millets were not the theme.",
+      "",
+      "Yoga was not the theme."
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "name": "C4S Courses, Daily current affairs 26 Nov 2026",
+     "url": "https://c4scourses.in/current-affairs/daily-current-affairs-dca-26-november-2026/"
+    },
+    {
+     "name": "Cracktarget, Current affairs 26 November 2026",
+     "url": "https://cracktarget.com/current-affairs-26-november-2026/"
+    }
+   ]
+  },
   {
    "date": "2026-11-25",
    "items": [
