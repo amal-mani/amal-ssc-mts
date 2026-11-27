@@ -68,21 +68,21 @@
     {
      "s": "Quant",
      "t": "Simplification",
-     "q": "999 × 7 = ?",
+     "q": "98 × 6 = ?",
      "o": [
-      "6993",
-      "6939",
-      "7993",
-      "6999"
+      "588",
+      "598",
+      "578",
+      "618"
      ],
      "a": 0,
-     "e": "999 × 7 = 1000 × 7 − 7. That is 7000 − 7 = 6993.",
-     "ml": "999 × 7 = 7000 − 7 = 6993.",
+     "e": "98 × 6 = 100 × 6 − 2 × 6. That is 600 − 12 = 588.",
+     "ml": "98 × 6 = 600 − 12 = 588.",
      "w": [
       "",
-      "You swapped the last two digits.",
-      "You added 1000 instead of subtracting 7.",
-      "You subtracted 1 instead of 7."
+      "You took away 2 instead of 12.",
+      "You took away 22.",
+      "You added 18 instead of taking away 12."
      ]
     },
     {
@@ -108,41 +108,41 @@
     {
      "s": "Reasoning",
      "t": "Analogy",
-     "q": "Doctor : Hospital :: Teacher : ?",
+     "q": "Farmer : Field :: Pilot : ?",
      "o": [
-      "School",
-      "Book",
-      "Student",
-      "Chalk"
+      "Cockpit",
+      "Train",
+      "Sky",
+      "Ticket"
      ],
      "a": 0,
-     "e": "A doctor works in a hospital. A teacher works in a school. The pair is worker : workplace.",
-     "ml": "ഡോക്ടർ ജോലി ചെയ്യുന്നത് ആശുപത്രിയിൽ. അധ്യാപകൻ സ്കൂളിൽ.",
+     "e": "A farmer works in a field. A pilot works in a cockpit. The pair is worker : workplace.",
+     "ml": "കർഷകൻ വയലിൽ, പൈലറ്റ് കോക്ക്പിറ്റിൽ ജോലി ചെയ്യുന്നു.",
      "w": [
       "",
-      "A book is a tool, not a workplace.",
-      "A student is a person taught, not a place.",
-      "Chalk is a tool, not a workplace."
+      "A pilot flies planes, not trains.",
+      "The sky is where the plane flies, not the pilot's workplace.",
+      "A ticket is for passengers."
      ]
     },
     {
      "s": "Reasoning",
      "t": "Analogy",
-     "q": "4 : 16 :: 7 : ?",
+     "q": "3 : 27 :: 5 : ?",
      "o": [
-      "49",
-      "28",
-      "14",
-      "56"
+      "125",
+      "25",
+      "15",
+      "75"
      ],
      "a": 0,
-     "e": "4 × 4 = 16, so the rule is square. 7 × 7 = 49.",
-     "ml": "4-ന്റെ വർഗം 16. 7-ന്റെ വർഗം 49.",
+     "e": "3 × 3 × 3 = 27, so the rule is the cube. 5 × 5 × 5 = 125.",
+     "ml": "3-ന്റെ ഘനം 27. 5-ന്റെ ഘനം 125.",
      "w": [
       "",
-      "You did × 4. The rule is the square of the number.",
-      "You did × 2.",
-      "You did × 8."
+      "That is the square of 5, not the cube.",
+      "You did × 3.",
+      "You did × 15."
      ]
     },
     {
