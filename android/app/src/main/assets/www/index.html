@@ -2298,6 +2298,25 @@ const _mtDraw1=mtDraw;mtDraw=function(){_mtDraw1();const sec=$('mentor');if(!sec
   $('mtAutoSw').onchange=e=>{st.auto={on:e.target.checked,since:dkey};save();mtToday()};const rs=$('mtRStart');if(rs)rs.onclick=mtRStart};
 Object.assign(window.__mtc,{mtRStart,mtOpen,mtPlan,wrong:()=>st.wrongLog,method:()=>st.method});
 
+/* ---------- App problem catcher: records errors and lets the student send them to be fixed ---------- */
+const ERR_KEY='mtsErr',ERR_IGNORE=/ResizeObserver loop|^Script error\.?$|Failed to fetch|NetworkError|Load failed|AbortError|The user aborted|cancelled|Could not reach the AI/i;
+const errGet=()=>{try{return JSON.parse(localStorage.getItem(ERR_KEY)||'[]')}catch(e){return[]}};
+const errPut=a=>{try{localStorage.setItem(ERR_KEY,JSON.stringify(a.slice(0,20)))}catch(e){}};
+function errRec(msg,where,stack){msg=String(msg||'').slice(0,300);if(!msg||ERR_IGNORE.test(msg))return;const a=errGet();const ex=a.find(x=>x.m===msg);
+  if(ex){ex.n=(ex.n||1)+1;ex.last=dkey;ex.sent=ex.sent&&ex.n<=(ex.sentN||0)?ex.sent:false}else a.unshift({m:msg,w:String(where||'').slice(0,160),s:String(stack||'').split('\n').slice(0,4).join(' | ').slice(0,500),tab:location.hash||'#today',d:dkey,last:dkey,n:1,sent:false});errPut(a);try{errToday()}catch(e){}}
+window.addEventListener('error',e=>{try{if(e.target&&e.target!==window&&!e.message)return;errRec(e.message,(e.filename||'').split('/').pop()+':'+e.lineno+':'+e.colno,e.error&&e.error.stack)}catch(_){}});
+window.addEventListener('unhandledrejection',e=>{try{const r=e.reason;errRec(r&&r.message||String(r),'promise',r&&r.stack)}catch(_){}});
+function errReportUrl(list){const kind=/^file:|android|electron/i.test(location.href+navigator.userAgent)?'phone/PC app':'study page';
+  const body=`The app recorded ${list.length} problem${list.length>1?'s':''}. Please fix.\n\nWhere: ${kind}\nDevice: ${navigator.userAgent.slice(0,140)}\nScreen: ${innerWidth}x${innerHeight}\n\n`+list.map((x,i)=>`### ${i+1}. ${x.m}\n- Times: ${x.n} (first ${x.d}, last ${x.last})\n- Page: ${x.tab}\n- Place: ${x.w}\n- Stack: ${x.s}`).join('\n\n');
+  return 'https://github.com/amal-mani/amal-ssc-mts/issues/new?labels=app-error&title='+encodeURIComponent('App problem: '+list[0].m.slice(0,70))+'&body='+encodeURIComponent(body.slice(0,6000))}
+function errToday(){const old=$('errBox');if(old)old.remove();const list=errGet().filter(x=>!x.sent&&!x.hide);if(!list.length)return;const hello=document.querySelector('#today .hello');if(!hello)return;
+  hello.insertAdjacentHTML('afterend',`<div id="errBox" class="panel" style="border:2px solid #c62828;margin-top:14px"><b>⚠️ The app had a problem</b><p class="small" style="margin:6px 0">${list.length} problem${list.length>1?'s were':' was'} recorded. Tap <b>Send to fix</b>. GitHub opens with the details filled in: tap <b>Submit new issue</b>. The morning update fixes it and sends you a new version.</p><div class="row" style="justify-content:flex-start;gap:8px;flex-wrap:wrap"><a class="btn" id="errSend" target="_blank" rel="noopener" href="${esc(errReportUrl(list))}">Send to fix</a><button class="btn ghost" type="button" id="errHide">Hide</button></div></div>`);
+  $('errSend').onclick=()=>{const a=errGet();a.forEach(x=>{if(!x.sent){x.sent=dkey;x.sentN=x.n}});errPut(a);setTimeout(errToday,400)};
+  $('errHide').onclick=()=>{const a=errGet();a.forEach(x=>{if(!x.sent)x.hide=true});errPut(a);errToday()}}
+try{const _errTod=drawPlusToday;drawPlusToday=function(){_errTod();try{errToday()}catch(e){}}}catch(e){}
+setTimeout(()=>{try{errToday()}catch(e){}},2000);
+window.__err={get:errGet,rec:errRec,url:errReportUrl};
+
 /* ---------- click actions ---------- */
 document.addEventListener('click',e=>{const b=e.target.closest('[data-px]');if(!b)return;e.preventDefault();const k=b.dataset.px;
   if(k==='fm')fmStart('full');else if(k==='sect')fmStart('sect',b.dataset.s);
