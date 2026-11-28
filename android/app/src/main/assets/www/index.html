@@ -275,6 +275,7 @@ html.examlook #simBox .qimg,html.examlook #simBox .opt .pfig{color:#111}
 .mtRepair{border:2px solid #ff7a59}.mtLesson{border:2px solid #f9a825}.mtOrig{font-size:1.1em;font-weight:600}.mtLesson ol{padding-left:22px;line-height:1.7}
 .mtChg{padding-left:18px;line-height:1.6}.mtSw{display:flex;gap:10px;align-items:center;min-height:44px;cursor:pointer}.mtSw input{width:24px;height:24px}
 .mtAuto{display:block}.mtPlan{list-style:none;padding:0;margin:8px 0}.mtPlan li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}.mtPlan li>span{min-width:0}.mtPlan li.done{opacity:.6}
+.actCol{display:flex;flex-direction:column;align-items:flex-end;gap:4px}.otherDev{white-space:nowrap;text-decoration:underline;color:var(--soft)}
 </style>
 </head>
 <body>
@@ -643,8 +644,8 @@ function revRows(date){const s=wkStatus(date);const ls=weekLessons(date);
 const unlocked=l=>{if(!TESTED.includes(l.t))return true;if(!st.course[l.id]&&(blockWeek()||mockBlock()||dmBlock()))return false;return !prevL(l)||!!st.course[prevL(l).id]};
 function act(l){
   if(st.course[l.id])return `<button class="tick" aria-pressed="true" data-lt="${TESTED.includes(l.t)?'test':'undo'}" data-id="${l.id}" title="${TESTED.includes(l.t)?'Passed. Tap to take the test again':'Done. Tap to undo'}">${st.lq[l.id]!=null?st.lq[l.id]+'%':'✓'}</button>`;
-  if(!unlocked(l))return `<span class="small" style="white-space:nowrap">Locked</span>`;
-  if(TESTED.includes(l.t))return `<button class="btn" style="padding:8px 14px" data-lt="test" data-id="${l.id}">Take test</button>`;
+  if(!unlocked(l))return (TESTED.includes(l.t)&&(!prevL(l)||st.course[prevL(l).id]))?`<span class="actCol"><span class="small" style="white-space:nowrap">Locked</span><a href="#" class="small otherDev" data-lt="other" data-id="${l.id}">Passed on your other device?</a></span>`:`<span class="small" style="white-space:nowrap">Locked</span>`;
+  if(TESTED.includes(l.t))return `<span class="actCol"><button class="btn" style="padding:8px 14px" data-lt="test" data-id="${l.id}">Take test</button><a href="#" class="small otherDev" data-lt="other" data-id="${l.id}">Passed on your other device?</a></span>`;
   if(l.t==='Mock')return `<button class="btn ghost" style="padding:8px 14px" data-lt="score" data-id="${l.id}">Enter score</button>`;
   return `<button class="btn ghost" style="padding:8px 14px" data-lt="done" data-id="${l.id}">Mark done</button>`;
 }
@@ -680,10 +681,10 @@ function startWeekly(date){const qs=weeklyQs(date);if(!qs.length){openScore(null
   goPractice();startQuiz(qs,true,{weekly:date})}
 function openScore(id,kind,msg){const l=id&&findL(id);const box=$('scoreBox');
   $('sbTitle').textContent=kind==='info'?'Weekly test':kind==='score'?'Enter your mock score':'Enter your test score';
-  $('sbText').textContent=msg||(kind==='score'?`${l.title}: enter the score you got in the Falcon mock.`:`The app test for "${l.title}" is not ready yet. Do the Day ${l.day} PDF practice in the Falcon course and enter your score. You need ${PASS}% to unlock the next class.`);
-  $('sbForm').hidden=kind==='info';$('sbS').value='';$('sbM').value=kind==='score'?'150':'10';box.hidden=false;box.dataset.id=id||'';box.dataset.kind=kind;}
+  $('sbText').textContent=msg||(kind==='other'?`Did you pass the "${l.title}" test on your other device (PC or phone)? Enter the score you got there. You need ${PASS}% to unlock the next class.`:kind==='score'?`${l.title}: enter the score you got in the Falcon mock.`:`The app test for "${l.title}" is not ready yet. Do the Day ${l.day} PDF practice in the Falcon course and enter your score. You need ${PASS}% to unlock the next class.`);
+  $('sbForm').hidden=kind==='info';$('sbS').value='';$('sbM').value=kind==='score'?'150':kind==='other'?'5':'10';box.hidden=false;box.dataset.id=id||'';box.dataset.kind=kind;}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-lt]');if(!b||b.disabled)return;if(b.tagName==='A')e.preventDefault();const id=b.dataset.id,k=b.dataset.lt;
-  if(k==='test')startLessonTest(id);else if(k==='score')openScore(id,'score');else if(k==='weekly')startWeekly(b.dataset.date);
+  if(k==='test')startLessonTest(id);else if(k==='score')openScore(id,'score');else if(k==='other')openScore(id,'other');else if(k==='weekly')startWeekly(b.dataset.date);
   else if(k==='notes'){e.preventDefault();openNotes(id)}
   else if(k==='rew'){e.preventDefault();const key=b.dataset.date+'|'+id;if(st.rev[key])delete st.rev[key];else st.rev[key]=true;save();refreshAll()}
   else if(k==='done'){(st.course[id]=true,(st.doneOn=st.doneOn||{})[id]=(st.doneOn[id]||dkey));st.today.ids[id]=(findL(id)||{}).t;save();refreshAll()}else if(k==='undo'){delete st.course[id];delete st.lq[id];save();refreshAll()}});
@@ -1109,11 +1110,13 @@ const _refreshAll=refreshAll;refreshAll=function(){Object.keys(st.course).forEac
 const START_RULES='2026-11-28';
 function mockBlock(){try{const d=new Date(dkey+'T12:00:00');let back=(d.getDay()+1)%7;if(back===0)back=7;const lastSat=addD(dkey,-back);if(lastSat<START_RULES)return null;
   const from=addD(lastSat,-6);return st.fmHist.some(r=>r.kind==='full'&&r.date>=from)?null:lastSat}catch(e){return null}}
-function dmBlock(){try{const y1=addD(dkey,-1),y2=addD(dkey,-2);if(y2<'2026-11-26')return null;const did=d=>st.dmDone[d]!=null||st.fmHist.some(r=>r.date===d);return(!did(y1)&&!did(y2)&&!did(dkey))?y1:null}catch(e){return null}}
+function dmBlock(){try{const y1=addD(dkey,-1),y2=addD(dkey,-2);if(y2<'2026-11-26')return null;const did=d=>st.dmDone[d]!=null||(st.dmOther&&st.dmOther[d])||st.fmHist.some(r=>r.date===d);return(!did(y1)&&!did(y2)&&!did(dkey))?y1:null}catch(e){return null}}
 const _drawPlan=drawPlan;drawPlan=function(){_drawPlan();const mb=mockBlock(),db=dmBlock();if(!mb&&!db)return;
   const li=document.createElement('li');li.style.setProperty('--c','#ff6b6b');
   li.innerHTML=mb?`<span class="t">Compulsory</span><span class="what">Weekly full mock not taken (week ending ${esc(fmtDate(mb))})<span class="how">New classes are locked until you take one 90-question full mock.</span></span><button class="btn" style="padding:8px 14px" data-px="fm">Start</button>`
-   :`<span class="t">Compulsory</span><span class="what">No mock for 2 days<span class="how">Never miss twice. Take today's mock to unlock new classes.</span></span><button class="btn" style="padding:8px 14px" data-px="dm">Start</button>`;$('plan').prepend(li)};
+   :`<span class="t">Compulsory</span><span class="what">No mock for 2 days<span class="how">Never miss twice. Take today's mock to unlock new classes.</span></span><span class="actCol"><button class="btn" style="padding:8px 14px" data-px="dm">Start</button><a href="#" class="small otherDev" id="dmOther">Did a mock on your other device?</a></span>`;$('plan').prepend(li);
+  const o=$('dmOther');if(o)o.onclick=e=>{e.preventDefault();pxBox(`<h2>Mock on your other device?</h2><p>Did you take a daily mock or full mock on your PC or phone in the last 2 days? Tap yes, and your classes here unlock.</p><p class="small">Tip: turn on Sync on both devices (My day → Sync phone + PC), so this happens by itself.</p><div class="row" style="justify-content:flex-start;gap:8px"><button class="btn" id="dmoY">Yes, I did</button><button class="btn ghost" id="dmoN">No</button></div>`);
+    $('dmoY').onclick=()=>{st.dmOther=st.dmOther||{};st.dmOther[addD(dkey,-1)]=true;st.dmOther[dkey]=true;save();$('pxBox').hidden=true;refreshAll()};$('dmoN').onclick=()=>{$('pxBox').hidden=true}}};
 
 /* ---------- routine, targets, streak ---------- */
 const DAYMS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -2394,6 +2397,12 @@ setInterval(()=>syncNow(),180000);
 document.addEventListener('visibilitychange',()=>{if(!SY.tok)return;if(document.visibilityState==='hidden'){clearTimeout(syTimer);syncNow()}else syncNow()});
 window.addEventListener('online',()=>syncNow());
 drawSync();
+
+/* Today: warn when phone and PC are not linked */
+function syToday(){const old=$('syWarn');if(old)old.remove();if(SY.tok&&SY.id&&!SY.err)return;if(st.syWarnOff===dkey)return;const hello=document.querySelector('#today .hello');if(!hello)return;
+  hello.insertAdjacentHTML('afterend',`<div id="syWarn" class="panel" style="border:2px solid #f9a825;margin-top:14px"><b>🔗 Phone and PC are not linked</b><p class="small" style="margin:6px 0">Classes and tests you finish on one device do not show on the other. Turn on Sync on both devices with the same GitHub key.</p><div class="row" style="justify-content:flex-start;gap:8px"><button class="btn" type="button" id="syGo">Set up sync</button><button class="btn ghost" type="button" id="syLater">Not today</button></div></div>`);
+  $('syGo').onclick=()=>{location.hash='#myday';setTimeout(()=>{const b=$('syncBox');if(b)b.scrollIntoView({behavior:'smooth',block:'start'})},300)};$('syLater').onclick=()=>{st.syWarnOff=dkey;save();syToday()}}
+try{const _syTod=drawPlusToday;drawPlusToday=function(){_syTod();try{syToday()}catch(e){}};setTimeout(()=>{try{syToday()}catch(e){}},1500)}catch(e){}
 
 /* ================= app self-update (phone / PC app only) ================= */
 const REL='https://api.github.com/repos/amal-mani/amal-ssc-mts/releases/latest';
